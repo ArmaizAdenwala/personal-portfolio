@@ -1,0 +1,10 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+
+.container {
+  width: 100%;
+  @include respond-to('medium') {
+    margin: 0 auto;
+    width: 980px;
+  }
+}

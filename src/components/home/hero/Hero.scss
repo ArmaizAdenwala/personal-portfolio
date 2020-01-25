@@ -1,0 +1,25 @@
+@import "../../../styles/colors";
+
+.hero {
+  height: 544px;
+  position: relative;
+  background-color: $background--light;
+  padding-top: -64px;
+  &__content {
+    position: absolute;
+    padding-left: 32px;
+    padding-right: 32px;
+    top: 50%;
+    max-width: 735px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    &__title {
+      margin: 0;
+    }
+    &__subtitle {
+      max-width: 612.5px;
+      margin: 0;
+      margin-top: 16px;
+    }
+  }
+}

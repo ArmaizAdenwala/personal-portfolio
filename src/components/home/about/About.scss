@@ -1,0 +1,37 @@
+@import "../../../styles/colors";
+
+.about {
+  position: relative;
+  background-color: $background;
+  width: 100%;
+  padding: 48px 0;
+  & &__title {
+    margin: 0;
+    margin-bottom: 32px;
+    color: $background-text;
+    font-weight: 800;
+    border-bottom: 3px solid $background-text;
+    width: 100%;
+  }
+  &__bio {
+    color: $background-text;
+    white-space: pre-wrap;
+  }
+  &__card {
+    background-color: #fafafa;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 16px;
+    border-radius: 8px;
+    height: 480px;
+    position: absolute;
+    width: 100%;
+    &__img {
+      width: 100%;
+      border-radius: 100%;
+      max-width: 160px;
+      max-height: 160px;
+    }
+  }
+}

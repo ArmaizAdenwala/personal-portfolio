@@ -1,0 +1,16 @@
+$grid-columns: 12;
+$gutter: 32px;
+
+.g__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 (-$gutter);
+}
+
+@for $i from 1 through $grid-columns {
+  .g__col-#{$i} {
+    width: percentage($i / $grid-columns);
+    padding: 0 $gutter;
+    position: relative;
+  }
+}

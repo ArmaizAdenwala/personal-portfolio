@@ -1,0 +1,23 @@
+@import "../../../styles/colors";
+
+.nav {
+  height: 64px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: $background--light;
+  z-index: 1;
+  
+  &__container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  &__link {
+    text-decoration: none;
+    margin-left: 32px;
+    font-size: 20px;
+  }
+}

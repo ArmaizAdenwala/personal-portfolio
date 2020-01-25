@@ -1,0 +1,66 @@
+@import "./colors";
+
+.tg {
+  &__title-1 {
+    font-weight: 300;
+    font-size: 96px;
+    letter-spacing: -1.5px;
+    display: inline-block;
+  }
+  &__title-2 {
+    font-weight: 300;
+    font-size: 60px;
+    letter-spacing: -0.5px;
+    display: inline-block;
+  }
+  &__title-3 {
+    font-weight: 300;
+    font-weight: 500;
+    font-size: 48px;
+    display: inline-block;
+  }
+  &__title-4 {
+    font-weight: 300;
+    font-size: 34px;
+    letter-spacing: 0.25px;
+    display: inline-block;
+  }
+  &__title-5 {
+    font-size: 24px;
+    display: inline-block;
+  }
+  &__title-6 {
+    font-size: 20px;
+    letter-spacing: 0.15px;
+    display: inline-block;
+    line-height: 1.5;
+  }
+  &__subtitle-1 {
+    font-size: 16px;
+    letter-spacing: 0.15px;
+  }
+  &__subtitle-2 {
+    font-size: 14px;
+    letter-spacing: 0.1px;
+  }
+  &__body-1 {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    margin: 8px 0;
+  }
+  &__body-2 {
+    font-size: 14px;
+    letter-spacing: 0.25px;
+  }
+  &__button {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.25px;
+  }
+  &__w--400 {
+    font-weight: 400;
+  }
+  &__c--primary {
+    color: $colors-primary--dark;
+  }
+}
