@@ -8,10 +8,14 @@
   & &__title {
     margin: 0;
     margin-bottom: 16px;
-    font-weight: 800;
+    font-weight: 700;
   }
   &__bio {
     color: #12173b;
     white-space: pre-wrap;
+    &--emphasis {
+      color: $colors-primary;
+      font-weight: 600;
+    }
   }
 }
