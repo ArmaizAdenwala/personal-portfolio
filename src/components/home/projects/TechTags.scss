@@ -1,0 +1,15 @@
+@import "../../../styles/colors";
+
+.tech-tags {
+  &__tag {
+    background-color: $colors-primary;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+    display: inline-block;
+  }
+}

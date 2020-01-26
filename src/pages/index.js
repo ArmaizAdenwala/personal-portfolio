@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Footer } from '../components/general';
-import { Hero, About, Experience } from '../components/home';
+import { Hero, About, Experience, Projects } from '../components/home';
 import '../styles/main.scss';
 import '../styles/pages/Home.scss';
 import Layout from '../components/layout';
@@ -13,6 +13,7 @@ const IndexPage = () => (
     <div className="home__content">
       <About />
       <Experience />
+      <Projects />
       <Footer />
     </div>
   </Layout>
