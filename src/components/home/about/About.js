@@ -10,19 +10,19 @@ export default class About extends Component {
         <Container>
           <div className="g__row">
             <div className="g__col-5">
-              <h3 className="tg__title-4 about__title">About Me</h3>
-              <p className="tg__title-6 about__bio">
-                Hey, I'm Armaiz, a passionate Software Engineer from Sacramento,
-                CA who is experienced in taking fullstack apps from scratch to
-                production.
-                <br />
-                <br />I had the oppurtunity to develop for over 5 awesome
-                companies / clients as a consultant. My work included mobile
-                apps, web apps, backend servers, devops, and desktop apps.
-              </p>
-            </div>
-            <div className="g__col-5">
               <ProfileCard />
+            </div>
+            <div className="g__col-7">
+              <h3 className="tg__title-4 about__title">Who am I?</h3>
+              <p className="tg__title-6 about__bio">
+                I'm a passionate Software Engineer from Sacramento, CA who's
+                experienced in taking fullstack apps from scratch to production.
+                <br />
+                <br />
+                I've had the oppurtunity to develop for over 5 awesome companies
+                / clients as a consultant. My work included mobile apps, web
+                apps, backend servers, devops, and desktop apps.
+              </p>
             </div>
           </div>
         </Container>

@@ -3,11 +3,10 @@
 .hero {
   height: 544px;
   position: relative;
-  background-color: $background--light;
+  background-color: $background--light-2;
   padding-top: -64px;
   &__content {
     position: absolute;
-    padding-left: 32px;
     padding-right: 32px;
     top: 50%;
     max-width: 735px;
