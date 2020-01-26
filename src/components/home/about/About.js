@@ -12,9 +12,9 @@ export default class About extends Component {
             <div className="g__col-5">
               <h3 className="tg__title-4 about__title">About Me</h3>
               <p className="tg__title-6 about__bio">
-                My passion for programming started in middleschool, however, my
-                skills as a developer skyrocketed once I started programming
-                professionally in highschool.
+                Hey, I'm Armaiz, a passionate Software Engineer from Sacramento,
+                CA who is experienced in taking fullstack apps from scratch to
+                production.
                 <br />
                 <br />I had the oppurtunity to develop for over 5 awesome
                 companies / clients as a consultant. My work included mobile
