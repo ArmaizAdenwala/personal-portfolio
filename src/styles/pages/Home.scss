@@ -1,7 +1,9 @@
 @import "../../styles/colors";
+@import "../../styles/variables";
 
 .home {
   &__content {
+    margin-top: $hero-height;
     display: inline-block;
     width: 100%;
     background-color: $background--light;

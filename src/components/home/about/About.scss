@@ -7,12 +7,12 @@
   padding: 96px 0;
   & &__title {
     margin: 0;
-    margin-bottom: 32px;
-    color: $background-text;
+    margin-bottom: 16px;
+    color: $colors-primary;
     font-weight: 800;
   }
   &__bio {
-    color: $background-text;
+    color: #12173b;
     white-space: pre-wrap;
   }
 }
