@@ -13,8 +13,8 @@ const IndexPage = () => (
     <div className="home__content">
       <About />
       <Experience />
+      <Footer />
     </div>
-    <Footer />
   </Layout>
 );
 

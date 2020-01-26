@@ -16,7 +16,7 @@ export default class About extends Component {
               <h3 className="tg__title-4 about__title">Who am I?</h3>
               <p className="tg__title-6 about__bio">
                 I'm a passionate Software Engineer from Sacramento, CA who's
-                experienced in taking fullstack apps from scratch to production.
+                experienced in taking fullstack apps to production from scratch.
                 <br />
                 <br />
                 I've had the oppurtunity to develop for over 5 awesome companies

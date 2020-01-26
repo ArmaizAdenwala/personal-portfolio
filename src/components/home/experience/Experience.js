@@ -7,7 +7,7 @@ export default class Experience extends Component {
     return (
       <div className="experience">
         <Container>
-          <h3 className="tg__title-4 experience__title">
+          <h3 className="tg__title-4 experience__title tg__c--primary">
             Here's where I've worked at
           </h3>
           <div className="experience__card">
