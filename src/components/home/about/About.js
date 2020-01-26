@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from '../../../components/general';
+import profilePic from '../../../images/armaiz_adenwala_software_engineer_sacramento_ca.jpg';
 import './About.scss';
 
 export default class About extends Component {
@@ -28,7 +29,7 @@ export default class About extends Component {
               <div className="about__card">
                 <img
                   className="about__card__img"
-                  // src={}
+                  src={profilePic}
                   alt="Armaiz Adenwala"
                 />
                 <h4 className="tg__title-6">Armaiz Adenwala</h4>
