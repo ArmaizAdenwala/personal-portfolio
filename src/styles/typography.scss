@@ -61,6 +61,12 @@
     font-weight: 400;
   }
   &__c--primary {
+    color: $colors-primary;
+  }
+  &__c--primary--dark {
     color: $colors-primary--dark;
+  }
+  &__c--secondary {
+    color: $colors-secondary;
   }
 }
