@@ -7,6 +7,10 @@
   background-color: $background--light-2;
   position: fixed;
   width: 100%;
+  background-image: url("./images/fluid_wave.png"), url("./images/dot.png");
+  background-size: 544px 544px, 10px;
+  background-repeat: no-repeat, repeat;
+  background-position: 100% 100%, 0 0;
   &__content {
     position: absolute;
     padding-right: 32px;
