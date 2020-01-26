@@ -1,5 +1,6 @@
 @import "../../../styles/colors";
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .hero {
   height: $hero-height;
@@ -7,15 +8,25 @@
   background-color: $background--light-2;
   position: fixed;
   width: 100%;
-  background-image: url("./images/fluid_wave.png"), url("./images/dot.png");
-  background-size: 544px 544px, 10px;
-  background-repeat: no-repeat, repeat;
-  background-position: 100% 100%, 0 0;
+  background-image: url("./images/dot.png");
+  background-size: 10px;
+  background-repeat: repeat;
+  background-position: 0 0;
+  @include respond-to('medium') {
+    background-image: url("./images/fluid_wave.png"), url("./images/dot.png");
+    background-size: 544px 544px, 10px;
+    background-repeat: no-repeat, repeat;
+    background-position: 100% 100%, 0 0;
+  }
   &__content {
     position: absolute;
-    padding-right: 32px;
+    text-align: center;
+    @include respond-to('medium') {
+      padding-left: 32px;
+      padding-right: 32px;
+      text-align: left;
+    }
     top: 50%;
-    max-width: 735px;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     &__title {
