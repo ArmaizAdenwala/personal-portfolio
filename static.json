@@ -1,4 +1,23 @@
 {
-  "root": "public",
-  "clean_urls": true
+  "root": "public/",
+  "headers": {
+    "/**": {
+      "Cache-Control": "public, max-age=0, must-revalidate"
+    },
+    "/**.css": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/**.js": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/static/**": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/icons/*.png": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    }
+  },
+  "clean_urls": true,
+  "https_only": true,
+  "error_page": "404.html"
 }
