@@ -38,7 +38,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "heroku static:deploy",
+    "deploy": "rm -rf .cache public && gatsby build && heroku static:deploy",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {

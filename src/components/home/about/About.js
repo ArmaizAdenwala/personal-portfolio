@@ -21,9 +21,12 @@ export default class About extends Component {
                 scratch.
                 <br />
                 <br />
-                I've had the oppurtunity to develop for over 5 awesome companies
-                / clients as a consultant. My work included mobile apps, web
-                apps, backend servers, devops, and desktop apps.
+                I've had the oppurtunity to develop for over{' '}
+                <span className="about__bio--emphasis">
+                  5 awesome companies / clients
+                </span>{' '}
+                as a consultant. My work included mobile apps, web apps, backend
+                servers, devops, and desktop apps.
               </p>
             </div>
           </div>
