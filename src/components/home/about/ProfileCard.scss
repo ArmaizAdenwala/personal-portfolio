@@ -1,0 +1,40 @@
+@import "../../../styles/colors";
+
+.profile-card {
+  background-color: #fafafa;;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 32px;
+  border-radius: 8px;
+  position: absolute;
+  &__img {
+    width: 100%;
+    border-radius: 100%;
+    max-width: 192px;
+    max-height: 192px;
+  }
+  &__title {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  & &__location {
+    margin: 0;
+    font-style: italic;
+  }
+  & &__email {
+    margin: 8px 0;
+    font-style: italic;
+  }
+  &__social {
+    margin-bottom: 16px;
+    &__link {
+      font-size: 24px;
+      margin: 0 8px;
+      color: $colors-primary--dark;
+    }
+  }
+  &__content {
+    align-self: flex-start;
+  }
+}
