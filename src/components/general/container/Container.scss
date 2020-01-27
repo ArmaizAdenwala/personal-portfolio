@@ -5,6 +5,7 @@
   width: calc(100% - 64px);
   padding-left: 32px;
   padding-right: 32px;
+  overflow-x: hidden;
   @include respond-to('medium') {
     margin: 0 auto;
     width: 980px;
