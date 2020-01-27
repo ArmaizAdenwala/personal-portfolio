@@ -3,6 +3,8 @@
 
 .container {
   width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
   @include respond-to('medium') {
     margin: 0 auto;
     width: 980px;

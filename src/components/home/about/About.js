@@ -9,20 +9,35 @@ export default class About extends Component {
       <div className="about">
         <Container>
           <div className="g__row">
-            <div className="g__col-5">
+            <div
+              className="
+              g__col-12--s
+              g__col-5--m
+              g__col-5--l
+            "
+            >
               <ProfileCard />
             </div>
-            <div className="g__col-7">
-              <h3 className="tg__title-4 about__title">Who am I?</h3>
-              <p className="tg__title-6 about__bio">
+            <div
+              className="
+              g__col-12--s
+              g__col-7--m
+              g__col-7--l
+              about__content
+            "
+            >
+              <h3 className="tg__title-4 about__content__title">Who am I?</h3>
+              <p className="tg__title-6 about__content__bio">
                 I'm a passionate Software Engineer from{' '}
-                <span className="about__bio--emphasis">Sacramento, CA</span>{' '}
+                <span className="about__content__bio--emphasis">
+                  Sacramento, CA
+                </span>{' '}
                 who's experienced in taking fullstack apps to production from
                 scratch.
                 <br />
                 <br />
                 I've had the oppurtunity to develop for over{' '}
-                <span className="about__bio--emphasis">
+                <span className="about__content__bio--emphasis">
                   5 awesome companies / clients
                 </span>{' '}
                 as a consultant. My work included mobile apps, web apps, backend

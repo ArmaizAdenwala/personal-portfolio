@@ -1,21 +1,36 @@
 @import "../../../styles/colors";
+@import "../../../styles/mixins";
 
 .about {
   position: relative;
   background-color: $background;
   width: 100%;
   padding: 96px 0;
-  & &__title {
-    margin: 0;
-    margin-bottom: 16px;
-    font-weight: 700;
+  &__row {
+    padding-left: 32px;
+    padding-right: 32px;
   }
-  &__bio {
-    color: #12173b;
-    white-space: pre-wrap;
-    &--emphasis {
-      color: $colors-primary;
-      font-weight: 600;
+  &__content {
+    max-width: 420px;
+    margin: 0 auto;
+    margin-top: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @include respond-to('small') {
+      max-width: 100%;
+    }
+    & &__title {
+      margin: 0;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    &__bio {
+      color: #12173b;
+      white-space: pre-wrap;
+      &--emphasis {
+        color: $colors-primary;
+        font-weight: 600;
+      }
     }
   }
 }

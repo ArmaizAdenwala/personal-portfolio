@@ -5,13 +5,15 @@ $gutter: 32px;
 
 .g__row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 (-$gutter);
 }
 @for $i from 1 through $grid-columns {
   $class-name: ".g__col-" + $i;
+  $percent: percentage($i / $grid-columns);
   @include responsive-modifiers($class-name) {
-    width: percentage($i / $grid-columns);
+    width: calc(#{$percent} - #{$gutter * 2});
     padding: 0 $gutter;
     position: relative;
   }
