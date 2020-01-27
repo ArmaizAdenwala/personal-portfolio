@@ -3,16 +3,18 @@
 @import "../../../styles/mixins";
 
 .hero {
-  height: $hero-height;
+  height: $hero-height--sm;
   position: relative;
   background-color: $background--light-2;
   position: fixed;
   width: 100%;
+  padding-top: 64px;
   background-image: url("./images/dot.png");
   background-size: 10px;
   background-repeat: repeat;
   background-position: 0 0;
   @include respond-to('medium') {
+    height: $hero-height;
     background-image: url("./images/fluid_wave.png"), url("./images/dot.png");
     background-size: 544px 544px, 10px;
     background-repeat: no-repeat, repeat;
@@ -21,7 +23,9 @@
   &__content {
     position: absolute;
     text-align: center;
+    width: 100%;
     @include respond-to('medium') {
+      width: auto;
       padding-left: 32px;
       padding-right: 32px;
       text-align: left;
@@ -34,8 +38,11 @@
     }
     &__subtitle {
       max-width: 612.5px;
-      margin: 0;
+      padding-right: 16px;
+      padding-left: 16px;
+      margin: 0 auto;
       margin-top: 16px;
+      font-weight: 300;
     }
   }
 }

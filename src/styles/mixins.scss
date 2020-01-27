@@ -1,3 +1,6 @@
+$small: 767px;
+$medium: 992px;
+
 $breakpoints: (
   'small':  767px,
   'medium': 992px,
@@ -7,5 +10,26 @@ $breakpoints: (
 @mixin respond-to($breakpoint) {
   @media (min-width: map-get($breakpoints, $breakpoint)) {
     @content;
+  }
+}
+
+@mixin responsive-modifiers($class) {
+  #{$class}{
+    @content;
+  }
+  #{$class}--s {
+    @media (max-width: $small) {
+      @content;
+    }
+  }
+  #{$class}--m {
+    @media (min-width: $small) and (max-width: $medium) {
+      @content;
+    }
+  }
+  #{$class}--l {
+    @media (min-width: $medium) {
+      @content;
+    }
   }
 }

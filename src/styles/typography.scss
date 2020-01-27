@@ -5,54 +5,47 @@
     font-weight: 300;
     font-size: 96px;
     letter-spacing: -1.5px;
-    display: inline-block;
   }
-  &__title-2 {
+  @include responsive-modifiers('&__title-2') {
     font-weight: 300;
     font-size: 60px;
     letter-spacing: -0.5px;
-    display: inline-block;
   }
-  &__title-3 {
+  @include responsive-modifiers('&__title-3') {
     font-weight: 300;
-    font-weight: 500;
     font-size: 48px;
-    display: inline-block;
   }
-  &__title-4 {
+  @include responsive-modifiers('&__title-4') {
     font-weight: 300;
     font-size: 34px;
     letter-spacing: 0.25px;
-    display: inline-block;
   }
-  &__title-5 {
+  @include responsive-modifiers('&__title-5') {
     font-size: 24px;
-    display: inline-block;
   }
-  &__title-6 {
+  @include responsive-modifiers('&__title-6') {
     font-size: 20px;
     letter-spacing: 0.15px;
-    display: inline-block;
     line-height: 1.5;
   }
-  &__subtitle {
+  @include responsive-modifiers('&__subtitle') {
     font-size: 18px;
     letter-spacing: 0.15px;
   }
-  &__subtitle-1 {
+  @include responsive-modifiers('&__subtitle-1') {
     font-size: 16px;
     letter-spacing: 0.15px;
   }
-  &__subtitle-2 {
+  @include responsive-modifiers('&__subtitle-2') {
     font-size: 14px;
     letter-spacing: 0.1px;
   }
-  &__body-1 {
+  @include responsive-modifiers('&__body-1') {
     font-size: 16px;
     letter-spacing: 0.5px;
     margin: 8px 0;
   }
-  &__body-2 {
+  @include responsive-modifiers('&__body-2') {
     font-size: 14px;
     letter-spacing: 0.25px;
   }
