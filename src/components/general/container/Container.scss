@@ -6,6 +6,11 @@
   padding-left: 32px;
   padding-right: 32px;
   overflow-x: hidden;
+  @include respond-to('small') {
+    width: calc(100% - 128px);
+    padding-left: 64px;
+    padding-right: 64px;
+  }
   @include respond-to('medium') {
     margin: 0 auto;
     width: 980px;

@@ -9,10 +9,11 @@
   &__content {
     max-width: 420px;
     margin: 0 auto;
-    margin-top: 32px;
     padding-left: 16px;
     padding-right: 16px;
+    margin-top: 32px;
     @include respond-to('small') {
+      margin-top: 0;
       max-width: 100%;
     }
     & &__title {

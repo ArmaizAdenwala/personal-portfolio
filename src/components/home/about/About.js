@@ -12,7 +12,7 @@ export default class About extends Component {
             <div
               className="
               g__col-12--s
-              g__col-5--m
+              g__col-6--m
               g__col-5--l
             "
             >
@@ -21,7 +21,7 @@ export default class About extends Component {
             <div
               className="
               g__col-12--s
-              g__col-7--m
+              g__col-6--m
               g__col-7--l
               about__content
             "
