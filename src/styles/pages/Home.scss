@@ -8,9 +8,9 @@
     width: 100%;
     background-color: $background--light;
     position: relative;
-    margin-top: $hero-height--sm;
+    margin-top: $hero-height--sm + 64px;
     @include respond-to('medium') {
-      margin-top: $hero-height;
+      margin-top: $hero-height + 64px;
     }
   }
 }
