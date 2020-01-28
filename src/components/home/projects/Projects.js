@@ -8,7 +8,15 @@ export default class Projects extends Component {
     return (
       <div className="projects">
         <Container>
-          <h3 className="tg__title-4 projects__title">
+          <h3
+            className="
+            tg__title-5--s
+            tg__title-4--m
+            tg__title-4--l
+            tg__t--center--s
+            projects__title
+          "
+          >
             Here are some projects I've worked on
           </h3>
           <ProjectCard

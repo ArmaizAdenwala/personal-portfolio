@@ -66,4 +66,7 @@
   &__c--secondary {
     color: $colors-secondary;
   }
+  @include responsive-modifiers('&__t--center') {
+    text-align: center;
+  }
 }

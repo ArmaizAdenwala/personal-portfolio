@@ -5,7 +5,13 @@
   position: relative;
   background-color: $background;
   width: 100%;
-  padding: 96px 0;
+  padding: 64px 0;
+  @include respond-to('medium') {
+    padding: 96px 0;
+  }
+  @include respond-to('large') {
+    padding: 96px 0;
+  }
   &__content {
     max-width: 420px;
     margin: 0 auto;

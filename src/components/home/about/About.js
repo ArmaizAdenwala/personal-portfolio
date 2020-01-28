@@ -26,7 +26,17 @@ export default class About extends Component {
               about__content
             "
             >
-              <h3 className="tg__title-4 about__content__title">Who am I?</h3>
+              <h3
+                className="
+                tg__title-5--s
+                tg__title-4--m
+                tg__title-4--l
+                tg__t--center--s
+                about__content__title
+              "
+              >
+                Who am I?
+              </h3>
               <p className="tg__title-6 about__content__bio">
                 Hello! I'm Armaiz, a Software Engineer based in{' '}
                 <span className="about__content__bio--emphasis">
