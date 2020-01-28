@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from '../../../components/general';
-import PlanspaceImg from './images/planspace_react_native_ruby_on_rails_app.jpg';
-import TechTags from './TechTags';
+import ProjectCard from './ProjectCard';
 import './Projects.scss';
 
 export default class Projects extends Component {
@@ -12,40 +11,37 @@ export default class Projects extends Component {
           <h3 className="tg__title-4 projects__title">
             Here are some projects I've worked on
           </h3>
-          <div className="projects__card">
-            <img src={PlanspaceImg} className="projects__card__img" />
-            <div className="projects__card__content">
-              <h5 className="tg__title-4 projects__card__content__title">
-                PlanSpace
-              </h5>
-              <p className="tg__subtitle-1  projects__card__content__date">
-                January 2020
-              </p>
-              <TechTags
-                tags={[
-                  'React Native',
-                  'Redux',
-                  'Ruby on Rails',
-                  'PostgreSQL',
-                  'Node.js',
-                  'socket-io',
-                ]}
-              />
-              <ul className="projects__card__content__list">
-                <li className="tg__subtitle  projects__card__content__list__subtitle">
-                  Automated chore schedules on a week by week basis
-                </li>
-                <li className="tg__subtitle  projects__card__content__list__subtitle">
-                  Normalizes chore assignments overtime so that roommates who
-                  did extra chores would have to do less over time.
-                </li>
-                <li className="tg__subtitle  projects__card__content__list__subtitle">
-                  Focused on seamless UX by using loading states, lazy loading
-                  data, caching, and pagination.
-                </li>
-              </ul>
-            </div>
-          </div>
+          <ProjectCard
+            name="PlanSpace"
+            description="App designed for roommates to have automated chore schedules on a week by week basis."
+            date="January 2020"
+            tags={[
+              'React Native',
+              'Redux',
+              'Ruby on Rails',
+              'PostgreSQL',
+              'Node.js',
+              'socket-io',
+            ]}
+          />
+          <ProjectCard
+            name="Reacto Meetup Speaker"
+            description='"Building a React Native App that Communicates with Arduino"'
+            date="January 2019"
+            tags={[
+              'React Native',
+              'Redux',
+              'C++',
+              'Arduino',
+              'HC-05 BT Module',
+            ]}
+          />
+          <ProjectCard
+            name="Programmable LED Mask"
+            description="Built an LED mask using individually addressable lightstrips and an Arduino"
+            date="January 2019"
+            tags={['C++', 'Arduino', 'WS2812B LEDS']}
+          />
         </Container>
       </div>
     );

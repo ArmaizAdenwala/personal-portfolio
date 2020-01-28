@@ -1,15 +1,22 @@
 @import "../../../styles/colors";
+@import "../../../styles/mixins";
 
 .tech-tags {
   &__tag {
-    background-color: $colors-primary;
+    background-color: $colors-secondary;
     color: #fff;
-    padding: 4px 8px;
+    padding: 4px 6px;
     border-radius: 4px;
     margin-right: 4px;
     text-transform: uppercase;
-    font-weight: 500;
-    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     display: inline-block;
+    margin-top: 4px;
+    font-size: 11px;
+    @include respond-to('small') {
+      padding: 4px 8px;
+      font-size: 13px;
+    }
   }
 }

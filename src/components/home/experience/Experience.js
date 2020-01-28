@@ -11,7 +11,7 @@ export default class Experience extends Component {
             Here's where I've worked at
           </h3>
           <div className="experience__card">
-            <h5 className="tg__title-5 experience__card__title tg__c--secondary">
+            <h5 className="tg__title-5 experience__card__title tg__c--primary">
               FullStack Labs, Sacramento, CA
             </h5>
             <h6 className="tg__title-6 experience__card__subtitle">

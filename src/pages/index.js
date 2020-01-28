@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="home" />
+    <SEO title="Hello!" />
     <Navbar />
     <Hero />
     <div className="home__content">

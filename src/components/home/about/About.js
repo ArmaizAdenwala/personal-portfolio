@@ -28,7 +28,7 @@ export default class About extends Component {
             >
               <h3 className="tg__title-4 about__content__title">Who am I?</h3>
               <p className="tg__title-6 about__content__bio">
-                I'm a passionate Software Engineer from{' '}
+                Hello! I'm Armaiz, a Software Engineer based in{' '}
                 <span className="about__content__bio--emphasis">
                   Sacramento, CA
                 </span>{' '}

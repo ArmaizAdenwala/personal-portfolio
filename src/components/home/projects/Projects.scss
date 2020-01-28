@@ -10,40 +10,4 @@
     margin-bottom: 32px;
     font-weight: 700;
   }
-  &__card {
-    display: flex;
-    position: relative;
-    background-color: #fafafa ;
-    border-radius: 4px;
-    height: 320px;
-    &__img {
-      width: 320px;
-      height: 320px;
-    }
-    &__content {
-      padding: 16px 32px;
-      width: calc(100% - 320px);
-      & &__title {
-        margin: 0;
-        margin-bottom: 8px;
-        display: block;
-        color: $colors-primary;
-        font-weight: 500;
-      }
-      & &__date {
-        margin-top: 0;
-        display: block;
-        font-style: italic;
-        font-weight: 400;
-        color: #757575;
-      }
-      &__list {
-        padding-left: 18px;
-        & &__subtitle {
-          margin: 0;
-          font-weight: 400;
-        }
-      }
-    }
-  }
 }
