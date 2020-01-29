@@ -84,7 +84,7 @@ function SEO({ description, lang, meta, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  description: `fdsafds`,
+  description: `Software Engineer based in Sacramento, CA.`,
 };
 
 SEO.propTypes = {
