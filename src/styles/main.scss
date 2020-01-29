@@ -1,6 +1,7 @@
 @import "./colors.scss";
 @import "./mixins.scss";
 @import "./typography.scss";
+@import "./variables.scss";
 @import "./grid.scss";
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
@@ -11,4 +12,17 @@
 body {
   // width: 100%;
   // overflow-x: hidden;
+}
+
+.page {
+  &__content {
+    display: inline-block;
+    width: 100%;
+    background-color: $background--light;
+    position: relative;
+    margin-top: $hero-height--sm + 64px;
+    @include respond-to('medium') {
+      margin-top: $hero-height + 64px;
+    }
+  }
 }

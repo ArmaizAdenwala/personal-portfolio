@@ -16,8 +16,10 @@ export default class Hero extends Component {
               hero__content__title
               "
             >
-              {"Hi, I'm "}
-              <span className="tg__c--primary tg__w--400">Armaiz Adenwala</span>
+              {this.props.title}
+              <span className="tg__c--primary tg__w--400">
+                {this.props.emphasized}
+              </span>
             </h1>
             <h2
               className="
@@ -27,8 +29,7 @@ export default class Hero extends Component {
               hero__content__subtitle
             "
             >
-              I'm a Software Engineer that welcomes challenges and provides
-              solutions.
+              {this.props.description}
             </h2>
           </div>
         </Container>
