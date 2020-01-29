@@ -17,7 +17,7 @@ export default class Projects extends Component {
             projects__title
           "
           >
-            Here are some projects I've worked on
+            Here are some of my projects
           </h3>
           <ProjectCard
             name="PlanSpace"
