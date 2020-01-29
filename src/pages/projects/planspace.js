@@ -5,17 +5,24 @@ import '../../styles/main.scss';
 import '../../styles/pages/Home.scss';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
+import CreateTaskImage from './planspace/create_task_planspace_react_native_app.png';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Navbar />
-    <Hero 
+    <Hero
       emphasized="PlanSpace"
       description="App designed for roommates to have automated chore schedules on a week by week basis."
     />
     <div className="page__content">
-      <ProjectSection/>
+      <ProjectSection
+        title={'Manage Roommates'}
+        description={
+          'App designed for roommates to have automated chore schedules on a week by week basis. App designed for roommates to have automated chore schedules on a week by week basis.'
+        }
+        src={CreateTaskImage}
+      />
     </div>
   </Layout>
 );
