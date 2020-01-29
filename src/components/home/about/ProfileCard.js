@@ -16,13 +16,13 @@ const ProfileCard = () => (
       <div className="profile-card__content__social">
         <a
           className="profile-card__content__social__link"
-          href="https://www.google.com/"
+          href="https://www.linkedin.com/in/armaizadenwala/"
         >
           <FontAwesomeIcon icon={['fab', 'linkedin']} />
         </a>
         <a
           className="profile-card__content__social__link"
-          href="https://www.google.com/"
+          href="https://github.com/ArmaizAdenwala"
         >
           <FontAwesomeIcon icon={['fab', 'github']} />
         </a>
