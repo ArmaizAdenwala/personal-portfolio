@@ -26,3 +26,21 @@ body {
     }
   }
 }
+
+.m {
+  &-v--8 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+.flex {
+  &--v-center {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  @include responsive-modifiers('&--row-reverse') {
+    flex-direction: row-reverse;
+  }
+}

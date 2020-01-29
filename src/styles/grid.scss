@@ -8,6 +8,7 @@ $gutter: 32px;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 (-$gutter);
+  width: 100%;
 }
 @for $i from 1 through $grid-columns {
   $class-name: ".g__col-" + $i;
