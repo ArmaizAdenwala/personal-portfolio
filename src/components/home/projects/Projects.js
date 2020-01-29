@@ -33,6 +33,12 @@ export default class Projects extends Component {
             ]}
           />
           <ProjectCard
+            name="Personal Portfolio Website"
+            description="A website to showcase my projects."
+            date="January 2020"
+            tags={['Gatsby', 'React.js', 'Heroku', 'SEO', 'Adobe Illustrator']}
+          />
+          <ProjectCard
             name="Reacto Meetup Speaker"
             description='"Building a React Native App that Communicates with Arduino"'
             date="January 2019"
