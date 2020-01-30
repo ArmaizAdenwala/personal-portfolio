@@ -13,7 +13,7 @@ import TaskListImage from './planspace/task_list_ios_android_hackathon_app.png';
 const IndexPage = () => (
   <Layout>
     <SEO title="PlanSpace" />
-    <Navbar />
+    <Navbar links={['Home']} />
     <Hero
       emphasized="PlanSpace"
       description="App designed for roommates to have automated chore schedules on a week by week basis."

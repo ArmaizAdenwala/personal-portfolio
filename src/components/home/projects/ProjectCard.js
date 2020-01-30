@@ -2,7 +2,29 @@ import React from 'react';
 import TechTags from './TechTags';
 import './ProjectCard.scss';
 
-const ProjectCard = ({ name, description, date, tags }) => (
+const _renderUrl = url => {
+  if (url) {
+    return (
+      <div
+        className="
+        tg__t--center 
+        m-t--32
+      "
+      >
+        <a
+          href={url}
+          className="
+            tg__button
+          "
+        >
+          VIEW PROJECT
+        </a>
+      </div>
+    );
+  }
+};
+
+const ProjectCard = ({ name, description, date, tags, url }) => (
   <div className="project-card">
     <div className="project-card__content">
       <div className="project-card__content__title-container">
@@ -24,6 +46,7 @@ const ProjectCard = ({ name, description, date, tags }) => (
         </p>
       </div>
       <TechTags tags={tags} />
+      {_renderUrl(url)}
     </div>
   </div>
 );

@@ -23,6 +23,7 @@ export default class Projects extends Component {
             name="PlanSpace"
             description="App designed for roommates to have automated chore schedules on a week by week basis."
             date="January 2020"
+            url="/projects/planspace"
             tags={[
               'React Native',
               'Redux',
