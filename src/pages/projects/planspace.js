@@ -8,10 +8,11 @@ import SEO from '../../components/seo';
 import CreateTaskImage from './planspace/create_task_planspace_react_native_app.png';
 import ViewTaskImage from './planspace/view_task_planspace_node_js_socket_io_app.png';
 import EditProfileImage from './planspace/edit_profile_invite_planspace_ruby_on_rails_app.png';
+import TaskListImage from './planspace/task_list_ios_android_hackathon_app.png';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="PlanSpace" />
     <Navbar />
     <Hero
       emphasized="PlanSpace"
@@ -19,24 +20,32 @@ const IndexPage = () => (
     />
     <div className="page__content">
       <ProjectSection
-        title={'Manage Roommates'}
+        title={'Automate Your Chores'}
         description={
-          'App designed for roommates to have automated chore schedules on a week by week basis. App designed for roommates to have automated chore schedules on a week by week basis.'
+          'PlanSpace automatically plans out chores for you and your roommate on a week by week basis. Every day you will have a list of chores to complete. Once you mark a chore as complete, it automatically schedules it for the next roommate based on their current chore schedules.'
+        }
+        src={TaskListImage}
+      />
+      <ProjectSection
+        flip
+        title={'Create Shared Tasks'}
+        description={
+          'Create shared tasks in seconds and let PlanSpace do the rest. Using the estimate and renewal fields, the app will automatically handle task assignments going forward. All you will have to do is wait for it to be assigned to you and mark it as complete.'
         }
         src={CreateTaskImage}
       />
       <ProjectSection
-        flip
-        title={'Manage '}
+        title={'Everyone Does Their Fair Share'}
         description={
-          'App designed for roommates to have automated chore schedules on a week by week basis. App designed for roommates to have automated chore schedules on a week by week basis.'
+          'PlanSpace, uses task history data and the task estimates to balance the workload throughout the year. If you do a task more often than others, PlanSpace will assign it more to other roommates more often.'
         }
         src={ViewTaskImage}
       />
       <ProjectSection
-        title={'Manage Roommates'}
+        flip
+        title={'Simple, As It Should Be'}
         description={
-          'App designed for roommates to have automated chore schedules on a week by week basis. App designed for roommates to have automated chore schedules on a week by week basis.'
+          "PlanSpace is supposed to help make chore assignments one less thing to worry about. It shouldn't be more work to use it. The app is designed to get you and your roommates setup in minutes."
         }
         src={EditProfileImage}
       />
