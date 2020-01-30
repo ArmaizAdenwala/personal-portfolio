@@ -18,5 +18,8 @@
       padding: 4px 8px;
       font-size: 13px;
     }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

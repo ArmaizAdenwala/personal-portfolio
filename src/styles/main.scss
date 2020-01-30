@@ -28,12 +28,18 @@ body {
 }
 
 .m {
-  @include responsive-modifiers('&-t--32') {
-    margin-top: 32px;
-  }
   @include responsive-modifiers('&-v--8') {
     margin-top: 8px;
     margin-bottom: 8px;
+  }
+  @include responsive-modifiers('&-t--16') {
+    margin-top: 16px;
+  }
+  @include responsive-modifiers('&-t--32') {
+    margin-top: 32px;
+  }
+  @include responsive-modifiers('&-t--64') {
+    margin-top: 64px;
   }
 }
 

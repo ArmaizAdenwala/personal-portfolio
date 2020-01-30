@@ -59,6 +59,9 @@
   &__w--400 {
     font-weight: 400;
   }
+  &__w--500 {
+    font-weight: 500;
+  }
   &__w--700 {
     font-weight: 700;
   }
@@ -73,6 +76,9 @@
   }
   &__c--secondary {
     color: $colors-secondary;
+  }
+  @include responsive-modifiers('&__t--left') {
+    text-align: left;
   }
   @include responsive-modifiers('&__t--center') {
     text-align: center;

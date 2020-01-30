@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 import { Container } from '../../../components/general';
+import TechTags from '../../home/projects/TechTags';
 import './Hero.scss';
 
 export default class Hero extends Component {
+  _renderTags() {
+    if (this.props.tags) {
+      return (
+        <div
+          className="
+          m-t--16
+          tg__t--left--l
+        "
+        >
+          <TechTags tags={this.props.tags} />
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="hero">
@@ -31,6 +47,7 @@ export default class Hero extends Component {
             >
               {this.props.description}
             </h2>
+            {this._renderTags()}
           </div>
         </Container>
       </div>
