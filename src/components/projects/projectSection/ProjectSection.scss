@@ -14,5 +14,13 @@
   }
   &__img {
     width: 100%;
+    max-height: 288px;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 16px;
+    @include respond-to('small') {
+      margin-bottom: 32px;
+      max-height: none;
+    }
   }
 }

@@ -28,7 +28,7 @@ body {
 }
 
 .m {
-  &-v--8 {
+  @include responsive-modifiers('&-v--8') {
     margin-top: 8px;
     margin-bottom: 8px;
   }
