@@ -44,7 +44,9 @@ const IndexPage = () => (
                 tg__title-7--s
                 tg__title-6--m
                 tg__title-6--l
-                tg__lh--1-75
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
                 m-v--8
               "
           >
@@ -70,6 +72,13 @@ const IndexPage = () => (
               ' Ruby on Rails allowed me to quickly create a REST api with fully working authentication using '
             }
             <span className="tg__c--primary tg__w--500">Devise.</span>
+            {' Using '}
+            <span className="tg__c--primary tg__w--500">
+              Active Model Serializer
+            </span>
+            {
+              ' I was able to keep the api responses small so that loading states are rare.'
+            }
             <br />
             <br />
             {
@@ -95,11 +104,25 @@ const IndexPage = () => (
                 tg__title-7--s
                 tg__title-6--m
                 tg__title-6--l
-                tg__lh--1-75
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
                 m-v--8
               "
           >
-            Learn more about how this React Native app was built:
+            Since this project was made at a hackathon, the biggest challenge
+            was creating a functional app within the 24 hours. I went to the
+            hackathon solo, so I decided to stay up the whole 24 hours to see
+            how far I could get. Unfortunately I was not able to get that far
+            with the automation part of the app. The app does automatically
+            create the next task and assigns chores to roommates who haven't
+            been putting in their fair share of work.
+            <br />
+            <br />
+            The app was also designed to be quick to use. Figuring out good UX
+            to achieve that goal was difficult. Lazyloading data using redux
+            improved the quality feel of the app. Rarely would a user see
+            loading states.
           </p>
           <h3
             className="
@@ -113,18 +136,23 @@ const IndexPage = () => (
                 m-t--64
               "
           >
-            What is next for PlanSpace?
+            What did I learn?
           </h3>
           <p
             className="
                 tg__title-7--s
                 tg__title-6--m
                 tg__title-6--l
-                tg__lh--1-75
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
                 m-v--8
               "
           >
-            Learn more about how this React Native app was built:
+            I learned how to completely setup a nearly production ready
+            fullstack app from scratch. It allowed me to fine tune my skills in
+            fullstack development and figure out what I need to focus on
+            learning next.
           </p>
         </div>
       </Container>
@@ -137,7 +165,9 @@ const IndexPage = () => (
                 tg__title-6--s
                 tg__title-5--m
                 tg__title-5--l
-                tg__lh--1-75
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
                 m-v--8--s
               "
               >

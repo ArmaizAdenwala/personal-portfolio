@@ -65,7 +65,10 @@
   &__w--700 {
     font-weight: 700;
   }
-  &__lh--1-75 {
+  @include responsive-modifiers('&__lh--1-5') {
+    line-height: 1.5;
+  }
+  @include responsive-modifiers('&__lh--1-75') {
     line-height: 1.75;
   }
   &__c--primary {
