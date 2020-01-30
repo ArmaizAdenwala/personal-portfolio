@@ -43,7 +43,30 @@ body {
     justify-content: center;
     flex-direction: column;
   }
+  &--h-center {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  &--col {
+    flex-direction: column;
+  }
   @include responsive-modifiers('&--row-reverse') {
     flex-direction: row-reverse;
+  }
+}
+
+.button {
+  background: $colors-secondary;
+  display: inline-block;
+  &__text {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.25px;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 4px;
   }
 }
