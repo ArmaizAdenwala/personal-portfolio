@@ -37,7 +37,8 @@ export default class Projects extends Component {
             name="Personal Portfolio Website"
             description="A website to showcase my projects."
             date="January 2020"
-            tags={['Gatsby', 'React.js', 'Heroku', 'SEO', 'Adobe Illustrator']}
+            tags={['Gatsby', 'React.js', 'Heroku', 'SEO']}
+            url="/projects/personal-portfolio-site"
           />
           <ProjectCard
             name="Reacto Meetup Speaker"
@@ -48,6 +49,7 @@ export default class Projects extends Component {
               'Redux',
               'C++',
               'Arduino',
+              'IOT',
               'HC-05 BT Module',
             ]}
           />

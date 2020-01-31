@@ -7,21 +7,23 @@ import SEO from '../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="PlanSpace"
+      title="
+      Personal Portfolio Website"
       description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
     />
-    <Navbar links={['Home', 'PlanSpace']} />
-    <Hero
-      emphasized="PlanSpace"
-      description="Developer Write Up"
-      tags={[
-        'React Native',
-        'Redux',
-        'Ruby on Rails',
-        'PostgreSQL',
-        'Node.js',
-        'socket-io',
+    <Navbar
+      links={['Home']}
+      customLinks={[
+        {
+          name: 'GITHUB',
+          to: 'https://github.com/ArmaizAdenwala/personal-portfolio',
+        },
       ]}
+    />
+    <Hero
+      emphasized="Personal Portfolio Website"
+      description="Developer Write Up"
+      tags={['Gatsby', 'React.js', 'Heroku', 'SEO']}
     />
     <div className="page__content">
       <Container>
@@ -50,40 +52,13 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            {'PlanSpace was build with '}
-            <span className="tg__c--primary tg__w--500">React Native</span>
-            {' for the frontend, '}
-            <span className="tg__c--primary tg__w--500">Ruby on Rails</span>
-            {' for the backend, '}
-            <span className="tg__c--primary tg__w--500">Node.js</span>
-            {' for the '}
-            <span className="tg__c--primary tg__w--500">Socket.io</span>
-            {' server, and '}
-            <span className="tg__c--primary tg__w--500">PostgreSQL</span>
-            {' for the database.'}
-            <br />
-            <br />
-            {
-              'This app was built from scratch at HackDavis 2020 within 24 hours. I created the React Native app with a future web app in mind so that I can reuse as much of the codebase as possible for a React.js web app.'
-            }
-            <br />
-            <br />
-            {
-              ' Ruby on Rails allowed me to quickly create a REST api with fully working authentication using '
-            }
-            <span className="tg__c--primary tg__w--500">Devise.</span>
-            {' Using '}
-            <span className="tg__c--primary tg__w--500">
-              Active Model Serializer
-            </span>
-            {
-              ' I was able to keep the api responses small so that loading states are rare.'
-            }
-            <br />
-            <br />
-            {
-              'The Node.js server is a simple Socket.io server that emits redux actions to be dispatched. Using this server, users can see real-time updates for their task list.'
-            }
+            {'My personal portfolio website was build with '}
+            <span className="tg__c--primary tg__w--500">React.js</span>
+            {' and '}
+            <span className="tg__c--primary tg__w--500">Gatsby</span>
+            {' for the frontend. The app is deployed to '}
+            <span className="tg__c--primary tg__w--500">Heroku</span>
+            {'.'}
           </p>
           <h3
             className="
@@ -110,19 +85,10 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            Since this project was made at a hackathon, the biggest challenge
-            was creating a functional app within the 24 hours. I went to the
-            hackathon solo, so I decided to stay up the whole 24 hours to see
-            how far I could get. Unfortunately I was not able to get that far
-            with the automation part of the app. The app does automatically
-            create the next task and assigns chores to roommates who haven't
-            been putting in their fair share of work.
-            <br />
-            <br />
-            The app was also designed to be quick to use. Figuring out good UX
-            to achieve that goal was difficult. Lazyloading data using redux
-            improved the quality feel of the app. Rarely would a user see
-            loading states.
+            The project was built with SEO in mind. Originally the app was built
+            as a single page app in React.js, however, I realized that SPA's are
+            not optimal for that. I switched over to Gatsby by copying over all
+            of my components to a new Gatsby project.
           </p>
           <h3
             className="
@@ -149,10 +115,19 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            I learned how to completely setup a nearly production ready
-            fullstack app from scratch. It allowed me to fine tune my skills in
-            fullstack development and figure out what I need to focus on
-            learning next.
+            {'The last time I used a static site generator I used '}
+            <span className="tg__c--primary tg__w--500">Ruby Middleman</span>
+            {
+              " which did it's job, however, it was not the best tool. After trying "
+            }
+            <span className="tg__c--primary tg__w--500">React.js</span>
+            {' and '}
+            <span className="tg__c--primary tg__w--500">Gatsby</span>
+            {
+              ' out, I couldn\t see myself using another stack. I was able to apply the coding practices I have from years of '
+            }
+            <span className="tg__c--primary tg__w--500">React Native</span>
+            {' development to this project.'}
           </p>
         </div>
       </Container>
@@ -171,11 +146,14 @@ const IndexPage = () => (
                 m-v--8--s
               "
               >
-                Learn more about PlanSpace:
+                Learn more about my Personal Portfolio Website:
               </p>
               <div className="button">
-                <a className="button__text" href="/projects/planspace/">
-                  VIEW PROJECT DETAILS
+                <a
+                  className="button__text"
+                  href="https://github.com/ArmaizAdenwala/personal-portfolio"
+                >
+                  VIEW ON GITHUB
                 </a>
               </div>
             </div>

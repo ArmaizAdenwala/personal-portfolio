@@ -2,8 +2,7 @@ import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../../components/general';
 import { ProjectSection } from '../../../components/projects';
 import '../../../styles/main.scss';
-import './Project.scss';
-import Layout from '../../../components/layout';
+import '../Project.scss';
 import SEO from '../../../components/seo';
 import CreateTaskImage from './create_task_planspace_react_native_app.png';
 import ViewTaskImage from './view_task_planspace_node_js_socket_io_app.png';
@@ -16,7 +15,7 @@ const IndexPage = () => (
       title="PlanSpace"
       description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
     />
-    <Navbar links={['Home']} />
+    <Navbar links={['Home', 'PlanSpaceDev']} />
     <Hero
       emphasized="PlanSpace"
       description="App designed for roommates to have automated chore schedules on a week by week basis."

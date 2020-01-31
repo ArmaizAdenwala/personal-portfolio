@@ -8,15 +8,28 @@ export default class Navbar extends Component {
       to: '/',
       name: 'HOME',
     },
+    PlanSpace: {
+      to: '/projects/planspace',
+      name: 'PLANSPACE',
+    },
+    PlanSpaceDev: {
+      to: '/projects/planspace/dev',
+      name: 'DEV WRITEUP',
+    },
   };
+
   _renderLinks = () => {
     if (this.props.links) {
-      return this.props.links.map(link => this._renderLink(link));
+      return this.props.links.map(link => this._renderLink(this.links[link]));
+    }
+  };
+  _renderCustomLinks = () => {
+    if (this.props.customLinks) {
+      return this.props.customLinks.map(link => this._renderLink(link));
     }
   };
 
-  _renderLink = linkKey => {
-    const link = this.links[linkKey];
+  _renderLink = link => {
     return (
       <Link
         className="tg__c--primary--dark tg__button nav__link tg__c--secondary"
@@ -30,7 +43,10 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="nav">
-        <div className="nav__container">{this._renderLinks()}</div>
+        <div className="nav__container">
+          {this._renderLinks()}
+          {this._renderCustomLinks()}
+        </div>
       </nav>
     );
   }
