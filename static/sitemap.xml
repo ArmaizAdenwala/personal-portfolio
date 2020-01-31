@@ -4,5 +4,24 @@
     <loc>https://armaizadenwala.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1</priority>
+  <url>
+    <loc>https://armaizadenwala.com/projects/planspace/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/projects/planspace/dev</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/projects/personal-portfolio-site/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/projects/smart-dorm-lock/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
