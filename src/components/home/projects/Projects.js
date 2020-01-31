@@ -41,24 +41,18 @@ export default class Projects extends Component {
             url="/projects/personal-portfolio-site"
           />
           <ProjectCard
-            name="Reacto Meetup Speaker"
-            description='"Building a React Native App that Communicates with Arduino"'
+            name="Smart Dorm Lock"
+            description="A mobile app used to unlock my dorm door without a physical key."
             date="January 2019"
-            tags={[
-              'React Native',
-              'Redux',
-              'C++',
-              'Arduino',
-              'IOT',
-              'HC-05 BT Module',
-            ]}
+            tags={['React Native', 'Redux', 'C++', 'Arduino', 'IOT']}
+            url="/projects/smart-dorm-lock"
           />
-          <ProjectCard
+          {/* <ProjectCard
             name="Programmable LED Mask"
             description="Built an LED mask using individually addressable lightstrips and an Arduino"
             date="January 2019"
             tags={['C++', 'Arduino', 'WS2812B LEDS']}
-          />
+          /> */}
         </Container>
       </div>
     );

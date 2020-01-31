@@ -56,6 +56,11 @@
     text-decoration: none;
     color: $colors-secondary;
   }
+  &__nested-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: $colors-secondary;
+  }
   &__w--400 {
     font-weight: 400;
   }
