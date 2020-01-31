@@ -22,7 +22,7 @@ const IndexPage = () => (
     />
     <Hero
       emphasized="Personal Portfolio Website"
-      description="Developer Write Up"
+      description="Developer Details"
       tags={['Gatsby', 'React.js', 'Heroku', 'SEO']}
     />
     <div className="page__content">

@@ -14,7 +14,7 @@ export default class Navbar extends Component {
     },
     PlanSpaceDev: {
       to: '/projects/planspace/dev',
-      name: 'DEV WRITEUP',
+      name: 'DEV DETAILS',
     },
   };
 

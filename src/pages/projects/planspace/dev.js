@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Navbar links={['Home', 'PlanSpace']} />
     <Hero
       emphasized="PlanSpace"
-      description="Developer Write Up"
+      description="Developer Details"
       tags={[
         'React Native',
         'Redux',

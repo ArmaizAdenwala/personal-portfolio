@@ -70,7 +70,7 @@ const IndexPage = () => (
               </p>
               <div className="button">
                 <a className="button__text" href="/projects/planspace/dev">
-                  VIEW DEVELOPER WRITE-UP
+                  VIEW DEVELOPER DETAILS
                 </a>
               </div>
             </div>
