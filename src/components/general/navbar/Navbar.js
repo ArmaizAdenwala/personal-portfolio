@@ -22,11 +22,21 @@ export default class Navbar extends Component {
   };
   _renderCustomLinks = () => {
     if (this.props.customLinks) {
-      return this.props.customLinks.map(link => this._renderLink(link));
+      return this.props.customLinks.map(link => this._renderLink(link, true));
     }
   };
 
-  _renderLink = link => {
+  _renderLink = (link, custom) => {
+    if (custom) {
+      return (
+        <a
+          className="tg__c--primary--dark tg__button nav__link tg__c--secondary"
+          href={link.to}
+        >
+          {link.name}
+        </a>
+      );
+    }
     return (
       <Link
         className="tg__c--primary--dark tg__button nav__link tg__c--secondary"
