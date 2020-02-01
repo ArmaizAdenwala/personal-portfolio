@@ -2,9 +2,9 @@
 @import "../../../styles/mixins";
 
 .container {
-  width: calc(100% - 64px);
-  padding-left: 32px;
-  padding-right: 32px;
+  width: calc(100% - 32px);
+  padding-left: 16px;
+  padding-right: 16px;
   overflow-x: hidden;
   @include respond-to('small') {
     width: calc(100% - 128px);
