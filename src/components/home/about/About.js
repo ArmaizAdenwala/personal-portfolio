@@ -46,9 +46,9 @@ export default class About extends Component {
                 scratch.
                 <br />
                 <br />
-                I'm currently attending California State University of
-                Sacramento fulltime while working part-time at a Software
-                Development consultancy.
+                I'm currently attending California State University, Sacramento
+                full-time while working part-time at a Software Development
+                consultancy.
                 <br />
                 <br />
                 {"I've had the opportunity to develop for over "}
