@@ -46,13 +46,18 @@ export default class About extends Component {
                 scratch.
                 <br />
                 <br />
+                I'm currently attending California State University of
+                Sacramento fulltime while working part-time at a Software
+                Development consultancy.
+                <br />
+                <br />
                 {"I've had the opportunity to develop for over "}
                 <span className="about__content__bio--emphasis">
                   5 awesome companies / clients
                 </span>{' '}
-                as a consultant. My work included developing mobile apps, making
-                web apps, creating backend servers, handling small-scale DevOps,
-                and implementing desktop apps.
+                as a consultant the last 4 years. My work included developing
+                mobile apps, making web apps, creating backend servers, handling
+                small-scale DevOps, and implementing desktop apps.
               </p>
             </div>
           </div>

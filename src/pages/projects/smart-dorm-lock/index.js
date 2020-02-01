@@ -57,7 +57,7 @@ const IndexPage = () => (
           >
             When I lived in the dorms at Sac State, I consistently locked myself
             out of my dorm due to the locks used for their doors. My go-to
-            method was to bend some coat hangers, slide it under the door and
+            method was to bend some coat hangers, slide it under the door, and
             attempt to pull the handle inside my room. It wasn't successful most
             of the time. The residence halls charge $40 for each spare key
             request and I didn't want to pay for that again.
@@ -178,7 +178,7 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            I learned how to take an actual problem I had an apply a solution.
+            I learned how to take an actual problem I had and apply a solution.
             Despite never working with Arduino, I managed to get a working
             prototype that I used over the course of the semester.
             <br />

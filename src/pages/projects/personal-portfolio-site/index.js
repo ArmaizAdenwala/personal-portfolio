@@ -129,7 +129,7 @@ const IndexPage = () => (
             {' and '}
             <span className="tg__c--primary tg__w--500">Gatsby</span>
             {
-              ' out, I couldn\t see myself using another stack. I was able to apply the coding practices I have from years of '
+              " out, I couldn't see myself using another stack. I was able to apply the coding practices I have from years of "
             }
             <span className="tg__c--primary tg__w--500">React Native</span>
             {' development to this project.'}
