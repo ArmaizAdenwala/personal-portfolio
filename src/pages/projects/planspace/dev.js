@@ -8,7 +8,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="PlanSpace"
-      description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
+      description="Developer details for the PlanSpace React Native app."
     />
     <Navbar links={['PlanSpace']} />
     <Hero
@@ -69,7 +69,7 @@ const IndexPage = () => (
             <br />
             <br />
             {
-              ' Ruby on Rails allowed me to quickly create a REST api with fully working authentication using '
+              ' Ruby on Rails allowed me to quickly create a REST API with fully working authentication using '
             }
             <span className="tg__c--primary tg__w--500">Devise.</span>
             {' Using '}
@@ -77,7 +77,7 @@ const IndexPage = () => (
               Active Model Serializer
             </span>
             {
-              ' I was able to keep the api responses small so that loading states are rare.'
+              ' I was able to keep the API responses small so that loading states are rare.'
             }
             <br />
             <br />

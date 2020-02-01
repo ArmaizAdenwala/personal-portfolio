@@ -9,7 +9,7 @@ const IndexPage = () => (
     <SEO
       title="
       Personal Portfolio Website"
-      description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
+      description="A website to showcase my projects"
     />
     <Navbar
       customLinks={[
@@ -60,7 +60,10 @@ const IndexPage = () => (
             {'. The ui was inspired by '}
             <span className="tg__c--primary tg__w--500">Material Design</span>
             {' and the styles were made with '}
-            <span className="tg__c--primary tg__w--500">SASS</span>.
+            <span className="tg__c--primary tg__w--500">SASS</span>
+            {
+              '. The hero section backgrounds were made using Adobe Illustrator.'
+            }
           </p>
           <h3
             className="
