@@ -55,7 +55,7 @@ export default class About extends Component {
                 <span className="about__content__bio--emphasis">
                   5 awesome companies / clients
                 </span>{' '}
-                as a consultant the last 4 years. My work included developing
+                as a consultant the past 4 years. My work included developing
                 mobile apps, making web apps, creating backend servers, handling
                 small-scale DevOps, and implementing desktop apps.
               </p>
