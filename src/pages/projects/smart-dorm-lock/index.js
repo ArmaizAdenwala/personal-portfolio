@@ -11,7 +11,6 @@ const IndexPage = () => (
       description="A mobile app used to unlock my dorm door without a physical key"
     />
     <Navbar
-      links={['Home']}
       customLinks={[
         {
           name: 'MEETUP LINK',

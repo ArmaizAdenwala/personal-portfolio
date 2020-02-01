@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import './Navbar.scss';
+import ArmaizLogo from './armaiz-developer-code-logo.png';
 
 export default class Navbar extends Component {
   links = {
-    Home: {
-      to: '/',
-      name: 'HOME',
-    },
     PlanSpace: {
       to: '/projects/planspace',
       name: 'PLANSPACE',
@@ -44,8 +41,15 @@ export default class Navbar extends Component {
     return (
       <nav className="nav">
         <div className="nav__container">
-          {this._renderLinks()}
-          {this._renderCustomLinks()}
+          <div>
+            <a href="/">
+              <img className="nav__container__logo" src={ArmaizLogo} />
+            </a>
+          </div>
+          <div className="nav__container__links">
+            {this._renderLinks()}
+            {this._renderCustomLinks()}
+          </div>
         </div>
       </nav>
     );

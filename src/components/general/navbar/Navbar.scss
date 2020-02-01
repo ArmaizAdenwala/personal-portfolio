@@ -1,20 +1,35 @@
 @import "../../../styles/colors";
+@import "../../../styles/mixins";
 
 .nav {
   height: 64px;
   position: fixed;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
   background-color: $background--light-2;
   z-index: 10;
+  display: flex;
+  align-items: center;
   
   &__container {
     padding-left: 32px;
     padding-right: 32px;
+    @include respond-to('small') {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    &__logo {
+      height: 20px;
+    }
+    &__links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
   }
-
   &__link {
     text-decoration: none;
     margin-left: 32px;

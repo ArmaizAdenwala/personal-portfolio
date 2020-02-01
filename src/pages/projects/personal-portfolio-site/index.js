@@ -12,7 +12,6 @@ const IndexPage = () => (
       description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
     />
     <Navbar
-      links={['Home']}
       customLinks={[
         {
           name: 'GITHUB',

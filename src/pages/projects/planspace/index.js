@@ -15,7 +15,7 @@ const IndexPage = () => (
       title="PlanSpace"
       description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
     />
-    <Navbar links={['Home', 'PlanSpaceDev']} />
+    <Navbar links={['PlanSpaceDev']} />
     <Hero
       emphasized="PlanSpace"
       description="App designed for roommates to have automated chore schedules on a week by week basis."
