@@ -25,7 +25,7 @@ const IndexPage = () => (
         <ProjectSection
           title={'Automate Your Chores'}
           description={
-            'PlanSpace automatically plans out chores for you and your roommate on a week by week basis. Every day you will have a list of chores to complete. Once you mark a chore as complete, it automatically schedules it for the next roommate based on their current chore schedules.'
+            'PlanSpace automatically plans out chores for you and your roommate on a week by week basis. Every day you will have a list of chores to complete. Once you mark a chore as complete, it automatically schedules the task for the next roommate based on their current chore schedule.'
           }
           src={TaskListImage}
         />

@@ -23,7 +23,7 @@ const IndexPage = () => (
     <Hero
       emphasized="Personal Portfolio Website"
       description="Developer Details"
-      tags={['Gatsby', 'React.js', 'Heroku', 'SEO']}
+      tags={['Gatsby', 'React.js', 'Heroku', 'SASS', 'SEO']}
     />
     <div className="page__content">
       <Container>
@@ -52,13 +52,16 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            {'My personal portfolio website was build with '}
+            {'My personal portfolio website was built with '}
             <span className="tg__c--primary tg__w--500">React.js</span>
             {' and '}
             <span className="tg__c--primary tg__w--500">Gatsby</span>
             {' for the frontend. The app is deployed to '}
             <span className="tg__c--primary tg__w--500">Heroku</span>
-            {'.'}
+            {'. The ui was inspired by '}
+            <span className="tg__c--primary tg__w--500">Material Design</span>
+            {' and the styles were made with '}
+            <span className="tg__c--primary tg__w--500">SASS</span>.
           </p>
           <h3
             className="
@@ -115,10 +118,10 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            {'The last time I used a static site generator I used '}
+            {'I used to use '}
             <span className="tg__c--primary tg__w--500">Ruby Middleman</span>
             {
-              " which did it's job, however, it was not the best tool. After trying "
+              ' as my go-to static site generator. It did its job, however, it was not the best tool in my experience. After trying '
             }
             <span className="tg__c--primary tg__w--500">React.js</span>
             {' and '}

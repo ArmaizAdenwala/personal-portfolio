@@ -37,7 +37,7 @@ export default class Projects extends Component {
             name="Personal Portfolio Website"
             description="A website to showcase my projects."
             date="January 2020"
-            tags={['Gatsby', 'React.js', 'Heroku', 'SEO']}
+            tags={['Gatsby', 'React.js', 'Heroku', 'SASS', 'SEO']}
             url="/projects/personal-portfolio-site"
           />
           <ProjectCard

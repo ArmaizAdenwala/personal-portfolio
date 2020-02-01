@@ -58,10 +58,10 @@ const IndexPage = () => (
           >
             When I lived in the dorms at Sac State, I consistently locked myself
             out of my dorm due to the locks used for their doors. My go-to
-            method was bend some coat hangers, slide it under the door and
-            attempt to pull the handle inside my room to unlock the door. It
-            wasn't successful most of the time. The residence halls charge $40
-            for each spare key request and I didn't want to pay for that again.
+            method was to bend some coat hangers, slide it under the door and
+            attempt to pull the handle inside my room. It wasn't successful most
+            of the time. The residence halls charge $40 for each spare key
+            request and I didn't want to pay for that again.
             <br />
             <br />
             So I did what any enthusiatic Computer Science student does and
