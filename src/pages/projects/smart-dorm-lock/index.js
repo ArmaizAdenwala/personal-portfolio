@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Navbar
       customLinks={[
         {
-          name: 'MEETUP LINK',
+          name: 'MEETUP',
           to:
             'https://www.meetup.com/Sacramento-ReactJS-Meetup/events/pggtznyzcbfb/',
         },

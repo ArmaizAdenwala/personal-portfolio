@@ -7,14 +7,22 @@ import SEO from '../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="PlanSpace"
-      description="Developer details for the PlanSpace React Native app."
+      title="Plutus"
+      description="Developer details for the Plutus prototype app."
     />
-    <Navbar links={['PlanSpace']} />
+    <Navbar
+      links={['Plutus']}
+      customLinks={[
+        {
+          name: 'GITHUB',
+          to: 'https://github.com/ArmaizAdenwala/plutus',
+        },
+      ]}
+    />
     <Hero
-      emphasized="PlanSpace"
+      emphasized="Plutus"
       description="Developer Details"
-      date="January 2020"
+      date="November 2015"
       tags={[
         'React Native',
         'Redux',
@@ -38,6 +46,53 @@ const IndexPage = () => (
                 m-v--8
               "
           >
+            Why was this built?
+          </h3>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+              "
+          >
+            When I was in highschool, I was in a class called GBiT. It was a
+            class for students interested in tech to grow their knowledge in it.
+            There were multiple groups in that class, one of which was the CS
+            group which I was a part of.
+            <br />
+            <br />
+            I knew I wanted to do something in computer science, I just didn't
+            know what I exactly wanted to do in that field. I tried making
+            videogames in Lua, C++, and in Java but it wasn't something I
+            excelled at or wanted to do in the future.
+            <br />
+            <br />
+            Eventually, I got into web development and enjoyed it, I wasn't good
+            but I was learning. Soon I wanted to try iOS and Android
+            development. Unfortunately that was a big task to accomplish, so I
+            stuck with designing a prototype mobile app in html, css, and
+            javascript.
+            <br />
+            <br />
+            This project was later presented to the class as part of our final
+            project for the semester.
+          </p>
+          <h3
+            className="
+                tg__title-5--s
+                tg__title-4--m
+                tg__title-4--l
+                tg__t--center--s
+                tg__c--primary
+                tg__w--700
+                m-v--8
+                m-t--64
+              "
+          >
             What was this built with?
           </h3>
           <p
@@ -51,40 +106,21 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            {'PlanSpace was build with '}
-            <span className="tg__c--primary tg__w--500">React Native</span>
-            {' for the frontend, '}
-            <span className="tg__c--primary tg__w--500">Ruby on Rails</span>
-            {' for the backend, '}
-            <span className="tg__c--primary tg__w--500">Node.js</span>
-            {' for the '}
-            <span className="tg__c--primary tg__w--500">Socket.io</span>
-            {' server, and '}
-            <span className="tg__c--primary tg__w--500">PostgreSQL</span>
-            {' for the database.'}
-            <br />
-            <br />
+            {'Plutus was build with '}
+            <span className="tg__c--primary tg__w--500">HTML</span>
+            {', '}
+            <span className="tg__c--primary tg__w--500">CSS</span>
+            {', and '}
+            <span className="tg__c--primary tg__w--500">Javascript</span>
+            {'for the frontend. It uses'}
+            <span className="tg__c--primary tg__w--500">Materialize</span>
+            {' for the ui framework and '}
+            <span className="tg__c--primary tg__w--500">Animate.css</span>
             {
-              'This app was built from scratch at HackDavis 2020 within 24 hours. I created the React Native app with a future web app in mind so that I can reuse as much of the codebase as possible for a React.js web app.'
+              ' for the animations. Plutus is packaged as an iOS and Android app by using '
             }
-            <br />
-            <br />
-            {
-              ' Ruby on Rails allowed me to quickly create a REST API with fully working authentication using '
-            }
-            <span className="tg__c--primary tg__w--500">Devise.</span>
-            {' Using '}
-            <span className="tg__c--primary tg__w--500">
-              Active Model Serializer
-            </span>
-            {
-              ' I was able to keep the API responses small so that loading states are rare.'
-            }
-            <br />
-            <br />
-            {
-              'The Node.js server is a simple Socket.io server that emits redux actions to be dispatched. Using this server, users can see real-time updates for their task list.'
-            }
+            <span className="tg__c--primary tg__w--500">Phonegap</span>
+            {'.'}
           </p>
           <h3
             className="
@@ -111,19 +147,9 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            Since this project was made at a hackathon, the biggest challenge
-            was creating a functional app within the 24 hours. I went to the
-            hackathon solo, so I decided to stay up the whole 24 hours to see
-            how far I could get. Unfortunately I was not able to get that far
-            with the automation part of the app. The app does automatically
-            create the next task and assigns chores to roommates who haven't
-            been putting in their fair share of work.
-            <br />
-            <br />
-            The app was also designed to be quick to use. Figuring out good UX
-            to achieve that goal was difficult. Lazyloading data using redux
-            improved the quality feel of the app. Rarely would a user see
-            loading states.
+            This was one of the first projects I made while learning html and
+            css, so I had difficulty learning how to implement ui frameworks and
+            javascript libraries.
           </p>
           <h3
             className="
@@ -150,10 +176,12 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            I learned how to completely setup a nearly production ready
-            fullstack app from scratch. It allowed me to fine tune my skills in
-            fullstack development and figure out what I need to focus on
-            learning next.
+            This project was a key stepping stone for me to pursue web
+            development and eventually mobile app development. Looking back at
+            this project from 5 years ago to today in 2020, I realized how far I
+            have come and how important it is to pay attention to detail. Being
+            able to feel confident in web development is what pushed me to keep
+            learning.
           </p>
         </div>
       </Container>
@@ -172,11 +200,14 @@ const IndexPage = () => (
                 m-v--8--s
               "
               >
-                Learn more about PlanSpace:
+                Check out the source code:
               </p>
               <div className="button">
-                <a className="button__text" href="/projects/planspace/">
-                  VIEW PROJECT DETAILS
+                <a
+                  className="button__text"
+                  href="https://github.com/ArmaizAdenwala/plutus"
+                >
+                  VIEW ON GITHUB
                 </a>
               </div>
             </div>
