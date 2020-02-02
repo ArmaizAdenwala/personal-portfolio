@@ -4,35 +4,42 @@
     <loc>https://armaizadenwala.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1</priority>
+    <lastmod>2020-02-20</lastmod>
   </url>
   <url>
     <loc>https://armaizadenwala.com/projects/planspace/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <lastmod>2020-02-20</lastmod>
   </url>
   <url>
     <loc>https://armaizadenwala.com/projects/planspace/dev</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <lastmod>2020-02-20</lastmod>
   </url>
   <url>
     <loc>https://armaizadenwala.com/projects/personal-portfolio-site/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <lastmod>2020-02-20</lastmod>
   </url>
   <url>
     <loc>https://armaizadenwala.com/projects/smart-dorm-lock/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <lastmod>2020-02-20</lastmod>
   </url>
   <url>
     <loc>https://armaizadenwala.com/projects/plutus/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <lastmod>2020-02-20</lastmod>
   </url>
   <url>
     <loc>https://armaizadenwala.com/projects/plutus/dev</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <lastmod>2020-02-20</lastmod>
   </url>
 </urlset>
