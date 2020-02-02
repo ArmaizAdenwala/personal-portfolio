@@ -42,7 +42,14 @@ const IndexPage = () => (
             Video Demo
           </h3>
           <div className="video-container">
-            <iframe width="400" height="300" src="https://www.youtube.com/embed/79XiYeptc7g?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe
+              width="400"
+              height="300"
+              srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/79XiYeptc7g?controls=0&autoplay=1><img src=https://img.youtube.com/vi/79XiYeptc7g/hqdefault.jpg alt='PlanSpace Demo'><span>▶</span></a>"
+              src="https://www.youtube.com/embed/79XiYeptc7g?controls=0"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
           <h3
             className="
