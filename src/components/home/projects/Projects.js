@@ -49,7 +49,7 @@ export default class Projects extends Component {
           />
           <ProjectCard
             name="Plutus"
-            description="A prototype shopping app presented for a highschool class"
+            description="A prototype shopping app for my highschool class"
             date="November 2015"
             tags={['HTML', 'CSS', 'Javscript', 'Phonegap', 'Material Design']}
             url="/projects/plutus"

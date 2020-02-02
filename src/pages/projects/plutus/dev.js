@@ -53,10 +53,10 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            When I was in highschool, I was in a class called GBiT. It was a
+            When I was attending Granite Bay High School, I was in a class called GBiT. It was a
             class for students interested in tech to grow their knowledge in it.
-            There were multiple groups in that class, one of which was the CS
-            group which I was a part of.
+            There were multiple groups in that class, one of which was the CS  group that
+            I was a part of.
             <br />
             <br />
             I knew I wanted to do something in computer science, I just didn't
@@ -65,11 +65,11 @@ const IndexPage = () => (
             excelled at or wanted to do in the future.
             <br />
             <br />
-            Eventually, I got into web development and enjoyed it, I wasn't good
-            but I was learning. Soon I wanted to try iOS and Android
-            development. Unfortunately that was a big task to accomplish, so I
-            stuck with designing a prototype mobile app in html, css, and
-            javascript.
+            Eventually, I got into web development and enjoyed it. I wasn't good
+            at it, but I was learning. Soon I wanted to try iOS and Android
+            development. Unfortunately that was a big task to accomplish at the time, so I
+            stuck with designing a prototype mobile app in HTML, CSS, and
+            Javascript.
             <br />
             <br />
             This project was later presented to the class as part of our final
@@ -106,7 +106,7 @@ const IndexPage = () => (
             <span className="tg__c--primary tg__w--500">CSS</span>
             {', and '}
             <span className="tg__c--primary tg__w--500">Javascript</span>
-            {'for the frontend. It uses'}
+            {' for the frontend. It uses '}
             <span className="tg__c--primary tg__w--500">Materialize</span>
             {' for the ui framework and '}
             <span className="tg__c--primary tg__w--500">Animate.css</span>

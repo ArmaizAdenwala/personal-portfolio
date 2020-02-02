@@ -12,20 +12,20 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Plutus - Shopping App Concept"
-      description="A prototype shopping app presented for my highschool class."
+      description="A prototype shopping app for my highschool class."
     />
     <Navbar links={['PlutusDev']} />
     <Hero
       emphasized="Plutus"
       date="November 2015"
-      description="A prototype shopping app presented for my highschool class"
+      description="A prototype shopping app for my highschool class"
     />
     <div className="page__content">
       <Container>
         <ProjectSection
           title={'Shop For Your Favorite Items'}
           description={
-            "Plutus is a platform for you to buy and sell used and new items from trusted sellers. Using the reputation system, you'll know if you're buying from someone reliable"
+            "Plutus is a platform for you to buy/sell used and new items from trusted sellers. Using the reputation system, you'll know if you're buying from someone reliable."
           }
           src={HomeImage}
         />
