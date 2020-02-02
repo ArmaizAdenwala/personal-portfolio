@@ -26,6 +26,7 @@ const IndexPage = () => (
     <Hero
       emphasized="Smart Dorm Lock"
       description="A mobile app used to unlock my dorm door without a physical key"
+      date="January 2019"
       tags={['React Native', 'Redux', 'C++', 'Arduino', 'IOT']}
     />
     <div className="page__content">

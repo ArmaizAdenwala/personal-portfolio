@@ -14,6 +14,7 @@ const IndexPage = () => (
     <Hero
       emphasized="PlanSpace"
       description="Developer Details"
+      date="January 2020"
       tags={[
         'React Native',
         'Redux',

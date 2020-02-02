@@ -19,6 +19,23 @@ export default class Hero extends Component {
     }
   }
 
+  _renderDate() {
+    if (this.props.date) {
+      return (
+        <h3
+          className="
+              tg__body-1--s
+              tg__title-6--m
+              tg__title-6--l
+              hero__content__date
+              "
+        >
+          {this.props.date}
+        </h3>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="hero">
@@ -37,6 +54,7 @@ export default class Hero extends Component {
                 {this.props.emphasized}
               </span>
             </h1>
+            {this._renderDate()}
             <h2
               className="
               tg__title-4--l
