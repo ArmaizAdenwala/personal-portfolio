@@ -39,6 +39,23 @@ const IndexPage = () => (
                 m-v--8
               "
           >
+            Video Demo
+          </h3>
+          <div className="video-container">
+            <iframe width="400" height="300" src="https://www.youtube.com/embed/79XiYeptc7g?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3
+            className="
+                tg__title-5--s
+                tg__title-4--m
+                tg__title-4--l
+                tg__t--center--s
+                tg__c--primary
+                tg__w--700
+                m-v--8
+                m-t--64
+              "
+          >
             What was this built with?
           </h3>
           <p
