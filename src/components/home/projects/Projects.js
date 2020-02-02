@@ -47,6 +47,13 @@ export default class Projects extends Component {
             tags={['React Native', 'Redux', 'C++', 'Arduino', 'IOT']}
             url="/projects/smart-dorm-lock"
           />
+          <ProjectCard
+            name="Plutus"
+            description="A prototype shopping app presented for a highschool class"
+            date="November 2015"
+            tags={['HTML', 'CSS', 'Javscript', 'Phonegap', 'Material Design']}
+            url="/projects/plutus"
+          />
           {/* <ProjectCard
             name="Programmable LED Mask"
             description="Built an LED mask using individually addressable lightstrips and an Arduino"

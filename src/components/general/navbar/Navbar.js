@@ -13,6 +13,14 @@ export default class Navbar extends Component {
       to: '/projects/planspace/dev',
       name: 'DEV DETAILS',
     },
+    Plutus: {
+      to: '/projects/plutus',
+      name: 'PLUTUS',
+    },
+    PlutusDev: {
+      to: '/projects/plutus/dev',
+      name: 'DEV DETAILS',
+    },
   };
 
   _renderLinks = () => {

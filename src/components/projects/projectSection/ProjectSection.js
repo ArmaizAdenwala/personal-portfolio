@@ -8,7 +8,14 @@ export default class ProjectSection extends Component {
     return (
       <div className="project-section">
         <div className={`g__row ${this._getDirection()}`}>
-          <div className="g__col-12--s g__col-5--m g__col-5--l">
+          <div
+            className="
+            g__col-12--s
+            g__col-5--m
+            g__col-5--l
+            tg__t--center--s
+          "
+          >
             <img className="project-section__img" src={this.props.src} />
           </div>
           <div className="g__col-12--s g__col-7--m g__col-7--l flex--v-center">

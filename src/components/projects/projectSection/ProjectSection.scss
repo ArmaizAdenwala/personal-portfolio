@@ -15,12 +15,14 @@
   &__img {
     width: 100%;
     max-height: 288px;
+    max-width: 360px;
     object-fit: cover;
     object-position: top;
     margin-bottom: 16px;
     @include respond-to('small') {
       margin-bottom: 32px;
       max-height: none;
+      max-width: none;
     }
   }
 }
