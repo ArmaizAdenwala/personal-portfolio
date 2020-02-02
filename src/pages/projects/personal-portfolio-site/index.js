@@ -7,9 +7,9 @@ import SEO from '../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="
-      Personal Portfolio Website"
-      description="A website to showcase my projects"
+      title="Personal Portfolio Website - React.js"
+      secondaryTitle="Armaiz"
+      description="A website to showcase my projects, built with React.js and Gatsby"
     />
     <Navbar
       customLinks={[

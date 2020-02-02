@@ -7,7 +7,8 @@ import SEO from '../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Plutus"
+      title="Plutus - Material Design Phonegap App"
+      secondaryTitle="Armaiz"
       description="Developer details for the Plutus prototype app."
     />
     <Navbar
@@ -23,14 +24,7 @@ const IndexPage = () => (
       emphasized="Plutus"
       description="Developer Details"
       date="November 2015"
-      tags={[
-        'React Native',
-        'Redux',
-        'Ruby on Rails',
-        'PostgreSQL',
-        'Node.js',
-        'socket-io',
-      ]}
+      tags={['HTML', 'CSS', 'Javscript', 'Phonegap', 'Material Design']}
     />
     <div className="page__content">
       <Container>

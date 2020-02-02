@@ -12,7 +12,8 @@ import TaskListImage from './task_list_ios_android_hackathon_app.png';
 const IndexPage = () => (
   <div>
     <SEO
-      title="PlanSpace"
+      title="PlanSpace - Automated Chore Management for iOS and Android"
+      secondaryTitle="Armaiz"
       description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
     />
     <Navbar links={['PlanSpaceDev']} />

@@ -7,8 +7,9 @@ import SEO from '../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Smart Dorm Lock"
-      description="A mobile app used to unlock my dorm door without a physical key"
+      title="Smart Dorm Lock - Arduino and React Native"
+      secondaryTitle="Armaiz"
+      description="A mobile app used to unlock my dorm door without a physical key. Built with Arduino and React Native."
     />
     <Navbar
       customLinks={[

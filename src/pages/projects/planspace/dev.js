@@ -7,7 +7,8 @@ import SEO from '../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="PlanSpace"
+      title="PlanSpace - React Native and Ruby on Rails App"
+      secondaryTitle="Armaiz"
       description="Developer details for the PlanSpace React Native app."
     />
     <Navbar links={['PlanSpace']} />

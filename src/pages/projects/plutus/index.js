@@ -11,14 +11,14 @@ import HomeImage from './plutus_shopping_app_home.png';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Plutus"
-      description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
+      title="Plutus - Shopping App Concept"
+      description="A prototype shopping app presented for my highschool class."
     />
     <Navbar links={['PlutusDev']} />
     <Hero
       emphasized="Plutus"
       date="November 2015"
-      description="A prototype shopping app presented for a highschool class"
+      description="A prototype shopping app presented for my highschool class"
     />
     <div className="page__content">
       <Container>
