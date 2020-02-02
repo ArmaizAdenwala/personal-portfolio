@@ -28,7 +28,7 @@ export default class Experience extends Component {
             <ul className="experience__card__details">
               <li className="tg__body-1">
                 Hired as one of the first employees to a very successful
-                international software development consultancy
+                software development consultancy
               </li>
               <li className="tg__body-1">
                 Created web apps, mobile apps, and desktop apps to create pixel
