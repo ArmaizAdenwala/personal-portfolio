@@ -48,18 +48,19 @@ export default class Projects extends Component {
             url="/projects/smart-dorm-lock"
           />
           <ProjectCard
+            name="Programmable LED Rave Mask"
+            description="A LED rave mask using individually addressable WS2812B led light strips and an Arduino"
+            date="December 2018"
+            tags={['C++', 'Arduino', 'WS2812B LEDS', 'FastLED']}
+            url="/projects/led-rave-mask"
+          />
+          <ProjectCard
             name="Plutus"
             description="A prototype shopping app for my highschool class"
             date="November 2015"
             tags={['HTML', 'CSS', 'Javscript', 'Phonegap', 'Material Design']}
             url="/projects/plutus"
           />
-          {/* <ProjectCard
-            name="Programmable LED Mask"
-            description="Built an LED mask using individually addressable lightstrips and an Arduino"
-            date="January 2019"
-            tags={['C++', 'Arduino', 'WS2812B LEDS']}
-          /> */}
         </Container>
       </div>
     );

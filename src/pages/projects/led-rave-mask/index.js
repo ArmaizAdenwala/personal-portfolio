@@ -7,28 +7,23 @@ import SEO from '../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Smart Dorm Lock - Arduino and React Native"
+      title="Programmable LED Rave Mask"
       secondaryTitle="Armaiz"
-      description="A mobile app used to unlock my dorm door without a physical key. Built with Arduino and React Native."
+      description="An LED rave mask using individually addressable WS2812B led light strips and an Arduino."
     />
     <Navbar
       customLinks={[
         {
-          name: 'MEETUP',
-          to:
-            'https://www.meetup.com/Sacramento-ReactJS-Meetup/events/pggtznyzcbfb/',
-        },
-        {
           name: 'GITHUB',
-          to: 'https://github.com/ArmaizAdenwala/ArduinoBluetooth',
+          to: 'https://github.com/ArmaizAdenwala/led-rave-mask',
         },
       ]}
     />
     <Hero
-      emphasized="Smart Dorm Lock"
-      description="A mobile app used to unlock my dorm door without a physical key"
-      date="January 2019"
-      tags={['React Native', 'Redux', 'C++', 'Arduino', 'IOT']}
+      emphasized="Programmable LED Rave Mask"
+      description="An LED rave mask using led light strips and an Arduino"
+      date="December 2018"
+      tags={['C++', 'Arduino', 'WS2812B LEDS', 'FastLED']}
     />
     <div className="page__content">
       <Container>
@@ -50,8 +45,8 @@ const IndexPage = () => (
             <iframe
               width="400"
               height="300"
-              srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/HcZT8bCcFyw?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/HcZT8bCcFyw/hqdefault.jpg alt='Smart Dorm Door Lock Demo'><span>▶</span></a>"
-              src="https://www.youtube.com/embed/HcZT8bCcFyw?rel=0&controls=1"
+              srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/pRaodK85-go?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/pRaodK85-go/hqdefault.jpg alt='Smart Dorm Door Lock Demo'><span>▶</span></a>"
+              src="https://www.youtube.com/embed/pRaodK85-go?rel=0&controls=1"
               frameborder="0"
               loading="lazy"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -83,22 +78,9 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            When I lived in the dorms at Sac State, I consistently locked myself
-            out of my dorm due to the locks used for their doors. My go-to
-            method was to bend some coat hangers, slide it under the door, and
-            attempt to pull the handle inside my room. It wasn't successful most
-            of the time. The residence halls charge $40 for each spare key
-            request and I didn't want to pay for that again.
-            <br />
-            <br />
-            So I did what any enthusiatic Computer Science student does and
-            programmed a solution. I bought an Arduino, an HC-05 module, a
-            soldering kit, and a strong servo and built a device to open my dorm
-            door. I created an iOS/Android app that connects to the Arduino via
-            bluetooth and sends a request to unlock the door.
-            <br />
-            <br />
-            Until I finally moved out, I used the app to unlock my dorm door.
+            I built an LED mask with effects inspired by the visuals seen at
+            raves. The mask loops through multiple effects as seen in the demo
+            video.
           </p>
           <h3
             className="
@@ -125,19 +107,16 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            {'The arduino bluetooth app was build with '}
-            <span className="tg__c--primary tg__w--500">React Native</span>
-            {' for the mobile app with '}
-            <span className="tg__c--primary tg__w--500">Redux</span>
-            {' for state management. An '}
+            {'The LED rave mask was built by using an '}
             <span className="tg__c--primary tg__w--500">Arduino</span>
-            {' was used to control the servo in '}
+            {' and '}
+            <span className="tg__c--primary tg__w--500">WS2812B</span>
+            {' light strips. The arduino was programmed in '}
             <span className="tg__c--primary tg__w--500">C++</span>
-            {'. An '}
-            <span className="tg__c--primary tg__w--500">HC-05</span>
-            {
-              ' module was used so that the React Native app could communicate with the Arduino via bluetooth.'
-            }
+            {' and utilized the '}
+            <span className="tg__c--primary tg__w--500">FastLED</span>
+            {' library.'} I used the WS2812B light strips as they are
+            individually addressable with the data pin.
           </p>
           <h3
             className="
@@ -164,22 +143,19 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            I have only worked with IOT once before this, so I chose something
-            that was simple that was still a challenge. The first step was to
-            learn how to control a servo using Arduino. Thankfully this was very
-            straightforward.
+            Programming the led light strips was very difficult. The leds are
+            treated as one single 2d array, which means that it treats is as a
+            single strip of leds instead of 11 rows of leds. My solution was to
+            manually hardcode some designs into the array and have the Arduino
+            loop through them.
+            <br />
+            <br />I also had to figure out how to animate the designs. My method
+            was to have a function that fades from one design to the next one.
+            This allowed the effects to be smoother.
             <br />
             <br />
-            The biggest challenge was figuring out how an HC-05 module works. I
-            soldered the module to the arduino board with a voltage divider
-            based on diagrams available online. I then went to work on the React
-            Native app.
-            <br />
-            <br />
-            The React Native app is very simple: A user pushes a button and it
-            sends a payload to the Arduino over bluetooth. After finding a
-            reliable bluetooth node_module, I was able to connect to the Arduino
-            and send data to it.
+            In the future I would like to create more complex designs instead of
+            fading through designs.
           </p>
           <h3
             className="
@@ -206,30 +182,10 @@ const IndexPage = () => (
                 m-v--8
               "
           >
-            I learned how to take an actual problem I had and apply a solution.
-            Despite only having a small amount of experience with Arduino, I
-            managed to get a working prototype that I used over the course of
-            the semester.
-            <br />
-            <br />
-            {
-              'Having never done a tech talk, I was requested to do a talk at a local meetup about how one could enter the world of '
-            }
-            <span className="tg__c--primary tg__w--500">IOT</span>
-            {' using an '}
-            <span className="tg__c--primary tg__w--500">Arduino</span>
-            {' and '}
-            <span className="tg__c--primary tg__w--500">React Native</span>
-            <br />
-            <br />
-            {'You can view the meetup post '}
-            <a
-              className="tg__nested-link"
-              href="https://www.meetup.com/Sacramento-ReactJS-Meetup/events/pggtznyzcbfb/"
-            >
-              here
-            </a>
-            .
+            I learned the importance of power efficency in order to maximize the
+            number of leds I can use while still outputting colors correctly.
+            This project got me to self-learn how Arduinos work and how to
+            solder components together.
           </p>
         </div>
       </Container>
@@ -253,7 +209,7 @@ const IndexPage = () => (
               <div className="button">
                 <a
                   className="button__text"
-                  href="https://github.com/ArmaizAdenwala/ArduinoBluetooth"
+                  href="https://github.com/ArmaizAdenwala/led-rave-mask"
                 >
                   VIEW ON GITHUB
                 </a>
