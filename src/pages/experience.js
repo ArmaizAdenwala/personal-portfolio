@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../components/general';
+import TechTags from '../components/home/projects/TechTags';
 import { Link } from 'gatsby';
 import '../styles/main.scss';
 import SEO from '../components/seo';
@@ -48,10 +49,91 @@ const IndexPage = () => (
                 new features based on clients’ needs
               </li>
               <li className="tg__body-1">
-                Created estimates, planned Agile Sprints, communicated directly
-                with clients, and review other developers’ pull requests
+                {'Created estimates, planned '}
+                <span className="tg__c--primary tg__w--700">SCRUM</span>
+                {
+                  ' Sprints, communicated directly with clients, and review other developers’ pull requests'
+                }
+              </li>
+              <li className="tg__body-1">
+                {'Developed and deployed iOS and Android apps with '}
+                <span className="tg__c--primary tg__w--700">React Native</span>
+                {
+                  ' while following code practices focused on readability, modularity, and efficiency'
+                }
+              </li>
+              <li className="tg__body-1">
+                {'Maintained a '}
+                <span className="tg__c--primary tg__w--700">React Native</span>
+                {' chat application using socket.io and Node.js'}
+              </li>
+              <li className="tg__body-1">
+                {'Optimized a legacy HIPAA compliant '}
+                <span className="tg__c--primary tg__w--700">Django</span>
+                {' web app and refactored inefficent '}{' '}
+                <span className="tg__c--primary tg__w--700">Salesforce</span>{' '}
+                {' report generation speeds by 99%'}
+              </li>
+              <li className="tg__body-1">
+                {'Implemented '}
+                <span className="tg__c--primary tg__w--700">SEO</span>
+                {
+                  ' practices for company’s website to help raise Google page ranks to top 5 for numerous keywords'
+                }
+              </li>
+              <li className="tg__body-1">
+                {'Maintained '}
+                <span className="tg__c--primary tg__w--700">AWS RDS</span>
+                {' instances (beginner),'}
+                <span className="tg__c--primary tg__w--700">
+                  AWS Elastic Beanstalk
+                </span>
+                {' instances (beginner), '}
+                <span className="tg__c--primary tg__w--700">AWS EC2</span>
+                {' instances (beginner), '}
+                <span className="tg__c--primary tg__w--700">Heroku</span>
+                {' servers, and '}
+                <span className="tg__c--primary tg__w--700">Digital Ocean</span>
+                {' droplets'}
+              </li>
+              <li className="tg__body-1">
+                Created software development blog posts for the company blog
+                centered around technologies I use on a day to day basis.
               </li>
             </ul>
+            <div className="m-t--32">
+              <TechTags
+                tags={[
+                  'React Native',
+                  'React',
+                  'Redux',
+                  'Javascript',
+                  'Node.js',
+                  'Socket-io',
+                  'Middleman',
+                  'Rails',
+                  'Ruby',
+                  'PostgreSQL',
+                  'Python',
+                  'Django',
+                  'Salesforce Apex (Beginner)',
+                  'Firebase',
+                  'AWS (Beginner)',
+                  'Nginx',
+                  'Heroku',
+                  'Digital Ocean',
+                  'SEO',
+                  'HTML',
+                  'CSS',
+                  'SASS',
+                  'Wordpress',
+                  'Shopify Liquid (Beginner)',
+                  'Linux',
+                  'SCRUM',
+                  'Agile',
+                ]}
+              />
+            </div>
           </div>
         </Container>
       </div>
