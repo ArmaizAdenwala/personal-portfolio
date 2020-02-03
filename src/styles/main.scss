@@ -21,7 +21,7 @@ body {
     background-color: $background--light;
     position: relative;
     margin-top: $hero-height--sm + 64px;
-    @include respond-to('medium') {
+    @include respond-to('large') {
       margin-top: $hero-height + 64px;
     }
   }
@@ -57,6 +57,9 @@ body {
   }
   @include responsive-modifiers('&-t--64') {
     margin-top: 64px;
+  }
+  &-b--0 {
+    margin-bottom: 0;
   }
   @include responsive-modifiers('&-b--32') {
     margin-bottom: 32px;
@@ -127,4 +130,17 @@ br {
     width: 100%;
     height: 100%;
   }
+}
+
+pre {
+  background: $background--light;
+  color: #6771ad;
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 17px;
+  margin: 0;
+  padding: 24px;
+  margin-top: 24px;
+  border-radius: 8px;
+  overflow: scroll;
 }

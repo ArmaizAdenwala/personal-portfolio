@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  @include respond-to('medium') {
+  @include respond-to('large') {
     height: $hero-height;
     background-image: url("./images/fluid_wave.png"), url("./images/dot.png");
     background-size: 544px 544px, 10px;
@@ -26,7 +26,7 @@
   }
   &__content {
     text-align: center;
-    @include respond-to('medium') {
+    @include respond-to('large') {
       width: auto;
       padding-left: 32px;
       padding-right: 32px;
@@ -41,7 +41,7 @@
       padding-left: 16px;
       margin: 0 auto;
       margin-top: 8px;
-      @include respond-to('medium') {
+      @include respond-to('large') {
         margin: 0;
         margin-top: 16px;
         padding-right: 0;

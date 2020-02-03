@@ -9,6 +9,10 @@ export default class Navbar extends Component {
       to: '/projects',
       name: 'PROJECTS',
     },
+    Blog: {
+      to: '/blog',
+      name: 'BLOG',
+    },
     PlanSpace: {
       to: '/projects/planspace',
       name: 'PLANSPACE',

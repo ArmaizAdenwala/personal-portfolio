@@ -8,13 +8,13 @@ import SEO from '../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="The Best Github Student Pack Offers and Why They Are Important"
+      title="My Favorite Github Student Pack Offers and Why They Are Important"
       secondaryTitle="Armaiz"
       description="My insights on the Github student pack and why you should take advantange of it"
     />
-    <Navbar links={['Projects']} />
+    <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="The Best Github Student Pack Offers and Why They Are Important"
+      emphasized="My Favorite Github Student Pack Offers and Why They Are Important"
       description="My insights on the Github student pack and why you should take advantange of it"
       date="Feburary 3rd 2020"
       extraContent
@@ -92,15 +92,28 @@ const IndexPage = () => (
           >
             Heroku is a PAAS (Plaform as a Service) that allows you to launch
             your app in seconds. It's focus is on taking all the devops work off
-            your hands and all you will have to do is deploy. That means you
-            just need to run a couple commands and your app is deployed and
-            accessible anywhere! Even better, you can use that credit for their
-            db instances above their free-tier.
+            your hands. That means you just need to run a couple commands for
+            your app to be deployed and accessible anywhere!
           </p>
-          <pre>{`
-            $ heroku create
-            $ git push heroku master
-          `}</pre>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-b--0
+                m-t--24"
+          >
+            For example, here is all you need to get a ruby on rails api
+            deployed on heroku:
+          </p>
+          <pre>
+            {'$ heroku create'}
+            <br />
+            {'$ git push heroku master'}
+          </pre>
           <p
             className="
                 tg__title-7--s
@@ -112,11 +125,12 @@ const IndexPage = () => (
                 m-v--8
                 m-t--24"
           >
-            So what does heroku provide in the Student Pack? Heroku provides
+            So what does Heroku provide in the Student Pack? Heroku provides
             $168 worth of credits, equivalent to 2 years of the hobby dyno. This
             allows you to have an app deployed on heroku with little or no
-            downtime and gives you access to ssl implementation for custom
-            domains.
+            downtime and gives you access to custom SSL certificates and custom
+            domains. Even better, you can use that credit for their database
+            instances above their free-tier.
           </p>
           <h3
             className="
@@ -144,8 +158,9 @@ const IndexPage = () => (
           >
             Namecheap is a domain registration site that provides a free year of
             a .me domain, perfect for your personal portfolio site. They also
-            provide a 1 year ssl certificate, but I highly reccomend Cloudflare
-            for that along with Cloudflare's other free-tier features.
+            provide a 1 year SSL certificate. You can have your new .me url
+            point to your Heroku server by using a DNS provider such as
+            Cloudflare.
           </p>
           <h3
             className="
@@ -192,40 +207,8 @@ const IndexPage = () => (
           >
             You could install an Nginx server on a Digital Ocean droplet and
             host multiple static sites on one droplet. That is far more cost
-            effective than Heroku which is a benifit of doing the DevOps
+            effective than Heroku which is a benefit of doing the DevOps
             yourself.
-          </p>
-          <h3
-            className="
-                tg__title-5--s
-                tg__title-4--m
-                tg__title-4--l
-                tg__t--center--s
-                tg__c--primary
-                tg__w--700
-                m-v--8
-                m-t--64
-              "
-          >
-            Git Kraken
-          </h3>
-          <p
-            className="
-                tg__title-7--s
-                tg__title-6--m
-                tg__title-6--l
-                tg__lh--1-5--s
-                tg__lh--1-75--m
-                tg__lh--1-75--l
-                m-v--8
-                m-t--24
-              "
-          >
-            GitKraken is a GUI for git repos that can supercharge your git
-            workflow without needing to use a terminal. Rebasing can be scary in
-            the terminal for some, but using a ui might make that an easier task
-            to accomplish. GitKraken has a full suite of features so be sure to
-            check them all out with their free 1 year of their pro plan!
           </p>
           <h3
             className="
@@ -252,7 +235,28 @@ const IndexPage = () => (
                 m-v--8
                 m-t--24
               "
-          ></p>
+          >
+            CI (continuous integration) is a very important tool in the
+            industry. A CI runs test against your code automatically and lets
+            you know if any tests are failing or not for a specific commit.
+            Blocking pull request merges when a CI is failing helps keep the
+            master branch working with no regressions.
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                m-t--24
+              "
+          >
+            Travis CI gives you unlimited builds for private repos while you are
+            a student so be sure to take advantange of this amazing service!
+          </p>
           <h3
             className="
                 tg__title-5--s
@@ -278,21 +282,12 @@ const IndexPage = () => (
                 m-v--8
                 m-t--24
               "
-          ></p>
-          <h3
-            className="
-                tg__title-5--s
-                tg__title-4--m
-                tg__title-4--l
-                tg__t--center--s
-                tg__c--primary
-                tg__w--700
-                m-v--8
-                m-t--64
-              "
           >
-            Twilo's SendGrid
-          </h3>
+            Sometimes your users will find bugs and you will have no idea what
+            exactly happened, or if it ever happened. Having error reporting is
+            crucial for production apps and that is where Sentry comes into
+            play.
+          </p>
           <p
             className="
                 tg__title-7--s
@@ -304,21 +299,11 @@ const IndexPage = () => (
                 m-v--8
                 m-t--24
               "
-          ></p>
-          <h3
-            className="
-                tg__title-5--s
-                tg__title-4--m
-                tg__title-4--l
-                tg__t--center--s
-                tg__c--primary
-                tg__w--700
-                m-v--8
-                m-t--64
-              "
           >
-            Stripe
-          </h3>
+            Sentry allows you to log errors in your code so that when they occur
+            in production, you can see detailed information on what caused that
+            error, how many times it has occured, the severity of it, and more.
+          </p>
           <p
             className="
                 tg__title-7--s
@@ -330,38 +315,12 @@ const IndexPage = () => (
                 m-v--8
                 m-t--24
               "
-          ></p>
+          >
+            The free 500,000 events/month should be more than enough for you to
+            utilize for any app you integrate Sentry in.
+          </p>
         </div>
       </Container>
-      <div className="page__section">
-        <Container>
-          <div className="flex--h-center">
-            <div className="tg__t--center">
-              <p
-                className="
-                tg__title-6--s
-                tg__title-5--m
-                tg__title-5--l
-                tg__lh--1-5--s
-                tg__lh--1-75--m
-                tg__lh--1-75--l
-                m-v--8--s
-              "
-              >
-                Check out the source code:
-              </p>
-              <div className="button">
-                <a
-                  className="button__text"
-                  href="https://github.com/ArmaizAdenwala/led-rave-mask"
-                >
-                  VIEW ON GITHUB
-                </a>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </div>
       <Footer />
     </div>
   </div>
