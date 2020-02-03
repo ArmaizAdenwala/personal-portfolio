@@ -2,6 +2,7 @@ import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../../components/general';
 import '../../../styles/main.scss';
 import '../Blog.scss';
+import VSCodeImage from './vscode_image_armaiz_adenwala.jpg';
 import SEO from '../../../components/seo';
 
 const IndexPage = () => (
@@ -11,15 +12,7 @@ const IndexPage = () => (
       secondaryTitle="Armaiz"
       description="My insights on the Github student pack and why you should take advantange of it"
     />
-    <Navbar
-      links={['Projects']}
-      customLinks={[
-        {
-          name: 'GITHUB',
-          to: 'https://github.com/ArmaizAdenwala/led-rave-mask',
-        },
-      ]}
-    />
+    <Navbar links={['Projects']} />
     <Hero
       emphasized="The Best Github Student Pack Offers and Why They Are Important"
       description="My insights on the Github student pack and why you should take advantange of it"
@@ -37,34 +30,10 @@ const IndexPage = () => (
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-                m-v--8"
-          >
-            Video Demo
-          </h3>
-          <div className="video-container">
-            <iframe
-              width="400"
-              height="300"
-              srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/pRaodK85-go?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/pRaodK85-go/hqdefault.jpg alt='Smart Dorm Door Lock Demo'><span>▶</span></a>"
-              src="https://www.youtube.com/embed/pRaodK85-go?rel=0&controls=1"
-              frameborder="0"
-              loading="lazy"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <h3
-            className="
-                tg__title-5--s
-                tg__title-4--m
-                tg__title-4--l
-                tg__t--center--s
-                tg__c--primary
-                tg__w--700
                 m-v--8
-                m-t--64"
+            "
           >
-            What is it?
+            What is the Github Student Pack?
           </h3>
           <p
             className="
@@ -75,11 +44,27 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
-            I built an LED mask with effects inspired by the visuals seen at
-            raves. The mask loops through multiple effects as seen in the demo
-            video.
+            The Github Student Pack is an abundance of resources available to
+            students for free. The services and tools provided are all used in
+            the industry today and can launch your projects to another level for
+            free. One can apply for the student pack here:
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                m-t--24"
+          >
+            In this article I am going to go over my favorite tools and services
+            available for free in the student pack and why you should use them
+            in your next project.
           </p>
           <h3
             className="
@@ -92,7 +77,7 @@ const IndexPage = () => (
                 m-v--8
                 m-t--64"
           >
-            What was this built with?
+            Heroku
           </h3>
           <p
             className="
@@ -103,18 +88,35 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
-            {'The LED rave mask was built by using an '}
-            <span className="tg__c--primary tg__w--500">Arduino</span>
-            {' and '}
-            <span className="tg__c--primary tg__w--500">WS2812B</span>
-            {' light strips. The arduino was programmed in '}
-            <span className="tg__c--primary tg__w--500">C++</span>
-            {' and utilized the '}
-            <span className="tg__c--primary tg__w--500">FastLED</span>
-            {' library.'} I used the WS2812B light strips as they are
-            individually addressable with the data pin.
+            Heroku is a PAAS (Plaform as a Service) that allows you to launch
+            your app in seconds. It's focus is on taking all the devops work off
+            your hands and all you will have to do is deploy. That means you
+            just need to run a couple commands and your app is deployed and
+            accessible anywhere! Even better, you can use that credit for their
+            db instances above their free-tier.
+          </p>
+          <pre>{`
+            $ heroku create
+            $ git push heroku master
+          `}</pre>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                m-t--24"
+          >
+            So what does heroku provide in the Student Pack? Heroku provides
+            $168 worth of credits, equivalent to 2 years of the hobby dyno. This
+            allows you to have an app deployed on heroku with little or no
+            downtime and gives you access to ssl implementation for custom
+            domains.
           </p>
           <h3
             className="
@@ -127,7 +129,7 @@ const IndexPage = () => (
               m-v--8
               m-t--64"
           >
-            What were the biggest challenges?
+            Namecheap
           </h3>
           <p
             className="
@@ -138,42 +140,12 @@ const IndexPage = () => (
               tg__lh--1-75--m
               tg__lh--1-75--l
               m-v--8
-              tg__ti--16"
+              m-t--24"
           >
-            Programming the led light strips was very difficult. The leds are
-            treated as one single 2d array, which means that it treats is as a
-            single strip of leds instead of 11 rows of leds. My solution was to
-            manually hardcode some designs into the array and have the Arduino
-            loop through them.
-          </p>
-          <p
-            className="
-              tg__title-7--s
-              tg__title-6--m
-              tg__title-6--l
-              tg__lh--1-5--s
-              tg__lh--1-75--m
-              tg__lh--1-75--l
-              m-v--8
-              tg__ti--16"
-          >
-            I also had to figure out how to animate the designs. My method was
-            to have a function that fades from one design to the next one. This
-            allowed the effects to be smoother.
-          </p>
-          <p
-            className="
-              tg__title-7--s
-              tg__title-6--m
-              tg__title-6--l
-              tg__lh--1-5--s
-              tg__lh--1-75--m
-              tg__lh--1-75--l
-              m-v--8
-              tg__ti--16"
-          >
-            In the future I would like to create more complex designs instead of
-            fading through designs.
+            Namecheap is a domain registration site that provides a free year of
+            a .me domain, perfect for your personal portfolio site. They also
+            provide a 1 year ssl certificate, but I highly reccomend Cloudflare
+            for that along with Cloudflare's other free-tier features.
           </p>
           <h3
             className="
@@ -187,7 +159,7 @@ const IndexPage = () => (
                 m-t--64
               "
           >
-            What did I learn?
+            Digital Ocean
           </h3>
           <p
             className="
@@ -198,14 +170,167 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16
+                m-t--24
               "
           >
-            I learned the importance of power efficency in order to maximize the
-            number of leds I can use while still outputting colors correctly.
-            This project got me to self-learn how Arduinos work and how to
-            solder components together.
+            Digital Ocean is an IAAS (Infrastructure as a Service). This means
+            that you get a virtual machine (called a Droplet) and have full
+            control of it via the terminal. Digital Ocean provides $50 credit to
+            students, which is good for 10 months of their $5/mo droplet.
           </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                m-t--24
+              "
+          >
+            You could install an Nginx server on a Digital Ocean droplet and
+            host multiple static sites on one droplet. That is far more cost
+            effective than Heroku which is a benifit of doing the DevOps
+            yourself.
+          </p>
+          <h3
+            className="
+                tg__title-5--s
+                tg__title-4--m
+                tg__title-4--l
+                tg__t--center--s
+                tg__c--primary
+                tg__w--700
+                m-v--8
+                m-t--64
+              "
+          >
+            Git Kraken
+          </h3>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                m-t--24
+              "
+          >
+            GitKraken is a GUI for git repos that can supercharge your git
+            workflow without needing to use a terminal. Rebasing can be scary in
+            the terminal for some, but using a ui might make that an easier task
+            to accomplish. GitKraken has a full suite of features so be sure to
+            check them all out with their free 1 year of their pro plan!
+          </p>
+          <h3
+            className="
+                tg__title-5--s
+                tg__title-4--m
+                tg__title-4--l
+                tg__t--center--s
+                tg__c--primary
+                tg__w--700
+                m-v--8
+                m-t--64
+              "
+          >
+            Travis CI
+          </h3>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                m-t--24
+              "
+          ></p>
+          <h3
+            className="
+                tg__title-5--s
+                tg__title-4--m
+                tg__title-4--l
+                tg__t--center--s
+                tg__c--primary
+                tg__w--700
+                m-v--8
+                m-t--64
+              "
+          >
+            Sentry
+          </h3>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                m-t--24
+              "
+          ></p>
+          <h3
+            className="
+                tg__title-5--s
+                tg__title-4--m
+                tg__title-4--l
+                tg__t--center--s
+                tg__c--primary
+                tg__w--700
+                m-v--8
+                m-t--64
+              "
+          >
+            Twilo's SendGrid
+          </h3>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                m-t--24
+              "
+          ></p>
+          <h3
+            className="
+                tg__title-5--s
+                tg__title-4--m
+                tg__title-4--l
+                tg__t--center--s
+                tg__c--primary
+                tg__w--700
+                m-v--8
+                m-t--64
+              "
+          >
+            Stripe
+          </h3>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                m-t--24
+              "
+          ></p>
         </div>
       </Container>
       <div className="page__section">
