@@ -10,12 +10,12 @@ const IndexPage = () => (
     <SEO
       title="My Favorite Github Student Pack Offers and Why They Are Important"
       secondaryTitle="Armaiz"
-      description="My insights on the Github student pack and why you should take advantange of it"
+      description="My insights on the Github Student Pack and why you should take advantange of it"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
       emphasized="My Favorite Github Student Pack Offers and Why They Are Important"
-      description="My insights on the Github student pack and why you should take advantange of it"
+      description="My insights on the Github Student Pack and why you should take advantange of it"
       date="Feburary 3rd 2020"
       extraContent
     />
@@ -74,7 +74,7 @@ const IndexPage = () => (
                 m-t--24"
           >
             In this article I am going to go over my favorite tools and services
-            available for free in the student pack and why you should use them
+            available for free in the Student Pack and why you should use them
             in your next project.
           </p>
           <h3
