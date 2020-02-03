@@ -36,7 +36,7 @@ const IndexPage = () => (
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-  m-v--8"
+                m-v--8"
           >
             Video Demo
           </h3>
@@ -74,7 +74,8 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-  m-v--8"
+                m-v--8
+                tg__ti--16"
           >
             {'PlanSpace was build with '}
             <span className="tg__c--primary tg__w--500">React Native</span>
@@ -87,13 +88,33 @@ const IndexPage = () => (
             {' server, and '}
             <span className="tg__c--primary tg__w--500">PostgreSQL</span>
             {' for the database.'}
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
             {
               'This app was built from scratch at HackDavis 2020 within 24 hours. I created the React Native app with a future web app in mind so that I can reuse as much of the codebase as possible for a React.js web app.'
             }
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
             {
               ' Ruby on Rails allowed me to quickly create a REST API with fully working authentication using '
             }
@@ -105,8 +126,18 @@ const IndexPage = () => (
             {
               ' I was able to keep the API responses small so that loading states are rare.'
             }
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
             {
               'The Node.js server is a simple Socket.io server that emits redux actions to be dispatched. Using this server, users can see real-time updates for their task list.'
             }
@@ -133,7 +164,8 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-  m-v--8"
+                m-v--8
+                tg__ti--16"
           >
             Since this project was made at a hackathon, the biggest challenge
             was creating a functional app within the 24 hours. I went to the
@@ -158,8 +190,7 @@ const IndexPage = () => (
                 tg__c--primary
                 tg__w--700
                 m-v--8
-                m-t--64
-              "
+                m-t--64"
           >
             What did I learn?
           </h3>
@@ -171,7 +202,8 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-  m-v--8"
+                m-v--8
+                tg__ti--16"
           >
             I learned how to completely setup a nearly production ready
             fullstack app from scratch. It allowed me to fine tune my skills in
@@ -192,8 +224,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8--s
-              "
+                m-v--8--s"
               >
                 Learn more about PlanSpace:
               </p>

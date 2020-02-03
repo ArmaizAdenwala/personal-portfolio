@@ -31,7 +31,7 @@ export default class ProjectSection extends Component {
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-  m-v--8"
+                m-v--8"
             >
               {this.props.title}
             </h3>
@@ -41,8 +41,7 @@ export default class ProjectSection extends Component {
                 tg__title-5--m
                 tg__title-5--l
                 tg__lh--1-75
-                m-v--8--s
-              "
+                m-v--8--s"
             >
               {this.props.description}
             </p>

@@ -41,7 +41,7 @@ const IndexPage = () => (
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-  m-v--8"
+                m-v--8"
           >
             Video Demo
           </h3>
@@ -66,8 +66,7 @@ const IndexPage = () => (
                 tg__c--primary
                 tg__w--700
                 m-v--8
-                m-t--64
-              "
+                m-t--64"
           >
             What is it?
           </h3>
@@ -79,7 +78,8 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-  m-v--8"
+                m-v--8
+                tg__ti--16"
           >
             When I lived in the dorms at Sac State, I consistently locked myself
             out of my dorm due to the locks used for their doors. My go-to
@@ -87,15 +87,35 @@ const IndexPage = () => (
             attempt to pull the handle inside my room. It wasn't successful most
             of the time. The residence halls charge $40 for each spare key
             request and I didn't want to pay for that again.
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
             So I did what any enthusiatic Computer Science student does and
             programmed a solution. I bought an Arduino, an HC-05 module, a
             soldering kit, and a strong servo and built a device to open my dorm
             door. I created an iOS/Android app that connects to the Arduino via
             bluetooth and sends a request to unlock the door.
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
             Until I finally moved out, I used the app to unlock my dorm door.
           </p>
           <h3
@@ -107,8 +127,7 @@ const IndexPage = () => (
                 tg__c--primary
                 tg__w--700
                 m-v--8
-                m-t--64
-              "
+                m-t--64"
           >
             What was this built with?
           </h3>
@@ -120,7 +139,8 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-  m-v--8"
+                m-v--8
+                tg__ti--16"
           >
             {'The arduino bluetooth app was build with '}
             <span className="tg__c--primary tg__w--500">React Native</span>
@@ -145,8 +165,7 @@ const IndexPage = () => (
                 tg__c--primary
                 tg__w--700
                 m-v--8
-                m-t--64
-              "
+                m-t--64"
           >
             What were the biggest challenges?
           </h3>
@@ -158,20 +177,41 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-  m-v--8"
+                m-v--8
+                tg__ti--16"
           >
             I have only worked with IOT once before this, so I chose something
             that was simple that was still a challenge. The first step was to
             learn how to control a servo using Arduino. Thankfully this was very
             straightforward.
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
             The biggest challenge was figuring out how an HC-05 module works. I
             soldered the module to the arduino board with a voltage divider
             based on diagrams available online. I then went to work on the React
             Native app.
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
             The React Native app is very simple: A user pushes a button and it
             sends a payload to the Arduino over bluetooth. After finding a
             reliable bluetooth node_module, I was able to connect to the Arduino
@@ -186,8 +226,7 @@ const IndexPage = () => (
                 tg__c--primary
                 tg__w--700
                 m-v--8
-                m-t--64
-              "
+                m-t--64"
           >
             What did I learn?
           </h3>
@@ -199,14 +238,25 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-  m-v--8"
+                m-v--8
+                tg__ti--16"
           >
             I learned how to take an actual problem I had and apply a solution.
             Despite only having a small amount of experience with Arduino, I
             managed to get a working prototype that I used over the course of
             the semester.
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
             {
               'Having never done a tech talk, I was requested to do a talk at a local meetup about how one could enter the world of '
             }
@@ -215,8 +265,18 @@ const IndexPage = () => (
             <span className="tg__c--primary tg__w--500">Arduino</span>
             {' and '}
             <span className="tg__c--primary tg__w--500">React Native</span>
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
             {'You can view the meetup post '}
             <a
               className="tg__nested-link"
@@ -240,8 +300,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8--s
-              "
+                m-v--8--s"
               >
                 Check out the source code:
               </p>
