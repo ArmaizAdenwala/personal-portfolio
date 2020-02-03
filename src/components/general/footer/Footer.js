@@ -61,6 +61,12 @@ export default class Footer extends Component {
               >
                 Experience
               </Link>
+              <Link
+                className="footer__link tg__c--primary--dark tg__c--secondary"
+                to={'/blog'}
+              >
+                Blog
+              </Link>
             </div>
             <div
               className="

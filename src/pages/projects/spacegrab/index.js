@@ -37,7 +37,8 @@ const IndexPage = () => (
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-                m-v--8"
+                m-v--8
+                m-t--24"
           >
             Video Demo
           </h3>
@@ -75,7 +76,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             It is a Java game that I made from scratch in sophomore year of
             highschool. The goal is to evade the red dots (enemies) and aquire
@@ -107,7 +108,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {'SpaceGrab was built with '}
             <span className="tg__c--primary tg__w--500">Java</span>
@@ -139,7 +140,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             This was the first playable game I made in Java so I was faced with
             many challenges. The biggest one was drawing the ui for the
@@ -154,7 +155,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             I recall spending weeks trying to figure out how pathfinding worked
             and eventually decided on just having the enemies go directly in a
@@ -170,7 +171,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             Back then I had no idea that you could create classes for enemies,
             powerups, and tokens. If I knew back then, this would've been far
@@ -198,7 +199,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             Fortunately, I did learn an immense amount from this project.
           </p>
@@ -211,7 +212,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             I learned to not worry so much about accomplishing everything
             (pathfinding, obstacles, etc.), and just focus on accomplishing one
@@ -227,7 +228,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             For example, the stars in the background are objects drawn using
             Java AWT. I wanted to have a moving background and have the stars
@@ -247,7 +248,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             This project pushed me to try new unfamiliar things and the
             motivation got me to try web development in the first place. I

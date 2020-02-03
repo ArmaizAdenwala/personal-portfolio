@@ -46,7 +46,10 @@ export default class About extends Component {
                 to production.
               </p>
               <p className="tg__title-6 about__content__bio">
-                I'm currently attending California State University, Sacramento
+                I'm currently attending{' '}
+                <span className="about__content__bio--emphasis">
+                  California State University, Sacramento
+                </span>{' '}
                 as a full-time student, while working at FullStack Labs, a
                 Software Development consultancy.
               </p>
