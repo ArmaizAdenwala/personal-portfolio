@@ -33,6 +33,11 @@ export default class Leadership extends Component {
                   the club's bylaws
                 </li>
                 <li className="tg__body-1">
+                  3rd President of one of the most talked about clubs at Sac
+                  State, including being mentioned during Freshmen orientation
+                  as a club to join
+                </li>
+                <li className="tg__body-1">
                   Managed 4 talented and determined officers to ensure that work
                   was getting done
                 </li>
