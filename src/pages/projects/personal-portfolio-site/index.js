@@ -50,7 +50,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {'My personal portfolio website was built with '}
             <span className="tg__c--primary tg__w--500">React.js</span>
@@ -88,7 +88,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             The project was built with SEO in mind. Originally the app was built
             as a single page app in React.js, however, I realized that SPA's are
@@ -117,7 +117,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {'I used to use '}
             <span className="tg__c--primary tg__w--500">Ruby Middleman</span>

@@ -50,7 +50,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             When I was attending Granite Bay High School, I was in a class
             called GBiT. It was a class for students interested in tech to grow
@@ -66,7 +66,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             I knew I wanted to do something in computer science, I just didn't
             know what I exactly wanted to do in that field. I tried making
@@ -82,7 +82,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             Eventually, I got into web development and enjoyed it. I wasn't good
             at it, but I was learning. Soon I wanted to try iOS and Android
@@ -99,7 +99,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             This project was later presented to the class as part of our final
             project for the semester.
@@ -126,7 +126,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {'Plutus was build with '}
             <span className="tg__c--primary tg__w--500">HTML</span>
@@ -166,7 +166,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             This was one of the first projects I made while learning html and
             css, so I had difficulty learning how to implement ui frameworks and
@@ -194,7 +194,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             This project was a key stepping stone for me to pursue web
             development and eventually mobile app development. Looking back at

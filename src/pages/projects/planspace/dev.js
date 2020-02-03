@@ -75,7 +75,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {'PlanSpace was build with '}
             <span className="tg__c--primary tg__w--500">React Native</span>
@@ -98,7 +98,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {
               'This app was built from scratch at HackDavis 2020 within 24 hours. I created the React Native app with a future web app in mind so that I can reuse as much of the codebase as possible for a React.js web app.'
@@ -113,7 +113,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {
               ' Ruby on Rails allowed me to quickly create a REST API with fully working authentication using '
@@ -136,7 +136,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {
               'The Node.js server is a simple Socket.io server that emits redux actions to be dispatched. Using this server, users can see real-time updates for their task list.'
@@ -165,7 +165,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             Since this project was made at a hackathon, the biggest challenge
             was creating a functional app within the 24 hours. I went to the
@@ -203,7 +203,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             I learned how to completely setup a nearly production ready
             fullstack app from scratch. It allowed me to fine tune my skills in

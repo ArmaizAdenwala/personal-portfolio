@@ -75,7 +75,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             I built an LED mask with effects inspired by the visuals seen at
             raves. The mask loops through multiple effects as seen in the demo
@@ -103,7 +103,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {'The LED rave mask was built by using an '}
             <span className="tg__c--primary tg__w--500">Arduino</span>
@@ -138,7 +138,7 @@ const IndexPage = () => (
               tg__lh--1-75--m
               tg__lh--1-75--l
               m-v--8
-              tg__ti--16"
+              m-t--24"
           >
             Programming the led light strips was very difficult. The leds are
             treated as one single 2d array, which means that it treats is as a
@@ -155,7 +155,7 @@ const IndexPage = () => (
               tg__lh--1-75--m
               tg__lh--1-75--l
               m-v--8
-              tg__ti--16"
+              m-t--24"
           >
             I also had to figure out how to animate the designs. My method was
             to have a function that fades from one design to the next one. This
@@ -170,7 +170,7 @@ const IndexPage = () => (
               tg__lh--1-75--m
               tg__lh--1-75--l
               m-v--8
-              tg__ti--16"
+              m-t--24"
           >
             In the future I would like to create more complex designs instead of
             fading through designs.
@@ -198,7 +198,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16
+                m-t--24
               "
           >
             I learned the importance of power efficency in order to maximize the

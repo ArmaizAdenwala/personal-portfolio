@@ -75,7 +75,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             When I lived in the dorms at Sac State, I consistently locked myself
             out of my dorm due to the locks used for their doors. My go-to
@@ -93,7 +93,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             So I did what any enthusiatic Computer Science student does and
             programmed a solution. I bought an Arduino, an HC-05 module, a
@@ -110,7 +110,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             Until I finally moved out, I used the app to unlock my dorm door.
           </p>
@@ -136,7 +136,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {'The arduino bluetooth app was built with '}
             <span className="tg__c--primary tg__w--500">React Native</span>
@@ -174,7 +174,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             I have only worked with IOT once before this, so I chose something
             that was simple that was still a challenge. The first step was to
@@ -190,7 +190,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             The biggest challenge was figuring out how an HC-05 module works. I
             soldered the module to the arduino board with a voltage divider
@@ -206,7 +206,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             The React Native app is very simple: A user pushes a button and it
             sends a payload to the Arduino over bluetooth. After finding a
@@ -235,7 +235,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             I learned how to take an actual problem I had and apply a solution.
             Despite only having a small amount of experience with Arduino, I
@@ -251,7 +251,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {
               'Having never done a tech talk, I was requested to do a talk at a local meetup about how one could enter the world of '
@@ -271,7 +271,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-                tg__ti--16"
+                m-t--24"
           >
             {'You can view the meetup post '}
             <a

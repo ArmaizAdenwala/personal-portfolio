@@ -83,12 +83,6 @@ export default class Footer extends Component {
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'/projects/planspace/dev'}
-              >
-                PlanSpace Dev
-              </Link>
-              <Link
-                className="footer__link tg__c--primary--dark tg__c--secondary"
                 to={'projects/personal-portfolio-site'}
               >
                 Personal Portfolio
@@ -110,12 +104,6 @@ export default class Footer extends Component {
                 to={'projects/plutus'}
               >
                 Plutus
-              </Link>
-              <Link
-                className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'projects/plutus/dev'}
-              >
-                Plutus Dev
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
