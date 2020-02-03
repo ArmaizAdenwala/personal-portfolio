@@ -66,4 +66,16 @@
     <priority>0.8</priority>
     <lastmod>2020-02-03</lastmod>
   </url>
+  <url>
+    <loc>https://armaizadenwala.com/blog/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/blog/my-favorite-github-student-pack-offers-and-why-they-are-important</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-02-03</lastmod>
+  </url>
 </urlset>

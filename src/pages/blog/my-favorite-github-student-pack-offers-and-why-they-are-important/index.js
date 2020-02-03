@@ -52,14 +52,14 @@ const IndexPage = () => (
             </span>{' '}
             is an abundance of resources available to students for free. The
             services and tools provided are all used in the industry today and
-            can launch your projects to the next level for free.
+            can launch your projects to the next level for free.{' '}
             <a
               className="tg__nested-link"
               rel="noopener noreferrer"
               target="_blank"
               href="https://education.github.com/pack"
             >
-              {' Apply for the Github Student Pack'}
+              {'Apply for the Github Student Pack'}
             </a>
           </p>
           <p
@@ -249,7 +249,7 @@ const IndexPage = () => (
             <span className="tg__c--primary tg__w--500">
               more cost effective
             </span>{' '}
-            than Heroku which is a benefit of doing the DevOps yourself.{' '}
+            than Heroku, emphasizing the benefit of doing the DevOps yourself.{' '}
             <a
               className="tg__nested-link"
               rel="noopener noreferrer"
