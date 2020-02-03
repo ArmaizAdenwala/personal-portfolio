@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hero, Navbar, Footer } from '../components/general';
-import { About, Experience, Projects } from '../components/home';
+import { About, Experience, Leadership, Projects } from '../components/home';
 import '../styles/main.scss';
 import '../styles/pages/Home.scss';
 import SEO from '../components/seo';
@@ -21,6 +21,7 @@ const IndexPage = () => (
     <div className="page__content">
       <About />
       <Experience />
+      <Leadership />
       <Projects />
       <Footer />
     </div>

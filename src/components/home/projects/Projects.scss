@@ -3,7 +3,7 @@
 
 .projects {
   position: relative;
-  background-color: $background;
+  background-color: $background--light;
   width: 100%;
   padding: 64px 0;
   @include respond-to('medium') {

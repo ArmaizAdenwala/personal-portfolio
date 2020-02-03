@@ -1,0 +1,40 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+
+.leadership {
+  position: relative;
+  background-color: $background;
+  width: 100%;
+  padding: 64px 0;
+  @include respond-to('medium') {
+    padding: 96px 0;
+  }
+  @include respond-to('large') {
+    padding: 96px 0;
+  }
+  & &__title {
+    margin: 0;
+    margin-bottom: 32px;
+    font-weight: 700;
+  }
+  &__card {
+    background-color: #fafafa ;
+    padding: 32px 32px;
+    border-radius: 4px;
+    & &__title {
+      margin: 0;
+      margin-bottom: 8px;
+      display: block;
+    }
+    & &__subtitle {
+      margin: 0;
+      display: block;
+      font-style: italic;
+      font-weight: 400;
+      color: #757575;
+    }
+    &__details {
+      padding-left: 24px;
+    }
+  }
+}
