@@ -9,7 +9,7 @@ const IndexPage = () => (
     <SEO
       title="My Projects"
       secondaryTitle="Armaiz"
-      description="A list of all of the projects that I have worked on."
+      description="A list of all of the projects that I have worked on since sophomore year of highschool"
     />
     <Navbar
       customLinks={[
@@ -21,7 +21,7 @@ const IndexPage = () => (
     />
     <Hero
       emphasized="My Projects"
-      description="A list of all of the projects that I have worked on"
+      description="A list of all of the projects that I have worked on since sophomore year of highschool"
     />
     <div className="page__content">
       <div className="p-v--32">
