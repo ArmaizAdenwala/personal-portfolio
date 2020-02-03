@@ -76,7 +76,7 @@ export default class Hero extends Component {
               tg__body-1--s
               tg__title-6--m
               tg__title-6--l
-              hero__content__date
+              hero__content__date--extra
               "
         >
           {this.props.date}

@@ -58,6 +58,13 @@
       @include respond-to('small') {
         margin-top: 0;
       }
+      &--extra {
+        margin: 0 auto;
+        font-weight: 400;
+        font-style: italic;
+        color: #757575;
+        margin-top: 8px;
+      }
     }
   }
 }
