@@ -4,9 +4,10 @@ import { About, Experience, Projects } from '../components/home';
 import '../styles/main.scss';
 import '../styles/pages/Home.scss';
 import SEO from '../components/seo';
+import Layout from '../components/layout';
 
 const IndexPage = () => (
-  <div>
+  <Layout>
     <SEO
       title="Home"
       description="Hi, I'm Armaiz Adenwala, a Software Engineer that welcomes challenges and provides solutions. Come check out my projects!"
@@ -23,7 +24,7 @@ const IndexPage = () => (
       <Projects />
       <Footer />
     </div>
-  </div>
+  </Layout>
 );
 
 export default IndexPage;
