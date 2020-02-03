@@ -42,21 +42,25 @@ export default class About extends Component {
                 <span className="about__content__bio--emphasis">
                   Sacramento, CA
                 </span>{' '}
-                who's experienced in taking fullstack applications from scratch to production.
-                <br />
-                <br />
-                I'm currently attending California State University, Sacramento as a
-                full-time student, while working at FullStack Labs, a Software Development
-                consultancy.
-                <br />
-                <br />
-                {"Over the last 4 years, I've had the opportunity to develop for over "}
+                who's experienced in taking fullstack applications from scratch
+                to production.
+              </p>
+              <p className="tg__title-6 about__content__bio">
+                I'm currently attending California State University, Sacramento
+                as a full-time student, while working at FullStack Labs, a
+                Software Development consultancy.
+              </p>
+              <p className="tg__title-6 about__content__bio">
+                {
+                  "Over the last 4 years, I've had the opportunity to develop for over "
+                }
                 <span className="about__content__bio--emphasis">
                   5 awesome companies / clients
                 </span>{' '}
-                as a consultant and continue to do so today. My work includes developing
-                mobile apps, making web apps, creating backend servers, handling
-                small-scale DevOps, and implementing desktop apps.
+                as a consultant and continue to do so today. My work includes
+                developing mobile apps, making web apps, creating backend
+                servers, handling small-scale DevOps, and implementing desktop
+                apps.
               </p>
             </div>
           </div>
