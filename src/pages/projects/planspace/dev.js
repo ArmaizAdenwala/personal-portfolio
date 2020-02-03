@@ -11,7 +11,7 @@ const IndexPage = () => (
       secondaryTitle="Armaiz"
       description="Developer details for the PlanSpace React Native app."
     />
-    <Navbar links={['PlanSpace']} />
+    <Navbar links={['Projects', 'PlanSpace']} />
     <Hero
       emphasized="PlanSpace"
       description="Developer Details"

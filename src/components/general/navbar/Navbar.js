@@ -5,6 +5,10 @@ import ArmaizLogo from './armaiz-developer-code-logo.png';
 
 export default class Navbar extends Component {
   links = {
+    Projects: {
+      to: '/projects',
+      name: 'PROJECTS',
+    },
     PlanSpace: {
       to: '/projects/planspace',
       name: 'PLANSPACE',

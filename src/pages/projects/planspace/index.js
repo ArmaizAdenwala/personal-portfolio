@@ -16,7 +16,7 @@ const IndexPage = () => (
       secondaryTitle="Armaiz"
       description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
     />
-    <Navbar links={['PlanSpaceDev']} />
+    <Navbar links={['Projects', 'PlanSpaceDev']} />
     <Hero
       emphasized="PlanSpace"
       date="January 2020"

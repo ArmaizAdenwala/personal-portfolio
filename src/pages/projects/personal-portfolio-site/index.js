@@ -12,6 +12,7 @@ const IndexPage = () => (
       description="A website to showcase my projects, built with React.js and Gatsby"
     />
     <Navbar
+      links={['Projects']}
       customLinks={[
         {
           name: 'GITHUB',

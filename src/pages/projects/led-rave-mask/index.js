@@ -12,6 +12,7 @@ const IndexPage = () => (
       description="An LED rave mask using individually addressable WS2812B led light strips and an Arduino."
     />
     <Navbar
+      links={['Projects']}
       customLinks={[
         {
           name: 'GITHUB',

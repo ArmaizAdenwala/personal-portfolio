@@ -68,6 +68,13 @@ const IndexPage = () => (
             tags={['HTML', 'CSS', 'Javscript', 'Phonegap', 'Material Design']}
             url="/projects/plutus"
           />
+          <ProjectCard
+            name="SpaceGrab"
+            description="A simple Java game made from scratch"
+            date="November 2014"
+            tags={['Java', 'Java AWT', 'Java Swing']}
+            url="/projects/spacegrab"
+          />
         </Container>
       </div>
       <div className="page__section">

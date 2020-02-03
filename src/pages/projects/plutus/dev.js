@@ -12,7 +12,7 @@ const IndexPage = () => (
       description="Developer details for the Plutus prototype app."
     />
     <Navbar
-      links={['Plutus']}
+      links={['Projects', 'Plutus']}
       customLinks={[
         {
           name: 'GITHUB',

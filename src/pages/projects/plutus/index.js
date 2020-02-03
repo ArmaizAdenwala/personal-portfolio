@@ -14,7 +14,7 @@ const IndexPage = () => (
       title="Plutus - Shopping App Concept"
       description="A prototype shopping app for my highschool class."
     />
-    <Navbar links={['PlutusDev']} />
+    <Navbar links={['Projects', 'PlutusDev']} />
     <Hero
       emphasized="Plutus"
       date="November 2015"

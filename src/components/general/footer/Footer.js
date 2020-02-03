@@ -111,6 +111,12 @@ export default class Footer extends Component {
               >
                 Plutus Dev
               </Link>
+              <Link
+                className="footer__link tg__c--primary--dark tg__c--secondary"
+                to={'projects/spacegrab'}
+              >
+                SpaceGrab
+              </Link>
             </div>
           </div>
         </Container>

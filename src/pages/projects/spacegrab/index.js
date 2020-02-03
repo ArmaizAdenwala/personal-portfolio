@@ -7,24 +7,24 @@ import SEO from '../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Smart Dorm Lock - Arduino and React Native"
+      title="SpaceGrab - Java Game"
       secondaryTitle="Armaiz"
-      description="A mobile app used to unlock my dorm door without a physical key. Built with Arduino and React Native."
+      description="A simple Java game made from scratch in 2014."
     />
     <Navbar
       links={['Projects']}
       customLinks={[
         {
           name: 'GITHUB',
-          to: 'https://github.com/ArmaizAdenwala/ArduinoBluetooth',
+          to: 'https://github.com/ArmaizAdenwala/SpaceGrab',
         },
       ]}
     />
     <Hero
-      emphasized="Smart Dorm Lock"
-      description="A mobile app used to unlock my dorm door without a physical key"
-      date="January 2019"
-      tags={['React Native', 'Redux', 'C++', 'Arduino', 'IOT']}
+      emphasized="SpaceGrab"
+      description="A simple Java game made from scratch in 2014"
+      date="October 2014"
+      tags={['Java', 'Java AWT', 'Java Swing']}
     />
     <div className="page__content">
       <Container>
@@ -45,8 +45,8 @@ const IndexPage = () => (
             <iframe
               width="400"
               height="300"
-              srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/HcZT8bCcFyw?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/HcZT8bCcFyw/hqdefault.jpg alt='Smart Dorm Door Lock Demo'><span>▶</span></a>"
-              src="https://www.youtube.com/embed/HcZT8bCcFyw?rel=0&controls=1"
+              srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/NwJG39aYvww?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/NwJG39aYvww/hqdefault.jpg alt='Smart Dorm Door Lock Demo'><span>▶</span></a>"
+              src="https://www.youtube.com/embed/NwJG39aYvww?rel=0&controls=1"
               frameborder="0"
               loading="lazy"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -77,42 +77,13 @@ const IndexPage = () => (
                 m-v--8
                 tg__ti--16"
           >
-            When I lived in the dorms at Sac State, I consistently locked myself
-            out of my dorm due to the locks used for their doors. My go-to
-            method was to bend some coat hangers, slide it under the door, and
-            attempt to pull the handle inside my room. It wasn't successful most
-            of the time. The residence halls charge $40 for each spare key
-            request and I didn't want to pay for that again.
-          </p>
-          <p
-            className="
-                tg__title-7--s
-                tg__title-6--m
-                tg__title-6--l
-                tg__lh--1-5--s
-                tg__lh--1-75--m
-                tg__lh--1-75--l
-                m-v--8
-                tg__ti--16"
-          >
-            So I did what any enthusiatic Computer Science student does and
-            programmed a solution. I bought an Arduino, an HC-05 module, a
-            soldering kit, and a strong servo and built a device to open my dorm
-            door. I created an iOS/Android app that connects to the Arduino via
-            bluetooth and sends a request to unlock the door.
-          </p>
-          <p
-            className="
-                tg__title-7--s
-                tg__title-6--m
-                tg__title-6--l
-                tg__lh--1-5--s
-                tg__lh--1-75--m
-                tg__lh--1-75--l
-                m-v--8
-                tg__ti--16"
-          >
-            Until I finally moved out, I used the app to unlock my dorm door.
+            It is a Java game that I made from scratch in sophomore year of
+            highschool. The goal is to evade the red dots (enemies) and aquire
+            the yellow dots (tokens). You can collect the blue dot as a powerup
+            to have the enemies fly away from you. You control your green dot
+            with your mouse and the enemies will disappear once they collide
+            with each other. Each time you get a token, your dot grows, but you
+            shrink if you get hit by an enemy.
           </p>
           <h3
             className="
@@ -138,19 +109,13 @@ const IndexPage = () => (
                 m-v--8
                 tg__ti--16"
           >
-            {'The arduino bluetooth app was built with '}
-            <span className="tg__c--primary tg__w--500">React Native</span>
-            {' for the mobile app with '}
-            <span className="tg__c--primary tg__w--500">Redux</span>
-            {' for state management. An '}
-            <span className="tg__c--primary tg__w--500">Arduino</span>
-            {' was used to control the servo in '}
-            <span className="tg__c--primary tg__w--500">C++</span>
-            {'. An '}
-            <span className="tg__c--primary tg__w--500">HC-05</span>
-            {
-              ' module was used so that the React Native app could communicate with the Arduino via bluetooth.'
-            }
+            {'SpaceGrab was built with '}
+            <span className="tg__c--primary tg__w--500">Java</span>
+            {' and utilized both the '}
+            <span className="tg__c--primary tg__w--500">Java AWT</span>
+            {' package and the '}
+            <span className="tg__c--primary tg__w--500">Java Swing</span>
+            {' package for drawing the ui.'}
           </p>
           <h3
             className="
@@ -176,10 +141,9 @@ const IndexPage = () => (
                 m-v--8
                 tg__ti--16"
           >
-            I have only worked with IOT once before this, so I chose something
-            that was simple that was still a challenge. The first step was to
-            learn how to control a servo using Arduino. Thankfully this was very
-            straightforward.
+            This was the first playable game I made in Java so I was faced with
+            many challenges. The biggest one was drawing the ui for the
+            application which I used Java AWT to accomplish.
           </p>
           <p
             className="
@@ -192,10 +156,10 @@ const IndexPage = () => (
                 m-v--8
                 tg__ti--16"
           >
-            The biggest challenge was figuring out how an HC-05 module works. I
-            soldered the module to the arduino board with a voltage divider
-            based on diagrams available online. I then went to work on the React
-            Native app.
+            I recall spending weeks trying to figure out how pathfinding worked
+            and eventually decided on just having the enemies go directly in a
+            straight direction. My goal was to do a simple implementation and
+            implement pathfinding in the future.
           </p>
           <p
             className="
@@ -208,10 +172,9 @@ const IndexPage = () => (
                 m-v--8
                 tg__ti--16"
           >
-            The React Native app is very simple: A user pushes a button and it
-            sends a payload to the Arduino over bluetooth. After finding a
-            reliable bluetooth node_module, I was able to connect to the Arduino
-            and send data to it.
+            Back then I had no idea that you could create classes for enemies,
+            powerups, and tokens. If I knew back then, this would've been far
+            less complicated and the code would've looked much cleaner.
           </p>
           <h3
             className="
@@ -237,10 +200,7 @@ const IndexPage = () => (
                 m-v--8
                 tg__ti--16"
           >
-            I learned how to take an actual problem I had and apply a solution.
-            Despite only having a small amount of experience with Arduino, I
-            managed to get a working prototype that I used over the course of
-            the semester.
+            Fortunately, I did learn an immense amount from this project.
           </p>
           <p
             className="
@@ -253,14 +213,10 @@ const IndexPage = () => (
                 m-v--8
                 tg__ti--16"
           >
-            {
-              'Having never done a tech talk, I was requested to do a talk at a local meetup about how one could enter the world of '
-            }
-            <span className="tg__c--primary tg__w--500">IOT</span>
-            {' using an '}
-            <span className="tg__c--primary tg__w--500">Arduino</span>
-            {' and '}
-            <span className="tg__c--primary tg__w--500">React Native</span>
+            I learned to not worry so much about accomplishing everything
+            (pathfinding, obstacles, etc.), and just focus on accomplishing one
+            challenge / feature at a time. I was new to creating games,
+            especially from scratch in Java.
           </p>
           <p
             className="
@@ -273,14 +229,34 @@ const IndexPage = () => (
                 m-v--8
                 tg__ti--16"
           >
-            {'You can view the meetup post '}
-            <a
-              className="tg__nested-link"
-              href="https://www.meetup.com/Sacramento-ReactJS-Meetup/events/pggtznyzcbfb/"
-            >
-              here
-            </a>
-            .
+            For example, the stars in the background are objects drawn using
+            Java AWT. I wanted to have a moving background and have the stars
+            move at different speeds depending on size. I originally was going
+            to use a gif or a video, but looping it was too difficult.
+            Eventually I decided to accomplish it with drawing multiple objects.
+            This may not have been the most optimal way, but I was learning and
+            that was what was my goal for this project: to take something scary
+            and unfamiliar and accomplish it one way or another.
+          </p>
+          <p
+            className="
+                tg__title-7--s
+                tg__title-6--m
+                tg__title-6--l
+                tg__lh--1-5--s
+                tg__lh--1-75--m
+                tg__lh--1-75--l
+                m-v--8
+                tg__ti--16"
+          >
+            This project pushed me to try new unfamiliar things and the
+            motivation got me to try web development in the first place. I
+            learned to always try new scary things and no matter how long it
+            takes to get to that point, it can get accomplished one way or
+            another. This mentality is applied into my consulting work as I
+            always get thrown with new challenges and need to provide solutions,
+            whether that be figured out on my own or through help with some of
+            my amazing and talented coworkers.
           </p>
         </div>
       </Container>
