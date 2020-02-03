@@ -50,7 +50,7 @@ export default class Experience extends Component {
             </div>
             <div className="m-t--32 tg__t--center">
               <div className="button">
-                <a className="button__text" href="/experience/">
+                <a className="button__text" href="/experience">
                   VIEW DETAILED WORK EXPERIENCE
                 </a>
               </div>

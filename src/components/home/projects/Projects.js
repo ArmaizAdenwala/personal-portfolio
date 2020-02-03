@@ -18,7 +18,7 @@ export default class Projects extends Component {
             projects__title
           "
             >
-              Here are some of my projects
+              Here are my favorite projects
             </h3>
             <ProjectCard
               name="PlanSpace - HackDavis"
@@ -35,13 +35,6 @@ export default class Projects extends Component {
               ]}
             />
             <ProjectCard
-              name="Personal Portfolio Website"
-              description="A website to showcase my projects."
-              date="January 2020"
-              tags={['Gatsby', 'React.js', 'Heroku', 'SASS', 'SEO']}
-              url="/projects/personal-portfolio-site"
-            />
-            <ProjectCard
               name="Smart Dorm Lock"
               description="A mobile app used to unlock my dorm door without a physical key."
               date="January 2019"
@@ -55,39 +48,14 @@ export default class Projects extends Component {
               tags={['C++', 'Arduino', 'WS2812B LEDS', 'FastLED']}
               url="/projects/led-rave-mask"
             />
-            <ProjectCard
-              name="Plutus"
-              description="A prototype shopping app for my highschool class"
-              date="November 2015"
-              tags={['HTML', 'CSS', 'Javscript', 'Phonegap', 'Material Design']}
-              url="/projects/plutus"
-            />
           </Container>
-        </div>
-        <div className="page__section">
-          <Container>
-            <div className="flex--h-center">
-              <div className="tg__t--center">
-                <p
-                  className="
-                tg__title-6--s
-                tg__title-5--m
-                tg__title-5--l
-                tg__lh--1-5--s
-                tg__lh--1-75--m
-                tg__lh--1-75--l
-                m-v--8--s"
-                >
-                  Check out all of my projects!
-                </p>
-                <div className="button">
-                  <a className="button__text" href="/projects/">
-                    VIEW ALL PROJECTS
-                  </a>
-                </div>
-              </div>
+          <div className="m-t--32 tg__t--center">
+            <div className="button">
+              <a className="button__text" href="/projects">
+                VIEW ALL PROJECTS
+              </a>
             </div>
-          </Container>
+          </div>
         </div>
       </div>
     );
