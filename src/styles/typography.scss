@@ -85,6 +85,9 @@
   &__c--secondary {
     color: $colors-secondary;
   }
+  &__ti--16 {
+    text-indent: 16px;
+  }
   @include responsive-modifiers('&__t--left') {
     text-align: left;
   }

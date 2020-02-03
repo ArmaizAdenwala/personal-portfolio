@@ -36,8 +36,7 @@ const IndexPage = () => (
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-                m-v--8
-              "
+                m-v--8"
           >
             Video Demo
           </h3>
@@ -62,8 +61,7 @@ const IndexPage = () => (
                 tg__c--primary
                 tg__w--700
                 m-v--8
-                m-t--64
-              "
+                m-t--64"
           >
             What is it?
           </h3>
@@ -76,7 +74,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-              "
+                tg__ti--16"
           >
             I built an LED mask with effects inspired by the visuals seen at
             raves. The mask loops through multiple effects as seen in the demo
@@ -91,8 +89,7 @@ const IndexPage = () => (
                 tg__c--primary
                 tg__w--700
                 m-v--8
-                m-t--64
-              "
+                m-t--64"
           >
             What was this built with?
           </h3>
@@ -105,7 +102,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-              "
+                tg__ti--16"
           >
             {'The LED rave mask was built by using an '}
             <span className="tg__c--primary tg__w--500">Arduino</span>
@@ -120,40 +117,60 @@ const IndexPage = () => (
           </p>
           <h3
             className="
-                tg__title-5--s
-                tg__title-4--m
-                tg__title-4--l
-                tg__t--center--s
-                tg__c--primary
-                tg__w--700
-                m-v--8
-                m-t--64
-              "
+              tg__title-5--s
+              tg__title-4--m
+              tg__title-4--l
+              tg__t--center--s
+              tg__c--primary
+              tg__w--700
+              m-v--8
+              m-t--64"
           >
             What were the biggest challenges?
           </h3>
           <p
             className="
-                tg__title-7--s
-                tg__title-6--m
-                tg__title-6--l
-                tg__lh--1-5--s
-                tg__lh--1-75--m
-                tg__lh--1-75--l
-                m-v--8
-              "
+              tg__title-7--s
+              tg__title-6--m
+              tg__title-6--l
+              tg__lh--1-5--s
+              tg__lh--1-75--m
+              tg__lh--1-75--l
+              m-v--8
+              tg__ti--16"
           >
             Programming the led light strips was very difficult. The leds are
             treated as one single 2d array, which means that it treats is as a
             single strip of leds instead of 11 rows of leds. My solution was to
             manually hardcode some designs into the array and have the Arduino
             loop through them.
-            <br />
-            <br />I also had to figure out how to animate the designs. My method
-            was to have a function that fades from one design to the next one.
-            This allowed the effects to be smoother.
-            <br />
-            <br />
+          </p>
+          <p
+            className="
+              tg__title-7--s
+              tg__title-6--m
+              tg__title-6--l
+              tg__lh--1-5--s
+              tg__lh--1-75--m
+              tg__lh--1-75--l
+              m-v--8
+              tg__ti--16"
+          >
+            I also had to figure out how to animate the designs. My method was
+            to have a function that fades from one design to the next one. This
+            allowed the effects to be smoother.
+          </p>
+          <p
+            className="
+              tg__title-7--s
+              tg__title-6--m
+              tg__title-6--l
+              tg__lh--1-5--s
+              tg__lh--1-75--m
+              tg__lh--1-75--l
+              m-v--8
+              tg__ti--16"
+          >
             In the future I would like to create more complex designs instead of
             fading through designs.
           </p>
@@ -180,6 +197,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
+                tg__ti--16
               "
           >
             I learned the importance of power efficency in order to maximize the
