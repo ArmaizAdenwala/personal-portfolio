@@ -1,6 +1,11 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../components/general';
-import TechTags from '../components/home/projects/TechTags';
+import {
+  Hero,
+  Navbar,
+  Footer,
+  Container,
+  TechTags,
+} from '../components/general';
 import { Link } from 'gatsby';
 import '../styles/main.scss';
 import SEO from '../components/seo';

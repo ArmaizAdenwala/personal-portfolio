@@ -1,6 +1,6 @@
 import React from 'react';
-import { TechTags } from '../../general';
-import './ProjectCard.scss';
+import { TechTags } from '../general';
+import './BlogCard.scss';
 
 const _renderUrl = url => {
   if (url) {
@@ -17,7 +17,7 @@ const _renderUrl = url => {
             tg__button
           "
         >
-          VIEW PROJECT
+          VIEW POST
         </a>
       </div>
     );
@@ -37,15 +37,14 @@ const ProjectCard = ({ name, description, date, tags, url }) => (
         "
         >
           {name + ' '}
-          <span className="tg__subtitle-1  project-card__content__title-container__title__date">
-            {`(${date})`}
-          </span>
         </h5>
+        <p className="tg__subtitle-1  project-card__content__title-container__title__date">
+          {`(${date})`}
+        </p>
         <p className="tg__subtitle-1  project-card__content__title-container__subtitle">
           {description}
         </p>
       </div>
-      <TechTags tags={tags} />
       {_renderUrl(url)}
     </div>
   </div>
