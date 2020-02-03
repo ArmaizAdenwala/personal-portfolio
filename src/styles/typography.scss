@@ -60,6 +60,10 @@
     font-weight: 600;
     text-decoration: none;
     color: $colors-secondary;
+    &:hover {
+      color: $colors-secondary--dark;
+      text-decoration: underline;
+    }
   }
   &__w--400 {
     font-weight: 400;

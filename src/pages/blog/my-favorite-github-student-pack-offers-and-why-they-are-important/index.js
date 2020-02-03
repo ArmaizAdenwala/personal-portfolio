@@ -46,10 +46,21 @@ const IndexPage = () => (
                 m-v--8
                 m-t--24"
           >
-            The Github Student Pack is an abundance of resources available to
-            students for free. The services and tools provided are all used in
-            the industry today and can launch your projects to another level for
-            free. One can apply for the student pack here:
+            The{' '}
+            <span className="tg__c--primary tg__w--500">
+              Github Student Pack
+            </span>{' '}
+            is an abundance of resources available to students for free. The
+            services and tools provided are all used in the industry today and
+            can launch your projects to the next level for free.
+            <a
+              className="tg__nested-link"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://education.github.com/pack"
+            >
+              {' Apply for the Github Student Pack'}
+            </a>
           </p>
           <p
             className="
@@ -90,10 +101,11 @@ const IndexPage = () => (
                 m-v--8
                 m-t--24"
           >
-            Heroku is a PAAS (Plaform as a Service) that allows you to launch
-            your app in seconds. It's focus is on taking all the devops work off
-            your hands. That means you just need to run a couple commands for
-            your app to be deployed and accessible anywhere!
+            Heroku is a <span className="tg__c--primary tg__w--500">PAAS</span>{' '}
+            (Plaform as a Service) that allows you to launch your app in
+            seconds. Its focus is on taking all the devops work off your hands.
+            That means you just need to run a couple commands for your app to be
+            deployed and accessible anywhere!
           </p>
           <p
             className="
@@ -125,12 +137,27 @@ const IndexPage = () => (
                 m-v--8
                 m-t--24"
           >
-            So what does Heroku provide in the Student Pack? Heroku provides
-            $168 worth of credits, equivalent to 2 years of the hobby dyno. This
-            allows you to have an app deployed on heroku with little or no
-            downtime and gives you access to custom SSL certificates and custom
-            domains. Even better, you can use that credit for their database
-            instances above their free-tier.
+            So what does Heroku provide in the Student Pack? Heroku provides{' '}
+            <span className="tg__c--primary tg__w--500">
+              $168 worth of credits
+            </span>
+            , equivalent to{' '}
+            <span className="tg__c--primary tg__w--500">
+              2 years of the hobby dyno
+            </span>
+            . This allows you to have an app deployed on Heroku with little or
+            no downtime and gives you access to custom SSL certificates and
+            custom domains. Even better, you can use that credit for their
+            database instances above their free-tier.{' '}
+            <a
+              className="tg__nested-link"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://heroku.com"
+            >
+              {'Learn more about how to deploy your app on Heroku'}
+            </a>
+            .
           </p>
           <h3
             className="
@@ -156,11 +183,16 @@ const IndexPage = () => (
               m-v--8
               m-t--24"
           >
-            Namecheap is a domain registration site that provides a free year of
-            a .me domain, perfect for your personal portfolio site. They also
-            provide a 1 year SSL certificate. You can have your new .me url
-            point to your Heroku server by using a DNS provider such as
-            Cloudflare.
+            Namecheap is a domain registration site that provides a{' '}
+            <span className="tg__c--primary tg__w--500">
+              free year of a .me domain
+            </span>
+            , perfect for your personal portfolio site. They also provide a{' '}
+            <span className="tg__c--primary tg__w--500">
+              1 year SSL certificate
+            </span>
+            . You can have your new .me url point to your Heroku server by using
+            a DNS provider such as Cloudflare.
           </p>
           <h3
             className="
@@ -188,10 +220,17 @@ const IndexPage = () => (
                 m-t--24
               "
           >
-            Digital Ocean is an IAAS (Infrastructure as a Service). This means
-            that you get a virtual machine (called a Droplet) and have full
-            control of it via the terminal. Digital Ocean provides $50 credit to
-            students, which is good for 10 months of their $5/mo droplet.
+            Digital Ocean is an{' '}
+            <span className="tg__c--primary tg__w--500">IAAS</span>{' '}
+            (Infrastructure as a Service). This means that you get a virtual
+            machine (called a Droplet) and have full control of it via the
+            terminal. Digital Ocean provides{' '}
+            <span className="tg__c--primary tg__w--500">$50 credit</span> to
+            students, which is good for{' '}
+            <span className="tg__c--primary tg__w--500">
+              10 months of their $5/month droplet
+            </span>
+            .
           </p>
           <p
             className="
@@ -206,9 +245,20 @@ const IndexPage = () => (
               "
           >
             You could install an Nginx server on a Digital Ocean droplet and
-            host multiple static sites on one droplet. That is far more cost
-            effective than Heroku which is a benefit of doing the DevOps
-            yourself.
+            host multiple static sites on one droplet. That is far{' '}
+            <span className="tg__c--primary tg__w--500">
+              more cost effective
+            </span>{' '}
+            than Heroku which is a benefit of doing the DevOps yourself.{' '}
+            <a
+              className="tg__nested-link"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.digitalocean.com/"
+            >
+              {'Check out how you can create your own Digital Ocean Droplet'}
+            </a>
+            .
           </p>
           <h3
             className="
@@ -236,11 +286,12 @@ const IndexPage = () => (
                 m-t--24
               "
           >
-            CI (continuous integration) is a very important tool in the
-            industry. A CI runs test against your code automatically and lets
-            you know if any tests are failing or not for a specific commit.
-            Blocking pull request merges when a CI is failing helps keep the
-            master branch working with no regressions.
+            <span className="tg__c--primary tg__w--500">CI</span> (continuous
+            integration) is a very important tool in the industry. A CI runs
+            test against your code automatically and lets you know if any tests
+            are failing or not for a specific commit. Blocking pull request
+            merges when a CI is failing helps keep the master branch working
+            with no regressions.
           </p>
           <p
             className="
@@ -254,8 +305,12 @@ const IndexPage = () => (
                 m-t--24
               "
           >
-            Travis CI gives you unlimited builds for private repos while you are
-            a student so be sure to take advantange of this amazing service!
+            Travis CI gives you{' '}
+            <span className="tg__c--primary tg__w--500">
+              unlimited builds for private repos
+            </span>{' '}
+            while you are a student so be sure to take advantange of this
+            amazing service!
           </p>
           <h3
             className="
@@ -316,9 +371,25 @@ const IndexPage = () => (
                 m-t--24
               "
           >
-            The free 500,000 events/month should be more than enough for you to
-            utilize for any app you integrate Sentry in.
+            The{' '}
+            <span className="tg__c--primary tg__w--500">
+              free 500,000 events/month
+            </span>{' '}
+            should be more than enough for you to utilize for any app you
+            integrate Sentry in.
           </p>
+          <div className="m-t--64 tg__t--center">
+            <div className="button">
+              <a
+                className="button__text"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://education.github.com/pack"
+              >
+                GET THE GITHUB STUDENT PACK
+              </a>
+            </div>
+          </div>
         </div>
       </Container>
       <Footer />
