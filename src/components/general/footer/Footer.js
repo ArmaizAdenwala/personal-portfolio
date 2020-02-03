@@ -49,6 +49,12 @@ export default class Footer extends Component {
               >
                 Home
               </Link>
+              <Link
+                className="footer__link tg__c--primary--dark tg__c--secondary"
+                to={'/projects'}
+              >
+                Projects
+              </Link>
             </div>
             <div
               className="

@@ -45,7 +45,7 @@ const IndexPage = () => (
           src={UpdatesImage}
         />
       </Container>
-      <div className="project__section">
+      <div className="page__section">
         <Container>
           <div className="flex--h-center">
             <div className="tg__t--center">

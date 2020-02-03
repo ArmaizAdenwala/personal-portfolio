@@ -25,6 +25,17 @@ body {
       margin-top: $hero-height + 64px;
     }
   }
+  &__section {
+    background-color: $background--light-2;
+    width: 100%;
+    padding: 64px 0;
+    @include respond-to('medium') {
+      padding: 96px 0;
+    }
+    @include respond-to('large') {
+      padding: 96px 0;
+    }
+  }
 }
 
 .m {
@@ -111,4 +122,3 @@ br {
     height: 100%;
   }
 }
-   

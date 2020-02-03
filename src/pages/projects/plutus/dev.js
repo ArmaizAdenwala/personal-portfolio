@@ -205,7 +205,7 @@ const IndexPage = () => (
           </p>
         </div>
       </Container>
-      <div className="project__section">
+      <div className="page__section">
         <Container>
           <div className="flex--h-center">
             <div className="tg__t--center">

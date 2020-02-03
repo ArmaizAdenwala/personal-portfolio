@@ -2,21 +2,10 @@
 @import "../../styles/mixins";
 
 .project {
-    &__section {
-      background-color: $background--light-2;
-      width: 100%;
-      padding: 64px 0;
-      @include respond-to('medium') {
-        padding: 96px 0;
-      }
-      @include respond-to('large') {
-        padding: 96px 0;
-      }
-    }
-    &__card {
-      background-color: #fafafa ;
-      padding: 32px 32px;
-      border-radius: 4px;
-      margin: 32px 0;
-    }
+  &__card {
+    background-color: #fafafa ;
+    padding: 32px 32px;
+    border-radius: 4px;
+    margin: 32px 0;
   }
+}
