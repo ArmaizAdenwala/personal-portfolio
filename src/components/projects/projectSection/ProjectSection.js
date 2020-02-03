@@ -16,7 +16,11 @@ export default class ProjectSection extends Component {
             tg__t--center--s
           "
           >
-            <img loading="lazy" className="project-section__img" src={this.props.src} />
+            <img
+              loading="lazy"
+              className="project-section__img"
+              src={this.props.src}
+            />
           </div>
           <div className="g__col-12--s g__col-7--m g__col-7--l flex--v-center">
             <h3
@@ -27,8 +31,7 @@ export default class ProjectSection extends Component {
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-                m-v--8
-              "
+  m-v--8"
             >
               {this.props.title}
             </h3>

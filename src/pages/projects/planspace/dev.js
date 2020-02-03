@@ -36,8 +36,7 @@ const IndexPage = () => (
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-                m-v--8
-              "
+  m-v--8"
           >
             Video Demo
           </h3>
@@ -50,7 +49,8 @@ const IndexPage = () => (
               frameborder="0"
               loading="lazy"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+              allowfullscreen
+            ></iframe>
           </div>
           <h3
             className="
@@ -74,8 +74,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             {'PlanSpace was build with '}
             <span className="tg__c--primary tg__w--500">React Native</span>
@@ -134,8 +133,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             Since this project was made at a hackathon, the biggest challenge
             was creating a functional app within the 24 hours. I went to the
@@ -173,8 +171,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             I learned how to completely setup a nearly production ready
             fullstack app from scratch. It allowed me to fine tune my skills in

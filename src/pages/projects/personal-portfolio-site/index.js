@@ -36,8 +36,7 @@ const IndexPage = () => (
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-                m-v--8
-              "
+                m-v--8"
           >
             What was this built with?
           </h3>
@@ -50,7 +49,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-              "
+                tg__ti--16"
           >
             {'My personal portfolio website was built with '}
             <span className="tg__c--primary tg__w--500">React.js</span>
@@ -75,8 +74,7 @@ const IndexPage = () => (
                 tg__c--primary
                 tg__w--700
                 m-v--8
-                m-t--64
-              "
+                m-t--64"
           >
             What were the biggest challenges?
           </h3>
@@ -89,7 +87,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-              "
+                tg__ti--16"
           >
             The project was built with SEO in mind. Originally the app was built
             as a single page app in React.js, however, I realized that SPA's are
@@ -105,8 +103,7 @@ const IndexPage = () => (
                 tg__c--primary
                 tg__w--700
                 m-v--8
-                m-t--64
-              "
+                m-t--64"
           >
             What did I learn?
           </h3>
@@ -119,7 +116,7 @@ const IndexPage = () => (
                 tg__lh--1-75--m
                 tg__lh--1-75--l
                 m-v--8
-              "
+                tg__ti--16"
           >
             {'I used to use '}
             <span className="tg__c--primary tg__w--500">Ruby Middleman</span>

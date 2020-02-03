@@ -37,8 +37,7 @@ const IndexPage = () => (
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-                m-v--8
-              "
+  m-v--8"
           >
             Why was this built?
           </h3>
@@ -50,13 +49,12 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
-            When I was attending Granite Bay High School, I was in a class called GBiT. It was a
-            class for students interested in tech to grow their knowledge in it.
-            There were multiple groups in that class, one of which was the CS  group that
-            I was a part of.
+            When I was attending Granite Bay High School, I was in a class
+            called GBiT. It was a class for students interested in tech to grow
+            their knowledge in it. There were multiple groups in that class, one
+            of which was the CS group that I was a part of.
             <br />
             <br />
             I knew I wanted to do something in computer science, I just didn't
@@ -67,9 +65,9 @@ const IndexPage = () => (
             <br />
             Eventually, I got into web development and enjoyed it. I wasn't good
             at it, but I was learning. Soon I wanted to try iOS and Android
-            development. Unfortunately that was a big task to accomplish at the time, so I
-            stuck with designing a prototype mobile app in HTML, CSS, and
-            Javascript.
+            development. Unfortunately that was a big task to accomplish at the
+            time, so I stuck with designing a prototype mobile app in HTML, CSS,
+            and Javascript.
             <br />
             <br />
             This project was later presented to the class as part of our final
@@ -97,8 +95,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             {'Plutus was build with '}
             <span className="tg__c--primary tg__w--500">HTML</span>
@@ -138,8 +135,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             This was one of the first projects I made while learning html and
             css, so I had difficulty learning how to implement ui frameworks and
@@ -167,8 +163,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             This project was a key stepping stone for me to pursue web
             development and eventually mobile app development. Looking back at

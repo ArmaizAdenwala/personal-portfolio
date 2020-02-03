@@ -41,8 +41,7 @@ const IndexPage = () => (
                 tg__t--center--s
                 tg__c--primary
                 tg__w--700
-                m-v--8
-              "
+  m-v--8"
           >
             Video Demo
           </h3>
@@ -80,8 +79,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             When I lived in the dorms at Sac State, I consistently locked myself
             out of my dorm due to the locks used for their doors. My go-to
@@ -122,8 +120,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             {'The arduino bluetooth app was build with '}
             <span className="tg__c--primary tg__w--500">React Native</span>
@@ -161,8 +158,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             I have only worked with IOT once before this, so I chose something
             that was simple that was still a challenge. The first step was to
@@ -203,8 +199,7 @@ const IndexPage = () => (
                 tg__lh--1-5--s
                 tg__lh--1-75--m
                 tg__lh--1-75--l
-                m-v--8
-              "
+  m-v--8"
           >
             I learned how to take an actual problem I had and apply a solution.
             Despite only having a small amount of experience with Arduino, I
