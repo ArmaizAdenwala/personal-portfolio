@@ -79,6 +79,7 @@ const IndexPage = () => (
           </div>
         </Container>
       </div>
+      <Footer />
     </div>
   </div>
 );

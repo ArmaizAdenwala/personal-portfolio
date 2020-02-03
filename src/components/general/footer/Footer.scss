@@ -1,6 +1,11 @@
 @import "../../../styles/colors";
 
 .footer {
-  height: 500px;
-  background-color: $background;
+  background-color: $background--dark;
+  &__link {
+    display: block;
+    margin-top: 8px;
+    text-decoration: none;
+    font-weight: 500;
+  }
 }

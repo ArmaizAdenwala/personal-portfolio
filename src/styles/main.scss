@@ -41,6 +41,16 @@ body {
   @include responsive-modifiers('&-t--64') {
     margin-top: 64px;
   }
+  @include responsive-modifiers('&-b--32') {
+    margin-bottom: 32px;
+  }
+}
+
+.p {
+  @include responsive-modifiers('&-v--32') {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 
 .flex {
