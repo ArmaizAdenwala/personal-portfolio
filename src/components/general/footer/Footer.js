@@ -18,19 +18,19 @@ export default class Footer extends Component {
             >
               <h4 className="m-v--8">Contact</h4>
               <a
-                className="footer__link tg__c--primary--dark tg__c--secondary"
+                className="footer__link footer__link--center tg__c--primary--dark tg__c--secondary"
                 href={'mailto:armaiz.adenwala@gmail.com'}
               >
-                armaiz.adenwala@gmail.com
+                Email
               </a>
               <a
-                className="footer__link tg__c--primary--dark tg__c--secondary"
+                className="footer__link footer__link--center tg__c--primary--dark tg__c--secondary"
                 href={'https://www.linkedin.com/in/armaizadenwala/'}
               >
                 LinkedIn
               </a>
               <a
-                className="footer__link tg__c--primary--dark tg__c--secondary"
+                className="footer__link footer__link--center tg__c--primary--dark tg__c--secondary"
                 href={'https://github.com/ArmaizAdenwala'}
               >
                 Github
@@ -54,6 +54,12 @@ export default class Footer extends Component {
                 to={'/projects'}
               >
                 Projects
+              </Link>
+              <Link
+                className="footer__link tg__c--primary--dark tg__c--secondary"
+                to={'/experience'}
+              >
+                Experience
               </Link>
             </div>
             <div

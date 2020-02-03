@@ -2,7 +2,6 @@ import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../components/general';
 import ProjectCard from '../../components/home/projects/ProjectCard';
 import '../../styles/main.scss';
-import './Project.scss';
 import SEO from '../../components/seo';
 
 const IndexPage = () => (

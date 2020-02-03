@@ -1,11 +1,22 @@
 @import "../../../styles/colors";
+@import "../../../styles/mixins";
 
 .footer {
   background-color: $background--dark;
   &__link {
-    display: block;
     margin-top: 8px;
     text-decoration: none;
     font-weight: 500;
+    display: block;
+    &--center {
+      display: inline-block;
+      width: 96px;
+      text-align: center;
+      @include respond-to('small') {
+        display: block;
+        width: auto;
+        text-align: left;
+      }
+    }
   }
 }
