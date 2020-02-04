@@ -24,7 +24,7 @@ export default class Leadership extends Component {
                 President of Hammock Club
               </h5>
               <h6 className="tg__title-6 leadership__card__subtitle">
-                (January 2018 - January 2019)
+                (January 2019 - January 2020)
               </h6>
               <ul className="leadership__card__details">
                 <li className="tg__body-1">
