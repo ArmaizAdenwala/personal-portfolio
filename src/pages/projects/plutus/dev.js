@@ -11,15 +11,7 @@ const IndexPage = () => (
       secondaryTitle="Armaiz"
       description="Developer details for the Plutus prototype app."
     />
-    <Navbar
-      links={['Projects', 'Plutus']}
-      customLinks={[
-        {
-          name: 'GITHUB',
-          to: 'https://github.com/ArmaizAdenwala/plutus',
-        },
-      ]}
-    />
+    <Navbar links={['Projects', 'Plutus']} />
     <Hero
       emphasized="Plutus"
       description="Developer Details"
