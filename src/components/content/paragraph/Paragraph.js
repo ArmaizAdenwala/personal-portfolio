@@ -21,6 +21,13 @@ const Paragraph = ({ children }) => (
               className: 'tg__c--primary tg__w--500',
             },
           },
+          a: {
+            props: {
+              className: 'tg__nested-link',
+              rel: 'noopener noreferrer',
+              target: '_blank',
+            },
+          },
         },
       }}
     >
