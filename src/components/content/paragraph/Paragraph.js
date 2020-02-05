@@ -1,4 +1,5 @@
 import React from 'react';
+import Markdown from 'markdown-to-jsx';
 
 const Paragraph = ({ children }) => (
   <p
@@ -12,7 +13,19 @@ const Paragraph = ({ children }) => (
       m-v--8
       m-t--24"
   >
-    {children}
+    <Markdown
+      options={{
+        overrides: {
+          strong: {
+            props: {
+              className: 'tg__c--primary tg__w--500',
+            },
+          },
+        },
+      }}
+    >
+      {children}
+    </Markdown>
   </p>
 );
 
