@@ -1,5 +1,6 @@
 import React from 'react';
 import { TechTags } from '../general';
+import { Link } from 'gatsby';
 import './BlogCard.scss';
 
 const _renderUrl = url => {
@@ -11,20 +12,20 @@ const _renderUrl = url => {
         m-t--32
       "
       >
-        <a
-          href={url}
+        <Link
+          to={url}
           className="
             tg__button
           "
         >
           VIEW POST
-        </a>
+        </Link>
       </div>
     );
   }
 };
 
-const ProjectCard = ({ name, description, date, tags, url }) => (
+const BlogCard = ({ name, description, date, tags, url }) => (
   <div className="project-card">
     <div className="project-card__content">
       <div className="project-card__content__title-container">
@@ -50,4 +51,4 @@ const ProjectCard = ({ name, description, date, tags, url }) => (
   </div>
 );
 
-export default ProjectCard;
+export default BlogCard;
