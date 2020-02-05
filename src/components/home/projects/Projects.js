@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from '../../../components/general';
 import ProjectCard from './ProjectCard';
+import { Link } from 'gatsby';
 import './Projects.scss';
 
 export default class Projects extends Component {
@@ -51,9 +52,9 @@ export default class Projects extends Component {
           </Container>
           <div className="m-t--32 tg__t--center">
             <div className="button">
-              <a className="button__text" href="/projects">
+              <Link className="button__text" to="/projects/">
                 VIEW ALL PROJECTS
-              </a>
+              </Link>
             </div>
           </div>
         </div>

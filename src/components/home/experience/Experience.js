@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from '../../../components/general';
+import { Link } from 'gatsby';
 import './Experience.scss';
 
 export default class Experience extends Component {
@@ -50,9 +51,9 @@ export default class Experience extends Component {
             </div>
             <div className="m-t--32 tg__t--center">
               <div className="button">
-                <a className="button__text" href="/experience">
+                <Link className="button__text" to="/experience">
                   VIEW DETAILED WORK EXPERIENCE
-                </a>
+                </Link>
               </div>
             </div>
           </Container>
