@@ -6,11 +6,11 @@ import ArmaizLogo from './armaiz-developer-code-logo.png';
 export default class Navbar extends Component {
   links = {
     Projects: {
-      to: '/projects',
+      to: '/projects/',
       name: 'PROJECTS',
     },
     Blog: {
-      to: '/blog',
+      to: '/blog/',
       name: 'BLOG',
     },
     PlanSpace: {

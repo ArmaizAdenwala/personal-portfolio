@@ -9,6 +9,7 @@ const IndexPage = () => (
     <SEO
       title="SpaceGrab - Java Game"
       secondaryTitle="Armaiz"
+      canonical="https://armaizadenwala.com/projects/spacegrab"
       description="A simple Java game made from scratch in 2014."
     />
     <Navbar

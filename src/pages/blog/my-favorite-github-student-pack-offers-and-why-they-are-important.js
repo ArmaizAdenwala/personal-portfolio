@@ -1,14 +1,14 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../../components/general';
-import '../../../styles/main.scss';
-import '../Blog.scss';
-import VSCodeImage from './vscode_image_armaiz_adenwala.jpg';
-import SEO from '../../../components/seo';
+import { Hero, Navbar, Footer, Container } from '../../components/general';
+import '../../styles/main.scss';
+import './Blog.scss';
+import SEO from '../../components/seo';
 
 const IndexPage = () => (
   <div>
     <SEO
       title="My Favorite Github Student Pack Offers and Why They Are Important"
+      canonical="https://armaizadenwala.com/blog/my-favorite-github-student-pack-offers-and-why-they-are-important"
       secondaryTitle="Armaiz"
       description="My insights on the Github Student Pack and why you should take advantange of it"
     />

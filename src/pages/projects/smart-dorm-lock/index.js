@@ -9,6 +9,7 @@ const IndexPage = () => (
     <SEO
       title="Smart Dorm Lock - Arduino and React Native"
       secondaryTitle="Armaiz"
+      canonical="https://armaizadenwala.com/projects/smart-dorm-lock"
       description="A mobile app used to unlock my dorm door without a physical key. Built with Arduino and React Native."
     />
     <Navbar

@@ -9,6 +9,7 @@ const IndexPage = () => (
     <SEO
       title="PlanSpace - React Native and Ruby on Rails App"
       secondaryTitle="Armaiz"
+      canonical="https://armaizadenwala.com/projects/planspace/dev"
       description="Developer details for the PlanSpace React Native app."
     />
     <Navbar links={['Projects', 'PlanSpace']} />

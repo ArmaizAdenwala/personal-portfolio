@@ -9,6 +9,7 @@ const IndexPage = () => (
     <SEO
       title="Personal Portfolio Website - React.js"
       secondaryTitle="Armaiz"
+      canonical="https://armaizadenwala.com/projects/personal-portfolio-site"
       description="A website to showcase my projects, built with React.js and Gatsby"
     />
     <Navbar

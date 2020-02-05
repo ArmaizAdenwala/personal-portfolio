@@ -12,7 +12,9 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Plutus - Shopping App Concept"
+      secondaryTitle="Armaiz"
       description="A prototype shopping app for my highschool class."
+      canonical="https://armaizadenwala.com/projects/plutus"
     />
     <Navbar links={['Projects', 'PlutusDev']} />
     <Hero

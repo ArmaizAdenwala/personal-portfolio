@@ -9,6 +9,7 @@ const IndexPage = () => (
     <SEO
       title="My Projects"
       secondaryTitle="Armaiz"
+      canonical="https://armaizadenwala.com/projects/"
       description="A list of all of the projects that I have worked on since sophomore year of highschool"
     />
     <Navbar

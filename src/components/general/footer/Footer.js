@@ -51,7 +51,7 @@ export default class Footer extends Component {
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'/projects'}
+                to={'/projects/'}
               >
                 Projects
               </Link>
@@ -63,7 +63,7 @@ export default class Footer extends Component {
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'/blog'}
+                to={'/blog/'}
               >
                 Blog
               </Link>

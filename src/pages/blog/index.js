@@ -8,6 +8,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Blog"
+      canonical="https://armaizadenwala.com/blog/"
       secondaryTitle="Armaiz"
       description="A developer blog to share what I learn."
     />

@@ -9,6 +9,7 @@ const IndexPage = () => (
     <SEO
       title="Plutus - Material Design Phonegap App"
       secondaryTitle="Armaiz"
+      canonical="https://armaizadenwala.com/projects/plutus/dev"
       description="Developer details for the Plutus prototype app."
     />
     <Navbar links={['Projects', 'Plutus']} />
