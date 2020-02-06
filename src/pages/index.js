@@ -11,7 +11,7 @@ const IndexPage = () => (
     <SEO
       title="Home"
       description="Hi, I'm Armaiz Adenwala, a Software Engineer that welcomes challenges and provides solutions. Come check out my projects!"
-      canonical="https://armaizadenwala.com"
+      canonical="https://armaizadenwala.com/"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero

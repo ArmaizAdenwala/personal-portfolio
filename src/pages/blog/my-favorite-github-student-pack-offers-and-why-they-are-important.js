@@ -8,7 +8,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="My Favorite Github Student Pack Offers and Why They Are Important"
-      canonical="https://armaizadenwala.com/blog/my-favorite-github-student-pack-offers-and-why-they-are-important"
+      canonical="https://armaizadenwala.com/blog/my-favorite-github-student-pack-offers-and-why-they-are-important/"
       secondaryTitle="Armaiz"
       description="My insights on the Github Student Pack and why you should take advantange of it"
     />

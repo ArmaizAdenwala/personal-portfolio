@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://armaizadenwala.com</loc>
+    <loc>https://armaizadenwala.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1</priority>
     <lastmod>2020-02-03</lastmod>
@@ -13,55 +13,55 @@
     <lastmod>2020-02-03</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/experience</loc>
+    <loc>https://armaizadenwala.com/experience/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-02</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/projects/planspace</loc>
+    <loc>https://armaizadenwala.com/projects/planspace/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-02</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/projects/planspace/dev</loc>
+    <loc>https://armaizadenwala.com/projects/planspace/dev/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-02</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/projects/personal-portfolio-site</loc>
+    <loc>https://armaizadenwala.com/projects/personal-portfolio-site/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-02</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/projects/smart-dorm-lock</loc>
+    <loc>https://armaizadenwala.com/projects/smart-dorm-lock/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-02</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/projects/plutus</loc>
+    <loc>https://armaizadenwala.com/projects/plutus/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-02</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/projects/plutus/dev</loc>
+    <loc>https://armaizadenwala.com/projects/plutus/dev/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-02</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/projects/led-rave-mask</loc>
+    <loc>https://armaizadenwala.com/projects/led-rave-mask/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-03</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/projects/spacegrab</loc>
+    <loc>https://armaizadenwala.com/projects/spacegrab/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-03</lastmod>
@@ -73,15 +73,21 @@
     <lastmod>2020-02-05</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/my-favorite-github-student-pack-offers-and-why-they-are-important</loc>
+    <loc>https://armaizadenwala.com/blog/my-favorite-github-student-pack-offers-and-why-they-are-important/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-03</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-rails-setup</loc>
+    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-rails-setup/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-05</lastmod>
+    <lastmod>2020-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-postgresql-setup/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-02-06</lastmod>
   </url>
 </urlset>
