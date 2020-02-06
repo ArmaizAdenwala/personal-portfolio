@@ -157,3 +157,10 @@ code {
   display: inline-block;
   line-height: normal;
 }
+
+.full-width-img {
+  width: 100%;
+  max-width: 650px;
+  margin: 32px auto;
+  display: block;
+}

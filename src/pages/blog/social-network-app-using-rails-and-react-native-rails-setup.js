@@ -4,6 +4,9 @@ import { Title, Paragraph } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
+import FirstCommit from './images/social-network/github_first_commit.png';
+import NewRepo from './images/social-network/github_new_repo.png';
+import BlankRepo from './images/social-network/github_blank_repo.png';
 
 const IndexPage = () => (
   <div>
@@ -75,19 +78,20 @@ const IndexPage = () => (
 
           <Title>Setting Up The Respository</Title>
           <Paragraph>
-            I like to create my GitHub repository ASAP. So this is a good
-            starting point to create our GitHub repo.
+            I like to create my GitHub repository ASAP. So this is a good time
+            to create our GitHub repo. [Click here to create a new repository on
+            GitHub](https://github.com/new) and name it to whatever you like.
           </Paragraph>
+          <img className="full-width-img" src={NewRepo} loading="lazy" />
           <Paragraph>
-            Keep in mind that Rails automatically creates a readme file for us.
-            We can verify that by running `ls *.md` to print out all markdown
-            files in our project.
+            Once you create a repository, GitHub will provide you with some
+            instructions that includes creating a `README.md` file.
           </Paragraph>
-          <pre>
-            {'~/code/social-media-blog-api$ ls *.md'}
-            <br />
-            {'README.md'}
-          </pre>
+          <img className="full-width-img" src={BlankRepo} loading="lazy" />
+          <Paragraph>
+            Keep in mind that Rails automatically creates a readme file for us
+            so we won't need to worry about creating a new readme.
+          </Paragraph>
           <Paragraph>
             Lets initiate this directory as a git repository by running `$ git
             init`. Since we already have our files, we can run `$ git add .` to
@@ -123,6 +127,7 @@ const IndexPage = () => (
             Now we have GitHub setup! Checkout your GitHub repo url to see your
             files.
           </Paragraph>
+          <img className="full-width-img" src={FirstCommit} loading="lazy" />
           <Title>Confirming The Setup</Title>
           <Paragraph>
             We are now ready to continue with our rails development. Lets run `$
