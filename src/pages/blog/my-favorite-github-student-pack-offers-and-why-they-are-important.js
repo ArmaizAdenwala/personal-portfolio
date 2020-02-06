@@ -16,7 +16,7 @@ const IndexPage = () => (
     <Hero
       emphasized="My Favorite Github Student Pack Offers and Why They Are Important"
       description="My insights on the Github Student Pack and why you should take advantange of it"
-      date="Feburary 3rd 2020"
+      date="Feburary 3rd, 2020"
       extraContent
     />
     <div className="page__content">

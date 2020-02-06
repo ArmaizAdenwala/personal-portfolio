@@ -22,7 +22,7 @@ const IndexPage = () => (
     <Hero
       emphasized="Let's Create A Social Network Using Rails And React Native - Part 1: Rails Setup"
       description="This series will be covering how to create a social network app using ruby on rails and react native"
-      date="Feburary 7th, 2020"
+      date="Feburary 5th, 2020"
       extraContent
     />
     <div className="page__content">
