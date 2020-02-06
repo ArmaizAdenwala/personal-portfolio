@@ -36,6 +36,11 @@ const IndexPage = () => (
             with captions.
           </Paragraph>
           <Paragraph>
+            If you are stuck at any point, you can [refer to the GitHub repo for
+            part
+            1](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part1).
+          </Paragraph>
+          <Paragraph>
             We will be covering an array of features that will be implemented
             using __Ruby on Rails__ and __React Native__. Before we work on the
             __React Native__ side, we will direct our focus on __Ruby on
