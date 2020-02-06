@@ -29,7 +29,7 @@ const IndexPage = () => (
       <Container>
         <div className="project__card">
           <Title first>A Quick Recap</Title>
-          <Paragraph>
+          <Paragraph disableRel>
             In the previous article we [installed Ruby on Rails and initiated a
             new Rails
             API](/blog/social-network-app-using-rails-and-react-native-rails-setup/).

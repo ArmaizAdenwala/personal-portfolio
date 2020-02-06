@@ -1,7 +1,7 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 
-const Paragraph = ({ children }) => (
+const Paragraph = ({ children, disableRel }) => (
   <p
     className="
       tg__title-7--s
@@ -22,11 +22,13 @@ const Paragraph = ({ children }) => (
             },
           },
           a: {
-            props: {
-              className: 'tg__nested-link',
-              rel: 'noopener noreferrer',
-              target: '_blank',
-            },
+            props: disableRel
+              ? { className: 'tg__nested-link' }
+              : {
+                  className: 'tg__nested-link',
+                  rel: 'noopener noreferrer',
+                  target: '_blank',
+                },
           },
         },
       }}
