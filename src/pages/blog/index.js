@@ -31,7 +31,7 @@ const IndexPage = () => (
             name="Let's Create A Social Network App Using Rails And React Native - Part 2: PostgreSQL Setup"
             description="Learn how to setup a PostgreSQL database for a Rails app"
             date="Feburary 6th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-rails-setup/"
+            url="/blog/social-network-app-using-rails-and-react-native-postgresql-setup/"
           />
           <BlogCard
             name="Let's Create A Social Network Using Rails And React Native - Part 1: Rails Setup"
