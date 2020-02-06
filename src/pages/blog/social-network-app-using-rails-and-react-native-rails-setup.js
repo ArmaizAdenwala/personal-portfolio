@@ -8,6 +8,7 @@ import FirstCommit from './images/social-network/github_first_commit.png';
 import NewRepo from './images/social-network/github_new_repo.png';
 import BlankRepo from './images/social-network/github_blank_repo.png';
 import SocialImage from './images/social-network/part1_social.png';
+import { Link } from 'gatsby';
 
 const IndexPage = () => (
   <div>
@@ -153,22 +154,16 @@ const IndexPage = () => (
           <Paragraph>
             Congrats! We now have a foundation to work off of for our Rails API!
           </Paragraph>
-          <Paragraph>
-            _Part 2 (PostgreSQL Setup) will be released soon. Please check back
-            later._
-          </Paragraph>
-          {/* <div className="m-t--64 tg__t--center">
+          <div className="m-t--64 tg__t--center">
             <div className="button">
-              <a
+              <Link
                 className="button__text"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://education.github.com/pack"
+                to="/blog/social-network-app-using-rails-and-react-native-postgresql-setup"
               >
                 VIEW PART TWO: POSTGRESQL SETUP
-              </a>
+              </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </Container>
       <Footer />
