@@ -7,6 +7,7 @@ import SEO from '../../components/seo';
 import FirstCommit from './images/social-network/github_first_commit.png';
 import NewRepo from './images/social-network/github_new_repo.png';
 import BlankRepo from './images/social-network/github_blank_repo.png';
+import SocialImage from './images/social-network/part1_social.png';
 
 const IndexPage = () => (
   <div>
@@ -14,6 +15,7 @@ const IndexPage = () => (
       title="Let's Create A Social Network App Using Rails And React Native - Part 1: Rails Setup"
       canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-rails-setup"
       secondaryTitle="Armaiz"
+      image={SocialImage}
       description="This series will be covering how to create a social network app using ruby on rails and react native."
     />
     <Navbar links={['Projects', 'Blog']} />
@@ -30,13 +32,14 @@ const IndexPage = () => (
           <Paragraph>
             In this blog post series, I will be walking you through my process
             of creating a simple social network app. By the end of this series
-            we will have a fullstack app where multiple users can use as a
-            social media app to post their pictures with captions.
+            we will have a fullstack app where users can post their pictures
+            with captions.
           </Paragraph>
           <Paragraph>
             We will be covering an array of features that will be implemented
             using __Ruby on Rails__ and __React Native__. Before we work on the
-            __React Native__ side, lets focus on just __Ruby on Rails__.
+            __React Native__ side, we will direct our focus on __Ruby on
+            Rails__.
           </Paragraph>
 
           <Title>Installing Ruby and Rails</Title>
@@ -46,41 +49,43 @@ const IndexPage = () => (
             version `6.0.2.1`
           </Paragraph>
           <Paragraph>
-            I highly suggest using __rvm__ to manage your ruby versions. [Click
-            here to view the documentation for RVM](https://rvm.io/)
+            I suggest using __RVM__ to manage your ruby versions. [Click here to
+            view the documentation for RVM](https://rvm.io/)
           </Paragraph>
           <Paragraph>
-            Using RVM, installing Ruby `2.6.5` is very straightforward by
-            running `$ rvm install 2.6.5` in your terminal.
+            Installing Ruby `2.6.5` is very straightforward by running the
+            following command in your terminal:
           </Paragraph>
+          <pre>$ rvm install 2.6.5</pre>
           <Paragraph>
             Going forward, if you ever want to use `2.6.5`, you would just need
             to run: `$ rvm use 2.6.5`
           </Paragraph>
-          <Paragraph>
-            Now that Ruby is setup, install Rails `6.0.2.1`: `$ gem install
-            rails -v 6.0.2.1`
-          </Paragraph>
-
+          <Paragraph>Once Ruby is setup, install Rails `6.0.2.1`:</Paragraph>
+          <pre>$ gem install rails -v 6.0.2.1</pre>
           <Title>Creating the API</Title>
+          <Paragraph>To create a new Rails API, run</Paragraph>
+          <pre>
+            $ rails new social-media-blog-api --api --database=postgresql
+          </pre>
           <Paragraph>
-            To create a new Rails API, run `$ rails new social-media-blog-api
-            --api --database=postgresql`
+            This command will create a new app called `social-media-blog-api`
+            and will preconfigure it for an api only stack using the `--api`
+            flag. It will also prepare it to be used with a __PostgreSQL__
+            database using the `--database=postgresql` flag.
           </Paragraph>
           <Paragraph>
-            This command will create a new app called social-media-blog-api and
-            will preconfigure it for an api only stack using the `--api` stack
+            Once this has been created, we can now enter the app directory by
+            running
           </Paragraph>
-          <Paragraph>
-            Once this has been created, we can now cd into it ``$ cd
-            social-media-blog-api``
-          </Paragraph>
+          <pre>$ cd social-media-blog-api</pre>
 
           <Title>Setting Up The Respository</Title>
           <Paragraph>
             I like to create my GitHub repository ASAP. So this is a good time
-            to create our GitHub repo. [Click here to create a new repository on
-            GitHub](https://github.com/new) and name it to whatever you like.
+            to create our GitHub repo. [Click here to create a new
+            repository](https://github.com/new) and name it to whatever you
+            like.
           </Paragraph>
           <img className="full-width-img" src={NewRepo} loading="lazy" />
           <Paragraph>
@@ -90,7 +95,7 @@ const IndexPage = () => (
           <img className="full-width-img" src={BlankRepo} loading="lazy" />
           <Paragraph>
             Keep in mind that Rails automatically creates a readme file for us
-            so we won't need to worry about creating a new readme.
+            so we won't need to worry about creating a new one.
           </Paragraph>
           <Paragraph>
             Lets initiate this directory as a git repository by running `$ git
@@ -111,18 +116,22 @@ const IndexPage = () => (
           </Paragraph>
           <Paragraph>
             We would now have to tell git that we want to connect this local
-            respository with a remote repository hosted on Github by running: `$
-            git remote add origin
-            https://github.com/ArmaizAdenwala/social-media-blog-api.git` _(Keep
-            in mind that your url will be different, refer to the GitHub
+            respository with a remote repository hosted on Github by running:
+          </Paragraph>
+          <pre>
+            $ git remote add origin
+            https://github.com/ArmaizAdenwala/social-media-blog-api.git
+          </pre>
+          <Paragraph>
+            _(Keep in mind that your url will be different, refer to the GitHub
             repository page to find your url)_.
           </Paragraph>
           <Paragraph>
-            We will now need to tell git that we want to push our master branch
-            to `origin`, which is the default name of the repository GitHub
-            created.
+            We will now need to tell git that we want to push our `master`
+            branch to `origin`, which is the default name of the repository
+            GitHub created.
           </Paragraph>
-          <Paragraph>`$ git push -u origin master`</Paragraph>
+          <pre>$ git push -u origin master</pre>
           <Paragraph>
             Now we have GitHub setup! Checkout your GitHub repo url to see your
             files.
@@ -137,7 +146,7 @@ const IndexPage = () => (
             port of `3000`.
           </Paragraph>
           <Paragraph>
-            Congrats! We now have a foundation for out rails api!
+            Congrats! We now have a foundation to work off of for our Rails API!
           </Paragraph>
           <Paragraph>
             _Part 2 (PostgreSQL Setup) will be released soon. Please check back

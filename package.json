@@ -40,7 +40,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "deploy:prod": "rm -rf .cache public && gatsby build && heroku static:deploy --app armaiz-portfolio",
-    "deploy:stag": "rm -rf .cache public && git push stag master",
+    "deploy:stag": "git push stag master",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
