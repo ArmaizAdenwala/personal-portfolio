@@ -9,7 +9,7 @@ const IndexPage = () => (
     <SEO
       title="Programmable LED Rave Mask"
       secondaryTitle="Armaiz"
-      canonical="https://armaizadenwala.com/projects/led-rave-mask"
+      canonical="https://armaizadenwala.com/projects/led-rave-mask/"
       description="An LED rave mask using individually addressable WS2812B led light strips and an Arduino."
     />
     <Navbar
@@ -17,7 +17,7 @@ const IndexPage = () => (
       customLinks={[
         {
           name: 'GITHUB',
-          to: 'https://github.com/ArmaizAdenwala/led-rave-mask',
+          to: 'https://github.com/ArmaizAdenwala/led-rave-mask/',
         },
       ]}
     />

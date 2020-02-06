@@ -57,7 +57,7 @@ export default class Footer extends Component {
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'/experience'}
+                to={'/experience/'}
               >
                 Experience
               </Link>
@@ -77,37 +77,37 @@ export default class Footer extends Component {
               <h4 className="m-v--8">Projects</h4>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'/projects/planspace'}
+                to={'/projects/planspace/'}
               >
                 PlanSpace
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'projects/personal-portfolio-site'}
+                to={'projects/personal-portfolio-site/'}
               >
                 Personal Portfolio
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'projects/smart-dorm-lock'}
+                to={'projects/smart-dorm-lock/'}
               >
                 Smart Dorm Lock
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'projects/led-rave-mask'}
+                to={'projects/led-rave-mask/'}
               >
                 LED Rave Mask
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'projects/plutus'}
+                to={'projects/plutus/'}
               >
                 Plutus
               </Link>
               <Link
                 className="footer__link tg__c--primary--dark tg__c--secondary"
-                to={'projects/spacegrab'}
+                to={'projects/spacegrab/'}
               >
                 SpaceGrab
               </Link>

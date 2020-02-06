@@ -14,7 +14,7 @@ const IndexPage = () => (
     <SEO
       title="PlanSpace - Automated Chore Management for iOS and Android"
       secondaryTitle="Armaiz"
-      canonical="https://armaizadenwala.com/projects/planspace"
+      canonical="https://armaizadenwala.com/projects/planspace/"
       description="PlanSpace is designed for roommates to have automated chore schedules on a week by week basis."
     />
     <Navbar links={['Projects', 'PlanSpaceDev']} />

@@ -14,19 +14,19 @@ export default class Navbar extends Component {
       name: 'BLOG',
     },
     PlanSpace: {
-      to: '/projects/planspace',
+      to: '/projects/planspace/',
       name: 'PLANSPACE',
     },
     PlanSpaceDev: {
-      to: '/projects/planspace/dev',
+      to: '/projects/planspace/dev/',
       name: 'DEV DETAILS',
     },
     Plutus: {
-      to: '/projects/plutus',
+      to: '/projects/plutus/',
       name: 'PLUTUS',
     },
     PlutusDev: {
-      to: '/projects/plutus/dev',
+      to: '/projects/plutus/dev/',
       name: 'DEV DETAILS',
     },
   };

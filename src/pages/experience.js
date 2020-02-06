@@ -15,7 +15,7 @@ const IndexPage = () => (
     <SEO
       title="My Work Experience"
       secondaryTitle="Armaiz"
-      canonical="https://armaizadenwala.com/experience"
+      canonical="https://armaizadenwala.com/experience/"
       description="Detailed information on my work history."
     />
     <Navbar

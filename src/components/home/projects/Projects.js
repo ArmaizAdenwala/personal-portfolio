@@ -25,7 +25,7 @@ export default class Projects extends Component {
               name="PlanSpace - HackDavis"
               description="App designed for roommates to have automated chore schedules on a week by week basis."
               date="January 2020"
-              url="/projects/planspace"
+              url="/projects/planspace/"
               tags={[
                 'React Native',
                 'Redux',
@@ -40,14 +40,14 @@ export default class Projects extends Component {
               description="A mobile app used to unlock my dorm door without a physical key."
               date="January 2019"
               tags={['React Native', 'Redux', 'C++', 'Arduino', 'IOT']}
-              url="/projects/smart-dorm-lock"
+              url="/projects/smart-dorm-lock/"
             />
             <ProjectCard
               name="Programmable LED Rave Mask"
               description="A LED rave mask using individually addressable WS2812B led light strips and an Arduino"
               date="December 2018"
               tags={['C++', 'Arduino', 'WS2812B LEDS', 'FastLED']}
-              url="/projects/led-rave-mask"
+              url="/projects/led-rave-mask/"
             />
           </Container>
           <div className="m-t--32 tg__t--center">
