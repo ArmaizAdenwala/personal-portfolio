@@ -144,3 +144,23 @@ pre {
   border-radius: 8px;
   overflow: scroll;
 }
+
+code {
+  background: #edf0f2;
+  color: #6771ad;
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 90%;
+  margin: 0 2px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: normal;
+}
+
+.full-width-img {
+  width: 100%;
+  max-width: 650px;
+  margin: 32px auto;
+  display: block;
+}
