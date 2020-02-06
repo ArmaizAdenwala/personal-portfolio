@@ -12,7 +12,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Let's Create A Social Network App Using Rails And React Native - Part 1: Rails Setup"
-      canonical="https://armaizadenwala.com/blog/social-network-using-rails-and-react-native-rails-setup"
+      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-rails-setup"
       secondaryTitle="Armaiz"
       description="This series will be covering how to create a social network app using ruby on rails and react native."
     />
