@@ -158,6 +158,18 @@ code {
   line-height: normal;
 }
 
+blockquote {
+  background: #edf0f2;
+  border-radius: 8px;
+  padding: 6px 32px;
+  margin: 0;
+  @include respond-to('small') {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+  }
+}
 .full-width-img {
   width: 100%;
   max-width: 650px;
