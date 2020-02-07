@@ -48,7 +48,7 @@ const IndexPage = () => (
             Rails__.
           </Paragraph>
 
-          <Title>Installing Ruby and Rails</Title>
+          <Title>Installing Ruby On Rails</Title>
           <Paragraph>
             The first step is to install __Ruby__ and __Rails__ on your
             terminal. We will be using __Ruby__ version `2.6.5` and __Rails__
@@ -70,6 +70,11 @@ const IndexPage = () => (
           <Paragraph>Once Ruby is setup, install Rails `6.0.2.1`:</Paragraph>
           <pre>$ gem install rails -v 6.0.2.1</pre>
           <Title>Creating the API</Title>
+          <Paragraph>
+            Ruby on Rails is capable of providing the backend and the frontend
+            for applications. In this case, we only would need it for the
+            backend. Fortunately, Rails provides us with an api-only option.
+          </Paragraph>
           <Paragraph>To create a new Rails API, run</Paragraph>
           <pre>
             $ rails new social-media-blog-api --api --database=postgresql
@@ -153,6 +158,10 @@ const IndexPage = () => (
           </Paragraph>
           <Paragraph>
             Congrats! We now have a foundation to work off of for our Rails API!
+            As we go on with this series, you will learn more about how Rails
+            works and what it has to offer. I will be doing my best to focus on
+            one component of Rails at a time so that it is easier to understand
+            as a whole.
           </Paragraph>
           <div className="m-t--64 tg__t--center">
             <div className="button">

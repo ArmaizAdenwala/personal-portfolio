@@ -38,8 +38,8 @@ const IndexPage = () => (
           </Paragraph>
           <Title>Configuring The Database.yml Config</Title>
           <Paragraph>
-            Now that we have our api initiated, we need to prepare the database
-            so that we can start creating models in Rails.
+            Now that we have our API initiated, we need to prepare the database
+            for Rails to insert records into.
           </Paragraph>
           <Paragraph>
             Lets checkout the database config file that Rails created for us.
@@ -178,14 +178,14 @@ $ git push`}</pre>
             has superuser privileges means that it has full control of
             everything.
           </Paragraph>
+          <Paragraph>We can create the role by running:</Paragraph>
+          <pre>
+            CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD
+            'password123';
+          </pre>
           <Paragraph>
-            We can create the role by running: `CREATE ROLE social_media_blog
-            LOGIN SUPERUSER PASSWORD 'password123';`
-          </Paragraph>
-          <Paragraph>
-            This will create a role with the name of `social_media_blog` with
-            `password123` as the password. _(Be sure this matches with your_
-            `.env` _file.)_
+            This will create a role named `social_media_blog` with `password123`
+            as the password. _(Be sure this matches with your_ `.env` _file.)_
           </Paragraph>
           <Paragraph>
             If successful, your console should look like this:

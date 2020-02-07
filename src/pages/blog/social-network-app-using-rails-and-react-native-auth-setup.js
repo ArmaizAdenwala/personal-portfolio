@@ -43,20 +43,20 @@ const IndexPage = () => (
           <Title>Overview</Title>
           <Paragraph>
             We are now going to be setting up the authenthication for our api.
-            Our goal for part 3 is to implement devise and prepare for creating
-            our first endpoints.
+            Our goal for part 3 is to implement authentication and prepare for
+            creating our first endpoints.
           </Paragraph>
           <Paragraph>
-            So how do we achieve this? There is a library called `devise`. It
-            handles all of the auth for you on a Ruby on Rails app, but it is
+            So how do we achieve this? There is a ruby gem called `devise`. It
+            handles everything auth related on a Ruby on Rails app, but it is
             not designed to be api only. Don't worry, we can still use it on our
             api with some adjustments. For simplicity, we will only be using
             devise to handle our `User` model and provide some helper methods
             for us.
           </Paragraph>
           <Paragraph>
-            Devise is packed with features so if at any point you want to mess
-            around with this, you already have it installed.
+            Devise is packed with features so if at any point you want to tinker
+            around with it, you already have it installed.
           </Paragraph>
           <Title>Installing Devise</Title>
           <Paragraph>
