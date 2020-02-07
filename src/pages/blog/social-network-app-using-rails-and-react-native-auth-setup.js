@@ -222,14 +222,29 @@ end`}</pre>
             deploying to production or when other developers pickup your code.
           </Paragraph>
           <Paragraph>
-            One options is running `$ rake db:reset` to reset the entire
+            One option is running `$ rake db:reset` to reset the entire
             database. Of course, don't do this on production as it will reset
-            your database completely. Only use this as a last resort. _(You can
-            import your most recent database backup if you have one)
+            your database completely. Only use this as a last resort. _(After a
+            reset, you should import your most recent database backup if you
+            have one)_
           </Paragraph>
           <Paragraph>
-            _Part 4 (Authenthication using Devise) will be released soon. Please
-            check back later._
+            In other cases you may need to manually delete the automatically
+            generated `schema.rb` file by running `$ rm db/schema.rb`.
+            Sometimes, Rails thinks the migration is applied already and doesn't
+            update the schema.rb file.
+          </Paragraph>
+          <Paragraph>
+            Of course, these issues could be usually avoided all together by
+            never editing a migration after you migrate and commit.
+          </Paragraph>
+          <Paragraph>
+            In the next part, we will check out the model that devise created
+            and make some endpoints!
+          </Paragraph>
+          <Paragraph>
+            _Part 4 (Creating Register And Login Rails Endpoints) will be
+            released soon. Please check back later._
           </Paragraph>
           {/* <div className="m-t--64 tg__t--center">
             <div className="button">
