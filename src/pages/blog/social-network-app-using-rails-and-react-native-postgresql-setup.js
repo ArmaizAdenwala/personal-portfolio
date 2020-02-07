@@ -74,9 +74,10 @@ production:
           </pre>
           <Paragraph>
             {
-              "What this does is tell Rails that we have a postgresql user that will use the same database for production and development and have a seperate database for tests. Notice that we pull the credentials from an environment variable via ` <%= ENV['POSTGRES_USER'] %>`. This is crucial when working with git. We don't want credentials uploaded to GitHub so we will have it in an `.env`. We will tell git to not upload this file so that our credentials are kept safe."
+              "This gives our app the credentials for a __PostgreSQL role__. It will use that role to access the Postgres Database (`production` and `development`) and the test database that is used for __automated tests__. Notice that we pull the credentials from an environment variable via ` <%= ENV['POSTGRES_USER'] %>`. This is crucial when working with git. We don't want credentials uploaded to GitHub so we will have it in an `.env`. This file is simply a list of files to blacklist from being uploaded to a git repo. Github will not upload files listed in a `.env`, keeping our credentials safe."
             }
           </Paragraph>
+          <Title>Creating Environment Variables</Title>
           <Paragraph>
             {
               "In order to setup the `.env`, we need to install the `dontenv-rails` gem by adding `gem 'dotenv-rails'` to `Gemfile`. Once that is done, we can run `$ bundle install` to install it."
@@ -94,8 +95,8 @@ POSTGRES_HOST='localhost'
 POSTGRES_DB=''
 POSTGRES_TEST_DB=''`}</pre>
           <Paragraph>
-            You can set the username, password, db name, and test db name to
-            anything. But here is my sample .env:
+            You can set the `username`, `password`, `db name`, and `test db
+            name` to anything. But here is my sample `.env`:
           </Paragraph>
           <pre>{`POSTGRES_USER='social_media_blog'
 POSTGRES_PASSWORD='password123'
@@ -151,16 +152,18 @@ no changes added to commit (use "git add" and/or "git commit -a")`}</pre>
           <pre>{`$ git add .
 $ git commit -m 'setup postgresql config'
 $ git push`}</pre>
+          <Title>Setting up PostgreSQL</Title>
           <Paragraph>
             We have one final step: __Creating the postgresql role__.
           </Paragraph>
           <Paragraph>
-            If you have not setup postgresql, [refer to the official postgresql
-            site on how to install it](https://www.postgresql.org/download/)
+            If you have not setup __PostgreSQL__ on your machine yet, [refer to
+            the official postgresql site on how to install
+            it](https://www.postgresql.org/download/)
           </Paragraph>
           <Paragraph>_Note: I am using_ `PostgreSQL 12.1`</Paragraph>
           <Paragraph>
-            If you are using MacOSX, you can run `$ brew search postgresql` too
+            If you are using MacOSX, you can run `$ brew search postgresql` to
             see the available version names. For now, `postgresql 12` falls
             under `postgresql` meaning you can just run `brew install
             postgresql`
@@ -175,8 +178,9 @@ $ git push`}</pre>
           </Paragraph>
           <Paragraph>
             In this console, we would need to create a new role, for now we will
-            make it a superuser out of convience and simplicity. A role that has
-            superuser privileges means that it has full control of everything.
+            make it a __superuser__ out of convience and simplicity. A role that
+            has superuser privileges means that it has full control of
+            everything.
           </Paragraph>
           <Paragraph>
             We can create the role by running: `CREATE ROLE social_media_blog
@@ -196,6 +200,7 @@ CREATE ROLE`}</pre>
             You can exit the console by typing `exit` or by using the `ctrl+z`
             command.
           </Paragraph>
+          <Title>Creating The Databases</Title>
           <Paragraph>
             Now that Rails can login to a role, lets run a built-in __rake
             task__ that creates the databases for us: `$ rake db:create`
