@@ -58,7 +58,7 @@ $ git push heroku master`}
             SSL certificates and custom domains__. Even better, you can use that
             credit for their __database instances__ above their free-tier.
             [Learn more about how to deploy your app on
-            Heroku]('https://heroku.com').
+            Heroku](https://heroku.com).
           </Paragraph>
           <Title>Namecheap</Title>
           <Paragraph>
@@ -82,7 +82,7 @@ $ git push heroku master`}
             host multiple static sites on one droplet. That is far __more cost
             effective__ than Heroku, emphasizing the benefit of doing the DevOps
             yourself. [Check out how you can create your own Digital Ocean
-            Droplet]('https://www.digitalocean.com/').
+            Droplet](https://www.digitalocean.com/).
           </Paragraph>
           <Title>Travis CI</Title>
           <Paragraph>
