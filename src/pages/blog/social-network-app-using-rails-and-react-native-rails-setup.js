@@ -13,7 +13,7 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Let's Create A Social Network App Using Rails And React Native - Part 1: Rails Setup"
+      title="Part 1: Rails Setup - Let's Create A Social Network App Using Rails And React Native"
       canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-rails-setup/"
       secondaryTitle="Armaiz"
       image={SocialImage}

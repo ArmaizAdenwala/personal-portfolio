@@ -4,18 +4,14 @@ import { Title, Paragraph } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
-import FirstCommit from './images/social-network/github_first_commit.png';
-import NewRepo from './images/social-network/github_new_repo.png';
-import BlankRepo from './images/social-network/github_blank_repo.png';
-import SocialImage from './images/social-network/part1_social.png';
+import { Link } from 'gatsby';
 
 const IndexPage = () => (
   <div>
     <SEO
-      title="Let's Create A Social Network App Using Rails And React Native - Part 3: Authentication Setup"
+      title="Part 3: Authentication Setup - Let's Create A Social Network App Using Rails And React Native"
       canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-auth-setup/"
       secondaryTitle="Armaiz"
-      image={SocialImage}
       description="Learn how to setup authentication using devise and Rails"
     />
     <Navbar links={['Projects', 'Blog']} />
@@ -239,25 +235,18 @@ end`}</pre>
             never editing a migration after you migrate and commit.
           </Paragraph>
           <Paragraph>
-            In the next part, we will check out the model that devise created
-            and make some endpoints!
+            In the next part, we will check out the model that devise created!
           </Paragraph>
-          <Paragraph>
-            _Part 4 (Creating Register And Login Rails Endpoints) will be
-            released soon. Please check back later._
-          </Paragraph>
-          {/* <div className="m-t--64 tg__t--center">
+          <div className="m-t--64 tg__t--center">
             <div className="button">
-              <a
+              <Link
                 className="button__text"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://education.github.com/pack"
+                to="/blog/social-network-app-using-rails-and-react-native-creating-a-user/"
               >
-                VIEW PART TWO: POSTGRESQL SETUP
-              </a>
+                VIEW PART FOUR: CREATING A USER
+              </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </Container>
       <Footer />
