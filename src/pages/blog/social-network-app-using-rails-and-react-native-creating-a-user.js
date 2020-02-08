@@ -197,6 +197,10 @@ end
           <pre>{`2.6.5 :064 > user.save
  => true`}</pre>
           <Paragraph>Success! We have now created our first user!</Paragraph>
+          <Title>Finding the User</Title>
+          <Paragraph>
+            For this next section, we will cover some ways we can find a user
+          </Paragraph>
           {/* <div className="m-t--64 tg__t--center">
             <div className="button">
               <Link
