@@ -189,12 +189,24 @@ pre {
     & .hljs-literal {
       color: $code-literal;
     }
+    & .hljs-attr {
+      color: $code-attr;
+    }
     & .bash {
       color: $code-bash;
     }
   }
 }
 
+.yml pre code {
+  color: $code-literal;
+  & .hljs-attr {
+    color: $code-yml-attr;
+  }
+  & .hljs-meta {
+    color: $code-number;
+  }
+}
 code {
   background: #edf0f2;
   color: #6771ad;

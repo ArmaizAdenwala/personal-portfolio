@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../components/general';
-import { Title, Paragraph } from '../../components/content';
+import { Title, Paragraph, CodeBlock } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
@@ -49,8 +49,9 @@ const IndexPage = () => (
             You'll notice a lot of information in there. We're going to simplify
             it by replacing the entire file with:
           </Paragraph>
-          <pre>
-            {`default: &default
+          <div className="yml">
+            <CodeBlock language="yml">
+              {`default: &default
   adapter: postgresql
   encoding: unicode
   username: <%= ENV['POSTGRES_USER'] %>
@@ -67,7 +68,8 @@ test:
 production:
   <<: *default
   database: <%= ENV['POSTGRES_DB'] %>`}
-          </pre>
+            </CodeBlock>
+          </div>
           <Paragraph>
             {
               "This gives our app the credentials for a __PostgreSQL role__. It will use that role to access the Postgres Database (`production` and `development`) and the test database that is used for __automated tests__. Notice that we pull the credentials from an environment variable via ` <%= ENV['POSTGRES_USER'] %>`. This is crucial when working with git. We don't want credentials uploaded to GitHub so we will have it in an `.env`. This file is simply a list of files to blacklist from being uploaded to a git repo. Github will not upload files listed in a `.env`, keeping our credentials safe."
@@ -85,29 +87,31 @@ production:
             .env` in your terminal.
           </Paragraph>
           <Paragraph>Open that file and add the following lines:</Paragraph>
-          <pre>{`POSTGRES_USER=''
+          <CodeBlock language="env">
+            {`POSTGRES_USER=''
 POSTGRES_PASSWORD=''
 POSTGRES_HOST='localhost'
 POSTGRES_DB=''
-POSTGRES_TEST_DB=''`}</pre>
+POSTGRES_TEST_DB=''`}
+          </CodeBlock>
           <Paragraph>
             You can set the `username`, `password`, `db name`, and `test db
             name` to anything. But here is my sample `.env`:
           </Paragraph>
-          <pre>{`POSTGRES_USER='social_media_blog'
+          <CodeBlock language="env">{`POSTGRES_USER='social_media_blog'
 POSTGRES_PASSWORD='password123'
 POSTGRES_HOST='localhost'
 POSTGRES_DB='social_media_blog'
-POSTGRES_TEST_DB='social_media_blog_test'`}</pre>
+POSTGRES_TEST_DB='social_media_blog_test'`}</CodeBlock>
           <Paragraph>
             Save the file and run `$ rails console` or `$ rails c`. Once the
             console starts, we can verify that the env variables were set by
             entering `ENV['POSTGRES_USER']`:
           </Paragraph>
-          <pre>{`~/code/social-media-blog-api$ rails console
+          <CodeBlock language="ruby">{`~/code/social-media-blog-api$ rails console
 Loading development environment (Rails 6.0.2.1)
 2.6.5 :001 > ENV['POSTGRES_USER']
- => "social_media_blog"`}</pre>
+ => "social_media_blog"`}</CodeBlock>
           <Paragraph>
             You can exit the console by typing `exit` or using the `ctrl+z`
             command.
@@ -117,18 +121,18 @@ Loading development environment (Rails 6.0.2.1)
             `.env` file. Open `.gitignore` and append `.env` to the end so that
             it matches below:
           </Paragraph>
-          <pre>
+          <CodeBlock language="env">
             {`...
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
 .env`}
-          </pre>
+          </CodeBlock>
           <Paragraph>
             Run `$ git status` . You should not see `.env` listed in the output.
           </Paragraph>
-          <pre>{`~/code/social-media-blog-api$ git status
+          <CodeBlock language="bash">{`~/code/social-media-blog-api$ git status
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -141,13 +145,13 @@ Changes not staged for commit:
 	modified:   Gemfile.lock
 	modified:   config/database.yml
 
-no changes added to commit (use "git add" and/or "git commit -a")`}</pre>
+no changes added to commit (use "git add" and/or "git commit -a")`}</CodeBlock>
           <Paragraph>
             This is a good point for us to commit our changes:
           </Paragraph>
-          <pre>{`$ git add .
+          <CodeBlock language="shell">{`$ git add .
 $ git commit -m 'setup postgresql config'
-$ git push`}</pre>
+$ git push`}</CodeBlock>
           <Title>Setting up PostgreSQL</Title>
           <Paragraph>
             We have one final step: __Creating the postgresql role__.
@@ -179,10 +183,10 @@ $ git push`}</pre>
             everything.
           </Paragraph>
           <Paragraph>We can create the role by running:</Paragraph>
-          <pre>
+          <CodeBlock language="psql">
             CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD
             'password123';
-          </pre>
+          </CodeBlock>
           <Paragraph>
             This will create a role named `social_media_blog` with `password123`
             as the password. _(Be sure this matches with your_ `.env` _file.)_
@@ -190,8 +194,8 @@ $ git push`}</pre>
           <Paragraph>
             If successful, your console should look like this:
           </Paragraph>
-          <pre>{`postgres=# CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD 'password123';
-CREATE ROLE`}</pre>
+          <CodeBlock language="psql">{`postgres=# CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD 'password123';
+CREATE ROLE`}</CodeBlock>
           <Paragraph>
             You can exit the console by typing `exit` or by using the `ctrl+z`
             command.
@@ -202,9 +206,9 @@ CREATE ROLE`}</pre>
             task__ that creates the databases for us: `$ rake db:create`
           </Paragraph>
           <Paragraph>You should see a similar response:</Paragraph>
-          <pre>{`~/code/social-media-blog-api$ rake db:create
+          <CodeBlock language="terminal">{`~/code/social-media-blog-api$ rake db:create
 Created database 'social_media_blog'
-Created database 'social_media_blog_test'`}</pre>
+Created database 'social_media_blog_test'`}</CodeBlock>
           <Paragraph>
             As you can see, it created two databases for us automatically:
             `social_media_blog` and `social_media_blog_test`
