@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../components/general';
-import { Title, Paragraph } from '../../components/content';
+import { Title, Paragraph, CodeBlock } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
@@ -62,13 +62,15 @@ const IndexPage = () => (
             Installing Ruby `2.6.5` is very straightforward by running the
             following command in your terminal:
           </Paragraph>
-          <pre>$ rvm install 2.6.5</pre>
+          <CodeBlock language="console">$ rvm install 2.6.5</CodeBlock>
           <Paragraph>
             Going forward, if you ever want to use `2.6.5`, you would just need
             to run: `$ rvm use 2.6.5`
           </Paragraph>
           <Paragraph>Once Ruby is setup, install Rails `6.0.2.1`:</Paragraph>
-          <pre>$ gem install rails -v 6.0.2.1</pre>
+          <CodeBlock language="console">
+            $ gem install rails -v 6.0.2.1
+          </CodeBlock>
           <Title>Creating the API</Title>
           <Paragraph>
             Ruby on Rails is capable of providing the backend and the frontend
@@ -76,9 +78,9 @@ const IndexPage = () => (
             backend. Fortunately, Rails provides us with an api-only option.
           </Paragraph>
           <Paragraph>To create a new Rails API, run</Paragraph>
-          <pre>
+          <CodeBlock language="console">
             $ rails new social-media-blog-api --api --database=postgresql
-          </pre>
+          </CodeBlock>
           <Paragraph>
             This command will create a new app called `social-media-blog-api`
             and will preconfigure it for an api only stack using the `--api`
@@ -89,7 +91,7 @@ const IndexPage = () => (
             Once this has been created, we can now enter the app directory by
             running
           </Paragraph>
-          <pre>$ cd social-media-blog-api</pre>
+          <CodeBlock language="console">$ cd social-media-blog-api</CodeBlock>
 
           <Title>Setting Up The Respository</Title>
           <Paragraph>
@@ -129,10 +131,10 @@ const IndexPage = () => (
             We would now have to tell git that we want to connect this local
             respository with a remote repository hosted on Github by running:
           </Paragraph>
-          <pre>
+          <CodeBlock language="console">
             $ git remote add origin
             https://github.com/ArmaizAdenwala/social-media-blog-api.git
-          </pre>
+          </CodeBlock>
           <Paragraph>
             _(Keep in mind that your url will be different, refer to the GitHub
             repository page to find your url)_.
@@ -142,7 +144,7 @@ const IndexPage = () => (
             branch to `origin`, which is the default name of the repository
             GitHub created.
           </Paragraph>
-          <pre>$ git push -u origin master</pre>
+          <CodeBlock language="console">$ git push -u origin master</CodeBlock>
           <Paragraph>
             Now we have GitHub setup! Checkout your GitHub repo url to see your
             files.
