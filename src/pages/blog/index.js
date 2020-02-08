@@ -28,19 +28,25 @@ const IndexPage = () => (
       <div className="p-v--32">
         <Container>
           <BlogCard
-            name="Let's Create A Social Network Using Rails And React Native - Part 3: Authentication"
+            name="Part 4: Creating A User - Let's Create A Social Network Using Rails And React Native"
+            description="Setting up authentication using devise"
+            date="Feburary 8th, 2020"
+            url="/blog/social-network-app-using-rails-and-react-native-creating-a-user/"
+          />
+          <BlogCard
+            name="Part 3: Authentication - Let's Create A Social Network Using Rails And React Native"
             description="Setting up authentication using devise"
             date="Feburary 7th, 2020"
             url="/blog/social-network-app-using-rails-and-react-native-auth-setup/"
           />
           <BlogCard
-            name="Let's Create A Social Network App Using Rails And React Native - Part 2: PostgreSQL Setup"
+            name="Part 2: PostgreSQL Setup - Let's Create A Social Network App Using Rails And React Native"
             description="Learn how to setup a PostgreSQL database for a Rails app"
             date="Feburary 6th, 2020"
             url="/blog/social-network-app-using-rails-and-react-native-postgresql-setup/"
           />
           <BlogCard
-            name="Let's Create A Social Network Using Rails And React Native - Part 1: Rails Setup"
+            name="Part 1: Rails Setup - Let's Create A Social Network Using Rails And React Native"
             description="This series will be covering how to create a social network app using ruby on rails and react native"
             date="Feburary 5th, 2020"
             url="/blog/social-network-app-using-rails-and-react-native-rails-setup/"
