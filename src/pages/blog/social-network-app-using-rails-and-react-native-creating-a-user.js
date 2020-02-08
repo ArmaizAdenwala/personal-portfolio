@@ -5,6 +5,8 @@ import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
 import { Link } from 'gatsby';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const IndexPage = () => (
   <div>
@@ -62,13 +64,16 @@ const IndexPage = () => (
             Before we create our endpoints, we need to take at the User model.
             Take a look at the `app/models/user.rb` file.
           </Paragraph>
-          <pre>{`class User < ApplicationRecord
+          <SyntaxHighlighter
+            language="ruby"
+            useInlineStyles={false}
+          >{`class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
-`}</pre>
+`}</SyntaxHighlighter>
           <Paragraph>
             There isn't much to look at other than we have a model called `User`
             and that it has some attributes that devise manages for us
@@ -138,8 +143,11 @@ end
             invalid? Rails has a method for models that lets us see why a
             instantiated model is invalid. Run `user.errors`:
           </Paragraph>
-          <pre>{`2.6.5 :037 > user.errors
- => #<ActiveModel::Errors:0x00007fa0b21c9418 @base=#<User id: nil, email: "a@abc.com", created_at: nil, updated_at: nil>, @messages={:password=>["can't be blank"]}, @details={:password=>[{:error=>:blank}]}>`}</pre>
+          <SyntaxHighlighter
+            language="ruby"
+            style={dark}
+          >{`2.6.5 :037 > user.errors
+ => #<ActiveModel::Errors:0x00007fa0b21c9418 @base=#<User id: nil, email: "a@abc.com", created_at: nil, updated_at: nil>, @messages={:password=>["can't be blank"]}, @details={:password=>[{:error=>:blank}]}>`}</SyntaxHighlighter>
           <Paragraph>
             We don't need all of this extra information, let's run
             `user.errors.messages`
