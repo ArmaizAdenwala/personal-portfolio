@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../components/general';
-import { Title, Paragraph } from '../../components/content';
+import { Title, Paragraph, CodeBlock } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
@@ -67,48 +67,49 @@ const IndexPage = () => (
           <Paragraph>
             Add these lines to your `Gemfile` and run `bundle install`:
           </Paragraph>
-          <pre>
-            gem 'devise'
-            <br />
-            gem 'bcrypt', '~> 3.1.7'
-          </pre>
+          <CodeBlock language="ruby">
+            {`gem 'devise'
+gem 'bcrypt', '~> 3.1.7'`}
+          </CodeBlock>
           <Paragraph>
             Once all the gems are installed, we need to install `devise`. Keep
             in mind that devise will create a bunch of views for the frontend,
             we won't be using them. Run:
           </Paragraph>
-          <pre>$ rails generate devise:install</pre>
+          <CodeBlock language="shell">
+            $ rails generate devise:install
+          </CodeBlock>
           <Title>Creating The Migration</Title>
           <Paragraph>
             Once devise is installed, we can generate the User model. Run this
             command so that devise can create the model and migrations for us:
           </Paragraph>
-          <pre>$ rails generate devise User</pre>
+          <CodeBlock language="shell">$ rails generate devise User</CodeBlock>
           <Paragraph>
             The next step would be to migrate our database. Let's look at the
             migration it created under `db/migrate/`:
           </Paragraph>
-          <pre>{`...
+          <CodeBlock language="ruby">{`...
 class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users  do |t|
-      ...
+      #...
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      ...
+      #...
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
-      ...
+      #...
       t.datetime :remember_created_at
-      ...
+      #...
       t.timestamps null: false
     end
 
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
-    ...
+    #...
   end
-end`}</pre>
+end`}</CodeBlock>
           <Paragraph>Let's walk through some of the lines:</Paragraph>
           <Paragraph>
             `class DeviseCreateUsers`: This is the name of the migration and it
@@ -134,20 +135,18 @@ end`}</pre>
             We will handle password resets on our own, so these two are not
             necessary, we can comment these out:
           </Paragraph>
-          <pre>
-            t.string :reset_password_token
-            <br />
-            t.datetime :reset_password_sent_at
-          </pre>
+          <CodeBlock language="ruby">
+            {`t.string :reset_password_token
+t.datetime :reset_password_sent_at`}
+          </CodeBlock>
           <Paragraph>
             This migration also adds __indexes__ for `email` and
             `reset_password_token` as seen below:
           </Paragraph>
-          <pre>
-            add_index :users, :email, unique: true
-            <br />
-            add_index :users, :reset_password_token, unique: true
-          </pre>
+          <CodeBlock language="ruby">
+            {`add_index :users, :email, unique: true
+add_index :users, :reset_password_token, unique: true`}
+          </CodeBlock>
           <Paragraph>
             You can remove the `reset_password_token` index but we will need the
             `email` index. This is because indexes make searching through a
@@ -185,17 +184,17 @@ end`}</pre>
             Luckily, UUID is very simple to enable in our migrations. To do this
             we would need to take a look at these lines:
           </Paragraph>
-          <pre>{`def change
-  create_table :users  do |t|`}</pre>
+          <CodeBlock language="ruby">{`def change
+  create_table :users  do |t|`}</CodeBlock>
           <Paragraph>
             We would need to use the `pgcrypto` extension so we enable it using
             `enable_extension 'pgcrypto'` and changing the id column to uuids by
             adding `id: :uuid`. As a result the lines above should be updated
             to:
           </Paragraph>
-          <pre>{`def change 
+          <CodeBlock language="ruby">{`def change 
   enable_extension 'pgcrypto'
-  create_table :users, id: :uuid  do |t|`}</pre>
+  create_table :users, id: :uuid  do |t|`}</CodeBlock>
           <Paragraph>
             Once this is complete, we can run `$ rake db:migrate` to run our
             migrations.

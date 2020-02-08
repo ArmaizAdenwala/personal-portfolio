@@ -156,6 +156,15 @@ pre {
         color: $code-class-title;
       }
     }
+    & .hljs-function  {
+      color: $code-function;
+      & .hljs-keyword {
+        color: $code-function-keyword;
+      }
+      & .hljs-title {
+        color: $code-function-title;
+      }
+    }
     & .hljs-comment {
       color: $code-comment;
     }
@@ -165,15 +174,24 @@ pre {
     & .hljs-keyword {
       color: $code-keyword;
     }
-  }
-  & .hljs-meta {
-    color: $code-meta;
-  }
-  & .hljs-number {
-    color: $code-number;
-  }
-  & .hljs-string {
-    color: $code-string;
+    & .hljs-meta {
+      color: $code-meta;
+    }
+    & .hljs-number {
+      color: $code-number;
+    }
+    & .hljs-string {
+      color: $code-string;
+    }
+    & .hljs-params {
+      color: $code-params;
+    }
+    & .hljs-literal {
+      color: $code-literal;
+    }
+    & .bash {
+      color: $code-bash;
+    }
   }
 }
 
