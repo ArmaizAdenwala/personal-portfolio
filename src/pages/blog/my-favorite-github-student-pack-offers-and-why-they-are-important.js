@@ -26,10 +26,10 @@ const IndexPage = () => (
           <Title first>What is the Github Student Pack?</Title>
           <Paragraph>
             The __Github Student Pack__ is an abundance of resources available
-            to students for free. The services and tools provided are all used
-            in the industry today and can launch your projects to the next level
-            for free. [Apply for the Github Student
-            Pack](https://education.github.com/pack)
+            to students for free. The services and tools provided are used in
+            the industry today and can launch your projects to the next level.
+            [Apply for the Github Student Pack
+            here](https://education.github.com/pack).
           </Paragraph>
           <Paragraph>
             In this article I am going to go over my favorite tools and services
@@ -44,30 +44,30 @@ const IndexPage = () => (
             commands for your app to be deployed and accessible anywhere!
           </Paragraph>
           <Paragraph>
-            For example, here is all you need to get a ruby on rails api
+            For example, here is all you need to get a Ruby on Rails API
             deployed on heroku:
           </Paragraph>
-          <pre>
-            {'$ heroku create'}
-            <br />
-            {'$ git push heroku master'}
-          </pre>
+          <CodeBlock language="console">
+            {`$ heroku create
+$ git push heroku master`}
+          </CodeBlock>
           <Paragraph>
-            So what does Heroku provide in the Student Pack? Heroku provides
-            __$168 worth of credits__ , equivalent to __2 years of the hobby
-            dyno__. This allows you to have an app deployed on Heroku with
-            little or no downtime and gives you access to custom SSL
-            certificates and custom domains. Even better, you can use that
-            credit for their database instances above their free-tier. [Learn
-            more about how to deploy your app on Heroku]('https://heroku.com').
+            Heroku provides __$168 worth of credits__ , equivalent to __2 years
+            of the hobby dyno__. This allows you to have an app deployed on
+            Heroku with little or no downtime and gives you access to __custom
+            SSL certificates and custom domains__. Even better, you can use that
+            credit for their __database instances__ above their free-tier.
+            [Learn more about how to deploy your app on
+            Heroku]('https://heroku.com').
           </Paragraph>
           <Title>Namecheap</Title>
           <Paragraph>
             Namecheap is a domain registration site that provides a __free year
-            of a .me domain__ , perfect for your personal portfolio site. They
+            of a .me domain__, perfect for your personal portfolio site. They
             also provide a __1 year SSL certificate__. You can have your new .me
             url point to your Heroku server by using a DNS provider such as
-            Cloudflare. [Register your .me domain here](https://nc.me/)
+            Cloudflare all for free. [Register your .me domain
+            here](https://nc.me/)
           </Paragraph>
           <Title>Digital Ocean</Title>
           <Paragraph>
@@ -89,9 +89,11 @@ const IndexPage = () => (
             __CI__ (continuous integration) is a very important tool in the
             industry. A CI runs test against your code automatically and lets
             you know if any tests are failing or not for a specific commit.
-            Blocking pull request merges when a CI is failing helps keep the
-            master branch working with no regressions. [Learn more about Travis
-            CI here](https://travis-ci.org/)
+            Travis CI can be integrated into GitHub to automatically run tests
+            against pull requests. Blocking pull requests with failed tests
+            helps keep the master branch working with a lower possiblity of
+            regressions. [Learn more about Travis CI
+            here](https://travis-ci.org/)
           </Paragraph>
           <Paragraph>
             Travis CI gives you __unlimited builds for private repos__ while you
@@ -115,7 +117,15 @@ const IndexPage = () => (
             about Sentry's error monitoring service
             here](https://sentry.io/welcome/).
           </Paragraph>
-          <div className="m-t--64 tg__t--center">
+          <Title>Get The Student Pack!</Title>
+          <Paragraph>
+            Overall, the GitHub student pack offers plenty of resources for
+            everyone. These were only my favorites, but it is only a small
+            fraction of what it has to offer. I highly recommend you to take
+            advantange of this awesome offer and utilize them for your next
+            project!
+          </Paragraph>
+          <div className="m-t--32 tg__t--center">
             <div className="button">
               <a
                 className="button__text"
