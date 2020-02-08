@@ -203,7 +203,94 @@ end
           <Paragraph>Success! We have now created our first user!</Paragraph>
           <Title>Finding the User</Title>
           <Paragraph>
-            For this next section, we will cover some ways we can find a user
+            For this next section, we will cover some ways we can find a user.
+            There are some query methods we can use such as `all`, `where`,
+            `find`, `find_by`. Here are some brief explanations of each:
+          </Paragraph>
+          <Paragraph>
+            __all__: This returns all records for that query. So `User.all()`
+            will return all users. If none exists, it returns an empty
+            ActiveRecord relation.
+          </Paragraph>
+          <Paragraph>
+            __where__: This takes in parameters to filter a relation. So
+            `User.where(name:'John Doe')` will return a relation of all users
+            with the name `John Doe`. If none exists, it returns an empty
+            ActiveRecord relation.
+          </Paragraph>
+          <Paragraph>
+            _Note: You can also use a string such as `User.where("name = 'John
+            Doe'")` but you would have to be careful not to be vulnerable to a
+            `SQL injection attack` if you are dealing with user input. We will
+            address this later but it is something to keep in mind._
+          </Paragraph>
+          <Paragraph>
+            __find__: This takes in the model's `id` (`User.find(123)`)as a
+            parameter and retuns the record if it exists, otherwise it throws an
+            `ActiveRecord::RecordNotFound` exception.
+          </Paragraph>
+          <Paragraph>
+            __find\_by__: This is similar to `find` except that it takes in any
+            column as a param (`User.find_by(email: 'a@abc.com')`) and returns
+            the relation if it exists, otherwise it returns `nil`. You can force
+            an `ActiveRecord::RecordNotFound` exception instead of `nil` by
+            using `find_by!()` instead.
+          </Paragraph>
+          <Paragraph>
+            We will cover more query methods later in the series.
+          </Paragraph>
+          <Paragraph>
+            Lets try these methods out! Open up the rails console via `$ rails
+            c` and try some of these methods.
+          </Paragraph>
+          <Paragraph>Getting all user records using `User.all()`:</Paragraph>
+          <CodeBlock language="ruby">{`2.6.5 :005 > User.all()
+  User Load (0.5ms)  SELECT "users".* FROM "users" LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<User id: "7545d290-962f-45bb-891d-f7e43b4fbf68", email: "a@abc.com", created_at: "2020-02-08 19:58:24", updated_at: "2020-02-08 19:58:24">]>`}</CodeBlock>
+          <Paragraph>
+            Getting all user records with the email `a@abc.com` using
+            `User.where()`:
+          </Paragraph>
+          <CodeBlock language="ruby">{`2.6.5 :006 > User.where(email: 'a@abc.com')
+  User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "a@abc.com"], ["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<User id: "7545d290-962f-45bb-891d-f7e43b4fbf68", email: "a@abc.com", created_at: "2020-02-08 19:58:24", updated_at: "2020-02-08 19:58:24">]>`}</CodeBlock>
+          <Paragraph>
+            Getting the user record with the uuid
+            `7545d290-962f-45bb-891d-f7e43b4fbf68` using `User.find()`:
+          </Paragraph>
+          <CodeBlock language="ruby">{`2.6.5 :008 > User.find('7545d290-962f-45bb-891d-f7e43b4fbf68')
+  User Load (5.3ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", "7545d290-962f-45bb-891d-f7e43b4fbf68"], ["LIMIT", 1]]
+ => #<User id: "7545d290-962f-45bb-891d-f7e43b4fbf68", email: "a@abc.com", created_at: "2020-02-08 19:58:24", updated_at: "2020-02-08 19:58:24">`}</CodeBlock>
+          <Paragraph>
+            Getting the user record with the email `a@abc.com` using
+            `User.find_by()`:
+          </Paragraph>
+          <CodeBlock language="ruby">{`2.6.5 :009 > User.find_by( email: 'a@abc.com')
+  User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "a@abc.com"], ["LIMIT", 1]]
+ => #<User id: "7545d290-962f-45bb-891d-f7e43b4fbf68", email: "a@abc.com", created_at: "2020-02-08 19:58:24", updated_at: "2020-02-08 19:58:24">`}</CodeBlock>
+          <Paragraph>
+            Testing a blank ActiveRecord relation using `User.find_by()`:
+          </Paragraph>
+          <CodeBlock language="ruby">{`2.6.5 :010 > User.find_by(email: '123@123.com')
+  User Load (0.4ms)  SELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "123@123.com"], ["LIMIT", 1]]
+ => nil`}</CodeBlock>
+          <Paragraph>
+            Testing if `ActiveRecord::RecordNotFound` exception is raised using
+            `User.find_by!()`:
+          </Paragraph>
+          <CodeBlock language="ruby">{`2.6.5 :011 > User.find_by!(email: '123@123.com')
+  User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "123@123.com"], ["LIMIT", 1]]
+Traceback (most recent call last):
+        1: from (irb):11
+ActiveRecord::RecordNotFound (Couldn't find User)`}</CodeBlock>
+          <Paragraph>
+            These methods will help us find records, not only for Users, but for
+            posts, comments, and more. We will implement the `register` and
+            `login` endpoints in the next part.
+          </Paragraph>
+          <Paragraph>
+            _Part 5 (Creating Register And Login Rails Endpoints) will be
+            released soon. Please check back later._
           </Paragraph>
           {/* <div className="m-t--64 tg__t--center">
             <div className="button">
