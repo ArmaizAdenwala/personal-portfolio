@@ -71,7 +71,7 @@ const IndexPage = () => (
             Rails provides us a command to create a controller automatically.
             Lets run `$ rails generate controller users`
           </Paragraph>
-          <CodeBlock language="console">{`$ rails generate controller users
+          <CodeBlock language="bash">{`$ rails generate controller users
       create  app/controllers/users_controller.rb
       invoke  test_unit
       create    test/controllers/users_controller_test.rb`}</CodeBlock>

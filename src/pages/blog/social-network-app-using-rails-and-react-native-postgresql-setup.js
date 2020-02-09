@@ -49,9 +49,8 @@ const IndexPage = () => (
             You'll notice a lot of information in there. We're going to simplify
             it by replacing the entire file with:
           </Paragraph>
-          <div className="yml">
-            <CodeBlock language="yml">
-              {`default: &default
+          <CodeBlock language="yml">
+            {`default: &default
   adapter: postgresql
   encoding: unicode
   username: <%= ENV['POSTGRES_USER'] %>
@@ -68,8 +67,7 @@ test:
 production:
   <<: *default
   database: <%= ENV['POSTGRES_DB'] %>`}
-            </CodeBlock>
-          </div>
+          </CodeBlock>
           <Paragraph>
             {
               "This gives our app the credentials for a __PostgreSQL role__. It will use that role to access the Postgres Database (`production` and `development`) and the test database that is used for __automated tests__. Notice that we pull the credentials from an environment variable via ` <%= ENV['POSTGRES_USER'] %>`. This is crucial when working with git. We don't want credentials uploaded to GitHub so we will have it in an `.env`. This file is simply a list of files to blacklist from being uploaded to a git repo. Github will not upload files listed in a `.env`, keeping our credentials safe."

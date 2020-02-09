@@ -147,6 +147,50 @@ pre {
     padding: 0;
     margin: 0;
     color: $code;
+    & .token.function {
+      color: $code-class-title;
+    }
+    & .token.keyword {
+      color: $code-class-keyword;
+    }
+    & .token.class-name {
+      color: $code-class-title;
+    }
+    & .token.operator {
+      color: $code-operator;
+    }
+    & .token.constant {
+      color: $code-class;
+    }
+    & .token.symbol {
+      color: $code-symbol;
+    }
+    & .token.punctuation {
+      color: $code-punctuation;
+    }
+    & .token.property {
+      color: $code-property;
+    }
+    & .token.variable {
+      color: $code-variable;
+    }
+    & .token.string {
+      color: $code-string;
+    }
+    & .token.boolean {
+      color: $code-boolean;
+    }
+    & .token.comment { 
+      color: $code-comment;
+    }
+    & .token.number { 
+      color: $code-number;
+    }
+    & .token.method-definition {
+      & .token.function {
+        color: $code-function-title;
+      }
+    }
     & .hljs-class  {
       color: $code-class;
       & .hljs-keyword {
