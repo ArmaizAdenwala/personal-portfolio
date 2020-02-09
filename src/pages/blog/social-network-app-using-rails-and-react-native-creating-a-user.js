@@ -28,8 +28,7 @@ const IndexPage = () => (
           <Paragraph disableRel>
             In the previous article we [setup devise and created the User
             model](/blog/social-network-app-using-rails-and-react-native-auth-setup/).
-            You are now ready for the next step: __setting up endpoints for
-            authentication__.
+            You are now ready for the next step: __creating a user__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 4 branch of the GitHub
@@ -38,29 +37,14 @@ const IndexPage = () => (
           </Paragraph>
           <Title>Overview</Title>
           <Paragraph>
-            We are now going to be setting up the authenthication endpoints for
-            our API. By the end of this article, you will have the following two
-            endpoints:
-          </Paragraph>
-          <Paragraph>
-            `/users/register`: Takes in `email`, `password` and
-            `password_confirmation` as paramaters. If all params are valid, then
-            creates a `User` record and returns the `User` in the json response.
-          </Paragraph>
-          <Paragraph>
-            `/users/login`: Takes in an existing `email` and `password` and if
-            correct, it will return that user's information.
-          </Paragraph>
-          <Paragraph>
-            _Note: we will never send plain text passwords to this API, even if
-            it is over HTTPS. It is not that much more effort to salt and hash a
-            password. We won't ever need to know the original password so we
-            should not store it anywhere._
+            We are now going to be creating User records using the Rails
+            console. This will help us understand how to create the auth
+            endpoints in the next part.
           </Paragraph>
           <Title>The User Model</Title>
           <Paragraph>
-            Before we create our endpoints, we need to view the User model. Take
-            a look at the `app/models/user.rb` file.
+            Before we create our User records, we need to view the User model.
+            Take a look at the `app/models/user.rb` file.
           </Paragraph>
           <CodeBlock language="ruby">{`class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -295,26 +279,31 @@ ActiveRecord::RecordNotFound (Couldn't find User)`}</CodeBlock>
  => true
 2.6.5 :003 > user.valid_password?('1231234')
  => false`}</CodeBlock>
+          <Title>What About Tests?</Title>
+          <Paragraph>
+            You may have noticed that the Rails automatically created a User
+            test file for us. This is so that we can run our tests to
+            automatically check if the app is working as intended without
+            regressions. Normally, you would write tests now or before merging a
+            feature into production. For this guide, I will have a seperate part
+            to cover tests as a whole, so don't worry!
+          </Paragraph>
           <Title>What's Next?</Title>
           <Paragraph>
             These methods will help us find records in the database, not only
             for Users, but for future models as well. We will implement the
             `register` and `login` endpoints in the next part.
           </Paragraph>
-          <Paragraph>
-            _Part 5 (Creating Register And Login Rails Endpoints) will be
-            released soon. Please check back later._
-          </Paragraph>
-          {/* <div className="m-t--64 tg__t--center">
+          <div className="m-t--64 tg__t--center">
             <div className="button">
               <Link
                 className="button__text"
                 to="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
               >
-                VIEW PART FOUR: CREATING AUTH ENDPOINTS
+                VIEW PART FIVE: CREATING AUTH ENDPOINTS
               </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </Container>
       <Footer />
