@@ -207,7 +207,7 @@ CREATE ROLE`}</CodeBlock>
             task__ that creates the databases for us: `$ rake db:create`
           </Paragraph>
           <Paragraph>You should see a similar response:</Paragraph>
-          <CodeBlock language="terminal">{`~/code/social-media-blog-api$ rake db:create
+          <CodeBlock language="bash">{`~/code/social-media-blog-api$ rake db:create
 Created database 'social_media_blog'
 Created database 'social_media_blog_test'`}</CodeBlock>
           <Paragraph>

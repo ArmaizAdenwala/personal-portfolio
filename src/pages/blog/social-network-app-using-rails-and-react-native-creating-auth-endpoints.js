@@ -71,7 +71,10 @@ const IndexPage = () => (
             Rails provides us a command to create a controller automatically.
             Lets run `$ rails generate controller users`
           </Paragraph>
-          <CodeBlock language="bash">{`$ rails generate controller users
+          <CodeBlock
+            useHighlight
+            language="shell"
+          >{`$ rails generate controller users
       create  app/controllers/users_controller.rb
       invoke  test_unit
       create    test/controllers/users_controller_test.rb`}</CodeBlock>
@@ -152,31 +155,37 @@ end
             Lets take a look at example payloads that can be passed to a request
             and what the user_params would be. Here is an example JSON payload:
           </Paragraph>
-          <CodeBlock language="json">{`{
+          <CodeBlock language="json">
+            {`{
   "user": {
     "email": "123@abc.com",
     "password": "123456",
     "password_confirmation": "123456",
     "admin": true
   }
-}`}</CodeBlock>
+}`}
+          </CodeBlock>
           <Paragraph>Here is what `user_params` would return:</Paragraph>
-          <CodeBlock language="json">{`{
+          <CodeBlock language="json">
+            {`{
   "user": {
     "email": "123@abc.com",
     "password": "123456",
     "password_confirmation": "123456"
   }
-}`}</CodeBlock>
+}`}
+          </CodeBlock>
           <Paragraph>
             Notice how the admin attribute is removed. Lets look at this
             example:
           </Paragraph>
-          <CodeBlock language="json">{`{
+          <CodeBlock language="json">
+            {`{
   "email": "123@abc.com",
   "password": "123456",
   "password_confirmation": "123456"
-}`}</CodeBlock>
+}`}
+          </CodeBlock>
           <Paragraph>
             All of the attributes are there but it is not nested under a `user`
             key. So this means that `require` would raise an exception since
@@ -210,7 +219,8 @@ end`}</CodeBlock>
             We need to replace the render comments with actual renders. If
             registration is successful, we will return the user.
           </Paragraph>
-          <CodeBlock language="ruby">{`def register
+          <CodeBlock language="ruby">
+            {`def register
   @user = User.create(user_params)
   if @user.valid? && @user.save
     render json: @user,
@@ -218,7 +228,8 @@ end`}</CodeBlock>
     return
   end
   # render error state
-end`}</CodeBlock>
+end`}
+          </CodeBlock>
           <Paragraph>
             This line does a lot for us, so lets disect this line:
           </Paragraph>
@@ -246,7 +257,8 @@ end`}</CodeBlock>
             error info. Updare your register method to render a response when an
             error exists:
           </Paragraph>
-          <CodeBlock language="ruby">{`def register
+          <CodeBlock language="ruby">
+            {`def register
   @user = User.create(user_params)
   if @user.valid? && @user.save
     render json: @user,
@@ -255,7 +267,8 @@ end`}</CodeBlock>
   end
   render json: @user.errors,
     status: 400
-end`}</CodeBlock>
+end`}
+          </CodeBlock>
           <Paragraph>
             We used a `400` status response because invalid params falls under
             the general `bad request` category. We don't need a return as it is
@@ -263,7 +276,8 @@ end`}</CodeBlock>
             this render. Your completed `users_controller.rb` should now look
             like:
           </Paragraph>
-          <CodeBlock language="ruby">{`class ApplicationController < ActionController::API
+          <CodeBlock language="ruby">
+            {`class ApplicationController < ActionController::API
   def register
     @user = User.create(user_params)
     if @user.valid? && @user.save
@@ -285,16 +299,129 @@ end`}</CodeBlock>
     )
   end
 end
-`}</CodeBlock>
+`}
+          </CodeBlock>
           <Title>Creating Our Route</Title>
           <Paragraph>
             We have one final step for our register endpoint to be ready:
             __configuring the routes file__. Open `config/routes.rb`:
           </Paragraph>
-          <CodeBlock language="ruby">{`Rails.application.routes.draw do
+          <CodeBlock language="ruby">
+            {`Rails.application.routes.draw do
   devise_for :users
 end
-`}</CodeBlock>
+`}
+          </CodeBlock>
+          <Paragraph>
+            We will be creating our own API-only auth routes, so delete
+            `devise_for :users`. For the registration route, we want to use
+            `/user/register`. Since the user will be sending data and expecting
+            a user to be created, we will use a `POST` request.
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`Rails.application.routes.draw do
+  post 'users/register', to: 'users#register'
+end
+`}
+          </CodeBlock>
+          <Paragraph>Here is a breakdown of what is going on:</Paragraph>
+          <Paragraph>
+            `post`: This tells us what HTTP request method needs to be made.
+            `post` is usually for creating data, `get` is for retrieving data,
+            and `delete` for deleting data. [Mozilla has documentation on HTTP
+            request
+            methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+          </Paragraph>
+          <Paragraph>
+            `'users/register',`: this tells Rails what the url should be. So
+            this line would create the route:
+            `http://localhost:3000/users/register`
+          </Paragraph>
+          <Paragraph>
+            `to:`: This tells Rails that when a user sends a request to the
+            `users/register` url, call the method after `to:`
+          </Paragraph>
+          <Paragraph>
+            `'users#register'`: This is the controller and action that the
+            endpoint would direct to. So `users` would look for
+            `users_controller` and `register` looks for the `register` method
+            inside `users_controller`
+          </Paragraph>
+          <Paragraph>
+            _Note: there is a much cleaner approach for basic CRUD endpoints, we
+            will cover this in the future_
+          </Paragraph>
+          <Paragraph>
+            Once you save the file, verify that the route has been created by
+            running `$ rake routes`
+          </Paragraph>
+          <CodeBlock useHighlight language="shell">
+            {`$ rake routes
+        Prefix Verb   URI Pattern                Controller#Action
+users_register POST   /users/register(.:format)  users#register`}
+          </CodeBlock>
+          <Paragraph>
+            You'll see a lot more routes, but this is the only one we care
+            about. If you see this, you're ready to test the endpoint!
+          </Paragraph>
+          <Title>Testing The Register Endpoint</Title>
+          <Paragraph>
+            For this tutorial, we will use `curl` to hit our endpoints. But it
+            is highly suggested to take a look at a [REST client such as
+            Insominia](https://insomnia.rest/)
+          </Paragraph>
+          <CodeBlock language="shell">
+            {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "abc@abc.com","password":"123456","password_confirmation": "123456"}}' http://localhost:3000/users/register
+{"id":"666b9e2b-da4a-4dbb-8fcc-aecc760c2f6f","email":"abc@abc.com","created_at":"2020-02-09T17:19:33.376Z","updated_at":"2020-02-09T17:19:33.376Z"}%`}
+          </CodeBlock>
+          <Paragraph>
+            A little hard to read, but you can pipe the JSON response and pretty
+            print it using `json_pp` by appending `| json_pp` to the end of it:
+          </Paragraph>
+          <CodeBlock language="shell">
+            {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "abc2@abc.com","password":"123456","password_confirmation": "123456"}}' http://localhost:3000/users/register | json_pp
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   236    0   148  100    88    743    442 --:--:-- --:--:-- --:--:--   747
+{
+   "id" : "4edc9a20-1e61-4a82-bb97-ee6647ff8212",
+   "updated_at" : "2020-02-09T17:24:53.319Z",
+   "created_at" : "2020-02-09T17:24:53.319Z",
+   "email" : "abc2@abc.com"
+}`}
+          </CodeBlock>
+          <Paragraph>
+            Awesome! Our endpoint works and we can create new users. You can
+            verify this in the Rails console:
+          </Paragraph>
+          <CodeBlock language="ruby">{`$ rails c
+Loading development environment (Rails 6.0.2.1)
+2.6.5 :001 > User.find_by(email: "abc2@abc.com")
+  User Load (0.9ms)  SELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "abc2@abc.com"], ["LIMIT", 1]]
+ => #<User id: "4edc9a20-1e61-4a82-bb97-ee6647ff8212", email: "abc2@abc.com", created_at: "2020-02-09 17:24:53", updated_at: "2020-02-09 17:24:53">`}</CodeBlock>
+          <Paragraph>
+            We have one more endpoint left: __the login endpoint__.
+          </Paragraph>
+          <Title>Creating The Login Endpoint</Title>
+          <Paragraph>
+            For the login endpoint, we will take `email` and `password` as
+            parameters and return the user if the credentials are correct. We
+            will make this action return a JWT token in the future, but this is
+            suffice for now.
+          </Paragraph>
+          <Paragraph>
+            Remember that we can find a user using the `find_by` command:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`2.6.5 :001 > user = User.find_by(email: "abc2@abc.com")
+  User Load (0.9ms)  SELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "abc2@abc.com"], ["LIMIT", 1]]
+ => #<User id: "4edc9a20-1e61-4a82-bb97-ee6647ff8212", email: "abc2@abc.com", created_at: "2020-02-09 17:24:53", updated_at: "2020-02-09 17:24:53">`}
+          </CodeBlock>
+          <Paragraph>
+            We can also validate the password using `valid_password?`
+          </Paragraph>
+          <CodeBlock language="ruby">{`2.6.5 :005 > user.valid_password?("123456")
+ => true`}</CodeBlock>
           <Title>What's Next?</Title>
           <Paragraph>
             These methods will help us find records in the database, not only

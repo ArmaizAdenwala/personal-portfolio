@@ -76,7 +76,7 @@ gem 'bcrypt', '~> 3.1.7'`}
             in mind that devise will create a bunch of views for the frontend,
             we won't be using them. Run:
           </Paragraph>
-          <CodeBlock language="shell">
+          <CodeBlock useHighlight language="shell">
             $ rails generate devise:install
           </CodeBlock>
           <Title>Creating The Migration</Title>
@@ -84,7 +84,9 @@ gem 'bcrypt', '~> 3.1.7'`}
             Once devise is installed, we can generate the User model. Run this
             command so that devise can create the model and migrations for us:
           </Paragraph>
-          <CodeBlock language="shell">$ rails generate devise User</CodeBlock>
+          <CodeBlock useHighlight language="shell">
+            $ rails generate devise User
+          </CodeBlock>
           <Paragraph>
             The next step would be to migrate our database. Let's look at the
             migration it created under `db/migrate/`:

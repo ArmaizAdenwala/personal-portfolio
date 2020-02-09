@@ -274,7 +274,7 @@ ActiveRecord::RecordNotFound (Couldn't find User)`}</CodeBlock>
             it out with a valid an invalid password. _(In our example above we
             used `a@abc.com` for the emails and `123456` for the password)_`)
           </Paragraph>
-          <CodeBlock>{`2.6.5 :001 > user = User.find_by(email: 'a@abc.com')
+          <CodeBlock language="ruby">{`2.6.5 :001 > user = User.find_by(email: 'a@abc.com')
 2.6.5 :002 > user.valid_password?('123123')
  => true
 2.6.5 :003 > user.valid_password?('1231234')
