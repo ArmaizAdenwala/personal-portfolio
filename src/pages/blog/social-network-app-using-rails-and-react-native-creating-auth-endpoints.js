@@ -61,10 +61,12 @@ const IndexPage = () => (
           <Title>What is a Rails Controller?</Title>
           <Paragraph>
             In simple terms, a controller is a Ruby file with methods that
-            recieve parameters and outputs a response. In orther words, it
-            connects the frontend to the database. We can route urls such as
-            `https://localhost:3000/users/register` to methods in a controller
-            such as the `register` method. We will cover more on this soon.
+            recieve parameters and outputs a response. In other words, it
+            connects the frontend to the database. It does much more than that,
+            but this is a solid high level perspective of it. We can route urls
+            such as `https://localhost:3000/users/register` to methods in a
+            controller such as the `register` method. We will cover more on this
+            soon.
           </Paragraph>
           <Title>Creating A Controller</Title>
           <Paragraph>
@@ -153,7 +155,8 @@ end
           </Paragraph>
           <Paragraph>
             Lets take a look at example payloads that can be passed to a request
-            and what the user_params would be. Here is an example JSON payload:
+            and what the `user_params` would be. Here is an example JSON
+            payload:
           </Paragraph>
           <CodeBlock language="json">
             {`{
@@ -176,7 +179,7 @@ end
 }`}
           </CodeBlock>
           <Paragraph>
-            Notice how the admin attribute is removed. Lets look at this
+            Notice how the admin key/value is removed. Lets look at this
             example:
           </Paragraph>
           <CodeBlock language="json">
@@ -231,7 +234,7 @@ end`}</CodeBlock>
 end`}
           </CodeBlock>
           <Paragraph>
-            This line does a lot for us, so lets disect this line:
+            This line does a lot for us, so lets disect it line by line:
           </Paragraph>
           <Paragraph>
             `render`: this method tells the endpoint what we are going to render
@@ -254,7 +257,7 @@ end`}
           </Paragraph>
           <Paragraph>
             If the user is invalid or the save fails, `User.errors` will provide
-            error info. Updare your register method to render a response when an
+            error info. Update your register method to render a response when an
             error exists:
           </Paragraph>
           <CodeBlock language="ruby">
@@ -271,10 +274,10 @@ end`}
           </CodeBlock>
           <Paragraph>
             We used a `400` status response because invalid params falls under
-            the general `bad request` category. We don't need a return as it is
-            already at the end of the method and no code will be executed after
-            this render. Your completed `users_controller.rb` should now look
-            like:
+            the general `bad request` category. We don't need a `return` as it
+            is already at the end of the method and no code will be executed
+            after this render. Your completed `users_controller.rb` should now
+            look like:
           </Paragraph>
           <CodeBlock language="ruby">
             {`class ApplicationController < ActionController::API
@@ -339,7 +342,7 @@ end
           </Paragraph>
           <Paragraph>
             `to:`: This tells Rails that when a user sends a request to the
-            `users/register` url, call the method after `to:`
+            `users/register` url, call the action after `to:`
           </Paragraph>
           <Paragraph>
             `'users#register'`: This is the controller and action that the
