@@ -62,13 +62,15 @@ const IndexPage = () => (
             Installing Ruby `2.6.5` is very straightforward by running the
             following command in your terminal:
           </Paragraph>
-          <CodeBlock language="console">$ rvm install 2.6.5</CodeBlock>
+          <CodeBlock useHighlight language="console">
+            $ rvm install 2.6.5
+          </CodeBlock>
           <Paragraph>
             Going forward, if you ever want to use `2.6.5`, you would just need
             to run: `$ rvm use 2.6.5`
           </Paragraph>
           <Paragraph>Once Ruby is setup, install Rails `6.0.2.1`:</Paragraph>
-          <CodeBlock language="console">
+          <CodeBlock useHighlight language="console">
             $ gem install rails -v 6.0.2.1
           </CodeBlock>
           <Title>Creating the API</Title>
@@ -78,7 +80,7 @@ const IndexPage = () => (
             backend. Fortunately, Rails provides us with an api-only option.
           </Paragraph>
           <Paragraph>To create a new Rails API, run</Paragraph>
-          <CodeBlock language="console">
+          <CodeBlock useHighlight language="console">
             $ rails new social-media-blog-api --api --database=postgresql
           </CodeBlock>
           <Paragraph>
@@ -91,7 +93,9 @@ const IndexPage = () => (
             Once this has been created, we can now enter the app directory by
             running
           </Paragraph>
-          <CodeBlock language="console">$ cd social-media-blog-api</CodeBlock>
+          <CodeBlock useHighlight language="console">
+            $ cd social-media-blog-api
+          </CodeBlock>
 
           <Title>Setting Up The Respository</Title>
           <Paragraph>
@@ -131,7 +135,7 @@ const IndexPage = () => (
             We would now have to tell git that we want to connect this local
             respository with a remote repository hosted on Github by running:
           </Paragraph>
-          <CodeBlock language="console">
+          <CodeBlock useHighlight language="console">
             $ git remote add origin
             https://github.com/ArmaizAdenwala/social-media-blog-api.git
           </CodeBlock>
@@ -144,7 +148,9 @@ const IndexPage = () => (
             branch to `origin`, which is the default name of the repository
             GitHub created.
           </Paragraph>
-          <CodeBlock language="console">$ git push -u origin master</CodeBlock>
+          <CodeBlock useHighlight language="console">
+            $ git push -u origin master
+          </CodeBlock>
           <Paragraph>
             Now we have GitHub setup! Checkout your GitHub repo url to see your
             files.

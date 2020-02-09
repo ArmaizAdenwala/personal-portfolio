@@ -1,10 +1,19 @@
 import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import SyntaxHighlighter, { Prism } from 'react-syntax-highlighter';
 
-const CodeBlock = ({ children, language }) => (
-  <SyntaxHighlighter language={language} useInlineStyles={false}>
-    {children}
-  </SyntaxHighlighter>
-);
+const CodeBlock = ({ children, language, useHighlight }) => {
+  if (useHighlight) {
+    return (
+      <SyntaxHighlighter language={language} useInlineStyles={false}>
+        {children}
+      </SyntaxHighlighter>
+    );
+  }
+  return (
+    <Prism language={language} useInlineStyles={false}>
+      {children}
+    </Prism>
+  );
+};
 
 export default CodeBlock;
