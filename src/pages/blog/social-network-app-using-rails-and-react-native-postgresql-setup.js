@@ -85,7 +85,7 @@ production:
             .env` in your terminal.
           </Paragraph>
           <Paragraph>Open that file and add the following lines:</Paragraph>
-          <CodeBlock language="env">
+          <CodeBlock language="ruby">
             {`POSTGRES_USER=''
 POSTGRES_PASSWORD=''
 POSTGRES_HOST='localhost'
@@ -96,7 +96,7 @@ POSTGRES_TEST_DB=''`}
             You can set the `username`, `password`, `db name`, and `test db
             name` to anything. But here is my sample `.env`:
           </Paragraph>
-          <CodeBlock language="env">{`POSTGRES_USER='social_media_blog'
+          <CodeBlock language="ruby">{`POSTGRES_USER='social_media_blog'
 POSTGRES_PASSWORD='password123'
 POSTGRES_HOST='localhost'
 POSTGRES_DB='social_media_blog'
@@ -119,7 +119,7 @@ Loading development environment (Rails 6.0.2.1)
             `.env` file. Open `.gitignore` and append `.env` to the end so that
             it matches below:
           </Paragraph>
-          <CodeBlock language="env">
+          <CodeBlock language="ruby">
             {`...
 
 # Ignore master key for decrypting credentials and more.
@@ -181,7 +181,7 @@ $ git push`}</CodeBlock>
             everything.
           </Paragraph>
           <Paragraph>We can create the role by running:</Paragraph>
-          <CodeBlock language="psql">
+          <CodeBlock useHighlight language="psql">
             CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD
             'password123';
           </CodeBlock>
@@ -192,7 +192,10 @@ $ git push`}</CodeBlock>
           <Paragraph>
             If successful, your console should look like this:
           </Paragraph>
-          <CodeBlock language="psql">{`postgres=# CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD 'password123';
+          <CodeBlock
+            useHighlight
+            language="psql"
+          >{`postgres=# CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD 'password123';
 CREATE ROLE`}</CodeBlock>
           <Paragraph>
             You can exit the console by typing `exit` or by using the `ctrl+z`
