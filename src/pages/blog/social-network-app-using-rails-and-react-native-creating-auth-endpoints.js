@@ -208,7 +208,7 @@ end`}</CodeBlock>
           </Paragraph>
           <CodeBlock language="ruby">{`def register
   user = User.new(user_params)
-  if user.valid? && @user.save
+  if user.valid? && user.save
     # render success state
   end
   # render error state
@@ -224,9 +224,9 @@ end`}</CodeBlock>
           </Paragraph>
           <CodeBlock language="ruby">
             {`def register
-  @user = User.create(user_params)
-  if @user.valid? && @user.save
-    render json: @user,
+  user = User.create(user_params)
+  if user.valid? && user.save
+    render json: user,
       status: 201
     return
   end
@@ -262,13 +262,13 @@ end`}
           </Paragraph>
           <CodeBlock language="ruby">
             {`def register
-  @user = User.create(user_params)
-  if @user.valid? && @user.save
-    render json: @user,
+  user = User.create(user_params)
+  if user.valid? && user.save
+    render json: user,
       status: 201
     return
   end
-  render json: @user.errors,
+  render json: user.errors,
     status: 400
 end`}
           </CodeBlock>
@@ -282,13 +282,13 @@ end`}
           <CodeBlock language="ruby">
             {`class ApplicationController < ActionController::API
   def register
-    @user = User.create(user_params)
-    if @user.valid? && @user.save
-      render json: @user,
+    user = User.create(user_params)
+    if user.valid? && user.save
+      render json: user,
         status: 201
       return
     end
-    render json: @user.errors,
+    render json: user.errors,
       status: 401
   end
 
@@ -546,7 +546,7 @@ end`}
             which emails exist and bruteforce a specific account as long as it
             keeps getting an `Invalid password` error. You may or may not ever
             come into this issue but it is a simple adjustment and protects your
-            endpoints.
+            endpoints.follo
           </Paragraph>
           <Paragraph>
             Your entire `app/controllers/users_controller.rb` file should now
@@ -555,13 +555,13 @@ end`}
           <CodeBlock language="ruby">
             {`class UsersController < ApplicationController
   def register
-    @user = User.create(user_params)
-    if @user.valid? && @user.save
-      render json: @user,
+    user = User.create(user_params)
+    if user.valid? && user.save
+      render json: user,
         adapter: :json ,
         status: 201 and return
     end
-    render json: @user.errors, status: 400
+    render json: user.errors, status: 400
   end
 
   def login
