@@ -153,22 +153,22 @@ end
             needed to ran:
           </Paragraph>
           <CodeBlock language="ruby">
-            user = User.new(email: 'a@abc.com', password: '123123')
+            user = User.new(email: 'a@abc.com', password: '123456')
           </CodeBlock>
           <Paragraph>
             Devise also handles password confirmations for us automatically. All
             we would have to do is add a `password_confirmation` attribute:
           </Paragraph>
           <CodeBlock language="ruby">
-            user = User.new(email: 'a@abc.com', password: '123123',
-            password_confirmation: '123123')
+            user = User.new(email: 'a@abc.com', password: '123456',
+            password_confirmation: '123456')
           </CodeBlock>
           <Paragraph>
             But since our variable `user` is already created, lets practice
             updating an existing model. Rails provides us with a `User.update()`
             method. Lets update `user` with a password and run `valid?`:
           </Paragraph>
-          <CodeBlock language="ruby">{`2.6.5 :050 > user.update(password: '123123', password_confirmation: '123123')
+          <CodeBlock language="ruby">{`2.6.5 :050 > user.update(password: '123456', password_confirmation: '123456')
    (0.4ms)  BEGIN
   User Exists? (0.4ms)  SELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "a@abc,com"], ["LIMIT", 1]]
   User Create (35.5ms)  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "a@abc,com"], ["encrypted_password", "$2a$11$H4TW0KwHFYPy3QKRVn58zuruh4OBZnaGn2YuVimbVoZDbFgbMSEzC"], ["created_at", "2020-02-08 09:12:13.225899"], ["updated_at", "2020-02-08 09:12:13.225899"]]
@@ -283,10 +283,23 @@ end
 Traceback (most recent call last):
         1: from (irb):11
 ActiveRecord::RecordNotFound (Couldn't find User)`}</CodeBlock>
+          <Title>Validating A User's Password</Title>
           <Paragraph>
-            These methods will help us find records, not only for Users, but for
-            posts, comments, and more. We will implement the `register` and
-            `login` endpoints in the next part.
+            One last thing: __we need to validate a user's password__. Devise
+            provides us with a `valid_password?` method for our User model. Try
+            it out with a valid an invalid password. _(In our example above we
+            used `a@abc.com` for the emails and `123456` for the password)_`)
+          </Paragraph>
+          <CodeBlock>{`2.6.5 :001 > user = User.find_by(email: 'a@abc.com')
+2.6.5 :002 > user.valid_password?('123123')
+ => true
+2.6.5 :003 > user.valid_password?('1231234')
+ => false`}</CodeBlock>
+          <Title>What's Next?</Title>
+          <Paragraph>
+            These methods will help us find records in the database, not only
+            for Users, but for future models as well. We will implement the
+            `register` and `login` endpoints in the next part.
           </Paragraph>
           <Paragraph>
             _Part 5 (Creating Register And Login Rails Endpoints) will be
