@@ -24,7 +24,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-syntax-highlighter": "^12.2.1"
+    "react-syntax-highlighter": "https://github.com/ArmaizAdenwala/react-syntax-highlighter"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
