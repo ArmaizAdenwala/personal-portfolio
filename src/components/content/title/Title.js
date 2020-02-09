@@ -3,7 +3,7 @@ import React from 'react';
 const Title = ({ children, first }) => {
   if (first) {
     return (
-      <h3
+      <h2
         className="
       tg__title-5--s
       tg__title-4--m
@@ -15,11 +15,11 @@ const Title = ({ children, first }) => {
     "
       >
         {children}
-      </h3>
+      </h2>
     );
   }
   return (
-    <h3
+    <h2
       className="
       tg__title-5--s
       tg__title-4--m
@@ -32,7 +32,7 @@ const Title = ({ children, first }) => {
     "
     >
       {children}
-    </h3>
+    </h2>
   );
 };
 
