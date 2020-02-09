@@ -28,6 +28,12 @@ const IndexPage = () => (
       <div className="p-v--32">
         <Container>
           <BlogCard
+            name="Part 5: Creating Auth Endpoints - Let's Create A Social Network Using Rails And React Native"
+            description="Creating authentication endpoints for our User models"
+            date="Feburary 9th, 2020"
+            url="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+          />
+          <BlogCard
             name="Part 4: Creating A User - Let's Create A Social Network Using Rails And React Native"
             description="Setting up authentication using devise"
             date="Feburary 8th, 2020"

@@ -390,6 +390,41 @@ users_register POST   /users/register(.:format)  users#register`}
    "email" : "abc2@abc.com"
 }`}
           </CodeBlock>
+          <Paragraph>Here is a breakdown of what is going on:</Paragraph>
+          <Paragraph>
+            `curl`: This is the command that we will be using to send data to
+            our server and recieve a response. You can learn more about curl by
+            running `man curl` on your terminal.
+          </Paragraph>
+          <Paragraph>
+            `-H`: This is the option for the curl command to set the Header of
+            the request
+          </Paragraph>
+          <Paragraph>
+            `"Content-Type: application/json"`: This is a header that tells the
+            API we are serving JSON data to it. We are using the
+            `application/json` MIME type.
+          </Paragraph>
+          <Paragraph>
+            `-X`: is used to set the request method that we are about to call.
+          </Paragraph>
+          <Paragraph>
+            `POST`: This is the request method we are setting for our request.
+          </Paragraph>
+          <Paragraph>
+            `-d`: This is an option for us to send data to the curl command so
+            that it can include it in the request
+          </Paragraph>
+          <Paragraph>{`\`'{"user": ...}'\`: this is the data that is being served`}</Paragraph>
+          <Paragraph>
+            `http://localhost:3000/users/register`: This is the url that we are
+            sending the request to. We are running the server locally and it
+            runs on port `3000` on default.
+          </Paragraph>
+          <Paragraph>
+            `| json_pp`: We pipe the result of the curl command to `json_pp` so
+            that it can pretty print the json response.
+          </Paragraph>
           <Paragraph>
             Awesome! Our endpoint works and we can create new users. You can
             verify this in the Rails console:
@@ -420,17 +455,221 @@ Loading development environment (Rails 6.0.2.1)
           <Paragraph>
             We can also validate the password using `valid_password?`
           </Paragraph>
-          <CodeBlock language="ruby">{`2.6.5 :005 > user.valid_password?("123456")
- => true`}</CodeBlock>
-          <Title>What's Next?</Title>
+          <CodeBlock language="ruby">
+            {`2.6.5 :005 > user.valid_password?("123456")
+ => true`}
+          </CodeBlock>
           <Paragraph>
-            These methods will help us find records in the database, not only
-            for Users, but for future models as well. We will implement the
-            `register` and `login` endpoints in the next part.
+            With this information, we can create the login endpoint in
+            `users_controller.rb`:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`def login
+  email = params[:user][:email]
+  password = params[:user][:password]
+  user = User.find_by(email: email)
+  is_valid = user && user.valid_password?(password)
+  unless is_valid
+    render json: {
+      status: 'error',
+      message: 'Invalid credentials'
+    }, status: 400 and return
+  end
+  return render json: user,
+    status: 200
+end`}
+          </CodeBlock>
+          <Paragraph>
+            We extract the email and password into variables by pulling them
+            from the `user` object that is passed in through the JSON request
+            body. `params[:user]` returns the user object and `[:email]` pulls
+            the value of the `email` key inside the user object. So our request
+            body would look like:
+          </Paragraph>
+          <CodeBlock language="json">
+            {`{
+  "user": {
+    "email": "abc@123.com",
+    "password": "123123"
+  }
+}`}
+          </CodeBlock>
+          <Paragraph>Alternatively we could just do:</Paragraph>
+          <CodeBlock language="json">
+            {`{
+  "email": "abc@123.com",
+  "password": "123123"
+}`}
+          </CodeBlock>
+          <Paragraph>
+            But I like to keep my code as consistent as possible. It helps with
+            readability and maintainability, not only for you, but for other
+            developers as well. You should always write clean code that others
+            can pickup and understand.
           </Paragraph>
           <Paragraph>
-            _Part 5 (Creating Register And Login Rails Endpoints) will be
-            released soon. Please check back later._
+            However, we won't get an error if we do go that route above. We are
+            not using the `user_params` method, so `.requre(:user)` won't be
+            ran. We won't need to filter out any params via `.require` and
+            `.permit` as we are directly extracting the `email` and `password`
+            keys from the `params` hash.
+          </Paragraph>
+          <Paragraph>
+            `User.find_by(email: email)` we find the user with the associated
+            email, keep in mind that if nothing is found, it will return `nil`
+            which is `falsey`.
+          </Paragraph>
+          <Paragraph>
+            `user && user.valid_password?(password)` is equal to true if `user`
+            exists (not `nil`) and if the `valid_password?` password method
+            returns `true`. _Note: `valid_password?` will not run if `user` does
+            not exist so we won't get an error calling `nil.valid_password?`.
+            This is because Ruby knows that it won't need to run the whole
+            conditional statement if the first conditional is `false`._
+          </Paragraph>
+          <Paragraph>
+            `unless is_valid` is the same as `if !is_valid`. Ruby focuses on
+            being easy to read, so according to the [Rubocop Style
+            Guide](https://github.com/rubocop-hq/ruby-style-guide), we should
+            use `unless`. So unless `is_valid` is `true`, run the nested
+            `render` method.
+          </Paragraph>
+          <Paragraph>
+            > We handle both an `invalid email` and `invalid password` error
+            under a single `Invalid credentials'` error becuase it will allow
+            someone to bruteforce a list of emails and passwords easier. A
+            hacker could send requests through proxies and log any email that
+            returns an `Invalid Email` response. They could also figure out
+            which emails exist and bruteforce a specific account as long as it
+            keeps getting an `Invalid password` error. You may or may not ever
+            come into this issue but it is a simple adjustment and protects your
+            endpoints.
+          </Paragraph>
+          <Paragraph>
+            Your entire `app/controllers/users_controller.rb` file should now
+            look like:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`class UsersController < ApplicationController
+  def register
+    @user = User.create(user_params)
+    if @user.valid? && @user.save
+      render json: @user,
+        adapter: :json ,
+        status: 201 and return
+    end
+    render json: @user.errors, status: 400
+  end
+
+  def login
+    email = params[:user][:email]
+    password = params[:user][:password]
+    user = User.find_by(email: email)
+    is_valid = user && user.valid_password?(password)
+    unless is_valid
+      render json: {
+        status: 'error',
+        message: 'Invalid credentials'
+      }, status: 400 and return
+    end
+
+    return render json: user,
+      status: 200
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(
+      :email,
+      :password,
+      :password_confirmation,
+    )
+  end
+end`}
+          </CodeBlock>
+          <Title>Updating The Routes</Title>
+          <Paragraph>
+            We need to add the new login route to our `config/routes.rb` file:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`Rails.application.routes.draw do
+  post 'users/register', to: 'users#register'
+  post 'users/login', to: 'users#login'
+end
+`}
+          </CodeBlock>
+          <Paragraph>
+            We are using a `post` for this as well. If you chose to not have a
+            `user` object for the login, I still recommend a `post` instead of a
+            `get` request. The `get` request will show the `email` and
+            `password` params in the url itself:
+            `users/login/?email="a@a.co"&password="123456"`.
+          </Paragraph>
+          <Paragraph>
+            > It is a bad habit to include any sensitive data in a `get` request
+            because the whole url may end up in logs, or history. A `post` isn't
+            any more secure than a `get` request other than the sensitive data
+            is moved to the request body. When dealing with sensitive data, it
+            should always go through `HTTPS`. The request method does not secure
+            it, but SSL does.
+          </Paragraph>
+          <Paragraph>
+            Run `rake routes` to verify that the route has been created.
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`$ rake routes
+        Prefix Verb   URI Pattern                Controller#Action
+users_register POST   /users/register(.:format)  users#register
+users_login    POST   /users/login(.:format)     users#login`}
+          </CodeBlock>
+          <Title>Testing The Login Endpoint</Title>
+          <Paragraph>
+            Make sure your server is running using `$ rails s` and enter the
+            following `curl` command to test if our endpoint works. _Be sure to
+            update the login credentials to the right credentials._
+          </Paragraph>
+          <CodeBlock language="shell">
+            {`curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "abc2@abc.com","password":"123456"}}' http://localhost:3000/users/login | json_pp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   202    0   148  100    54    135     49  0:00:01  0:00:01 --:--:--   135
+{
+   "created_at" : "2020-02-09T17:24:53.319Z",
+   "email" : "abc2@abc.com",
+   "updated_at" : "2020-02-09T17:24:53.319Z",
+   "id" : "4edc9a20-1e61-4a82-bb97-ee6647ff8212"
+}`}
+          </CodeBlock>
+          <Paragraph>
+            It works! Now that we got our endpoints in order, check out the
+            Rails server terminal to see what it outputted once we ran that
+            login command:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`Started POST "/users/login" for ::1 at 2020-02-09 10:45:24 -0800
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"email"=>"abc2@abc.com", "password"=>"[FILTERED]"}}
+  User Load (1.0ms)  SELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "abc2@abc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in \`login'
+Completed 200 OK in 159ms (Views: 8.6ms | ActiveRecord: 1.9ms | Allocations: 3940)`}
+          </CodeBlock>
+          <Paragraph>
+            This is where you will see realtime errors and logs. From this we
+            can tell a `POST` request was made to `users/login` and follow along
+            to see which controller it called, parameters that were passed, SQL
+            queries that were made, the line where the response was rendered,
+            the status code, and more. This is very useful information that we
+            will come across in the future.
+          </Paragraph>
+          <Title>What's Next?</Title>
+          <Paragraph>
+            You have now made your first Rails endpoints! We will be improving
+            these endpoints in the next part by implementing API Versions.
+          </Paragraph>
+          <Paragraph>
+            _Part 6 (Implementing API versions in Rails) will be released soon.
+            Please check back later._
           </Paragraph>
           {/* <div className="m-t--64 tg__t--center">
             <div className="button">
