@@ -16,7 +16,7 @@ const IndexPage = () => (
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 5: Creating Auth Endpoints"
+      emphasized="Let's Create A Social Network Using Rails And React Native - Part 6: API Versioning"
       description="Implementing API versioning on our Rails API"
       date="Feburary 10th, 2020"
       extraContent
