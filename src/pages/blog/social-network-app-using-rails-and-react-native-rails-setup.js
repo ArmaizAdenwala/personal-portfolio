@@ -59,8 +59,8 @@ const IndexPage = () => (
             view the documentation for RVM](https://rvm.io/)
           </Paragraph>
           <Paragraph>
-            Installing Ruby `2.6.5` is very straightforward by running the
-            following command in your terminal:
+            Installing Ruby `2.6.5` using __RVM__ is very straightforward by
+            running the following command in your terminal:
           </Paragraph>
           <CodeBlock useHighlight language="console">
             $ rvm install 2.6.5
@@ -99,10 +99,10 @@ const IndexPage = () => (
 
           <Title>Setting Up The Respository</Title>
           <Paragraph>
-            I like to create my GitHub repository ASAP. So this is a good time
-            to create our GitHub repo. [Click here to create a new
-            repository](https://github.com/new) and name it to whatever you
-            like.
+            I like to create my GitHub repository as soon as I start my app. So
+            this is a good time to create our GitHub repo. [Click here to create
+            a new repository](https://github.com/new) and name it to whatever
+            you like.
           </Paragraph>
           <img className="full-width-img" src={NewRepo} loading="lazy" />
           <Paragraph>

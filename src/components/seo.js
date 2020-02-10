@@ -94,6 +94,7 @@ function SEO({
       {canonical && <meta property="og:url" content={canonical} />}
       {image && <meta property="og:image" content={image} />}
       {image && <meta name="twitter:image:src" content={image} />}
+      <link rel="shortcut icon" href="/favicon.png" />
     </Helmet>
   );
 }
