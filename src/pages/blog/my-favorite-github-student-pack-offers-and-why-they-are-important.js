@@ -38,7 +38,7 @@ const IndexPage = () => (
           </Paragraph>
           <Title>Heroku</Title>
           <Paragraph>
-            Heroku is a __PAAS__ (Plaform as a Service) that allows you to
+            Heroku is a __PAAS__ (Platform as a Service) that allows you to
             launch your app in seconds. Its focus is on taking all the devops
             work off your hands. That means you just need to run a couple
             commands for your app to be deployed and accessible anywhere!
