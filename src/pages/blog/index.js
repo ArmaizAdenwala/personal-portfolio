@@ -9,7 +9,6 @@ const IndexPage = () => (
     <SEO
       title="Blog"
       canonical="https://armaizadenwala.com/blog/"
-      secondaryTitle="Armaiz"
       description="A developer blog to share what I learn."
     />
     <Navbar
@@ -31,7 +30,7 @@ const IndexPage = () => (
             name="Part 6: API Versioning - Let's Create A Social Network Using Rails And React Native"
             description="Implementing API versioning on our Rails API"
             date="Feburary 10th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-creating-api-versioning/"
+            url="/blog/social-network-app-using-rails-and-react-native-api-versioning/"
           />
           <BlogCard
             name="Part 5: Creating Auth Endpoints - Let's Create A Social Network Using Rails And React Native"

@@ -39,25 +39,30 @@ const IndexPage = () => (
           <Paragraph>
             Our current API currently has the endpoints `/users/login` and
             `/users/register`. Imagine we are in a scenario where we have an
-            active userbase ande we are changing the register api to require a
-            `name` field. In this scenario, our mobile app only has an `email`
-            and `password` field. How can we make all new versions of the app
-            use the new endpoint while still temporarily supporting old versions
-            of the app?
+            active userbase and we are updating our mobile app from `1.2.3` to
+            `2.0.0`. This is signifies some form of a major change. In `2.0.0`
+            users are now asked to enter their `name` on the registration
+            screen, in addition to an `email` and a `password`. In this
+            scenario, our `1.2.3` mobile app's registration field only has an
+            `email` and `password` field. How can we release `2.0.0` without
+            breaking `1.2.3`?
           </Paragraph>
           <Paragraph>
-            Implementing API Versioning would be the solution to the situation
-            above. We can have a version 1 of the API (`v1`) and a version 2 of
-            the API (`v2`). That means our current version of the app would
-            point to `/v1/users/register` and the new version would point to
-            `/v2/users/register`. This will prevent many bugs and conflicts when
-            deploying a critical change.
+            The cleanest approach is API versioning. That means `1.2.3` will
+            point to the `/v1/` version of the api and `2.0.0` will point to the
+            `/v2/` version of the api.
           </Paragraph>
           <Paragraph>
-            _Note: Some would argue this is overkill for a small project. It's
-            easy to implement, keeps urls clean, and is a good habit for a
-            developer in the industy. Do it right the first time, so you won't
-            have to worry about it in the future._
+            So if a user tries registering using `1.2.3`, the app would point to
+            `/v1/users/register` and `2.0.0` would point to
+            `/v2/users/register`. This will prevent potential bugs and conflicts
+            when deploying a critical change.
+          </Paragraph>
+          <Paragraph>
+            _Note: Some would argue this is overkill for a small project with no
+            userbase. It's easy to implement, keeps urls clean, and is a good
+            habit for a developer in the industy. If you do it right the first
+            time, so you won't have to worry about it in the future._
           </Paragraph>
           <Title>Versioning The Controller</Title>
           <Paragraph>
@@ -76,7 +81,10 @@ $ mv app/controllers/users_controller.rb app/controllers/v1/users_controller.rb`
           </Paragraph>
           <Paragraph>
             `mv`: moves the file provided to the new path. In this case moving
-            from the `controllers` folder to the `controllers/v`` folder.
+            from the `controllers` folder to the `controllers/v1` folder.
+          </Paragraph>
+          <Paragraph>
+            > `mv` can also be used to rename files: `mv file.rb new_name.rb`
           </Paragraph>
           <Paragraph>
             We need to update our users controller, so we need to update this
@@ -92,8 +100,9 @@ $ mv app/controllers/users_controller.rb app/controllers/v1/users_controller.rb`
           </Paragraph>
           <CodeBlock language="ruby">{`class V1::UsersController < ApplicationController`}</CodeBlock>
           <Paragraph>
-            _Note: `ApplicationController` is still under `controllers/` so we
-            do not update that._
+            _Note: `ApplicationController`'s path is still
+            `controllers/application_controller.rb` so we do not prepend `V1::`
+            to `ApplicationController`._
           </Paragraph>
           <Title>Updating The Routes</Title>
           <Paragraph>
@@ -173,10 +182,10 @@ v1_users_register POST   /v1/users/register(.:format)  v1/users#register
           <Paragraph>
             We still can prepare our `routes.rb` file to be cleaner in the
             future. We want to focus our code to be __DRY__ (Don't Repeat
-            Yourself). A routing concern allows us to define some routes and use
-            those routes anywhere in the file through that routing concern. In
+            Yourself). A __routing concern__ allows us to define some routes
+            within that concern and use those routes anywhere in the file. In
             this case we want a routing concern for our `login` and `register`
-            routes and call that routing concern in the `v1` namespace.
+            routes and call that concern in the `v1` namespace.
           </Paragraph>
           <Paragraph>
             We need to add a concern to our `routes.rb` file:
@@ -198,9 +207,9 @@ end`}
             `concern`: tells Rails that we are declaring a concern
           </Paragraph>
           <Paragraph>
-            `:base_api`: This can be anything, a good self-doccumenting name
-            would be `:base_api` but it could be anything like
-            `:report_endpoints`
+            `:base_api`: This is what you want the concern to be named as. A
+            good self-doccumenting name would be `:base_api` but it could be
+            anything like `:report_endpoints`
           </Paragraph>
           <Paragraph>
             `do`: tells Rails that everything nested between the `do` and `end`
@@ -231,8 +240,8 @@ end`}
           </Paragraph>
           <Paragraph>
             Before we test it, here is an example of why concerns are useful.
-            Here is an example without API verisoning with a new endpoint in
-            `v2`:
+            Here is an example without API verisoning that has a `v2` namespace
+            with a new endpoint:
           </Paragraph>
           <CodeBlock language="ruby">
             {`Rails.application.routes.draw do
@@ -249,7 +258,8 @@ end`}
 end`}
           </CodeBlock>
           <Paragraph>
-            Here is an example of API verisoning with a new endpoint in `v2`:
+            Here is an example of the `routes.rb` file above with API
+            verisoning:
           </Paragraph>
           <CodeBlock language="ruby">
             {`Rails.application.routes.draw do
@@ -276,6 +286,21 @@ end`}
             within the controllers may differ, but knowing if there is a `[POST]
             /comments/` endpoint in `v2` and not `v1` is important.
           </Paragraph>
+          <Paragraph>
+            Don't forget that you shouldn't have the `v2` namespace above as
+            that was just an example. Your `config/routes.rb` should look like:
+          </Paragraph>
+          <CodeBlock language="ruby">{`Rails.application.routes.draw do
+  concern :base_api do
+    post 'users/register', to: 'users#register'
+    post 'users/login', to: 'users#login'
+  end
+
+  namespace :v1 do
+    concerns :base_api
+  end
+end
+`}</CodeBlock>
           <Title>Testing The Refactored Code</Title>
           <Paragraph>First, lets run `rake routes` again.</Paragraph>
           <CodeBlock language="ruby">
@@ -314,13 +339,14 @@ v1_users_register POST   /v1/users/register(.:format) v1/users#register
           </CodeBlock>
           <Paragraph>
             If everything works, you've successfully implementing API
-            versioning! Down the road, you'll appreciate doing it now, rather
-            than in the future when you have dozens of endpoints.
+            versioning!
           </Paragraph>
           <Title>What's Next?</Title>
           <Paragraph>
-            We now have a good foundation for our next section: __Implementing
-            Json Web Tokens__.
+            By now you should have 2 important endpoints: `login` and
+            `register`. But these need to be improved so that we won't have to
+            pass `login` and `password` to every request. In the next section we
+            will be __implementing Json Web Tokens__.
           </Paragraph>
           <Paragraph>
             _Part 7 (Implementing Json Web Tokens) will be released soon. Please
