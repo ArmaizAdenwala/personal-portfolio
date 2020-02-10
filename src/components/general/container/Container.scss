@@ -7,12 +7,14 @@
   padding-right: 16px;
   overflow-x: hidden;
   @include respond-to('small') {
-    width: calc(100% - 128px);
-    padding-left: 64px;
-    padding-right: 64px;
+    width: calc(100% - 64px);
+    padding-left: 32px;
+    padding-right: 32px;
   }
-  @include respond-to('medium') {
+  @include respond-to('large') {
     margin: 0 auto;
     width: 980px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
