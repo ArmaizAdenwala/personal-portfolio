@@ -108,4 +108,10 @@
     <priority>0.8</priority>
     <lastmod>2020-02-09</lastmod>
   </url>
+  <url>
+    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-api-versioning/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-02-10</lastmod>
+  </url>
 </urlset>

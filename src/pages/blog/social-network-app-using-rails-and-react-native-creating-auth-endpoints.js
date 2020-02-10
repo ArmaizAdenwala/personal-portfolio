@@ -670,20 +670,16 @@ Completed 200 OK in 159ms (Views: 8.6ms | ActiveRecord: 1.9ms | Allocations: 394
             You have now made your first Rails endpoints! We will be improving
             these endpoints in the next part by implementing API Versions.
           </Paragraph>
-          <Paragraph>
-            _Part 6 (Implementing API versions in Rails) will be released soon.
-            Please check back later._
-          </Paragraph>
-          {/* <div className="m-t--64 tg__t--center">
+          <div className="m-t--64 tg__t--center">
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+                to="/blog/social-network-app-using-rails-and-react-native-api-versioning/"
               >
-                VIEW PART FOUR: CREATING AUTH ENDPOINTS
+                VIEW PART SIX: RAILS API VERSIONING
               </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </Container>
       <Footer />
