@@ -348,20 +348,16 @@ v1_users_register POST   /v1/users/register(.:format) v1/users#register
             pass `login` and `password` to every request. In the next section we
             will be __implementing Json Web Tokens__.
           </Paragraph>
-          <Paragraph>
-            _Part 7 (Implementing Json Web Tokens) will be released soon. Please
-            check back later._
-          </Paragraph>
-          {/* <div className="m-t--64 tg__t--center">
+          <div className="m-t--64 tg__t--center">
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+                to="/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
               >
-                VIEW PART FOUR: CREATING AUTH ENDPOINTS
+                VIEW PART SEVEN: CREATING AUTH ENDPOINTS
               </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </Container>
       <Footer />
