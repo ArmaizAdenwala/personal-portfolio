@@ -281,6 +281,10 @@ blockquote {
     margin-inline-start: 40px;
     margin-inline-end: 40px;
   }
+
+  & code {
+    background: #dde4e9;
+  }
 }
 .full-width-img {
   width: 100%;

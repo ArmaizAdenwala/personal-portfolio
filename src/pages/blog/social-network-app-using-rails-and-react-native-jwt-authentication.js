@@ -18,7 +18,7 @@ const IndexPage = () => (
     <Hero
       emphasized="Let's Create A Social Network Using Rails And React Native - Part 7: JWT (JSON Web Token) Authentication"
       description="What is JWT and how to use it"
-      date="Feburary 11th, 2020"
+      date="Feburary 12th, 2020"
       extraContent
     />
     <div className="page__content">
@@ -38,13 +38,13 @@ const IndexPage = () => (
           </Paragraph>
           <Title>What Is JWT?</Title>
           <Paragraph>
-            __JWT__ stands for __JSON Web Token__. It takes a JSON payload, an
-            expiration date, and a key to create a token that is encrypted using
-            a specified algorithim. It can then be decoded to retrieve the
-            original payload. What we want to do is save the token on the user's
-            app so that every request made sends a JWT token along with it.
-            Before the API does anything, it will verify if the token is valid
-            and tells the controller which user sent the request.
+            __JWT__ stands for __JSON Web Token__. It takes a `payload` and a
+            `key` to create a `token` that is encrypted using a specified
+            algorithim. It can then be decoded to retrieve the original payload.
+            What we want to do is save the token on the user's app so that every
+            request made sends a JWT token along with it. Before the API does
+            anything, it will verify if the token is valid and tells the
+            controller which user sent the request.
           </Paragraph>
           <Paragraph>
             {`Here is an example workflow:
@@ -52,14 +52,14 @@ const IndexPage = () => (
 1. The mobile app logs in using the \`login\` endpoint.
 2. If the credentials are valid, the API returns the user object, and __encode__ a JWT \`access_token\` that will be passed as \`meta data\`.
 3. The mobile app saves the \`access_token\` and navigates to the homepage of the app.
-4. For every api call, the mobile app will now pass the \`access_token\`
-5. When the app recieves an \`access_token\`, it will __decode__ it and retrieve the user's id and set an __instance_variable__ called \`@current_user\` and set it to the user from the payload.
+4. For every API call, the mobile app will now pass the \`access_token\`
+5. When the app recieves an \`access_token\`, it will __decode__ it and retrieve the user's id, set an __instance_variable__ called \`@current_user\` and set it to the \`user\` from the \`payload\` .
           `}
           </Paragraph>
           <Paragraph>
             That may have been a lot of information, so lets look at one step at
-            a time. We implemented step 1 in the workflow, so we will need to
-            take a look at step 2: __encoding a JWT access token__.
+            a time. We implemented step 1 in the workflow, so for this section,
+            we will take a look at step 2: __encoding a JWT access token__.
           </Paragraph>
           <Title>Installing JSON Web Token</Title>
           <Paragraph>
@@ -74,7 +74,6 @@ gem 'jwt'
           </CodeBlock>
           <CodeBlock language="shell">
             {`$ bundle install
-The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run \`bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java\`.
 ...
 Using jwt 2.2.1
 ...
@@ -132,7 +131,7 @@ Use \`bundle info [gemname]\` to see where a bundled gem is installed.`}
           <Title>Encrypting With Our Secret Key Base</Title>
           <Paragraph>
             Let's use our secret keybase to encrypt an object, and decrypt it.
-            In the rails console, assign the `secret_key_base` to a variable
+            In the Rails console, assign the `secret_key_base` to a variable
             such as `key`:
           </Paragraph>
           <CodeBlock language="ruby">

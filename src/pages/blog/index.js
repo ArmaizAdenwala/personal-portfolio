@@ -27,6 +27,12 @@ const IndexPage = () => (
       <div className="p-v--32">
         <Container>
           <BlogCard
+            name="Part 7: JWT (JSON Web Token) Authentication - Let's Create A Social Network Using Rails And React Native"
+            description="What is JWT (JSON Web Token) and how to use it"
+            date="Feburary 12th, 2020"
+            url="/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
+          />
+          <BlogCard
             name="Part 6: API Versioning - Let's Create A Social Network Using Rails And React Native"
             description="Implementing API versioning on our Rails API"
             date="Feburary 10th, 2020"
