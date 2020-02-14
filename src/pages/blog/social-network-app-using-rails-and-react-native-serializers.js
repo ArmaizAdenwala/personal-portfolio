@@ -91,8 +91,72 @@ const {access_token} = meta;`}
             `/comments` endpoint to get the first 3 comments for each post in
             the `/posts` endpoint).
           </Paragraph>
-          <Title>Implementing Serializers</Title>
-          <Paragraph>Let's try to implement serializers</Paragraph>
+          <Title>Setting Up Serializers</Title>
+          <Paragraph>
+            We would need to first setup serializers. Add `gem
+            'active_model_serializers'` to your `Gemfile` and run `$ bundle
+            install`:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`...
+gem 'jwt'
+gem 'active_model_serializers'
+...`}
+          </CodeBlock>
+          <Paragraph>
+            We will now need to create an initialixer that will configure
+            `active_model_serializers` every time the server is ran.
+            Initializers are located under `config/initialixers`. Let's create
+            one called `active_model_serializers.rb`. You can create the file
+            via terminal by using the `touch` command: `$ touch
+            config/initializers/active_model_serializers.rb`. Add the following
+            lines to your new initializer:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`ActiveModel::Serializer.config.adapter = :json_api 
+ActiveModelSerializers.config.key_transform = :underscore`}
+          </CodeBlock>
+          <Paragraph>
+            Lets break this down line by line, starting with:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            ActiveModel::Serializer.config.adapter = :json_api
+          </CodeBlock>
+          <Paragraph>
+            `ActiveModel::Serializer`: This is the class that
+            `active_model_serializer` gem provides.
+          </Paragraph>
+          <Paragraph>
+            `config`: This is the config class where we can set our
+            configurations.
+          </Paragraph>
+          <Paragraph>
+            `adapter`: This is a setting to determine what our adapter is.
+            Adapters choose how our responses should be serialized. By default
+            it uses the `attributes` serializer.
+          </Paragraph>
+          <Paragraph>
+            `:json_api`: This is the adapter we will use that formats our
+            response as JSON.
+          </Paragraph>
+          <CodeBlock language="ruby">
+            ActiveModelSerializers.config.key_transform = :underscore
+          </CodeBlock>
+          <Paragraph>
+            `key_transform`: This setting allows us to configure our json keys
+            to be `CamelCase`, `lowerCamelCase`, `underscore_case`
+            (`snake_case`), `dashed-case,` or `unaltered`.
+          </Paragraph>
+          <Paragraph>
+            `:underscore`: we will be using underscore for our keys. This is
+            becuase the Ruby language uses underscores and it would make it
+            easier if data being sent, manipulated, and recieved had consistent
+            key names. Even though our frontend is in Javascript, which uses
+            camelCase, we won't be doing any manipulation on our frontend.
+            Sorting, searching, etc. will all be done in the backend Rails API.
+            I do this to remove any complexity out of the app and it makes
+            updates easier when it comes to anything data related.
+          </Paragraph>
           <Paragraph>
             _Part 8 (Implementing JWT in Rails endpoints) will be released soon.
             Please check back later._
