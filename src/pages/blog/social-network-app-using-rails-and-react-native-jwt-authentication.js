@@ -33,7 +33,7 @@ const IndexPage = () => (
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 7 branch of the GitHub
-            repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part6)
+            repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part7)
             if needed._
           </Paragraph>
           <Title>What Is JWT?</Title>
@@ -230,23 +230,20 @@ JWT::ExpiredSignature (Signature has expired)`}
           </Paragraph>
           <Title>What's Next?</Title>
           <Paragraph>
-            Now that we have learned what `JWT` is, we can now implement it to
-            our API endpoints in the next section.
+            Now that we have learned what `JWT` is, we should now implement it
+            to our API endpoints. Before we can do that, we need to setup
+            serializers.
           </Paragraph>
-          <Paragraph>
-            _Part 8 (Implementing JWT in Rails endpoints) will be released soon.
-            Please check back later._
-          </Paragraph>
-          {/* <div className="m-t--64 tg__t--center">
+          <div className="m-t--64 tg__t--center">
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+                to="/blog/social-network-app-using-rails-and-react-native-serializers/"
               >
-                VIEW PART FOUR: CREATING AUTH ENDPOINTS
+                VIEW PART EIGHT: IMPLEMENTING SERIALIZERS IN OUR RAILS ENDPOINTS
               </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </Container>
       <Footer />
