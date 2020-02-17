@@ -69,9 +69,10 @@ const IndexPage = () => (
 }`}
           </CodeBlock>
           <Paragraph>
-            Notice how we no longer have `updated_at` or `created_at`. In some
-            scenarios, we never use that information so there is no need to
-            output it and make the response larger.
+            Our user data is now under a `user` attribute. Notice how we no
+            longer have `updated_at` or `created_at`. In some scenarios, we
+            never use that information so there is no need to output it and make
+            the response larger.
           </Paragraph>
           <Paragraph>
             We also have the `meta` attribute which allows us to append the
@@ -87,9 +88,9 @@ const {access_token} = meta;`}
             Serializers are much more powerful than selecting which attributes
             to output. We can also output relations, such as the first 3
             comments for a post. Using serializers keeps our responses small and
-            allows us to combine multiple responses into one. (Not having to hit
-            `/comments` endpoint to get the first 3 comments for each post in
-            the `/posts` endpoint).
+            allows us to combine multiple responses into one. For example, not
+            having to hit `/comments` endpoint to get the first 3 comments for
+            each post in the `/posts` endpoint.
           </Paragraph>
           <Title>Setting Up Serializers</Title>
           <Paragraph>
@@ -120,7 +121,7 @@ ActiveModelSerializers.config.key_transform = :underscore`}
             Lets break this down line by line, starting with:
           </Paragraph>
           <CodeBlock language="ruby">
-            ActiveModel::Serializer.config.adapter = :json_api
+            ActiveModel::Serializer.config.adapter = :json
           </CodeBlock>
           <Paragraph>
             `ActiveModel::Serializer`: This is the class that
@@ -230,9 +231,9 @@ end `}</CodeBlock>
           <Title>Adding Meta Data</Title>
           <Paragraph>
             Serializers give us the option to add meta data. This would be the
-            extra deta appended to our `User` response. In this case we want to
-            return our JWT access token. Since we have not worked on generating
-            a token in the controller yet, we will just hardcode a string.
+            extra data appended to our response. In this case we want to return
+            our JWT access token. Since we have not worked on generating a token
+            in the controller yet, we will just hardcode a string.
           </Paragraph>
           <Paragraph>
             Take a look at the render method of your login endpoint in your
@@ -244,17 +245,38 @@ end `}</CodeBlock>
           </CodeBlock>
           <Paragraph>
             We have the option of passing a hash as a value for the `meta` key.
-            Create hash with a mock access_token and set it to the `meta` key:
+            Create a hash with a mock `access_token` and set it to the `meta`
+            key:
           </Paragraph>
           <CodeBlock language="ruby">
             {`return render json: user,
       meta: {access_token: '123'},
       status: 200`}
           </CodeBlock>
-          <Paragraph>This won't addend the met</Paragraph>
+          <Paragraph>Now we can test the login endpoint again:</Paragraph>
+          <CodeBlock language="shell">
+            {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "a@abc.com","password":"123456"}}' http://localhost:3000/v1/users/login | json_pp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   155    0   104  100    51    735    360 --:--:-- --:--:-- --:--:--   737
+{
+   "user" : {
+      "id" : "7545d290-962f-45bb-891d-f7e43b4fbf68",
+      "email" : "a@abc.com"
+   },
+   "meta" : {
+      "access_token" : "123"
+   }
+}`}
+          </CodeBlock>
           <Paragraph>
-            _Part 8 (Implementing JWT in Rails endpoints) will be released soon.
-            Please check back later._
+            Our meta deta is now stored under the `meta` key in our JSON
+            response. We are now ready to create our JWT module in the next
+            section.
+          </Paragraph>
+          <Paragraph>
+            _Part 9 (Creating a JWT module) will be released soon. Please check
+            back later._
           </Paragraph>
           {/* <div className="m-t--64 tg__t--center">
             <div className="button">
