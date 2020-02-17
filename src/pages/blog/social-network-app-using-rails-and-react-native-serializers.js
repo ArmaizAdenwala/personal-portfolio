@@ -104,16 +104,16 @@ gem 'active_model_serializers'
 ...`}
           </CodeBlock>
           <Paragraph>
-            We will now need to create an initialixer that will configure
+            We will now need to create an initializer that will configure
             `active_model_serializers` every time the server is ran.
-            Initializers are located under `config/initialixers`. Let's create
+            Initializers are located under `config/initializers`. Lets create
             one called `active_model_serializers.rb`. You can create the file
             via terminal by using the `touch` command: `$ touch
             config/initializers/active_model_serializers.rb`. Add the following
             lines to your new initializer:
           </Paragraph>
           <CodeBlock language="ruby">
-            {`ActiveModel::Serializer.config.adapter = :json_api 
+            {`ActiveModel::Serializer.config.adapter = :json 
 ActiveModelSerializers.config.key_transform = :underscore`}
           </CodeBlock>
           <Paragraph>
@@ -136,8 +136,8 @@ ActiveModelSerializers.config.key_transform = :underscore`}
             it uses the `attributes` serializer.
           </Paragraph>
           <Paragraph>
-            `:json_api`: This is the adapter we will use that formats our
-            response as JSON.
+            `:json`: This is the adapter we will use that formats our response
+            as JSON.
           </Paragraph>
           <CodeBlock language="ruby">
             ActiveModelSerializers.config.key_transform = :underscore
@@ -153,10 +153,105 @@ ActiveModelSerializers.config.key_transform = :underscore`}
             easier if data being sent, manipulated, and recieved had consistent
             key names. Even though our frontend is in Javascript, which uses
             camelCase, we won't be doing any manipulation on our frontend.
-            Sorting, searching, etc. will all be done in the backend Rails API.
-            I do this to remove any complexity out of the app and it makes
+            Sorting, searching, and etc will all be done in the backend Rails
+            API. I do this to remove any complexity out of the app and make
             updates easier when it comes to anything data related.
           </Paragraph>
+          <Title>Creating Our First Serializers</Title>
+          <Paragraph>Create a `serializers` directory:</Paragraph>
+          <CodeBlock
+            useHighlight
+            language="console"
+          >{`$ mkdir app/serializers`}</CodeBlock>
+          <Paragraph>Create a `v1` directory:</Paragraph>
+          <CodeBlock
+            useHighlight
+            language="console"
+          >{`$ mkdir app/serializers/v1`}</CodeBlock>
+          <Paragraph>
+            Create a `user_serializer.rb` file under `app/serializers/v1/`:
+          </Paragraph>
+          <CodeBlock
+            useHighlight
+            language="console"
+          >{`$ touch app/serializers/v1/user_serializer.rb`}</CodeBlock>
+          <Paragraph>Add the following to the file:</Paragraph>
+          <CodeBlock language="ruby">{`class V1::UserSerializer < ActiveModel::Serializer
+  attributes (
+    :id,
+    :email
+  )
+end `}</CodeBlock>
+          <Paragraph>
+            `V1::UserSerializer`: Similar to controllers, this declares a class
+            named `UserSerializer` under `v1`. This tells use that this
+            serializer will be used by controllers under `v1`.
+          </Paragraph>
+          <Paragraph>
+            `ActiveModel::Serializer`: The class will inherit the
+            `ActiveModel::Serializer` class.
+          </Paragraph>
+          <Paragraph>
+            `attributes`: These are the attributes that will be used in the
+            serialization.
+          </Paragraph>
+          <Paragraph>
+            `:id`, `:email`: These would be the only two columns we care about
+            right now. We won't need `created_at` or `updated_at` for this
+            endpoint.
+          </Paragraph>
+          <Paragraph>
+            Now that our serializer is setup, we can test it out by calling the
+            `login` endpoint. The controller will automatically look for the
+            `UserSerializer` under `v1`. There is a way to manually set the
+            serializer that you want to use, for example a different user
+            serializer, but we will cover that in the future.
+          </Paragraph>
+          <Title>Testing The Serializer</Title>
+          <Paragraph>
+            We can now test the serializer. Call the login endpoint:
+          </Paragraph>
+          <CodeBlock language="shell">
+            {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "a@abc.com","password":"123456"}}' http://localhost:3000/v1/users/login | json_pp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   125    0    74  100    51    241    166 --:--:-- --:--:-- --:--:--   242
+{
+   "user" : {
+      "id" : "7545d290-962f-45bb-891d-f7e43b4fbf68",
+      "email" : "a@abc.com"
+   }
+}`}
+          </CodeBlock>
+          <Paragraph>
+            Sweet, our API now only returns the attributes that was specified in
+            our serializer.
+          </Paragraph>
+          <Title>Adding Meta Data</Title>
+          <Paragraph>
+            Serializers give us the option to add meta data. This would be the
+            extra deta appended to our `User` response. In this case we want to
+            return our JWT access token. Since we have not worked on generating
+            a token in the controller yet, we will just hardcode a string.
+          </Paragraph>
+          <Paragraph>
+            Take a look at the render method of your login endpoint in your
+            `app/controllers/v1/user_controller.rb` file:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`return render json: user,
+      status: 200`}
+          </CodeBlock>
+          <Paragraph>
+            We have the option of passing a hash as a value for the `meta` key.
+            Create hash with a mock access_token and set it to the `meta` key:
+          </Paragraph>
+          <CodeBlock language="ruby">
+            {`return render json: user,
+      meta: {access_token: '123'},
+      status: 200`}
+          </CodeBlock>
+          <Paragraph>This won't addend the met</Paragraph>
           <Paragraph>
             _Part 8 (Implementing JWT in Rails endpoints) will be released soon.
             Please check back later._
