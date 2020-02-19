@@ -42,12 +42,6 @@ const IndexPage = () => (
             name="Part 8: Implementing Serializers - Let's Create A Social Network Using Rails And React Native"
             description="How to implement serializers for your endpoints in Rails"
             date="Feburary 19th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
-          />
-          <BlogCard
-            name="Part 8: Implementing Serializers - Let's Create A Social Network Using Rails And React Native"
-            description="How to implement serializers for your endpoints in Rails"
-            date="Feburary 19th, 2020"
             url="/blog/social-network-app-using-rails-and-react-native-serializers/"
           />
           <BlogCard
