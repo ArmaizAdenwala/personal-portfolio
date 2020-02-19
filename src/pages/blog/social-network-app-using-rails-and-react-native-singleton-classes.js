@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 9: Creating a JWT Singleton Class - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-jwt-module/"
+      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-singleton-classes/"
       secondaryTitle="Armaiz"
       description="How to create a singleton class for JWT logic"
     />
@@ -27,10 +27,10 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             We learned [how to implement
-            serializers](/blog/social-network-app-using-rails-and-react-native-serializers/).
-            To help ease the implementation of JWT and keep the controllers
-            skinny, we will create a singleton class that helps encode and
-            decode our JSON Web Tokens.
+            serializers](/blog/social-network-app-using-rails-and-react-native-serializers/)
+            in the last part. To help ease the implementation of JWT and keep
+            the controllers skinny, we will create a __singleton class__ that
+            helps encode and decode our JSON Web Tokens.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 9 branch of the GitHub
@@ -55,7 +55,7 @@ end`}</CodeBlock>
             This is our mock `AccessToken` class. It has the class name, and a
             method called `encode` that returns `1` when called. In order to
             call the method, we need to create an instance of the class and then
-            call this encode method.
+            call the encode method.
           </Paragraph>
           <CodeBlock language="ruby">
             {`2.6.5 :001 > token = AccessToken.new
@@ -112,17 +112,17 @@ end`}
  => 1`}
           </CodeBlock>
           <Paragraph>
-            The `AccessToken` singleton class will now be accessible globally so
-            that we can use it in our controllers.
+            With some configuration, the `AccessToken` singleton class will be
+            accessible globally so that we can use it in our controllers.
           </Paragraph>
           <Title>Creating The AccessToken Singleton Class</Title>
           <Paragraph>
-            First, create the `access_token.rb` file under `lib/tasks`:
+            First, create the `access_token.rb` file under `lib/`:
           </Paragraph>
           <CodeBlock
             useHighlight
             language="shell"
-          >{`$ touch lib/tasks/access_token.rb`}</CodeBlock>
+          >{`$ touch lib/access_token.rb`}</CodeBlock>
           <Paragraph>Input the following class and stub methods:</Paragraph>
           <CodeBlock language="ruby">
             {`class AccessToken
@@ -139,9 +139,11 @@ end`}
           <Paragraph>
             After saving the file, we will need to __autoload__ everything under
             `lib/`. In Ruby you would need to `require` every module, but Rails
-            does this automatically for everything under `app/`. Rails gives us
-            the option to configure which directories get autoloaded through the
-            `config.autoload_paths` option in `config/application.rb`:
+            does this automatically for everything under `app/`. Fortunately
+            Rails gives us the option to configure which directories get
+            autoloaded through the `config.autoload_paths` option in
+            `config/application.rb`. Add the `config.autoload_paths` line to
+            your application config:
           </Paragraph>
           <CodeBlock language="ruby">{`...
 module SocialMediaBlogApi
@@ -201,8 +203,9 @@ encoded_payload = JWT.encode(payload, key)
 decoded_jwt = JWT.decode(encoded_payload, key)`}
           </CodeBlock>
           <Paragraph>
-            For the encode method, we will only focus on the first 5 lines. We
-            need to take `payload` as a parameter and return the `access_token`:
+            For the `encode` method, we will only focus on the first 5 lines. We
+            need to take `payload` as a parameter and return the response from
+            `JWT.encode`:
           </Paragraph>
           <CodeBlock language="ruby">
             {`class AccessToken
@@ -247,7 +250,7 @@ end`}
             {`2.6.5 :001 > payload = {user_id: 123}
  => {:user_id=>123}
 2.6.5 :002 > token = AccessToken.encode(payload)
- => "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMjMsImV4cCI6MTU4MjE3OTg4M30.MBt69AVRP2Q2qPiePI94Vf5w52YMLGxrAjocy5a3m_I"
+ => "e32...dds3"
 2.6.5 :003 > AccessToken.decode(token)
  => [{"user_id"=>123, "exp"=>1582179883}, {"alg"=>"HS256"}]`}
           </CodeBlock>
@@ -257,7 +260,11 @@ end`}
           </Paragraph>
           <CodeBlock language="ruby">
             {`def get_user_from_token(token)
-  response = self.decode(token)
+  begin
+    response = self.decode(token)
+  rescue JWT::VerificationError
+    return nil
+  end
   payload = response[0]
   user_id = payload['user_id']
   User.find_by(id: user_id)
@@ -268,14 +275,22 @@ end`}
             name for fetching the user from a token passed in.
           </Paragraph>
           <Paragraph>
-            `response = self.decode(token)`: This saves the response from the
-            `decode` method. Methods can call other methods within the same
-            class using `self`.
+            `begin...rescue...end`: This will capture exceptions for us. `rescue
+            JWT::VerificationError` catches all `VerificationError` exceptions
+            from `JWT.decode`. Since `AccessToken.decode` does not catch
+            exceptions, it goes up into the `get_user_from_token` method. Within
+            `rescue` we return `nil` so that the method returns nothing since a
+            user could not be found without a token.
           </Paragraph>
           <Paragraph>
-            `payload = response[0]`: The `decode` method returns an array of the
-            `payload` hash and the `algorithim` hash. We would only need the
-            first one, which has the `user_id` in it.
+            `response = self.decode(token)`: This assigns the response from the
+            `decode` method to `response`. Methods can call other methods within
+            the same class using `self`.
+          </Paragraph>
+          <Paragraph>
+            `payload = response[0]`: The `decode` method returns an array that
+            contains the `payload` hash and the `algorithim` hash. We would only
+            need the first one, which has the `user_id` in it.
           </Paragraph>
           <Paragraph>
             `user_id = payload['user_id']`: since this is a hash, we can
@@ -294,7 +309,7 @@ end`}
 2.6.5 :002 > payload = {user_id: user_id}
  => {:user_id=>"0e6e9b1c-22f5-41a7-91bb-3da9808c7b3e"}
 2.6.5 :003 > token = AccessToken.encode(payload)
- => "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMGU2ZTliMWMtMjJmNS00MWE3LTkxYmItM2RhOTgwOGM3YjNlIiwiZXhwIjoxNTgyMTgyMDI4fQ.ucvo2WtkKrtVH47KqNFO5nr638RfFFaGRisPAPotsV0"
+ => "e32...dds3"
 2.6.5 :004 > AccessToken.get_user_from_token(token)
   User Load (0.4ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", "0e6e9b1c-22f5-41a7-91bb-3da9808c7b3e"], ["LIMIT", 1]]
  => #<User id: "0e6e9b1c-22f5-41a7-91bb-3da9808c7b3e", email: "ab2c@gmail.com", created_at: "2020-02-09 03:07:54", updated_at: "2020-02-09 03:07:54">`}

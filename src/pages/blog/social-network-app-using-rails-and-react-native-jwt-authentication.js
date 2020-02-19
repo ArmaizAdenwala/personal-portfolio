@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 7: JWT (JSON Web Token) Authentication - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-api-versioning/"
+      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
       secondaryTitle="Armaiz"
       description="What is JWT (JSON Web Token) and how to use it."
     />

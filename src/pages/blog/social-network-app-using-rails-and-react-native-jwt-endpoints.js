@@ -27,7 +27,7 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the last section we [created an AccessToken singleton
-            class](/blog/social-network-app-using-rails-and-react-native-singleton-classes/).
+            class](/blog/social-network-app-using-rails-and-react-native-singleton-classes/)
             to help DRY up our code. In this section we will be utilizing that
             AccessToken class.
           </Paragraph>
@@ -39,11 +39,11 @@ const IndexPage = () => (
           <Title>Overview</Title>
           <Paragraph>
             The problem we are presented with is that we do not want to pass
-            login information every request. The only time a username and
-            password should be passed in would be for the login and register
-            endpoints. To solve this, we will pass in JWT in every request that
-            isn't login/register. If no user is found, or the JWT is
-            invalid/expired, the endpoint will return a 401.
+            login information in every request. The only time a username and
+            password should be passed in would be for the `login` and `register`
+            endpoints. To solve this, we will pass in a JSON Web token in every
+            request that isn't login/register. If no user is found, or the JWT
+            is invalid/expired, the endpoint will return a `401`.
           </Paragraph>
           <Title>Returning An AccessToken</Title>
           <Paragraph>
@@ -81,7 +81,7 @@ return render json: user,
           </CodeBlock>
           <Paragraph>
             {
-              '`payload = {user_id: user.id}`: creates a variable named `payload` that contains the user_id from the `user` object declared above'
+              "`payload = {user_id: user.id}`: creates a variable named `payload` that contains the user's id from the `user` object declared above"
             }
           </Paragraph>
           <Paragraph>
@@ -91,7 +91,7 @@ return render json: user,
           </Paragraph>
           <Paragraph>
             {
-              '`meta: {access_token: access_token},`: replaces our hardcoded access_token with the correct access token.'
+              '`meta: {access_token: access_token},`: replaces our hardcoded `access_token` with the correct access token.'
             }
           </Paragraph>
           <Paragraph>
@@ -115,7 +115,8 @@ return render json: user,
           </CodeBlock>
           <Title>Setting Up The Application Controller</Title>
           <Paragraph>
-            Remember how our `UserController` inherits `ApplicationController`:
+            Don't forget that our `UserController` inherits
+            `ApplicationController`:
           </Paragraph>
           <CodeBlock language="ruby">
             {`class V1::UsersController < ApplicationController
@@ -127,16 +128,17 @@ end`}
             `ApplicationController` by validating the `Authorization` header.
           </Paragraph>
           <Paragraph>
-            An `Authorization` header is a header that we can pass in to our
-            request that APIs will use to validate who is making the request.
-            For JWT, these are usually in the format of `Bearer JSON_WEB_TOKEN`.
-            We append an `Authorization` header to our request by adding `-H
-            "Authorization: Bearer eyz1...5dX"` to our `curl` command.
+            An `Authorization` header can be passed in to our request so that
+            APIs will know who is making the request. For JWT, these are usually
+            in the format of `Bearer JSON_WEB_TOKEN`. We can append an
+            `Authorization` header to our request by adding `-H "Authorization:
+            Bearer eyz1...5dX"` to our `curl` command.
           </Paragraph>
           <Paragraph>
             Rails can now access this by using
-            `request.headers['Authorization']`. Create the following private
-            method in your `app/controllers/application_controller.rb`:
+            `request.headers['Authorization']`. Lets take a look at how we can
+            verify the auth header. Create the following private method in your
+            `app/controllers/application_controller.rb`:
           </Paragraph>
           <CodeBlock language="ruby">
             {`class ApplicationController < ActionController::API
@@ -164,25 +166,27 @@ end
           <Paragraph>
             `regex = /^Bearer /`: Remember that the `Authorization` header is in
             this format: `Bearer AUTH_TOKEN`. We only need the token itself, so
-            we will remove the `Bearer ` from string using regex. In Ruby, we
-            can declare regex between `/.../`. The caret (`^`) signifies that it
-            will match the string if it starts with the string that comes after
-            the `^`. In this case `^Bearer ` will match anything that starts
-            with `Bearer `. For example `/^abc /` will match `abcd` but not
-            `acd` or `aabc`.
+            we will remove the `Bearer ` from the string using __regex__. In
+            Ruby, we can declare regex between `/.../`. The caret (`^`)
+            signifies that it will match the string if it starts with whatever
+            comes after the `^`. In this case `^Bearer ` will match anything
+            that starts with `Bearer `. For example `/^abc/` will match `abcd`
+            but not `acd` or `aabc`. _(Do not forget the space in `/^Bearer
+            /`!)_
           </Paragraph>
           <Paragraph>
             `auth_header = auth_header.gsub(regex, '')`: `gsub` allows us to
-            substitute all occurances of a pattern provided (our `regex`
-            variable) and substitutes it with a second string (`''` is
-            equivalent to removing the occurrences). We then assign the new
-            string to `auth_header`.
+            substitute all occurrences of a pattern provided _(our `regex`
+            variable)_ and substitutes it with a second string _(`''` is
+            equivalent to removing the occurrences)_. We then assign the new
+            string to `auth_header`. This essentially removes `Bearer ` from our
+            token.
           </Paragraph>
           <Paragraph>
             `if auth_header`: Adding an `if` or `unless` statement to the end of
-            a line is a shorthand to wrapping that line with an `if` or `unless`
-            block. So `auth_header = auth_header.gsub(regex, '')` will only run
-            if `auth_header` is not `nil` or `''`.
+            a line is a shorthand for wrapping that line with an `if` or
+            `unless` block. So `...auth_header.gsub(...)` will only run if
+            `auth_header` is not `nil` or `''`.
           </Paragraph>
           <Paragraph>
             `@current_user =`: This creates an __instance variable__ which means
@@ -192,11 +196,11 @@ end
           </Paragraph>
           <Paragraph>
             `AccessToken.get_user_from_token(auth_header)`: This called our
-            singleton class to return the user using the token passed in.
+            singleton class to return the user from the token passed in.
           </Paragraph>
           <Paragraph>
             {
-              "`render json: { error: 'Not Authorized' }, status: 401`: This is the error message if the authorization fails. We will use a 401 HTTP status."
+              "`render json: { error: 'Not Authorized' }, status: 401`: This is the error message if the authorization fails. We will use a `401` HTTP status."
             }
           </Paragraph>
           <Paragraph>
@@ -222,8 +226,8 @@ end
           </CodeBlock>
           <Paragraph>
             We are almost done. The issue we have is that the API will return
-            `Not Authorized` for our `login` and `register` endpoints, which is
-            not ideal because there is no way for a user to have their
+            `Not Authorized` for our `login` and `register` endpoints since it
+            requires an access token. There is no way for a user to have their
             `access_token` without those endpoints. Rails provides us with a
             `skip_before_action` option for controllers. Add it for the `login`
             and `register` endpoints in `user_controller.rb`:
@@ -315,8 +319,9 @@ end`}
           </CodeBlock>
           <Paragraph>
             If everything works, you're finally done! At this point we should
-            have a very solid foundation for a Rails app. This is a good point
-            for us to introduce tests, which we will cover in the next section.
+            have a very solid foundation for a Rails API. This is a good
+            stopping point for us to introduce tests, which we will cover in the
+            next section.
           </Paragraph>
           <Paragraph>
             _Part 11 (Creating Rails Tests) will be released soon. Please check

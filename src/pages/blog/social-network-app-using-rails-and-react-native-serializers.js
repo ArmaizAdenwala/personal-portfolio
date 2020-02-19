@@ -27,7 +27,7 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the last article, we covered [how JWT (JSON Web Token)
-            works.](/blog/social-network-app-using-rails-and-react-native-jwt-authentication/).
+            works](/blog/social-network-app-using-rails-and-react-native-jwt-authentication/).
             In order to implement JWT into our endpoints, we need to add it in
             as __meta data__ for our responses. To achieve that, we will need to
             implement serializers for our Rails API__.
@@ -128,7 +128,7 @@ ActiveModelSerializers.config.key_transform = :underscore`}
             `active_model_serializer` gem provides.
           </Paragraph>
           <Paragraph>
-            `config`: This is the config class where we can set our
+            `config`: This is the config class that we can use to set our
             configurations.
           </Paragraph>
           <Paragraph>
@@ -185,7 +185,7 @@ ActiveModelSerializers.config.key_transform = :underscore`}
 end `}</CodeBlock>
           <Paragraph>
             `V1::UserSerializer`: Similar to controllers, this declares a class
-            named `UserSerializer` under `v1`. This tells use that this
+            named `UserSerializer` under `v1`. This tells us that this
             serializer will be used by controllers under `v1`.
           </Paragraph>
           <Paragraph>
@@ -212,7 +212,7 @@ end `}</CodeBlock>
           <Paragraph>
             We can now test the serializer. Call the login endpoint:
           </Paragraph>
-          <CodeBlock language="shell">
+          <CodeBlock language="json">
             {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "a@abc.com","password":"123456"}}' http://localhost:3000/v1/users/login | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -225,8 +225,8 @@ end `}</CodeBlock>
 }`}
           </CodeBlock>
           <Paragraph>
-            Sweet, our API now only returns the attributes that was specified in
-            our serializer.
+            Sweet! Our API now only returns the attributes that were specified
+            in our serializer.
           </Paragraph>
           <Title>Adding Meta Data</Title>
           <Paragraph>
@@ -254,7 +254,7 @@ end `}</CodeBlock>
       status: 200`}
           </CodeBlock>
           <Paragraph>Now we can test the login endpoint again:</Paragraph>
-          <CodeBlock language="shell">
+          <CodeBlock language="json">
             {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "a@abc.com","password":"123456"}}' http://localhost:3000/v1/users/login | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed

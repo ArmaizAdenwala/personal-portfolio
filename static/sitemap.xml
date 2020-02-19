@@ -70,7 +70,7 @@
     <loc>https://armaizadenwala.com/blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-12</lastmod>
+    <lastmod>2020-02-19</lastmod>
   </url>
   <url>
     <loc>https://armaizadenwala.com/blog/my-favorite-github-student-pack-offers-and-why-they-are-important/</loc>
@@ -118,6 +118,24 @@
     <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-jwt-authentication/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-12</lastmod>
+    <lastmod>2020-02-19</lastmod>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-serializers/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-02-19</lastmod>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-singleton-classes/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-02-19</lastmod>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-jwt-endpoints/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-02-19</lastmod>
   </url>
 </urlset>
