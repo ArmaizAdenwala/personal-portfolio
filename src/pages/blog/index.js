@@ -27,6 +27,30 @@ const IndexPage = () => (
       <div className="p-v--32">
         <Container>
           <BlogCard
+            name="Part 10: Implementing JWT In Auth Endpoints - Let's Create A Social Network Using Rails And React Native"
+            description="How to implement JWT in login and register endpoints"
+            date="Feburary 19th, 2020"
+            url="/blog/social-network-app-using-rails-and-react-native-jwt-endpoints/"
+          />
+          <BlogCard
+            name="Part 9: Creating a JWT Singleton Class - Let's Create A Social Network Using Rails And React Native"
+            description="How to create a singleton class for JWT logic"
+            date="Feburary 19th, 2020"
+            url="/blog/social-network-app-using-rails-and-react-native-singleton-classes/"
+          />
+          <BlogCard
+            name="Part 8: Implementing Serializers - Let's Create A Social Network Using Rails And React Native"
+            description="How to implement serializers for your endpoints in Rails"
+            date="Feburary 19th, 2020"
+            url="/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
+          />
+          <BlogCard
+            name="Part 8: Implementing Serializers - Let's Create A Social Network Using Rails And React Native"
+            description="How to implement serializers for your endpoints in Rails"
+            date="Feburary 19th, 2020"
+            url="/blog/social-network-app-using-rails-and-react-native-serializers/"
+          />
+          <BlogCard
             name="Part 7: JWT (JSON Web Token) Authentication - Let's Create A Social Network Using Rails And React Native"
             description="What is JWT (JSON Web Token) and how to use it"
             date="Feburary 12th, 2020"

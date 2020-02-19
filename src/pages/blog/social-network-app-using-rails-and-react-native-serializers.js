@@ -18,7 +18,7 @@ const IndexPage = () => (
     <Hero
       emphasized="Let's Create A Social Network Using Rails And React Native - Part 8: Implementing Serializers In Our Endpoints"
       description="Implementing serializers in our Rails endpoints"
-      date="Feburary 14th, 2020"
+      date="Feburary 19th, 2020"
       extraContent
     />
     <div className="page__content">
@@ -274,20 +274,16 @@ end `}</CodeBlock>
             response. We are now ready to create our JWT module in the next
             section.
           </Paragraph>
-          <Paragraph>
-            _Part 9 (Creating a JWT module) will be released soon. Please check
-            back later._
-          </Paragraph>
-          {/* <div className="m-t--64 tg__t--center">
+          <div className="m-t--64 tg__t--center">
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+                to="/blog/social-network-app-using-rails-and-react-native-singleton-classes/"
               >
-                VIEW PART FOUR: CREATING AUTH ENDPOINTS
+                VIEW PART NINE: SINGLETON CLASSES
               </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </Container>
       <Footer />
