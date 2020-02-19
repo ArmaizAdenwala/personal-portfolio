@@ -354,7 +354,7 @@ v1_users_register POST   /v1/users/register(.:format) v1/users#register
                 className="button__text"
                 to="/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
               >
-                VIEW PART SEVEN: CREATING AUTH ENDPOINTS
+                VIEW PART SEVEN: JWT AUTHENTICATION
               </Link>
             </div>
           </div>
