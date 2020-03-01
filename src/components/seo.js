@@ -9,7 +9,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import ArmaizLogo from '../images/armaiz-developer-code-logo.png';
 function SEO({
   description,
   lang,
@@ -35,7 +34,7 @@ function SEO({
 
   const metaDescription = description || site.siteMetadata.description;
   const socialTitle = `${title} | ${secondaryTitle || site.siteMetadata.title}`;
-  const metaImage = image || ArmaizLogo;
+  const metaImage = image || '/armaiz-developer-code-logo.png';
   return (
     <Helmet
       htmlAttributes={{
