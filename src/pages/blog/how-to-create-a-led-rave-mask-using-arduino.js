@@ -277,15 +277,16 @@ void loop()
             `FastLED.show();`: Whenever we change the LEDs, the `show` method
             would need to be called to display the newly assigned LEDs.
           </Paragraph>
-          <Title>Creating The Visuals</Title>
+          <Title>Visuals Overview</Title>
           <Paragraph>
             {
               'Here comes the fun part: creating the visuals. The implementation I did was to create a 1d array with a length of `NUM_LEDS` and called it `pattern`. We will fill `pattern` with integers that indicate the color that will be assigned to an led. In addition to the `pattern` array, there will be a 2d array for RGB colors that `pattern` would use to determine the color that needs to be outputted. We will call this `colors`. To save memory, we will share the `colors` array among all designs, so that colors can be reused without taking additional memory. We can achieve this by creating the 1d array `patternColors` that will bridge the `pattern` values to a color in `colors`. So if the value of the first item in `patterns` is `0`, the 0th index of the `patternsColors`array could have a value of `2` which refers to the `2nd` index of `colors`. In this scenario the 2nd index could have a value of `{0, 100, 0}`, which will show a green LED (RGB).'
             }
           </Paragraph>
           <Paragraph>
-            Here is a visual for how the 0th and 1st iterations would look like
-            for a mask with 6 leds:
+            We want to animate the visuals, so we will wrap everything in a loop
+            so that the colors rotate each iteration. Here is a visual for how
+            the 0th and 1st iterations would look like for a mask with 6 leds:
           </Paragraph>
           <img
             className="full-width-img"
@@ -293,9 +294,9 @@ void loop()
             loading="lazy"
           />
           <Paragraph>
-            The Arduino will parse through each value in this array which in
-            this case the current value is `1`. So it finds the value of
-            `patternColors[1]` and gets `0`. It then gets the value of
+            The Arduino will parse through each value in the `pattern` array
+            which in this case the current value is `1`. So it finds the value
+            of `patternColors[1]` and gets `0`. It then gets the value of
             `colors[0]`
           </Paragraph>
           <img
@@ -310,12 +311,9 @@ void loop()
             `(1 + 2) % 3 = 0`_)
           </Paragraph>
           <Paragraph>
-            We will then wrap it in a loop so that each interation rotates the
-            color. So if the `0th` index of `pattern` has a value of `1`, it
-            will have a value of `2` in the 2nd iteration. This allows us to
-            animate our leds. We can take it a step further by nesting it
-            another for loop that would fade into the next "frame". Check out
-            the before and after adding this effect in the video below. The
+            This allows us to animate our leds. We can take it a step further by
+            nesting it another loop that would fade into the next "frame". Check
+            out the before and after adding this effect in the video below. The
             effect without the fade goes outward, while the one with the fade
             goes inward. Notice how the inward effect looks drastically
             smoother:
@@ -324,19 +322,27 @@ void loop()
             <iframe
               width="400"
               height="300"
-              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/g0qZ4X8jIHw?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/g0qZ4X8jIHw/hqdefault.jpg alt='Arduino LED Rave Mask Before And After Fade Effect'><span>▶</span></a>"
-              src="https://www.youtube.com/embed/g0qZ4X8jIHw?rel=0&controls=1"
+              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/hijCexsv8tY?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/hijCexsv8tY/hqdefault.jpg alt='Arduino LED Rave Mask Before And After Fade Effect'><span>▶</span></a>"
+              src="https://www.youtube.com/embed/hijCexsv8tY?rel=0&controls=1"
               frameBorder="0"
               loading="lazy"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
+          <Paragraph>
+            If we follow this approach, we can create awesome looking visuals in
+            minutes and have it automatically animate for us with very low
+            memory usage. In fact, with 4 effects I was able to get my binary
+            down to 1.1kb! This was drastically lower than just having 1 or 2
+            effects at 1.4kb.
+          </Paragraph>
           <Title>Creating The Visuals</Title>
           <Paragraph>
             For this guide, we will create a simple design that has a horizontal
             line that goes from the top of the mask to the bottom. First step is
-            to create the 1d array that's formatted in the shape of our mask:
+            to create the 1d array that's formatted in the shape of our mask
+            (place this in the `loop` method):
           </Paragraph>
           <CodeBlock language="cpp">
             {`uint_least8_t linePattern[NUM_LEDS] = {
@@ -363,6 +369,165 @@ void loop()
             frame would shift it downwards so that the first row would be `1`,
             and the last one would be `0`.
           </Paragraph>
+          <Paragraph>
+            Let's also define our pattern colors and call it `lineColors`:
+          </Paragraph>
+          <CodeBlock language="cpp">
+            {`uint_least8_t lineColors[7] = { 0, 0, 1, 1, 1, 1, 1 };`}
+          </CodeBlock>
+          <Paragraph>
+            These values don't mean much as we don't have colors defined, but
+            this does tell us a horizontal line of 2 pixels wide will go from
+            the bottom to the top of the mask (We want to reverse this in the
+            future)
+          </Paragraph>
+          <Paragraph>Our full file should now look like:</Paragraph>
+          <CodeBlock language="cpp">
+            {`#include <FastLED.h>
+
+#define LED_PIN A5
+#define NUM_LEDS 161
+#define LED_TYPE WS2812B
+#define BRIGHTNESS 20
+
+CRGB leds[NUM_LEDS];
+
+void setup()
+{
+  FastLED.addLeds<LED_TYPE, LED_PIN>(leds, NUM_LEDS);
+  FastLED.setMaxPowerInVoltsAndMilliamps(4.5, 500);
+  FastLED.show();
+}
+
+void loop()
+{
+  uint_least8_t linePattern[NUM_LEDS] = {
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+      2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+      3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+        4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+        5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+          6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6
+  };
+  uint_least8_t lineColors[7] = { 0, 0, 1, 1, 1, 1, 1 };
+}`}
+          </CodeBlock>
+          <Paragraph>We will now create a `pattern` method:</Paragraph>
+          <CodeBlock language="cpp">
+            {`...
+
+void loop()
+{
+  uint_least8_t linePattern[NUM_LEDS] = {
+    ...
+  };
+  uint_least8_t lineColors[7] = { 0, 0, 1, 1, 1, 1, 1 };
+  pattern(linePattern, lineColors, false, 1, 7);
+}
+
+void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], bool reverse, float speed, uint_least8_t max) {
+  uint_least8_t colors[2][3] = {
+    {60, 35, 150},
+    {0, 30, 170},
+  };
+}`}
+          </CodeBlock>
+          <Paragraph>
+            `pattern(linePattern, lineColors, false, 1, 7);`: This calls our new
+            `pattern` method and passes in our pattern and pattern colors. The
+            parameters are explained below.
+          </Paragraph>
+          <Paragraph>
+            `void pattern`: We aren't returning anything so we are using `void`
+          </Paragraph>
+          <Paragraph>
+            `uint_least8_t pattern[NUM_LEDS]`: This is the pattern array we are
+            passing in
+          </Paragraph>
+          <Paragraph>
+            `colorsPattern[]`: This is the pattern "bridge" colors that we are
+            passing in
+          </Paragraph>
+          <Paragraph>
+            `bool reverse`: This is a flag to reverse the array so that we don't
+            have to reverse the pattern array
+          </Paragraph>
+          <Paragraph>
+            `float speed`: This is the speed of the animations
+          </Paragraph>
+          <Paragraph>
+            `uint_least8_t max`:This is the max number of colors we have, if you
+            increase it, you could increase the amount of colors used in an
+            effect. For example, if we doubled the pattern colors array to
+            include the 7 more colors and set the max to 14, the effect will
+            loop twice, using the last 7 colors for the 2nd loop. Even better,
+            it will automatically transition to the next colorset. You could
+            create different effects using this method and save even more memory
+            without creating a more complicated pattern array.
+          </Paragraph>
+          <Paragraph>
+            {
+              '`uint_least8_t colors[2][3] = {`: This is the 2d array containing all of the colors from every effect.'
+            }
+          </Paragraph>
+          <Title>Implementing The Pattern Method</Title>
+          <Paragraph>
+            We can now work on the pattern method, focused only on showing the
+            leds in the 0th iteration, without worrying about animations or
+            fading.
+          </Paragraph>
+          <Paragraph>
+            The FastLED library makes it very easy to set the color for an LED.
+            If we want to set the first LED to red, we can do so via `leds[0] =
+            CRGB(100, 0, 0)`. However, it won't show until we call
+            `FastLED.show()`. So lets loop through the pattern array and map the
+            leds to the appropriate color:
+          </Paragraph>
+          <CodeBlock language="cpp">
+            {`void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t patternColors[], bool reverse, float speed, uint_least8_t max) {
+  uint_least8_t colors[2][3] = {
+    {5, 160, 60},
+    {0, 30, 170},
+  };
+  for (uint_least8_t i = 0; i < NUM_LEDS; i++) {
+    uint_least8_t color = pattern[i];
+    leds[i] = CRGB(
+      colors[patternColors[color]][0],
+      colors[patternColors[color]][1],
+      colors[patternColors[color]][2]
+    );
+  }
+  FastLED.show();
+  FastLED.delay(1);
+}`}
+          </CodeBlock>
+          <Paragraph>
+            {
+              '`for (uint_least8_t i = 0; i < NUM_LEDS; i++) {`: This create a for loop that loops from 0 to our total leds.'
+            }
+          </Paragraph>
+          <Paragraph>
+            `uint_least8_t color = pattern[i];`: This gets us the pattern color
+            index from `pattern`
+          </Paragraph>
+          <Paragraph>
+            `leds[i] = CRGB(`: Assigns the color to the led at index `i`
+          </Paragraph>
+          <Paragraph>
+            `colors[patternColors[color]][0]`: This grabs the color from the
+            `colors` array using the `color` variable and grabs the 0th index to
+            represent the `R` in `RGB`. It does the same for `G` and `B`.
+          </Paragraph>
+          <Paragraph>
+            `FastLED.show();`: Displays the leds after all of the leds are set,
+            so that they show all at once rather than one at a time.
+          </Paragraph>
+          <Paragraph>
+            `FastLED.delay(1);`: Delays by 1ms, this can be adjusted to cause a
+            larger delay. This helps keep our animations at a consistent speed.
+          </Paragraph>
+          <Paragraph>``: </Paragraph>
           <Paragraph>``: </Paragraph>
           <div className="m-t--64 tg__t--center">
             <div className="button">
