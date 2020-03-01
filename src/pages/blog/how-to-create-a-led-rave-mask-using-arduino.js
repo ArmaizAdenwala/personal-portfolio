@@ -5,6 +5,7 @@ import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
 import { Link } from 'gatsby';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import MaskImage from './images/arduino-led-mask/arduino_led_rave_mask.png';
 import LedsMaskImage from './images/arduino-led-mask/arduino_led_rave_mask_only_leds.png';
 import LedsMaskArduino from './images/arduino-led-mask/arduino_led_rave_mask_cropped.png';
@@ -55,7 +56,7 @@ const IndexPage = () => (
             ></iframe>
           </div>
           <Title>Overview Of The Mask</Title>
-          <img className="full-width-img" src={MaskImage} loading="lazy" />
+          <LazyLoadImage className="full-width-img" src={MaskImage} />
           <div
             className="
               tg__t--center
@@ -80,7 +81,11 @@ const IndexPage = () => (
             in a hexagon-like geometric pattern which will allow us to make
             awesome patterns for our visuals.
           </Paragraph>
-          <img className="full-width-img" src={LedsMaskImage} loading="lazy" />
+          <LazyLoadImage
+            className="full-width-img"
+            src={LedsMaskImage}
+            loading="lazy"
+          />
           <div
             className="
               tg__t--center
@@ -137,11 +142,7 @@ const IndexPage = () => (
             in creating the mask itself.
           </Paragraph>
           <Title>Overview Of The Arduino</Title>
-          <img
-            className="full-width-img"
-            src={LedsMaskArduino}
-            loading="lazy"
-          />
+          <LazyLoadImage className="full-width-img" src={LedsMaskArduino} />
           <div
             className="
               tg__t--center
@@ -173,7 +174,7 @@ const IndexPage = () => (
             long as you limit the power to the neopixels to be under `5V`, you
             should be ok._
           </Paragraph>
-          <img className="full-width-img" src={LedsMaskFull} loading="lazy" />
+          <LazyLoadImage className="full-width-img" src={LedsMaskFull} />
           <div
             className="
               tg__t--center
@@ -289,22 +290,14 @@ void loop()
             so that the colors rotate each iteration. Here is a visual for how
             the 0th and 1st iterations would look like for a mask with 6 leds:
           </Paragraph>
-          <img
-            className="full-width-img"
-            src={MaskColorsArray0}
-            loading="lazy"
-          />
+          <LazyLoadImage className="full-width-img" src={MaskColorsArray0} />
           <Paragraph>
             The Arduino will parse through each value in the `pattern` array
             which in this case the current value is `1`. So it finds the value
             of `patternColors[1]` and gets `0`. It then gets the value of
             `colors[0]`
           </Paragraph>
-          <img
-            className="full-width-img"
-            src={MaskColorsArray1}
-            loading="lazy"
-          />
+          <LazyLoadImage className="full-width-img" src={MaskColorsArray1} />
           <Paragraph>
             Now in the 2nd iteration, the value increments by 1 and is now `2`.
             (_When we program this, the array wont be mutated, we will instead
@@ -529,7 +522,7 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
             larger delay. This helps keep our animations at a consistent speed.
           </Paragraph>
           <Paragraph>This will result in the mask looking like this:</Paragraph>
-          <img className="full-width-img" src={MaskStatic} loading="lazy" />
+          <LazyLoadImage className="full-width-img" src={MaskStatic} />
           <Paragraph>``: </Paragraph>
           <Paragraph>``: </Paragraph>
           <div className="m-t--64 tg__t--center">
