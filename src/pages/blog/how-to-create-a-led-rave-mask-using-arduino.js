@@ -493,7 +493,7 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
     );
   }
   FastLED.show();
-  FastLED.delay(1);
+  FastLED.delay(100);
 }`}
           </CodeBlock>
           <Paragraph>
@@ -518,11 +518,60 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
             so that they show all at once rather than one at a time.
           </Paragraph>
           <Paragraph>
-            `FastLED.delay(1);`: Delays by 1ms, this can be adjusted to cause a
-            larger delay. This helps keep our animations at a consistent speed.
+            `FastLED.delay(100);`: Delays each render by 100ms, this can be
+            adjusted to cause a larger delay. This helps keep our animations at
+            a consistent speed.
           </Paragraph>
           <Paragraph>This will result in the mask looking like this:</Paragraph>
           <LazyLoadImage className="full-width-img" src={MaskStatic} />
+          <Title>Animating The Design</Title>
+          <Paragraph>
+            To animate the design, we would need to wrap our method in a for
+            loop and change the `color` value by 1 on every increment. We will
+            use the modulus operator (`%`) to loop any value above `max` back to
+            zero.
+          </Paragraph>
+          <CodeBlock language="cpp">
+            {`void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t patternColors[], bool reverse, float speed, uint_least8_t max) {
+  uint_least8_t colors[2][3] = {
+    {5, 160, 60},
+    {0, 30, 170},
+  };
+  for (uint_least8_t x = 0; x < max; x++) {
+    for (uint_least8_t i = 0; i < NUM_LEDS; i++) {
+      uint_least8_t color = (pattern[i] + x) % max;
+      leds[i] = CRGB(
+        colors[patternColors[color]][0],
+        colors[patternColors[color]][1],
+        colors[patternColors[color]][2]
+      );
+    }
+    FastLED.show();
+    FastLED.delay(100);
+  }
+}`}
+          </CodeBlock>
+          <Paragraph>
+            {
+              '`for (uint_least8_t x = 0; x < max; x++)`: Loops through our original `pattern` method `max` times.'
+            }
+          </Paragraph>
+          <Paragraph>
+            `(pattern[i] + x) % max;`: Each iteration will increment the
+            original pattern value by `1`. If it overflows past `max`, it will
+            loop back to `0` because of the modulus operator. Remember that max
+            can be anything ,as long as there are enough colors/
+          </Paragraph>
+          <Paragraph>
+            Be sure that `FastLED.show()` is within the for loop or it wont
+            render each iteration! That is all it takes to animate it. Now we
+            will need to fade to the next iteration to keep it clean and we are
+            done!
+          </Paragraph>
+          <Title>Fading Iterations</Title>
+          <Paragraph>``: </Paragraph>
+          <Paragraph>``: </Paragraph>
+          <Paragraph>``: </Paragraph>
           <Paragraph>``: </Paragraph>
           <Paragraph>``: </Paragraph>
           <div className="m-t--64 tg__t--center">
