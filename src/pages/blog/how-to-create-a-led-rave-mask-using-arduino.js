@@ -171,6 +171,155 @@ const IndexPage = () => (
               VIEW FULL COMPLETE ARDUINO MASK IMAGE
             </a>
           </div>
+          <Paragraph>
+            You can now connect your Arduino to your mask's `G`, `I`, `+` pins
+            on the first row. Be sure that the length of these cables are long
+            enough to place them in your pocket, or anywhere you plan on keeping
+            them.
+          </Paragraph>
+          <Title>Programming The Mask</Title>
+          <Paragraph>
+            Open your Arduino IDE and create a new project. Install the FastLED
+            library via the Library Manager window (`Sketch > Include Library >
+            Manage Libraries`). Once that is installed, we can begin writing our
+            app.
+          </Paragraph>
+          <Paragraph>
+            _Note: You can edit the `.ino` file using your preferred editor like
+            Vim or VSCode and soley use the IDE for uploading and compiling._
+          </Paragraph>
+          <CodeBlock language="cpp">
+            {`void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}`}
+          </CodeBlock>
+          <Paragraph>
+            Once you create the new sketch, you will be presented with a default
+            template. We will need to import and setup the FastLED library:
+          </Paragraph>
+          <CodeBlock language="cpp">
+            {`#include <FastLED.h>
+
+#define LED_PIN A5
+#define NUM_LEDS 161
+#define LED_TYPE WS2812B
+#define BRIGHTNESS 20
+
+CRGB leds[NUM_LEDS];
+
+void setup()
+{
+  FastLED.addLeds<LED_TYPE, LED_PIN>(leds, NUM_LEDS);
+  FastLED.setMaxPowerInVoltsAndMilliamps(4.5, 500);
+  FastLED.show();
+}
+
+void loop()
+{
+}`}
+          </CodeBlock>
+          <Paragraph>
+            {'`#include <FastLED.h>`: This imports our FastLED Library'}
+          </Paragraph>
+          <Paragraph>
+            `#define LED_PIN A5`: This tells FastLED that we are using the A5
+            pin for our LEDs
+          </Paragraph>
+          <Paragraph>`#define NUM_LEDS 161`: The # of LEDs we have</Paragraph>
+          <Paragraph>
+            `#define LED_TYPE WS2812B`: This is the type of LEDs we are using
+          </Paragraph>
+          <Paragraph>
+            `#define BRIGHTNESS 20`: This sets the brightness of our LEDs.
+            Neopixels are bright and use a lot of power. Having this higher
+            means that we use more power but have a larger range of colors.
+            Using a smaller number results in a much smaller ranger of colors.
+          </Paragraph>
+          <Paragraph>
+            `CRGB leds[NUM_LEDS];`: This defines our `leds` array which we will
+            use to assign colors to specific LEDs. The `CRGB` object refers to
+            an `RGB` pixel.
+          </Paragraph>
+          <Paragraph>
+            {
+              '`FastLED.addLeds<...>(...);`: Sets up our LEDs for us and will instantiate the `leds` variable. It takes in the type of leds, pin, leds array, and number of leds as parameters.'
+            }
+          </Paragraph>
+          <Paragraph>
+            `FastLED.setMaxPowerInVoltsAndMilliamps(4.5, 500);`: This uses a
+            helper method that is provided by FastLED to automatically handle
+            the power draw by passing in the volts of our power (`4.5V`)
+          </Paragraph>
+          <Paragraph>
+            `FastLED.show();`: Whenever we change the LEDs, the `show` method
+            would need to be called to display the newly assigned LEDs.
+          </Paragraph>
+          <Paragraph>
+            {
+              'Here comes the fun part: creating the visuals. The implementation I did was to create a 1d array with a length of NUM_LEDS. Lets call it `pattern` as this is the array we will use to create our visuals. We will fill `pattern` with integers that indicate the color that will be assigned to an led. In addition to the `pattern` array, there will be a 2d array for RGB colors that `pattern` would use to determine the color that needs to be outputted. We will call this `colors`. So if the value of the first item in `pattern` is `0`, the 0th index of the colors array could have a value of `{0, 100, 0}`, which will show a green LED (RGB).'
+            }
+          </Paragraph>
+          <Paragraph>
+            We will then wrap it in a loop so that each interation rotates the
+            color. So if the `0th` index of `pattern` has a value of `1`, it
+            will have a value of `2` in the 2nd iteration. This allows us to
+            animate our leds. We can take it a step further by nesting it
+            another for loop that would fade into the next "frame". Check out
+            the before and after adding this effect in the video below. The
+            effect without the fade goes outward, while the one with the fade
+            goes inward. Notice how the inward effect looks drastically
+            smoother:
+          </Paragraph>
+          <div className="video-container">
+            <iframe
+              width="400"
+              height="300"
+              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/g0qZ4X8jIHw?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/g0qZ4X8jIHw/hqdefault.jpg alt='Arduino LED Rave Mask Before And After Fade Effect'><span>▶</span></a>"
+              src="https://www.youtube.com/embed/g0qZ4X8jIHw?rel=0&controls=1"
+              frameBorder="0"
+              loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <Title>Creating The Visuals</Title>
+          <Paragraph>
+            For this guide, we will create a simple design that has a horizontal
+            line that goes from the top of the mask to the bottom. First step is
+            to create the 1d array that's formatted in the shape of our mask:
+          </Paragraph>
+          <CodeBlock language="cpp">
+            {`uint_least8_t linePattern[NUM_LEDS] = {
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+     3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+      4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+       5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+        6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6
+};`}
+          </CodeBlock>
+          <Paragraph>
+            `uint_least8_t`: This sets out integers to be 8 bits, which is
+            drastically smaller than a normal `int`. Since we aren't using large
+            integers for this array, 8 bits is suffice.
+          </Paragraph>
+          <Paragraph>
+            `linePattern[NUM_LEDS]`: Sets our array to be the size of `NUM_LEDS`
+          </Paragraph>
+          <Paragraph>
+            `0,..1,...2,...6`: This means that the first row would be color `0`
+            in the first "frame", and the last row would be color `6`. The next
+            frame would shift it downwards so that the first row would be `1`,
+            and the last one would be `0`.
+          </Paragraph>
+          <Paragraph>``: </Paragraph>
           <div className="m-t--64 tg__t--center">
             <div className="button">
               <Link
