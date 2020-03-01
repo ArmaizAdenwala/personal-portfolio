@@ -3,6 +3,7 @@ import { Hero, Navbar, Footer, Container } from '../../../components/general';
 import '../../../styles/main.scss';
 import '../Project.scss';
 import SEO from '../../../components/seo';
+import { Link } from 'gatsby';
 
 const IndexPage = () => (
   <div>
@@ -46,12 +47,12 @@ const IndexPage = () => (
             <iframe
               width="400"
               height="300"
-              srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/pRaodK85-go?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/pRaodK85-go/hqdefault.jpg alt='Smart Dorm Door Lock Demo'><span>▶</span></a>"
+              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/pRaodK85-go?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/pRaodK85-go/hqdefault.jpg alt='Smart Dorm Door Lock Demo'><span>▶</span></a>"
               src="https://www.youtube.com/embed/pRaodK85-go?rel=0&controls=1"
-              frameborder="0"
+              frameBorder="0"
               loading="lazy"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
           <h3
@@ -205,7 +206,15 @@ const IndexPage = () => (
             I learned the importance of power efficency in order to maximize the
             number of leds I can use while still outputting colors correctly.
             This project got me to self-learn how Arduinos work and how to
-            solder components together.
+            solder components together. I used what I learned from this project
+            to create a{'  '}
+            <Link
+              className="tg__nested-link"
+              to="/blog/how-to-create-a-led-rave-mask-using-arduino/"
+            >
+              new version of this LED mask
+            </Link>
+            .
           </p>
         </div>
       </Container>
