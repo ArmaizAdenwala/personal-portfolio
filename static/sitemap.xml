@@ -70,7 +70,7 @@
     <loc>https://armaizadenwala.com/blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-19</lastmod>
+    <lastmod>2020-03-01</lastmod>
   </url>
   <url>
     <loc>https://armaizadenwala.com/blog/my-favorite-github-student-pack-offers-and-why-they-are-important/</loc>
@@ -137,5 +137,11 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <lastmod>2020-02-19</lastmod>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/blog/how-to-create-an-led-rave-mask-using-arduino/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-03-01</lastmod>
   </url>
 </urlset>

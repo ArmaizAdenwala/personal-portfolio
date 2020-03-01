@@ -27,6 +27,12 @@ const IndexPage = () => (
       <div className="p-v--32">
         <Container>
           <BlogCard
+            name="How To Create A LED Rave Mask Using Arduino, Neopixels, and C++"
+            description="A detailed guide on how to create an LED mask and display effects"
+            date="March 1st, 2020"
+            url="/blog/how-to-create-a-led-rave-mask-using-arduino"
+          />
+          <BlogCard
             name="Part 10: Implementing JWT In Auth Endpoints - Let's Create A Social Network Using Rails And React Native"
             description="How to implement JWT in login and register endpoints"
             date="Feburary 19th, 2020"

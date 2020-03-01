@@ -27,7 +27,7 @@ const IndexPage = () => (
     <Hero
       emphasized="How To Create A LED Rave Mask Using Arduino, Neopixels, and C++"
       description="A detailed guide on how to make an LED rave mask"
-      date="Feburary 29th, 2020"
+      date="March 1st, 2020"
       extraContent
     />
     <div className="page__content">
