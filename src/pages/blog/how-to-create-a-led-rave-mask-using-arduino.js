@@ -20,6 +20,7 @@ const IndexPage = () => (
       title="How To Create A LED Rave Mask Using Arduino, Neopixels, and C++"
       canonical="https://armaizadenwala.com/blog/how-create-an-led-rave-mask-using-arduino.js"
       secondaryTitle="Armaiz"
+      image={LedsMaskFull}
       description="A detailed guide on how to create an LED mask and display effects"
     />
     <Navbar links={['Projects', 'Blog']} />
