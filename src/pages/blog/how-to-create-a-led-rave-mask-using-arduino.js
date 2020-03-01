@@ -9,6 +9,8 @@ import MaskImage from './images/arduino-led-mask/arduino_led_rave_mask.png';
 import LedsMaskImage from './images/arduino-led-mask/arduino_led_rave_mask_only_leds.png';
 import LedsMaskArduino from './images/arduino-led-mask/arduino_led_rave_mask_cropped.png';
 import LedsMaskFull from './images/arduino-led-mask/arduino_led_rave_mask_full.png';
+import MaskColorsArray0 from './images/arduino-led-mask/mask_colors_array0.png';
+import MaskColorsArray1 from './images/arduino-led-mask/mask_colors_array1.png';
 
 const IndexPage = () => (
   <div>
@@ -280,6 +282,20 @@ void loop()
               'Here comes the fun part: creating the visuals. The implementation I did was to create a 1d array with a length of NUM_LEDS. Lets call it `pattern` as this is the array we will use to create our visuals. We will fill `pattern` with integers that indicate the color that will be assigned to an led. In addition to the `pattern` array, there will be a 2d array for RGB colors that `pattern` would use to determine the color that needs to be outputted. We will call this `colors`. So if the value of the first item in `pattern` is `0`, the 0th index of the colors array could have a value of `{0, 100, 0}`, which will show a green LED (RGB).'
             }
           </Paragraph>
+          <Paragraph>
+            Here is a visual for how the 0th and 1st iterations would look like
+            for a mask with 6 leds:
+          </Paragraph>
+          <img
+            className="full-width-img" 
+            src={MaskColorsArray0} 
+            loading="lazy" 
+          /> 
+          <img 
+            className="full-width-img" 
+            src={MaskColorsArray1} 
+            loading="lazy" 
+          />
           <Paragraph>
             We will then wrap it in a loop so that each interation rotates the
             color. So if the `0th` index of `pattern` has a value of `1`, it
