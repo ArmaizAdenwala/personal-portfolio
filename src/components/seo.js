@@ -51,19 +51,20 @@ function SEO({
       ].concat(meta)}
     >
       {canonical && <link rel="canonical" key={canonical} href={canonical} />}
-      {canonical && <meta property="og:url" content={canonical} />}
-      {image && <meta property="og:image" content={image} />}
-      {image && <meta name="twitter:image:src" content={image} />}
       <meta charset="UTF-8" />
       <meta name="author" content="Armaiz Adenwala" />
       <meta name="description" content={metaDescription} />
-      <meta name="twitter:card" content={'summary'} />
+      <meta name="twitter:card" content={'summary_large_image'} />
       <meta name="twitter:creator" content={'Armaiz Adenwala'} />
       <meta name="twitter:title" content={socialTitle} />
       <meta name="twitter:description" content={metaDescription} />
+      {image && <meta name="twitter:image:src" content={image} />}
+      {image && <meta name="twitter:image" content={image} />}
       <meta property="og:title" content={socialTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content={'website'} />
+      {image && <meta property="og:image" content={image} />}
+      {canonical && <meta property="og:url" content={canonical} />}
       <link rel="shortcut icon" href="/favicon.png" />
     </Helmet>
   );
