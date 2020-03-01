@@ -67,11 +67,11 @@ const IndexPage = () => (
           </Paragraph>
           <Paragraph>
             `3 x BATTERY PACK`: $1-$5 - You can use a 4 pack ONLY if you use
-            1.2V NiMH rechargable batteries. Your NeoPixels will break if you
+            1.2V NiMH rechargeable batteries. Your NeoPixels will break if you
             use 4 normal 1.5V batteries.
           </Paragraph>
           <Paragraph>
-            `3 x AA 1.5V BATTERIES`: $2 - You can use 1.2V NiMH rechargable
+            `3 x AA 1.5V BATTERIES`: $2 - You can use 1.2V NiMH rechargeable
             batteries as long as you stay below 5V and high enough to show
             colors properly.
           </Paragraph>
@@ -97,7 +97,7 @@ const IndexPage = () => (
             `470 OHM RESISTOR`: Helps keep the signal to the NeoPixels clear
           </Paragraph>
           <Paragraph>
-            If you dont have one already, you will need a soldering iron and
+            If you don't have one already, you will need a soldering iron and
             solder wire. Be sure to be extra safe when soldering and not breathe
             the smoke by taking proper precautions. Soldering is difficult, be
             sure to look up guides on how to solder properly.
@@ -124,7 +124,7 @@ const IndexPage = () => (
             NeoPixels__. There are a total of 161 LEDs, with the first row being
             26. Each row decrements by 1, which means the 7th row will have 19
             NeoPixels. Since we are decrementing by an odd number, we will line
-            up the pixels to be inbetween the two pixels above it. This results
+            up the pixels to be in-between the two pixels above it. This results
             in a hexagon-like geometric pattern which will allow us to make
             awesome patterns for our visuals.
           </Paragraph>
@@ -171,9 +171,9 @@ const IndexPage = () => (
             the 51st LED is the first LED of the 2nd row.
           </Paragraph>
           <Paragraph>
-            Luckily, this isn't an issue if all of our designs are symetrical,
-            because the 27th LED and the 51st lEDs would be the same color. If
-            our designs are not symetical, we would need a helper function to
+            Luckily, this isn't an issue if all of our designs are symmetrical,
+            because the 27th LED and the 51st LEDs would be the same color. If
+            our designs are not symmetrical, we would need a helper function to
             flip each row which could use more memory.
           </Paragraph>
           <Title>Creating The Mask</Title>
@@ -217,9 +217,9 @@ const IndexPage = () => (
           </Paragraph>
           <Paragraph>
             _Alternatively, you could upgrade the battery pack from `4.5V` to
-            `4.8V` by using 4 Reachargable NiMH batteries at `1.2V` each. As
-            long as you limit the power to the NeoPixels to be under `5V`, you
-            should be ok._
+            `4.8V` by using 4 Rechargable NiMH batteries at `1.2V` each. As long
+            as you limit the power to the NeoPixels to be under `5V`, you should
+            be ok._
           </Paragraph>
           <LazyLoadImage className="full-width-img" src={LedsMaskFull} />
           <div
@@ -252,7 +252,7 @@ const IndexPage = () => (
           </Paragraph>
           <Paragraph>
             _Note: You can edit the `.ino` file using your preferred editor like
-            Vim or VSCode and soley use the IDE for uploading and compiling._
+            Vim or VSCode and solely use the IDE for uploading and compiling._
           </Paragraph>
           <CodeBlock language="cpp">
             {`void setup() {
@@ -658,7 +658,7 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
           <Paragraph>
             `uint_least8_t range`: This is the amount of steps we want the fade
             to occur. So if we want it to fade over 4 iterations, after 1
-            interation it would be 25% of the way from color a to color b. So
+            iteration it would be 25% of the way from color a to color b. So
             lets say that we want it to fade over 10 iterations. `index` will be
             equal to `0`, going all the way until `9`. When index is `5`, that
             means it is half way towards color `b`.
@@ -849,7 +849,7 @@ float getColorFade(uint_least8_t a, uint_least8_t b, uint_least8_t index, uint_l
             You can now create some designs by creating more pattern arrays and
             pattern colors. In my experience, each design only takes 1-5
             minutes. As long as you remember where the center index is, you can
-            make a symetrical design fairly fast. _Note: Using the multicursor
+            make a symmetrical design fairly fast. _Note: Using the multicursor
             feature in your editor helps a TON_
           </Paragraph>
           <Paragraph>I have lots of upgrades planned so stay tuned!</Paragraph>
