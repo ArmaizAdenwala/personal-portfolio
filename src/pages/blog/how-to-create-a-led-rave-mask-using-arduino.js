@@ -94,6 +94,9 @@ const IndexPage = () => (
             well, but should fit your battery pack and Arduino Nano.
           </Paragraph>
           <Paragraph>
+            `470 OHM RESISTOR`: Helps keep the signal to the NeoPixels clear
+          </Paragraph>
+          <Paragraph>
             If you dont have one already, you will need a soldering iron and
             solder wire. Be sure to be extra safe when soldering and not breathe
             the smoke by taking proper precautions. Soldering is difficult, be
@@ -179,12 +182,10 @@ const IndexPage = () => (
             mask and measured that the first row of 26 LEDs would fit. After
             that, I measured the maximum amount of rows I could fit while
             keeping the "decrement by 1" rule. In my case it was 7 rows. Once
-            everything was measured, the leds were cut and soldered, ensuring
+            everything was measured, the LEDs were cut and soldered, ensuring
             each alternating row flipped. Then the back of the NeoPixels were
-            taped together using electrical tape. Once the leds were soldered
-            together, I used a braided fishing line to sew the leds to the mask
-            as it was the neatest method I found. This is my suggested approach
-            in creating the mask itself.
+            taped together using electrical tape. I used a braided fishing line
+            to sew the LEDs to the mask.
           </Paragraph>
           <Title>Overview Of The Arduino</Title>
           <LazyLoadImage className="full-width-img" src={LedsMaskArduino} />
@@ -205,13 +206,14 @@ const IndexPage = () => (
           </div>
           <Paragraph>
             The Arduino is connected to the mask's data pin through th `A5` pin.
-            There is a 470ohm resistor prior to reaching the Arduino's pin. The
-            mask is powered by a battery pack with 3 AA batteries. The ground
-            cable is connected to the arduino and the mask. The power cable of
-            the battery is connected to the mask's `+` pin. You can also connect
-            the power to the Arduino's `5V` pin, however, we won't worry about
-            that until we are finished programming it. The Arduino will be
-            connected to our computer using a usb cable.
+            There is a `470ohm` resistor prior to reaching the Arduino's pin.
+            This will keep the signal clear to the NeoPixels. The mask is
+            powered by a battery pack with 3 AA batteries. The ground cable is
+            connected to the Arduino and the mask. The power cable of the
+            battery is connected to the mask's `+` pin. You can also connect the
+            power to the Arduino's `5V` pin, however, we won't worry about that
+            until we are finished programming it. The Arduino will be connected
+            to our computer using a usb cable.
           </Paragraph>
           <Paragraph>
             _Alternatively, you could upgrade the battery pack from `4.5V` to
@@ -312,13 +314,13 @@ void loop()
           </Paragraph>
           <Paragraph>
             {
-              '`FastLED.addLeds<...>(...);`: Sets up our LEDs for us and will instantiate the `leds` variable. It takes in the type of leds, pin, leds array, and number of leds as parameters.'
+              '`FastLED.addLeds<...>(...);`: Sets up our LEDs for us and will instantiate the `leds` variable. It takes in the type of LEDs, pin, LEDs array, and number of LEDs as parameters.'
             }
           </Paragraph>
           <Paragraph>
             `FastLED.setMaxPowerInVoltsAndMilliamps(4.5, 500);`: This uses a
             helper method that is provided by FastLED to automatically handle
-            the power draw by passing in the volts of our power (`4.5V`)
+            the power draw by passing in the volts of our power supply (`4.5V`)
           </Paragraph>
           <Paragraph>
             `FastLED.show();`: Whenever we change the LEDs, the `show` method
@@ -346,8 +348,8 @@ void loop()
           <Paragraph>
             Now in the 2nd iteration, the value increments by 1 and is now `2`.
             (_When we program this, the array wont be mutated, we will instead
-            calculate it using `%`. `(1 + 0) % 3 = 1`, `(1 + 1) % 3 = 2`, and
-            `(1 + 2) % 3 = 0`_)
+            calculate it using the modulus operator (`%`). `(1 + 0) % 3 = 1`,
+            `(1 + 1) % 3 = 2`, and `(1 + 2) % 3 = 0`_)
           </Paragraph>
           <Paragraph>
             This allows us to animate our leds. We can take it a step further by
@@ -373,8 +375,8 @@ void loop()
             If we follow this approach, we can create awesome looking visuals in
             minutes and have it automatically animate for us with very low
             memory usage. In fact, with 4 effects I was able to get my binary
-            down to 1.1kb! This was drastically lower than just having 1 or 2
-            effects at 1.4kb.
+            size for variables down to 1.1kb! This was drastically lower than
+            just having 1 or 2 effects at 1.4kb.
           </Paragraph>
           <Title>Creating The Visuals</Title>
           <Paragraph>
@@ -403,10 +405,12 @@ void loop()
             `linePattern[NUM_LEDS]`: Sets our array to be the size of `NUM_LEDS`
           </Paragraph>
           <Paragraph>
-            `0,..1,...2,...6`: This means that the first row would be color `0`
-            in the first "frame", and the last row would be color `6`. The next
-            frame would shift it downwards so that the first row would be `1`,
-            and the last one would be `0`.
+            `0,..1,...2,...6`: The 1d array is in the shape of our mask, with
+            the first row being 26. Each row share a value that increments by 1
+            for every row. This means that the first row would be color `0` in
+            the first "frame", and the last row would be color `6`. The next
+            frame would shift it so that the first row would be `1`, and the
+            last one would be `0`.
           </Paragraph>
           <Paragraph>
             Let's also define our pattern colors and call it `lineColors`:
@@ -418,7 +422,7 @@ void loop()
             These values don't mean much as we don't have colors defined, but
             this does tell us a horizontal line of 2 pixels wide will go from
             the bottom to the top of the mask (We want to reverse this in the
-            future)
+            future).
           </Paragraph>
           <Paragraph>Our full file should now look like:</Paragraph>
           <CodeBlock language="cpp">
@@ -513,7 +517,7 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
           <Title>Implementing The Pattern Method</Title>
           <Paragraph>
             We can now work on the pattern method, focused only on showing the
-            leds in the 0th iteration, without worrying about animations or
+            LEDs in the 0th iteration, without worrying about animations or
             fading.
           </Paragraph>
           <Paragraph>
@@ -521,7 +525,7 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
             If we want to set the first LED to red, we can do so via `leds[0] =
             CRGB(100, 0, 0)`. However, it won't show until we call
             `FastLED.show()`. So lets loop through the pattern array and map the
-            leds to the appropriate color:
+            LEDs to the appropriate color:
           </Paragraph>
           <CodeBlock language="cpp">
             {`void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t patternColors[], bool reverse, float speed, uint_least8_t max) {
@@ -559,7 +563,7 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
             represent the `R` in `RGB`. It does the same for `G` and `B`.
           </Paragraph>
           <Paragraph>
-            `FastLED.show();`: Displays the leds after all of the leds are set,
+            `FastLED.show();`: Displays the LEDs after all of the LEDs are set,
             so that they show all at once rather than one at a time.
           </Paragraph>
           <Paragraph>
@@ -605,7 +609,7 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
             `(pattern[i] + x) % max;`: Each iteration will increment the
             original pattern value by `1`. If it overflows past `max`, it will
             loop back to `0` because of the modulus operator. Remember that max
-            can be anything ,as long as there are enough colors/
+            can be anything, as long as there are enough colors.
           </Paragraph>
           <Paragraph>
             Be sure that `FastLED.show()` is within the for loop or it wont
@@ -664,12 +668,12 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
           </Paragraph>
           <Paragraph>
             `float dif = abs(a - b);`: Get the difference of the two colors.
-            `abs` is used so that we don't have any negatives. We just want to
-            know the "distance" between the two.
+            `abs` is used so that we don't have any negative values. We just
+            want to know the "distance" between the two.
           </Paragraph>
           <Paragraph>
             `float change = dif / range`: This is amount we need to add/subtract
-            to `a`. Lets pretend `a` = 150, and `b` = 50. The difference between
+            to `a`. Lets pretend `a = 150`, and `b = 50`. The difference between
             the two is `100`. We want to fade to the next color over 5
             increments. So in this case the change would be `20` (100 / 5) a.k.a
             `dif / range`.
@@ -729,7 +733,7 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
           </Paragraph>
           <Paragraph>
             `if (reverse)`: The code nested within this if statment is the exact
-            same as the `else` statument, just that the variable names are
+            same as the `else` statement, just that the variable names are
             reversed. This results in the animations to go in the reverse
             direction.
           </Paragraph>
@@ -848,10 +852,7 @@ float getColorFade(uint_least8_t a, uint_least8_t b, uint_least8_t index, uint_l
             make a symetrical design fairly fast. _Note: Using the multicursor
             feature in your editor helps a TON_
           </Paragraph>
-          <Paragraph>
-            This project is still a work in progress, I have lots of upgrades
-            planned so stay tuned!
-          </Paragraph>
+          <Paragraph>I have lots of upgrades planned so stay tuned!</Paragraph>
           <div className="m-t--64 tg__t--center">
             <div className="button">
               <a
