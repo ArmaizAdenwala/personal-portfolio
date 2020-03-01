@@ -17,7 +17,7 @@ import MaskStatic from './images/arduino-led-mask/led_rave_mask_static.jpg';
 const IndexPage = () => (
   <div>
     <SEO
-      title="How To Create A LED Rave Mask Using Arduino, Neopixels, and C++"
+      title="How To Create A LED Rave Mask Using Arduino, NeoPixels, and C++"
       canonical="https://armaizadenwala.com/blog/how-create-an-led-rave-mask-using-arduino.js"
       secondaryTitle="Armaiz"
       image={LedsMaskFull}
@@ -25,7 +25,7 @@ const IndexPage = () => (
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="How To Create A LED Rave Mask Using Arduino, Neopixels, and C++"
+      emphasized="How To Create A LED Rave Mask Using Arduino, NeoPixels, and C++"
       description="A detailed guide on how to make an LED rave mask"
       date="March 1st, 2020"
       extraContent
@@ -35,20 +35,19 @@ const IndexPage = () => (
         <div className="project__card">
           <Title first>Overview</Title>
           <Paragraph>
-            in this guide, we will cover how to create the hardware and software
-            for an arduino led rave mask. _Feel free to refer to [the GitHub
-            repository for this Arduino
+            In this guide, we will cover how you can create the hardware and
+            software for an Arduino LED rave mask. _Feel free to refer to [the
+            GitHub repository for this Arduino
             project](https://github.com/ArmaizAdenwala/arduino-led-mask)._
           </Paragraph>
           <Paragraph>
-            It is hard to record the mask with how bright the leds are but here
-            is the end result:
+            The mask looks much better in person but here is the end result:
           </Paragraph>
           <div className="video-container">
             <iframe
               width="400"
               height="300"
-              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/-JsS84euiK8?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/-JsS84euiK8/hqdefault.jpg alt='LED Rave Mask V2 - Arduino and Neopixels'><span>▶</span></a>"
+              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/-JsS84euiK8?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/-JsS84euiK8/hqdefault.jpg alt='LED Rave Mask V2 - Arduino and NeoPixels'><span>▶</span></a>"
               src="https://www.youtube.com/embed/-JsS84euiK8?rel=0&controls=1"
               frameBorder="0"
               loading="lazy"
@@ -58,35 +57,47 @@ const IndexPage = () => (
           </div>
           <Title>Parts Needed</Title>
           <Paragraph>
-            `ARDUINO NANO`: ~$3-$5 - Used to control the leds
+            `ARDUINO NANO`: ~$3-$5 - Used to control the LEDs
           </Paragraph>
           <Paragraph>
-            `2 x 144LEDS/M WS2182B NON-WATERPROOF`: ~$40-$60 - I got mine for
-            $20 ea. 60m with be FAR cheaper and MUCH easier to solder at the
-            cost of less leds. I suggest non-waterproof otherwise it would be
-            difficult to keep in place in the mask.
+            `2 x 1 METER 144LEDS/M WS2182B NON-WATERPROOF`: ~$40-$60 - 144
+            LEDs/m is a lot of pixels, so 60 LEDS/m could work as well and is
+            far cheaper and easier to solder. Waterproof versions can be harder
+            to hold in place in the mask.
           </Paragraph>
           <Paragraph>
             `3 x BATTERY PACK`: $1-$5 - You can use a 4 pack ONLY if you use
-            1.2V NiMH rechargable batteries. Your neopixels will break if you
-            use normal 1.5V batteris.
+            1.2V NiMH rechargable batteries. Your NeoPixels will break if you
+            use 4 normal 1.5V batteries.
           </Paragraph>
           <Paragraph>
             `3 x AA 1.5V BATTERIES`: $2 - You can use 1.2V NiMH rechargable
             batteries as long as you stay below 5V and high enough to show
             colors properly.
           </Paragraph>
-          <Paragraph>`SILICON WIRES`: ~$10-$15</Paragraph>
-          <Paragraph>`MASK`: ~$12 - I use an airsoft mesh mask</Paragraph>
-          <Paragraph>`USB A TO MINI B CABLE`: ~$5</Paragraph>
           <Paragraph>
-            `HEATSHRINK`: Keeps your wires and solders clean and secure.
+            `SILICON WIRES`: ~$10-$15 - Needed to connect the LEDs together.
+            Jumper cables won't work in this project.
+          </Paragraph>
+          <Paragraph>
+            `MASK`: ~$12 - Any airsoft mesh mask should work.
+          </Paragraph>
+          <Paragraph>
+            `USB A TO MINI B CABLE`: ~$5 - Arduino Nanos use a cable different
+            from the Uno
+          </Paragraph>
+          <Paragraph>
+            `HEATSHRINK`: ~$2 - Keeps your wires and solders clean and secure.
+          </Paragraph>
+          <Paragraph>
+            `Arduino Uno Case / Project Box`: ~$2-~$4 - Can be 3d printed as
+            well, but should fit your battery pack and Arduino Nano.
           </Paragraph>
           <Paragraph>
             If you dont have one already, you will need a soldering iron and
-            solder. Be sure to be extra safe when soldering and not breathe the
-            smoke by taking proper precautions. Soldering is difficult, be sure
-            to look up guides on how to solder properly.
+            solder wire. Be sure to be extra safe when soldering and not breathe
+            the smoke by taking proper precautions. Soldering is difficult, be
+            sure to look up guides on how to solder properly.
           </Paragraph>
           <Title>Overview Of The Mask</Title>
           <LazyLoadImage className="full-width-img" src={MaskImage} />
@@ -107,9 +118,9 @@ const IndexPage = () => (
           </div>
           <Paragraph>
             The mask itself consists of 7 rows of __WS2182B 144 LEDs/m
-            Neopixels__. There are a total of 161 LEDs, with the first row being
+            NeoPixels__. There are a total of 161 LEDs, with the first row being
             26. Each row decrements by 1, which means the 7th row will have 19
-            Neopixels. Since we are decrementing by an odd number, we will line
+            NeoPixels. Since we are decrementing by an odd number, we will line
             up the pixels to be inbetween the two pixels above it. This results
             in a hexagon-like geometric pattern which will allow us to make
             awesome patterns for our visuals.
@@ -137,8 +148,8 @@ const IndexPage = () => (
           <Paragraph>
             The order of WS2182B pins can differ depending on the brand. In my
             case, the order was `Ground`, `Data`, and `Power`. These are
-            represented with `G`, `I/O`, `+` respecively. These leds are
-            individually addressable so the order of these leds matter. When you
+            represented with `G`, `I/O`, `+` respectively. These LEDs are
+            individually addressable so the order of these LEDs matter. When you
             get a Neopixel strip, it will be one long strip of 144 leds or so.
             You can cut these leds between these pins and solder them together
             as seen with the image above, making sure that the `O` pin connects
@@ -147,28 +158,29 @@ const IndexPage = () => (
           <Paragraph>
             The problem is that the Arduino won't see this in the shape of a
             mask, it will still think of it as one long strip. As seen with the
-            full-sized image, the leds snake around, having each alternating row
-            flipped. This is so that we do not have long wires going from one
-            end of the mask to the other (I marked the flow of the led strip's
-            data pin using arrows). This means that the 26th led is the last led
-            in the first row, 27th led is the last led of the 2nd row, 28th led
-            is the 2nd to last led of the 2nd row, and the 51st led is the first
-            led of the 2nd row.
+            full-sized image, the LEDs snake around, having each alternating row
+            flipped. You can tell the direction of the LEDs based on the `I` and
+            `O` pins of one end of the LED strip. This is so that we do not have
+            long wires going from one end of the mask to the other (I marked the
+            flow of the LED strip's data pin using arrows). This means that the
+            26th LED is the last LED in the first row, 27th LED is the last LED
+            of the 2nd row, 28th LED is the 2nd to last LED of the 2nd row, and
+            the 51st LED is the first LED of the 2nd row.
           </Paragraph>
           <Paragraph>
             Luckily, this isn't an issue if all of our designs are symetrical,
-            because the `27th` led and the `51st` leds would be the same color.
-            If our designs are not symetical, we would need a helper function
-            which could use more memory.
+            because the 27th LED and the 51st lEDs would be the same color. If
+            our designs are not symetical, we would need a helper function to
+            flip each row which could use more memory.
           </Paragraph>
           <Title>Creating The Mask</Title>
           <Paragraph>
-            In order to keep the leds in place and wearable, I bought an airsoft
+            In order to keep the LEDs in place and wearable, I bought an airsoft
             mask and measured that the first row of 26 LEDs would fit. After
             that, I measured the maximum amount of rows I could fit while
             keeping the "decrement by 1" rule. In my case it was 7 rows. Once
             everything was measured, the leds were cut and soldered, ensuring
-            each alternating row flipped. Then the back of the neopixels were
+            each alternating row flipped. Then the back of the NeoPixels were
             taped together using electrical tape. Once the leds were soldered
             together, I used a braided fishing line to sew the leds to the mask
             as it was the neatest method I found. This is my suggested approach
@@ -204,7 +216,7 @@ const IndexPage = () => (
           <Paragraph>
             _Alternatively, you could upgrade the battery pack from `4.5V` to
             `4.8V` by using 4 Reachargable NiMH batteries at `1.2V` each. As
-            long as you limit the power to the neopixels to be under `5V`, you
+            long as you limit the power to the NeoPixels to be under `5V`, you
             should be ok._
           </Paragraph>
           <LazyLoadImage className="full-width-img" src={LedsMaskFull} />
@@ -289,7 +301,7 @@ void loop()
           </Paragraph>
           <Paragraph>
             `#define BRIGHTNESS 20`: This sets the brightness of our LEDs.
-            Neopixels are bright and use a lot of power. Having this higher
+            NeoPixels are bright and use a lot of power. Having this higher
             means that we use more power but have a larger range of colors.
             Using a smaller number results in a much smaller ranger of colors.
           </Paragraph>
@@ -315,7 +327,7 @@ void loop()
           <Title>Visuals Overview</Title>
           <Paragraph>
             {
-              'Here comes the fun part: creating the visuals. The implementation I did was to create a 1d array with a length of `NUM_LEDS` and called it `pattern`. We will fill `pattern` with integers that indicate the color that will be assigned to an led. In addition to the `pattern` array, there will be a 2d array for RGB colors that `pattern` would use to determine the color that needs to be outputted. We will call this `colors`. To save memory, we will share the `colors` array among all designs, so that colors can be reused without taking additional memory. We can achieve this by creating the 1d array `patternColors` that will bridge the `pattern` values to a color in `colors`. So if the value of the first item in `patterns` is `0`, the 0th index of the `patternsColors`array could have a value of `2` which refers to the `2nd` index of `colors`. In this scenario the 2nd index could have a value of `{0, 100, 0}`, which will show a green LED (RGB).'
+              'Here comes the fun part: creating the visuals. The implementation I did was to create a 1d array with a length of `NUM_LEDS` and called it `pattern`. We will fill `pattern` with integers that indicate the color that will be assigned to an LED. In addition to the `pattern` array, there will be a 2d array for RGB colors that `pattern` would use to determine the color that needs to be outputted. We will call this `colors`. To save memory, we will share the `colors` array among all designs, so that colors can be reused without taking additional memory. We can achieve this by creating the 1d array `patternColors` that will bridge the `pattern` values to a color in `colors`. So if the value of the first item in `patterns` is `0`, the 0th index of the `patternsColors`array could have a value of `2` which refers to the `2nd` index of `colors`. In this scenario the 2nd index could have a value of `{0, 100, 0}`, which will show a green LED (RGB).'
             }
           </Paragraph>
           <Paragraph>
