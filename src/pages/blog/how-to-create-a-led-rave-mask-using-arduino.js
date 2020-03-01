@@ -18,7 +18,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="How To Create A LED Rave Mask Using Arduino, NeoPixels, and C++"
-      canonical="https://armaizadenwala.com/blog/how-create-an-led-rave-mask-using-arduino.js"
+      canonical="https://armaizadenwala.com/blog/how-to-create-a-led-rave-mask-using-arduino/"
       secondaryTitle="Armaiz"
       image={LedsMaskFull}
       description="A detailed guide on how to create an LED mask and display effects"
