@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-
+import ArmaizLogo from '../images/armaiz-developer-code-logo.png';
 function SEO({
   description,
   lang,
@@ -35,6 +35,7 @@ function SEO({
 
   const metaDescription = description || site.siteMetadata.description;
   const socialTitle = `${title} | ${secondaryTitle || site.siteMetadata.title}`;
+  const metaImage = image || ArmaizLogo;
   return (
     <Helmet
       htmlAttributes={{
@@ -58,12 +59,12 @@ function SEO({
       <meta name="twitter:creator" content={'Armaiz Adenwala'} />
       <meta name="twitter:title" content={socialTitle} />
       <meta name="twitter:description" content={metaDescription} />
-      {image && <meta name="twitter:image:src" content={image} />}
-      {image && <meta name="twitter:image" content={image} />}
+      <meta name="twitter:image:src" content={metaImage} />
+      <meta name="twitter:image" content={metaImage} />
       <meta property="og:title" content={socialTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content={'website'} />
-      {image && <meta property="og:image" content={image} />}
+      <meta property="og:image" content={metaImage} />
       {canonical && <meta property="og:url" content={canonical} />}
       <link rel="shortcut icon" href="/favicon.png" />
     </Helmet>
