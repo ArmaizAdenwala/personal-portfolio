@@ -55,6 +55,38 @@ const IndexPage = () => (
               allowFullScreen
             ></iframe>
           </div>
+          <Title>Parts Needed</Title>
+          <Paragraph>
+            `ARDUINO NANO`: ~$3-$5 - Used to control the leds
+          </Paragraph>
+          <Paragraph>
+            `2 x 144LEDS/M WS2182B NON-WATERPROOF`: ~$40-$60 - I got mine for
+            $20 ea. 60m with be FAR cheaper and MUCH easier to solder at the
+            cost of less leds. I suggest non-waterproof otherwise it would be
+            difficult to keep in place in the mask.
+          </Paragraph>
+          <Paragraph>
+            `3 x BATTERY PACK`: $1-$5 - You can use a 4 pack ONLY if you use
+            1.2V NiMH rechargable batteries. Your neopixels will break if you
+            use normal 1.5V batteris.
+          </Paragraph>
+          <Paragraph>
+            `3 x AA 1.5V BATTERIES`: $2 - You can use 1.2V NiMH rechargable
+            batteries as long as you stay below 5V and high enough to show
+            colors properly.
+          </Paragraph>
+          <Paragraph>`SILICON WIRES`: ~$10-$15</Paragraph>
+          <Paragraph>`MASK`: ~$12 - I use an airsoft mesh mask</Paragraph>
+          <Paragraph>`USB A TO MINI B CABLE`: ~$5</Paragraph>
+          <Paragraph>
+            `HEATSHRINK`: Keeps your wires and solders clean and secure.
+          </Paragraph>
+          <Paragraph>
+            If you dont have one already, you will need a soldering iron and
+            solder. Be sure to be extra safe when soldering and not breathe the
+            smoke by taking proper precautions. Soldering is difficult, be sure
+            to look up guides on how to solder properly.
+          </Paragraph>
           <Title>Overview Of The Mask</Title>
           <LazyLoadImage className="full-width-img" src={MaskImage} />
           <div
