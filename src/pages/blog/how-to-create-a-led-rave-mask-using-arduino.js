@@ -292,11 +292,23 @@ void loop()
             src={MaskColorsArray0}
             loading="lazy"
           />
+          <Paragraph>
+            The Arduino will parse through each value in this array which in
+            this case the current value is `1`. So it finds the value of
+            `patternColors[1]` and gets `0`. It then gets the value of
+            `colors[0]`
+          </Paragraph>
           <img
             className="full-width-img"
             src={MaskColorsArray1}
             loading="lazy"
           />
+          <Paragraph>
+            Now in the 2nd iteration, the value increments by 1 and is now `2`.
+            (_When we program this, the array wont be mutated, we will instead
+            calculate it using `%`. `(1 + 0) % 3 = 1`, `(1 + 1) % 3 = 2`, and
+            `(1 + 2) % 3 = 0`_)
+          </Paragraph>
           <Paragraph>
             We will then wrap it in a loop so that each interation rotates the
             color. So if the `0th` index of `pattern` has a value of `1`, it
