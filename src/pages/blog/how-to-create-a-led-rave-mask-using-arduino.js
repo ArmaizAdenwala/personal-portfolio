@@ -35,7 +35,10 @@ const IndexPage = () => (
             repository for this Arduino
             project](https://github.com/ArmaizAdenwala/arduino-led-mask)._
           </Paragraph>
-
+          <Paragraph>
+            It is hard to record the mask with how bright the leds are but here
+            is the end result:
+          </Paragraph>
           <Title>Overview Of The Mask</Title>
           <img className="full-width-img" src={MaskImage} loading="lazy" />
           <div
