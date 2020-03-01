@@ -11,6 +11,7 @@ import LedsMaskArduino from './images/arduino-led-mask/arduino_led_rave_mask_cro
 import LedsMaskFull from './images/arduino-led-mask/arduino_led_rave_mask_full.png';
 import MaskColorsArray0 from './images/arduino-led-mask/mask_colors_array0.png';
 import MaskColorsArray1 from './images/arduino-led-mask/mask_colors_array1.png';
+import MaskStatic from './images/arduino-led-mask/led_rave_mask_static.jpg';
 
 const IndexPage = () => (
   <div>
@@ -527,6 +528,8 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
             `FastLED.delay(1);`: Delays by 1ms, this can be adjusted to cause a
             larger delay. This helps keep our animations at a consistent speed.
           </Paragraph>
+          <Paragraph>This will result in the mask looking like this:</Paragraph>
+          <img className="full-width-img" src={MaskStatic} loading="lazy" />
           <Paragraph>``: </Paragraph>
           <Paragraph>``: </Paragraph>
           <div className="m-t--64 tg__t--center">
