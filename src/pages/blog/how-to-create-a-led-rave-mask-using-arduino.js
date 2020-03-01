@@ -277,9 +277,10 @@ void loop()
             `FastLED.show();`: Whenever we change the LEDs, the `show` method
             would need to be called to display the newly assigned LEDs.
           </Paragraph>
+          <Title>Creating The Visuals</Title>
           <Paragraph>
             {
-              'Here comes the fun part: creating the visuals. The implementation I did was to create a 1d array with a length of NUM_LEDS. Lets call it `pattern` as this is the array we will use to create our visuals. We will fill `pattern` with integers that indicate the color that will be assigned to an led. In addition to the `pattern` array, there will be a 2d array for RGB colors that `pattern` would use to determine the color that needs to be outputted. We will call this `colors`. So if the value of the first item in `pattern` is `0`, the 0th index of the colors array could have a value of `{0, 100, 0}`, which will show a green LED (RGB).'
+              'Here comes the fun part: creating the visuals. The implementation I did was to create a 1d array with a length of `NUM_LEDS` and called it `pattern`. We will fill `pattern` with integers that indicate the color that will be assigned to an led. In addition to the `pattern` array, there will be a 2d array for RGB colors that `pattern` would use to determine the color that needs to be outputted. We will call this `colors`. To save memory, we will share the `colors` array among all designs, so that colors can be reused without taking additional memory. We can achieve this by creating the 1d array `patternColors` that will bridge the `pattern` values to a color in `colors`. So if the value of the first item in `patterns` is `0`, the 0th index of the `patternsColors`array could have a value of `2` which refers to the `2nd` index of `colors`. In this scenario the 2nd index could have a value of `{0, 100, 0}`, which will show a green LED (RGB).'
             }
           </Paragraph>
           <Paragraph>
@@ -287,14 +288,14 @@ void loop()
             for a mask with 6 leds:
           </Paragraph>
           <img
-            className="full-width-img" 
-            src={MaskColorsArray0} 
-            loading="lazy" 
-          /> 
-          <img 
-            className="full-width-img" 
-            src={MaskColorsArray1} 
-            loading="lazy" 
+            className="full-width-img"
+            src={MaskColorsArray0}
+            loading="lazy"
+          />
+          <img
+            className="full-width-img"
+            src={MaskColorsArray1}
+            loading="lazy"
           />
           <Paragraph>
             We will then wrap it in a loop so that each interation rotates the
