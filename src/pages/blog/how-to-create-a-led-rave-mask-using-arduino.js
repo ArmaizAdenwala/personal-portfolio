@@ -569,19 +569,252 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
             done!
           </Paragraph>
           <Title>Fading Iterations</Title>
-          <Paragraph>``: </Paragraph>
-          <Paragraph>``: </Paragraph>
-          <Paragraph>``: </Paragraph>
-          <Paragraph>``: </Paragraph>
-          <Paragraph>``: </Paragraph>
+          <Paragraph>
+            Lets take a look at a helper method called `getColorFade` that I
+            created for this project:
+          </Paragraph>
+          <CodeBlock language="cpp">
+            {`float getColorFade(uint_least8_t a, uint_least8_t b, uint_least8_t index, uint_least8_t range) {
+  if (a == b)
+  {
+    return a;
+  }
+  float dif = abs(a - b);
+  float change = (float)dif / range;
+  change *= (index + 1);
+  if (a > b)
+  {
+    return a - change;
+  }
+  return a + change;
+}`}
+          </CodeBlock>
+          <Paragraph>
+            `float getColorFade`: This method returns a `float` that is supposed
+            to represent a color. We use `float` so that it won't round whole
+            numbers, to keep the fades clean.
+          </Paragraph>
+          <Paragraph>
+            `uint_least8_t a`: This is color `a`, this would be the source color
+          </Paragraph>
+          <Paragraph>
+            `uint_least8_t b`: This is color `b`, this would be the destination
+            color
+          </Paragraph>
+          <Paragraph>
+            `uint_least8_t index`: This is the current stage the fade is on. So
+            if it is 2 loops in, this would equal to `2` on the 3rd loop (starts
+            at 0). This is explained in the next parameter.
+          </Paragraph>
+          <Paragraph>
+            `uint_least8_t range`: This is the amount of steps we want the fade
+            to occur. So if we want it to fade over 4 iterations, after 1
+            interation it would be 25% of the way from color a to color b. So
+            lets say that we want it to fade over 10 iterations. `index` will be
+            equal to `0`, going all the way until `9`. When index is `5`, that
+            means it is half way towards color `b`.
+          </Paragraph>
+          <Paragraph>
+            `if (a == b)`: If the colors are the same, return the color.
+          </Paragraph>
+          <Paragraph>
+            `float dif = abs(a - b);`: Get the difference of the two colors.
+            `abs` is used so that we don't have any negatives. We just want to
+            know the "distance" between the two.
+          </Paragraph>
+          <Paragraph>
+            `float change = dif / range`: This is amount we need to add/subtract
+            to `a`. Lets pretend `a` = 150, and `b` = 50. The difference between
+            the two is `100`. We want to fade to the next color over 5
+            increments. So in this case the change would be `20` (100 / 5) a.k.a
+            `dif / range`.
+          </Paragraph>
+          <Paragraph>
+            `change *= (index + 1);`: The change is then multipled by the
+            current index otherwise it won't actually fade. (first loop adds
+            `20`, second loop adds `40`, etc.)
+          </Paragraph>
+          <Paragraph>
+            `if (a > b)`: This decides whether we need to add `change` to `a` or
+            subtract it. (ex. `a` is `100`, `b` is `50`, so we subtract from `a`
+            to get closer to `b`'s value)
+          </Paragraph>
+          <Paragraph>
+            Now for the final loop! Update your `pattern` method:
+          </Paragraph>
+          <CodeBlock language="cpp">
+            {`void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t patternColors[], bool reverse, float speed, uint_least8_t max) {
+  uint_least8_t colors[2][3] = {
+    {5, 160, 60},
+    {0, 30, 170},
+  };
+  for (uint_least8_t x = 0; x < max; x++) {
+    for (uint_least8_t z = 0; z < (4 * speed); z++) {
+      for (uint_least8_t i = 0; i < NUM_LEDS; i++) {
+        uint_least8_t colorA;
+        uint_least8_t colorB;
+        if (reverse) {
+          colorB = (pattern[i] + (4 - x)) % max;
+          colorA = (colorB + 1) % max;
+        } else {
+          colorA = (pattern[i] + x) % max;
+          colorB = (colorA + 1) % max;
+        }
+        leds[i] = CRGB(
+          getColorFade(colors[patternColors[colorA]][0], colors[patternColors[colorB]][0], z, (4 * speed)),
+          getColorFade(colors[patternColors[colorA]][1], colors[patternColors[colorB]][1], z, (4 * speed)),
+          getColorFade(colors[patternColors[colorA]][2], colors[patternColors[colorB]][2], z, (4 * speed))
+        );
+      }
+      FastLED.show();
+      FastLED.delay(50);
+    }
+  }
+}`}
+          </CodeBlock>
+          <Paragraph>
+            {
+              '`for (uint_least8_t z = 0; z < (4 * speed); z++)`: We implement the fade loop on every color change loop. This is because when we want it to fade to the next color first, then change the color so that it can fade to the next one again. From my tests, `4` is enough steps to fade to the next color, so I use `z < (4 * speed)` in the for loop. The `speed` parameter exists for us to adjust the speed of the fades. Right now our `pattern` call in `loop()` uses a speed of `1.5` so that means this would fade over 6 iterations. The `z` variable is our `index` for our fade method.'
+            }
+          </Paragraph>
+          <Paragraph>
+            `uint_least8_t colorA;`: We create the `colorA` and `colorB`
+            variable here so that we can instantiate them depending on if we
+            want the effects reversed or not.
+          </Paragraph>
+          <Paragraph>
+            `if (reverse)`: The code nested within this if statment is the exact
+            same as the `else` statument, just that the variable names are
+            reversed. This results in the animations to go in the reverse
+            direction.
+          </Paragraph>
+          <Paragraph>
+            `colorA = (pattern[i] + x) % max;`: This is the `color` variable we
+            had before.
+          </Paragraph>
+          <Paragraph>
+            `colorB = (colorA + 1) % max`: This gets the next color before the
+            `x` for loop increments to it. So if colorA is `0`, this will return
+            `1`.
+          </Paragraph>
+          <Paragraph>
+            `getColorFade(...)`: We call our new fade method and pass in all of
+            the appropriate parameters. This has to be done for each color.
+          </Paragraph>
+          <Paragraph>
+            `patternColors[colorA]][0]`: This gets the value of `colorA` so that
+            our fade method can calculate how much to increment and return. The
+            same applies to `colors[patternColors[colorB]][0]`.
+          </Paragraph>
+          <Paragraph>
+            `(4 * speed)`: We need to multiply our default `4` by speed since we
+            can't have the fade for loop fade `6` times and the color fade
+            method expecting `4`.
+          </Paragraph>
+          <Paragraph>
+            `FastLED.delay(50);`: The fade method will slow down the animation
+            since this delay will be called more times before shifting to the
+            next color. I usually like keeping this delay low, but that results
+            in more calls to the mask.
+          </Paragraph>
+          <Title>You're Done!</Title>
+          <Paragraph>That's it! Now your code should look like this:</Paragraph>
+          <CodeBlock language="cpp">
+            {`#include <FastLED.h>
+
+#define LED_PIN A5
+#define NUM_LEDS 161
+#define LED_TYPE WS2812B
+#define BRIGHTNESS 20
+
+CRGB leds[NUM_LEDS];
+
+void setup()
+{
+  FastLED.addLeds<LED_TYPE, LED_PIN>(leds, NUM_LEDS);
+  FastLED.setMaxPowerInVoltsAndMilliamps(4.5, 500);
+  FastLED.show();
+}
+
+void loop()
+{
+  uint_least8_t linePattern[NUM_LEDS] = {
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+      2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+      3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+        4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+        5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+          6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6
+  };
+  uint_least8_t lineColors[7] = { 0, 0, 1, 1, 1, 1, 1 };
+  pattern(linePattern, lineColors, false, 1, 5);
+}
+
+void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t patternColors[], bool reverse, float speed, uint_least8_t max) {
+  uint_least8_t colors[2][3] = {
+    {5, 160, 60},
+    {0, 30, 170},
+  };
+  for (uint_least8_t x = 0; x < max; x++) {
+    for (uint_least8_t z = 0; z < (4 * speed); z++) {
+      for (uint_least8_t i = 0; i < NUM_LEDS; i++) {
+        uint_least8_t color = (pattern[i] + x) % max;
+        uint_least8_t colorA;
+        uint_least8_t colorB;
+        if (reverse) {
+          colorB = (pattern[i] + (4 - x)) % max;
+          colorA = (colorB + 1) % max;
+        } else {
+          colorA = (pattern[i] + x) % max;
+          colorB = (colorA + 1) % max;
+        }
+        leds[i] = CRGB(
+          getColorFade(colors[patternColors[colorA]][0], colors[patternColors[colorB]][0], z, (4 * speed)),
+          getColorFade(colors[patternColors[colorA]][1], colors[patternColors[colorB]][1], z, (4 * speed)),
+          getColorFade(colors[patternColors[colorA]][2], colors[patternColors[colorB]][2], z, (4 * speed))
+        );
+      }
+      FastLED.show();
+      FastLED.delay(50);
+    }
+  }
+}
+
+float getColorFade(uint_least8_t a, uint_least8_t b, uint_least8_t index, uint_least8_t range) {
+  if (a == b)
+  {
+    return a;
+  }
+  float dif = abs(a - b);
+  float change = dif / range;
+  change *= (index + 1);
+  if (a > b)
+  {
+    return a - change;
+  }
+  return a + change;
+}`}
+          </CodeBlock>
+          <Paragraph>
+            You can now create some designs by creating more pattern arrays and
+            pattern colors. In my experience, each design only takes 1-5
+            minutes. As long as you remember where the center index is, you can
+            make a symetrical design fairly fast. _Note: Using the multicursor
+            feature in your editor helps a TON_
+          </Paragraph>
+          <Paragraph>
+            This project is still a work in progress, I have lots of upgrades
+            planned so stay tuned!
+          </Paragraph>
           <div className="m-t--64 tg__t--center">
             <div className="button">
-              <Link
+              <a
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-jwt-endpoints/"
+                href="https://github.com/ArmaizAdenwala/arduino-led-mask"
               >
-                VIEW PART TEN: IMPLEMENTING JWT IN AUTH ENDPOINTS
-              </Link>
+                VIEW ON GITHUB
+              </a>
             </div>
           </div>
         </div>
