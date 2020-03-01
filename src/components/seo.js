@@ -44,46 +44,6 @@ function SEO({
       titleTemplate={`%s | ${secondaryTitle || site.siteMetadata.title}`}
       meta={[
         {
-          rel: `canonical`,
-          content: '',
-        },
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: socialTitle,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: socialTitle,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
           name: `viewport`,
           content:
             'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
@@ -94,6 +54,16 @@ function SEO({
       {canonical && <meta property="og:url" content={canonical} />}
       {image && <meta property="og:image" content={image} />}
       {image && <meta name="twitter:image:src" content={image} />}
+      <meta charset="UTF-8" />
+      <meta name="author" content="Armaiz Adenwala" />
+      <meta name="description" content={metaDescription} />
+      <meta name="twitter:card" content={'summary'} />
+      <meta name="twitter:creator" content={'Armaiz Adenwala'} />
+      <meta name="twitter:title" content={socialTitle} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta property="og:title" content={socialTitle} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:type" content={'website'} />
       <link rel="shortcut icon" href="/favicon.png" />
     </Helmet>
   );
