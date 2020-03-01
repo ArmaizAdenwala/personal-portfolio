@@ -39,6 +39,18 @@ const IndexPage = () => (
             It is hard to record the mask with how bright the leds are but here
             is the end result:
           </Paragraph>
+          <div className="video-container">
+            <iframe
+              width="400"
+              height="300"
+              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/-JsS84euiK8?rel=0&controls=1&autoplay=1><img src=https://img.youtube.com/vi/-JsS84euiK8/hqdefault.jpg alt='LED Rave Mask V2 - Arduino and Neopixels'><span>▶</span></a>"
+              src="https://www.youtube.com/embed/-JsS84euiK8?rel=0&controls=1"
+              frameBorder="0"
+              loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
           <Title>Overview Of The Mask</Title>
           <img className="full-width-img" src={MaskImage} loading="lazy" />
           <div
