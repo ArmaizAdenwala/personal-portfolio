@@ -103,7 +103,11 @@ const IndexPage = () => (
             sure to look up guides on how to solder properly.
           </Paragraph>
           <Title>Overview Of The Mask</Title>
-          <LazyLoadImage className="full-width-img" src={MaskImage} />
+          <LazyLoadImage
+            className="full-width-img"
+            src={MaskImage}
+            alt="NeoPixels in the shape of the Arduino LED mask. Cables are connected to the next row and snake around with each row having 1 less LED than the one above it."
+          />
           <div
             className="
               tg__t--center
@@ -131,7 +135,7 @@ const IndexPage = () => (
           <LazyLoadImage
             className="full-width-img"
             src={LedsMaskImage}
-            loading="lazy"
+            alt="Close of image of the WS2182B LED lightstrip. There are 3 pins: G (Ground), I (data input), and + (Power). Each row alternates with the 2nd row having data output (O) instead of input."
           />
           <div
             className="
@@ -188,7 +192,11 @@ const IndexPage = () => (
             to sew the LEDs to the mask.
           </Paragraph>
           <Title>Overview Of The Arduino</Title>
-          <LazyLoadImage className="full-width-img" src={LedsMaskArduino} />
+          <LazyLoadImage
+            alt="Close up of the Arduino Nano. It is connected to a triple AA battery pack and a 470 ohm resistor. The data cable is connected to the A5 pin."
+            className="full-width-img"
+            src={LedsMaskArduino}
+          />
           <div
             className="
               tg__t--center
@@ -221,7 +229,11 @@ const IndexPage = () => (
             as you limit the power to the NeoPixels to be under `5V`, you should
             be ok._
           </Paragraph>
-          <LazyLoadImage className="full-width-img" src={LedsMaskFull} />
+          <LazyLoadImage
+            className="full-width-img"
+            src={LedsMaskFull}
+            alt="A full view of the mask, with the LED mask and the Arduino Nano all connected together."
+          />
           <div
             className="
               tg__t--center
@@ -337,14 +349,22 @@ void loop()
             so that the colors rotate each iteration. Here is a visual for how
             the 0th and 1st iterations would look like for a mask with 6 leds:
           </Paragraph>
-          <LazyLoadImage className="full-width-img" src={MaskColorsArray0} />
+          <LazyLoadImage
+            className="full-width-img"
+            src={MaskColorsArray0}
+            alt="A visual that shows how the 5th item in the pattern array is equal to 1 which represents the index in the pattern color array which then points to a color in the color array"
+          />
           <Paragraph>
             The Arduino will parse through each value in the `pattern` array
             which in this case the current value is `1`. So it finds the value
             of `patternColors[1]` and gets `0`. It then gets the value of
             `colors[0]`
           </Paragraph>
-          <LazyLoadImage className="full-width-img" src={MaskColorsArray1} />
+          <LazyLoadImage
+            className="full-width-img"
+            src={MaskColorsArray1}
+            alt="A visual showing the next iteration of the pattern array where every value in the pattern array increments by one, with the highest value looping back to 0."
+          />
           <Paragraph>
             Now in the 2nd iteration, the value increments by 1 and is now `2`.
             (_When we program this, the array wont be mutated, we will instead
@@ -572,7 +592,7 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
             a consistent speed.
           </Paragraph>
           <Paragraph>This will result in the mask looking like this:</Paragraph>
-          <LazyLoadImage className="full-width-img" src={MaskStatic} />
+          <LazyLoadImage alt="Image of the led mask at the static state. There is a few row of leds that are pink and some that are blue." className="full-width-img" src={MaskStatic} />
           <Title>Animating The Design</Title>
           <Paragraph>
             To animate the design, we would need to wrap our method in a for
