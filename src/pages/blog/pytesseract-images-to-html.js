@@ -5,6 +5,7 @@ import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import CoverImage from './images/ocr/pytesseract-convert-image-to-html-site.png';
 import LoremHtmlImg from './images/ocr/basic-ocr-to-html-page.png';
@@ -1397,6 +1398,26 @@ extracting: data/python_dataset_38.jpg`}
             using `pytest` and `coverage`. I am always available to help with
             any questions, so don't hesitate to contact me!
           </Paragraph>
+          <div className="m-t--32 tg__t--center">
+            <a
+              className="profile-card__content__social__link"
+              href="https://www.linkedin.com/in/armaizadenwala/"
+            >
+              <FontAwesomeIcon icon={['fab', 'linkedin']} />
+            </a>
+            <a
+              className="profile-card__content__social__link"
+              href="https://github.com/ArmaizAdenwala"
+            >
+              <FontAwesomeIcon icon={['fab', 'github']} />
+            </a>
+            <a
+              className="profile-card__content__social__link"
+              href="mailto:armaiz.adenwala@gmail.com"
+            >
+              <FontAwesomeIcon icon="envelope" />
+            </a>
+          </div>
         </div>
       </Container>
       <Footer />

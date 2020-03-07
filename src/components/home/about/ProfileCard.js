@@ -26,6 +26,12 @@ const ProfileCard = () => (
         >
           <FontAwesomeIcon icon={['fab', 'github']} />
         </a>
+        <a
+          className="profile-card__content__social__link"
+          href="mailto:armaiz.adenwala@gmail.com"
+        >
+          <FontAwesomeIcon icon={['fab', 'envelope']} />
+        </a>
       </div>
     </div>
   </div>
