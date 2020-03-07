@@ -17,7 +17,7 @@ import NavImg from './images/ocr/custom-navigation-using-python.png';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Using Pytesseract To Convert Images Into An HTML Site"
+      title="Using Pytesseract To Convert Images Into A HTML Site"
       canonical="https://armaizadenwala.com/blog/pytesseract-images-to-html/"
       secondaryTitle="Armaiz"
       image={CoverImage}
@@ -25,7 +25,7 @@ const IndexPage = () => (
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Using Pytesseract To Convert Images Into An HTML Site"
+      emphasized="Using Pytesseract To Convert Images Into A HTML Site"
       description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
       date="March 7th, 2020"
       extraContent
@@ -36,13 +36,13 @@ const IndexPage = () => (
           <LazyLoadImage
             className="cover-image"
             src={CoverImage}
-            alt="Using Pytesseract to convert images into an HTML site by Armaiz Adenwala."
+            alt="Using Pytesseract to convert images into a HTML site by Armaiz Adenwala."
           />
           <Title first>Overview</Title>
           <Paragraph>
             Using Google's Tesseract OCR library, we will scan images from a
-            dataset and create an HTML website out of it with navigation. We
-            will be covering an array of topics including the __Pytesseract__
+            dataset and create a HTML website out of it with navigation. We will
+            be covering an array of topics including the __Pytesseract__
             library, Google's __Tesseract__ library, __Makefiles__, __regex__,
             and more. This post is to serve as an introduction to the power of
             neural networks through basic OCR.
@@ -358,7 +358,7 @@ OCR Engine modes:
           </Paragraph>
           <Paragraph>
             `build_html_file`: converts a key and value pair from the
-            `build_chapters` method into an html page
+            `build_chapters` method into a html page
           </Paragraph>
           <Paragraph>
             `convert_chapter_to_spinal`: converts a chapter name into
@@ -858,7 +858,7 @@ utils.utils.InvalidChapterException
           </Paragraph>
           <Paragraph>
             {
-              "` return '{}.html'.format(chapter_spinal_case)`: returns the converted chapter string as an html file name. `Chapter 1: Lorem` becomes `lorem.html`."
+              "` return '{}.html'.format(chapter_spinal_case)`: returns the converted chapter string as a html file name. `Chapter 1: Lorem` becomes `lorem.html`."
             }
           </Paragraph>
           <Paragraph>
@@ -945,7 +945,7 @@ utils.utils.InvalidChapterException
           <Paragraph>
             `html_file.write(content)`: this appends our `content` to our html
             file. When we open our html file, this is what we will see. In our
-            actual method, we will have an html template.
+            actual method, we will have a html template.
           </Paragraph>
           <Paragraph>
             `html_file.close()`: this closes our html_file for writing, we want
@@ -1373,7 +1373,7 @@ content = """
           <LazyLoadImage
             className="full-width-img"
             src={NavImg}
-            alt="An HTML screen with a next and previous button to navigate through pages and chapters."
+            alt="A HTML screen with a next and previous button to navigate through pages and chapters."
           />
           <Title>Testing The Entire Dataset</Title>
           <Paragraph>

@@ -27,7 +27,7 @@ const IndexPage = () => (
       <div className="p-v--32">
         <Container>
           <BlogCard
-            name="Using Pytesseract To Convert Images Into An HTML Site"
+            name="Using Pytesseract To Convert Images Into A HTML Site"
             description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
             date="March 7th, 2020"
             url="/blog/pytesseract-images-to-html/"
