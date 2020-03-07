@@ -1,7 +1,26 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 
-const Paragraph = ({ children, disableRel }) => (
+const _getProps = (disableRel, noFollow) => {
+  let props = { className: 'tg__nested-link' };
+  if (noFollow) {
+    const rel = `nofollow noopener noreferrer'`;
+    props = {
+      ...props,
+      rel,
+      target: '_blank',
+    };
+  } else if (disableRel) {
+    props = {
+      ...props,
+      rel: 'noopener noreferrer',
+      target: '_blank',
+    };
+  }
+  return props;
+};
+
+const Paragraph = ({ children, disableRel, noFollow }) => (
   <p
     className="
       tg__title-7--s
@@ -22,13 +41,7 @@ const Paragraph = ({ children, disableRel }) => (
             },
           },
           a: {
-            props: disableRel
-              ? { className: 'tg__nested-link' }
-              : {
-                  className: 'tg__nested-link',
-                  rel: 'noopener noreferrer',
-                  target: '_blank',
-                },
+            props: _getProps(disableRel, noFollow),
           },
         },
       }}

@@ -42,10 +42,10 @@ const IndexPage = () => (
           <Paragraph>
             Using Google's Tesseract OCR library, we will scan images from a
             dataset and create an HTML website out of it with navigation. We
-            will be covering an array of topics including the `Pytesseract`
-            library, Google's `tesseract` library, Makefiles, `regex`, and more.
-            This post is to serve as an introduction to the power of neural
-            networks through basic OCR.
+            will be covering an array of topics including the __Pytesseract__
+            library, Google's __Tesseract__ library, __Makefiles__, __regex__,
+            and more. This post is to serve as an introduction to the power of
+            neural networks through basic OCR.
           </Paragraph>
           <Paragraph>
             [View the project in action
