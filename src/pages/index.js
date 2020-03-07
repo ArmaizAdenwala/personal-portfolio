@@ -9,15 +9,16 @@ import Layout from '../components/layout';
 const IndexPage = () => (
   <Layout>
     <SEO
-      title="Home"
-      description="Hi, I'm Armaiz Adenwala, a Software Engineer that welcomes challenges and provides solutions. Come check out my projects!"
+      title="SSoftware Engineer Portfolio - JS, Python, Ruby"
+      secondaryTitle="Armaiz"
+      description="Hi, I'm Armaiz Adenwala, a Software Engineer with over over 4 years of experience. I'm experienced in React. Ruby, Rails, Python, Django, Node, and more."
       canonical="https://armaizadenwala.com/"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
       title="Hi, I'm "
       emphasized="Armaiz Adenwala"
-      description="I'm a Software Engineer that welcomes challenges and provides solutions."
+      description="I'm a Software Engineer that welcomes challenges and architect solutions."
     />
     <div className="page__content">
       <About />
