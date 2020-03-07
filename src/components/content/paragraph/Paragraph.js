@@ -33,7 +33,7 @@ const Paragraph = ({ children, disableRel }) => (
         },
       }}
     >
-      {children}
+      {children || ''}
     </Markdown>
   </p>
 );
