@@ -262,7 +262,7 @@ Type "help", "copyright", "credits" or "license" for more information.
           </Paragraph>
           <CodeBlock language="python">
             {`>>> pytesseract.image_to_string('./data/python_dataset_01.jpg')
-'Chapter 1: Lorem\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ...Praesent ut diam aliquet, dapibus felis in,'
+'Chapter 1: Lorem\\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ...Praesent ut diam aliquet, dapibus felis in,'
 >>>`}
           </CodeBlock>
           <Paragraph>
@@ -316,7 +316,7 @@ OCR Engine modes:
           </Paragraph>
           <CodeBlock language="python">
             {`>>> pytesseract.image_to_string('./data/python_dataset_01.jpg', config="--psm 5")
-"=\n5\nLEE:\nce\nae\not\nnH\nHite\noo. =\nnda ...a5\nicees 3 3\nor _ 8s\nbaka gs\nGas g\n528 Ze\n© © 5\nEe 52\n> 28\nzo\n2"`}
+"=\\n5\\nLEE:\\nce\\nae\\not\\nnH\\nHite\\noo. =\\nnda ...a5\\nicees 3 3\\nor _ 8s\\nbaka gs\\nGas g\\n528 Ze\\n© © 5\\nEe 52\\n> 28\\nzo\\n2"`}
           </CodeBlock>
           <Title>Overview Of The Utils File</Title>
           <Paragraph>
