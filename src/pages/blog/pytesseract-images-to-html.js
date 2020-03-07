@@ -358,7 +358,7 @@ OCR Engine modes:
             The extract method's goal is to return an array of lines from all of
             the images in the `data` folder. So the first step is to figure out
             which files that we will need to run through `tesseract`. We can do
-            this through the builtin `glob` package. We can pass a pattern to
+            this through the built-in `glob` package. We can pass a pattern to
             the `glob` library and it will return a list of files that match to
             it, similar to the `ls` command.
           </Paragraph>

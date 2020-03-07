@@ -9,7 +9,7 @@ import Layout from '../components/layout';
 const IndexPage = () => (
   <Layout>
     <SEO
-      title="SSoftware Engineer Portfolio - JS, Python, Ruby"
+      title="Software Engineer Portfolio - JS, Python, Ruby"
       secondaryTitle="Armaiz"
       description="Hi, I'm Armaiz Adenwala, a Software Engineer with over over 4 years of experience. I'm experienced in React. Ruby, Rails, Python, Django, Node, and more."
       canonical="https://armaizadenwala.com/"
