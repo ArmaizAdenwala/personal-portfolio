@@ -10,7 +10,7 @@ const _getProps = (disableRel, noFollow) => {
       rel,
       target: '_blank',
     };
-  } else if (disableRel) {
+  } else if (!disableRel) {
     props = {
       ...props,
       rel: 'noopener noreferrer',
