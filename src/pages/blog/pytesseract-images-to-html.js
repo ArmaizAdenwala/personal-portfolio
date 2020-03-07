@@ -112,6 +112,13 @@ $ cd python-ocr-tutorial`}
             important tasks like `run`, `test`, and `clean`
           </Paragraph>
           <Title>Setting Up Our Libraries</Title>
+          <Paragraph>
+            We will first need to download `Tesseract`. `Pytesseract` is a
+            wrapper for Google's library. Which means it serves as a bridge from
+            Python to `Tesseract`. In order for the Python library to work, you
+            need to [install the Tesseract library through Google's install
+            guide](https://tesseract-ocr.github.io/tessdoc/Home.html).
+          </Paragraph>
           <Paragraph>In `requirements.txt` add the following:</Paragraph>
           <CodeBlock
             useHighlight
@@ -156,6 +163,10 @@ Successfully installed Pillow-7.0.0 pytesseract-0.3.2`}
             _Note: When installing Python dependencies, it would be ideal to use
             `virtualenv`, however, for this guide we will not cover that._
           </Paragraph>
+          <Paragraph>{`> Make will throw an error if you use spaces instead of tabs. Some IDEs automatically converts tabs into spaces. You will have to turn that off or use \`nano\` or \`vim\`.
+
+> You can verify if the file is valid by running \`$ cat -e -t -v Makefile\`. If you see \`^I\` before each line, that means it is valid and is using tabs. If you only see spaces, then you need to convert them into tabs.
+          `}</Paragraph>
           <Paragraph>
             If you noticed, `$ Make init` installed `Pillow` automatically. This
             is because `pytesseract` requires it and it installs it for us. You
@@ -255,7 +266,7 @@ Type "help", "copyright", "credits" or "license" for more information.
             this guide, I have using `4.1.1` which allows us to use their newer
             Neural nets LSTM engine. `pytesseract` will automatically use the
             OCR engine based on what's available. [Visit Google's tessearct
-            install guide](https://github.com/tesseract-ocr/tesseract).
+            install guide](https://tesseract-ocr.github.io/tessdoc/Home.html).
           </Paragraph>
           <Paragraph>
             The `pytesseract` library provides us with the `image_to_string`
@@ -351,7 +362,7 @@ OCR Engine modes:
           </Paragraph>
           <Paragraph>
             `convert_chapter_to_spinal`: converts a chapter name into
-            spinal-case ("Hello World" becomes "hello-word")
+            spinal-case ("Hello World" becomes "hello-world")
           </Paragraph>
           <Title>Creating The Extract Method:</Title>
           <Paragraph>
@@ -389,7 +400,7 @@ OCR Engine modes:
           </Paragraph>
           <Paragraph>
             We can loop through this array of filepaths, run it through
-            tesseract, and append it into one giant string which we can then
+            `tesseract`, and append it into one giant string which we can then
             break into an array, line by line. Here is the full `extract`
             method:
           </Paragraph>
@@ -409,7 +420,7 @@ def extract(path='./data/*.jpg'):
         image_string = pytesseract.image_to_string(page)
         text += image_string
 
-    lines = text.split('\n')
+    lines = text.split('\\n')
     return lines`}
           </CodeBlock>
           <Paragraph>
@@ -427,7 +438,7 @@ def extract(path='./data/*.jpg'):
             variable
           </Paragraph>
           <Paragraph>
-            `pages.sort()`: glob does not guarentee that the files are returned
+            `pages.sort()`: glob does not guarantee that the files are returned
             in the right order. We want to sort this array in alphanumeric order
             so that an earlier page does not come after a later page. Keep in
             mind that `sort()` mutates the array, it does not return a new
@@ -466,7 +477,7 @@ def extract(path='./data/*.jpg'):
           </Paragraph>
           <Paragraph>
             `text += image_string`: this appends `image_string` to `text`. This
-            means that `text` will be this extremely large string containing all
+            means that `text` will be an extremely large string containing all
             of the text from our images, like one large document.
           </Paragraph>
           <Paragraph>
@@ -476,7 +487,7 @@ def extract(path='./data/*.jpg'):
             for each line. We want to iterate through these seperately so we
             should create a breakpoint for `\n`.
           </Paragraph>
-          <Paragraph>Here is an example of the split command:</Paragraph>
+          <Paragraph>Here is an example of the `split` command:</Paragraph>
           <CodeBlock language="python">
             {`>>> lines = 'line1\nline2\nline3'
 >>> lines.split('\n')
@@ -487,15 +498,15 @@ def extract(path='./data/*.jpg'):
             documents. We will use this array to build our chapters hash.
           </Paragraph>
           <Paragraph>
-            Note: There are two blank lines above the method to follow `pep8`
-            standards
+            _Note: There are two blank lines above the method to follow `pep8`
+            standards_
           </Paragraph>
-          <Title>Testing our `extract` method:</Title>
+          <Title>Testing Our extract Method:</Title>
           <Paragraph>
-            Since the `extract` method goes through all 40+ images, we shoud
+            Since the `extract` method goes through all 40+ images, we should
             lower that amount temporarily for testing purposes. We can slice an
-            array to only the first 3 items by using `[:3]`. The color ( `:`)
-            tells Python to extract everything before index `3` ,
+            array to only the first 3 items by using `[:3]`. The colon ( `:`)
+            tells Python to extract everything before index `3` .
           </Paragraph>
           <Paragraph>
             We can update the `pages` variable to only loop through a few
@@ -545,7 +556,7 @@ build_chapters(lines) # {'Chapter 1: Lorem': 'line 1\nline2', 'Chapter 2: Ipsum'
             chapter and which one is a normal line. We can tell if a string is a
             chapter if it starts with `Chapter NUMBER:`. Fortunately, regular
             expressions can be used to see if a string matches a "chapter"
-            pattern. We will do this through the builtin `re` library:
+            pattern. We will do this through the built-in `re` library:
           </Paragraph>
           <CodeBlock language="python">
             {`>>> import re
@@ -583,9 +594,9 @@ build_chapters(lines) # {'Chapter 1: Lorem': 'line 1\nline2', 'Chapter 2: Ipsum'
           </Paragraph>
           <Paragraph>`r`: signifies that it is a regular expression</Paragraph>
           <Paragraph>
-            `^`: indicates that the string starts with the pattern so "Loren
-            chapter 1: ipsum" won't match. For the sake of this project, we will
-            assume that tesseract will OCR the chapters correctly
+            `^`: indicates that the string starts with the pattern so `Lorem
+            chapter 1: ipsum` won't match. For the sake of this project, we will
+            assume that `tesseract` will OCR the chapters correctly
           </Paragraph>
           <Paragraph>
             `(...)` : indicates the pattern that should be applied to `^`
@@ -613,7 +624,7 @@ build_chapters(lines) # {'Chapter 1: Lorem': 'line 1\nline2', 'Chapter 2: Ipsum'
 4. if it is not a chapter, append it to the current chapter key's value
 5. return chapters hash`}
           </Paragraph>
-          <Paragraph>Here is the build_chapters method:</Paragraph>
+          <Paragraph>Here is the `build_chapters` method:</Paragraph>
           <CodeBlock language="python">
             {`import re
 # ...
@@ -675,7 +686,7 @@ def build_chapters(lines):
           </Paragraph>
           <Paragraph>
             {
-              "`content = '{}\n'.format(line)`: builds our content string to add a new line (`\n`). `chapters[cur_chapter] += content`: Since we know that `cur_chapter` exists in `chapters`, we can append it to its current value using the `+=` operator."
+              "`content = '{}\\n'.format(line)`: builds our content string to add a new line (`\\n`). `chapters[cur_chapter] += content`: Since we know that `cur_chapter` exists in `chapters`, we can append it to its current value using the `+=` operator."
             }
           </Paragraph>
           <Paragraph>
@@ -684,7 +695,7 @@ def build_chapters(lines):
           </Paragraph>
           <Paragraph>
             {
-              "`content = '{}\n'.format(line)`: same as above. It is important to no repeat code (DRY), however, in this case it was only repated twice so it is not that bad. Otherwise we should extract it to a method or refactor our method. Since it is only one simple line, we won't need to worry about it."
+              "`content = '{}\\n'.format(line)`: same as above. It is important to no repeat code (DRY), however, in this case it was only repated twice so it is not that bad. Otherwise we should extract it to a method or refactor our method. Since it is only one simple line, we won't need to worry about it."
             }
           </Paragraph>
           <Paragraph>
@@ -698,7 +709,7 @@ def build_chapters(lines):
           <Title>Testing build_chapters</Title>
           <Paragraph>
             In the Python console, lets pass the result of our `extract()`
-            method into our build_chapters method:
+            method into our `build_chapters` method:
           </Paragraph>
           <CodeBlock language="python">
             {`>>> from utils.utils import extract, build_chapters
@@ -708,7 +719,7 @@ extracting: data/python_dataset_02.jpg
 extracting: data/python_dataset_03.jpg
 >>> chapters = build_chapters(lines)
 >>> chapters
-{'Chapter 1: Lorem': '\nLorem ..\n', 'Chapter 2: lpsum': '\nFusce ...'}
+{'Chapter 1: Lorem': '\\nLorem ...\\n', 'Chapter 2: lpsum': '\\nFusce ...'}
 >>> chapters.keys()
 dict_keys(['Chapter 1: Lorem', 'Chapter 2: lpsum', 'Chapter 3: Dolor'])`}
           </CodeBlock>
@@ -721,7 +732,7 @@ dict_keys(['Chapter 1: Lorem', 'Chapter 2: lpsum', 'Chapter 3: Dolor'])`}
             works correctly!
           </Paragraph>
           <Title>
-            Creating the convert_chapter_to_spinal method And
+            Creating The convert_chapter_to_spinal method And
             InvalidChapterException
           </Title>
           <Paragraph>
@@ -736,7 +747,7 @@ dict_keys(['Chapter 1: Lorem', 'Chapter 2: lpsum', 'Chapter 3: Dolor'])`}
             chapter portion: `lorem-ipsum-dolor`
           </Paragraph>
           <Paragraph>Here is our `convert_chapter_to_spinal` method:</Paragraph>
-          <CodeBlock langage="python">
+          <CodeBlock language="python">
             {`def convert_chapter_to_spinal(chapter):
     name = re.sub(r"^(Chapter [0-9]+: )", '', chapter)
     if name == chapter:
@@ -759,7 +770,7 @@ dict_keys(['Chapter 1: Lorem', 'Chapter 2: lpsum', 'Chapter 3: Dolor'])`}
           </Paragraph>
           <Paragraph>
             `if name == chapter:`: At the point, chapter should be `Chapter 1:
-            Lorem`, and the `name` variable should be `Lorem`. If the `re.sub`
+            Lorem`, and the `name` variable should be `lorem`. If the `re.sub`
             method didn't work, then `name` should be equal to chapter since
             nothing was replaced. If the string isn't a valid chapter, it should
             throw an error.
@@ -904,8 +915,8 @@ utils.utils.InvalidChapterException
           <Paragraph>
             `list(chapters)[0]`: we convert chapters into a list which will only
             return an array of keys. We do not use the `chapters.keys()` method
-            for simplicity. In python 3, `.keys()` returns `dict_keys` which are
-            iteratable, but not indexible. This is becuase Python 3.6 and older
+            for simplicity. In Python 3, `.keys()` returns `dict_keys` which are
+            iteratable, but not indexible. This is because Python 3.6 and older
             do not order keys within our dict/hashes. They use less memory,
             however, we will use the less efficient route and convert it to a
             list. In this project, we won't need to look to much into being
