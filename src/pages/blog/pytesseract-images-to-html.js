@@ -968,7 +968,7 @@ utils.utils.InvalidChapterException
             content for that chapter.
           </Paragraph>
           <Paragraph>
-            So in every iteration, we have a chapter that we need to create an
+            So in every iteration, we have a chapter that we need to create a
             html file for. We get the name of the file, the chapter name, and
             the content of the chapter content through out helper methods. We
             open up our html file and pass in html code to our file. Once that
@@ -981,7 +981,7 @@ utils.utils.InvalidChapterException
         chapter_file = get_chapter_file(chapter)
         file_name = '{0}{1}'.format(dest, chapter_file)
         html_file = open(file_name, 'w')
-        paragraph = chapters[chapter].replace('\n\n', '<br/><br/>')
+        paragraph = chapters[chapter].replace('\\n\\n', '<br/><br/>')
         content = """
 <html>
     <head>
@@ -1024,7 +1024,7 @@ utils.utils.InvalidChapterException
           </Paragraph>
           <Paragraph>
             {
-              "`chapters[chapter].replace('\\n\\n', '<br/><br/>')`:  this grabs the value of our chapters key and replaces the newlines with `<br/><br/>`. In html, the `<br/>` element refers to a linebreak, where two line breaks results in a blank line as spacing. This allows us to properly see the new lines (`\\n\\n`) in our html file. This is then assigned to `paragraph`"
+              "`chapters[chapter].replace('\\n\\n', '<br/><br/>')`:  this grabs the value of our chapters key and replaces the newlines with `<br/><br/>`. In html, the `<br/>` element refers to a linebreak, where two line breaks results in a blank line as spacing. This allows us to properly see the new lines (`\\n\\n`) in our html file. This is then assigned to `paragraph`."
             }
           </Paragraph>
           <CodeBlock language="python">
@@ -1044,7 +1044,7 @@ utils.utils.InvalidChapterException
           </CodeBlock>
           <Paragraph>
             {
-              'This is our entire html file as a string. It is very basic which is all we need. We use triple quotes (`"""`) to signify that it a multiline html file. The `link` metatag imports a styles.css file, which we will cover soon. `<h1>{0}</h1>` is where our chapter title will be and `<p>{1}</p>` is where our chapter content will be. `{0}` and `{1}` refer to the first and second paramert in the `format` method (`chapter`, `paragraph`). The entire html content is assigned to `content`.'
+              'This is our entire html file as a string. It is very basic which is all we need. We use triple quotes (`"""`) to signify that it a multiline html file. The `link` meta tag imports a `styles.css` file, which we will cover soon. `<h1>{0}</h1>` is where our chapter title will be and `<p>{1}</p>` is where our chapter content will be. `{0}` and `{1}` refer to the first and second param in the `format` method (`chapter`, `paragraph`). The entire html content is then assigned to `content`.'
             }
           </Paragraph>
           <Paragraph>
@@ -1054,14 +1054,14 @@ utils.utils.InvalidChapterException
           <Paragraph>`html_file.close()`: this closes the html file.</Paragraph>
           <Title>Testing build_html_files</Title>
           <Paragraph>
-            We can test the build_html_files function out now (we will create
+            We can test the `build_html_files` function out now (we will create
             styles.css later).
           </Paragraph>
           <Paragraph>
             But, we still need to clear out our html folder. Add the `clean`
             command to your Makefile:
           </Paragraph>
-          <CodeBlock language="python">
+          <CodeBlock language="makefile">
             {`init:
 	pip3 install -r requirements.txt
 clean:
@@ -1179,7 +1179,8 @@ def build_html_files(chapters, dest='html/'):
           </CodeBlock>
           <Title>Creating The main.py File</Title>
           <Paragraph>
-            We can now connect everything together in our main.py file:
+            We can now connect everything together in our `main.py` file. Update
+            your `main.py` to include the following:
           </Paragraph>
           <CodeBlock language="python">
             {`from utils.utils import extract, build_chapters, build_html_files
@@ -1192,21 +1193,24 @@ build_html_files(chapters)`}
           </CodeBlock>
           <Paragraph>
             At this point, this file should be self-explanatory. We import the
-            extract method to extract the lines from our images, we import the
-            `build_chapters` method to create our `chapters` hash using `lines`.
-            Then we pass it to `build_html_files` to create our html files.
+            extract method to extract the lines from our images. Then, we import
+            the `build_chapters` method to create our `chapters` hash using
+            `lines`. Then we pass it to `build_html_files` to create our html
+            files.
           </Paragraph>
           <Paragraph>
             Save this file and run `$ Make clean` and then `$ python3 main.py`
             (or `$ python main.py`):
           </Paragraph>
-          <CodeBlock language="python">
+          <CodeBlock useHighlight language="shell">
             {`$ python3 main.py
 extracting: data/python_dataset_01.jpg
 extracting: data/python_dataset_02.jpg
 extracting: data/python_dataset_03.jpg`}
           </CodeBlock>
-          <Paragraph>Now if we check our html folder:</Paragraph>
+          <Paragraph>
+            Now if we check if the files exist in our html folder using `ls`:
+          </Paragraph>
           <CodeBlock useHighlight language="shell">
             {`$ ls html
 dolor.html lorem.html lpsum.html`}
@@ -1221,8 +1225,9 @@ dolor.html lorem.html lpsum.html`}
             alt="The HTML page for the full Chapter 2 section. There is a lost of content and it is unstyled."
           />
           <Paragraph>
-            Download the `styles.css` files from the `html` folder in the github
-            repo and put it in our `html` folder to style this page:
+            This page could use some styling. Download the `styles.css` files
+            from the `html` folder in the github repo and put it in our `html`
+            folder. Once complete, refresh the page:
           </Paragraph>
           <LazyLoadImage
             className="full-width-img"
@@ -1231,7 +1236,7 @@ dolor.html lorem.html lpsum.html`}
           />
           <Paragraph>
             This now looks a lot more readable. There is still one more feature
-            we can add to it though: navigation.
+            we can add to it though: __navigation__.
           </Paragraph>
           <Title>Adding Navigation</Title>
           <Paragraph>
@@ -1248,7 +1253,7 @@ dolor.html lorem.html lpsum.html`}
             Starting with the first step, update your loop from:
           </Paragraph>
           <CodeBlock language="python">{`for chapter in chapters.keys():`}</CodeBlock>
-          <Paragraph>To:</Paragraph>
+          <Paragraph>to:</Paragraph>
           <CodeBlock language="python">
             {`chapter_keys = list(chapters)
 for index, chapter in enumerate(chapter_keys):`}
@@ -1283,7 +1288,7 @@ content = """
             <h1>{0}</h1>
             <p>{1}</p>
             {2}
-		...
+    ...
 </html>
 """.format(chapter, paragraph, prev_link)`}
           </CodeBlock>
@@ -1342,7 +1347,7 @@ content = """
             next_chapter_file = get_chapter_file(next_chapter)
             next_link = '<p><a href="{}">Next</a></p>'.format(
                 next_chapter_file)
-        paragraph = chapters[chapter].replace('\n\n', '<br/><br/>')
+        paragraph = chapters[chapter].replace('\\n\\n', '<br/><br/>')
         content = """
 <html>
     <head>
@@ -1385,7 +1390,7 @@ content = """
     text = ''
     # ...`}
           </CodeBlock>
-          <Paragraph>To:</Paragraph>
+          <Paragraph>to:</Paragraph>
           <CodeBlock language="python">
             {`def extract(path='data/*.jpg'):
     pages = glob.glob(path)
@@ -1402,10 +1407,8 @@ extracting: data/python_dataset_01.jpg
 extracting: data/python_dataset_38.jpg`}
           </CodeBlock>
           <Paragraph>
-            If everything went well, you should now have a fully indexed static
-            website from everything in the dataset under the `html/` page! If
-            you wish to improve this project further, learn how to create tests
-            for this exact project using `pytest` here:
+            If everything went well, you should now have a static website in
+            `html/`!
           </Paragraph>
           <Title>What's Next?</Title>
           <Paragraph>
