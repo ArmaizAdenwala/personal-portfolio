@@ -289,6 +289,13 @@ blockquote {
     background: #dde4e9;
   }
 }
+img.cover-image {
+  width: calc(100% + 64px);
+  margin-top: -32px;
+  margin-left: -32px;
+  margin-bottom: 32px;
+  display: block;
+}
 .full-width-img {
   width: 100%;
   max-width: 650px;
