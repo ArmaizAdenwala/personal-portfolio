@@ -24,23 +24,63 @@ const IndexPage = () => (
       description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
       ldJson={{
         '@context': 'http://schema.org',
-        '@type': 'Article',
+        '@type': 'TechArticle',
         name: 'Using Pytesseract To Convert Images Into A HTML Site',
         headline: 'Using Pytesseract To Convert Images Into A HTML Site',
+        alternativeHeadline:
+          'Convert Scanned Documents Into An HTML Site Using OCR',
         mainEntityOfPage: {
           '@type': 'WebPage',
           '@id': 'https://armaizadenwala.com/blog/pytesseract-images-to-html/',
+          breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                item: {
+                  '@id': 'https://armaizadenwala.com/',
+                  name: 'Home',
+                },
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                item: {
+                  '@id': 'https://armaizadenwala.com/blog/',
+                  name: 'Blog',
+                },
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                item: {
+                  '@id':
+                    'https://armaizadenwala.com/blog/pytesseract-images-to-html/',
+                  name: 'Using Pytesseract To Convert Images Into HTML',
+                },
+              },
+            ],
+          },
         },
         publisher: {
-          '@type': 'Person',
+          '@type': 'Organization',
           name: 'Armaiz Adenwala',
+          logo: {
+            '@type': 'imageObject',
+            url: 'https://armaizadenwala.com/armaiz-developer-full.png',
+          },
         },
+        wordcount: '6016',
+        editor: 'Armaiz Adenwala',
         author: {
           '@type': 'Person',
           name: 'Armaiz Adenwala',
         },
         datePublished: '2020-03-07',
         dateModified: '2020-03-07',
+        description:
+          'Convert images to a string with Google Tesseract and then into a static HTML site using Python',
         articleBody:
           "Using Google's Tesseract OCR library, we will scan images from a dataset and create a HTML website out of it with navigation. We will be covering an array of topics including the Pytesseract library, Google's Tesseract library, Makefiles, regex, and more. This post is to serve as an introduction to the power of neural networks through basic OCR.",
         url: 'https://armaizadenwala.com/blog/pytesseract-images-to-html/',
@@ -49,7 +89,7 @@ const IndexPage = () => (
     <Navbar links={['Projects', 'Blog']} />
     <Hero
       emphasized="Using Pytesseract To Convert Images Into A HTML Site"
-      description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
+      description="Convert images to a string with Google Tesseract and then into a static HTML site using Python"
       date="March 7th, 2020"
       extraContent
     />

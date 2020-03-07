@@ -90,6 +90,9 @@
   &__ti--16 {
     text-indent: 16px;
   }
+  &__td--none {
+    text-decoration: none;
+  }
   @include responsive-modifiers('&__t--left') {
     text-align: left;
   }
