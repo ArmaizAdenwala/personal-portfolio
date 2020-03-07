@@ -3,14 +3,14 @@ import { Hero, Navbar, Footer, Container } from '../../components/general';
 import ProjectCard from '../../components/home/projects/ProjectCard';
 import '../../styles/main.scss';
 import SEO from '../../components/seo';
-
+import { Paragraph } from '../../components/content';
 const IndexPage = () => (
   <div>
     <SEO
       title="My Projects"
       secondaryTitle="Armaiz"
       canonical="https://armaizadenwala.com/projects/"
-      description="A list of all of the projects that I have worked on since sophomore year of highschool"
+      description="A list of the projects that I have worked on ranging from multiple languages and frameworks."
     />
     <Navbar
       customLinks={[
@@ -22,11 +22,16 @@ const IndexPage = () => (
     />
     <Hero
       emphasized="My Projects"
-      description="A list of all of the projects that I have worked on since sophomore year of highschool"
+      description="A list of the projects that I have worked on ranging from multiple languages and frameworks"
     />
     <div className="page__content">
       <div className="p-v--32">
         <Container>
+          <Paragraph>
+            _Note: My blog posts are project-based, so be sure to check those
+            out for [detailed guides on more projects](/blog)._
+          </Paragraph>
+          <br />
           <ProjectCard
             name="PlanSpace - HackDavis"
             description="App designed for roommates to have automated chore schedules on a week by week basis."

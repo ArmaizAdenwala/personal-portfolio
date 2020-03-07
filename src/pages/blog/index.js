@@ -9,7 +9,7 @@ const IndexPage = () => (
     <SEO
       title="Blog"
       canonical="https://armaizadenwala.com/blog/"
-      description="A developer blog to share what I learn."
+      description="Detailed guides covering an array of technologies and frameworks."
     />
     <Navbar
       customLinks={[
@@ -21,7 +21,7 @@ const IndexPage = () => (
     />
     <Hero
       emphasized="Blog"
-      description="A developer blog to share what I learn"
+      description="Detailed guides covering an array of technologies and frameworks"
     />
     <div className="page__content">
       <div className="p-v--32">
