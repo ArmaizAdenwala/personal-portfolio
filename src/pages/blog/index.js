@@ -9,7 +9,7 @@ const IndexPage = () => (
     <SEO
       title="Blog"
       canonical="https://armaizadenwala.com/blog/"
-      description="A developer blog to share what I learn."
+      description="Detailed guides covering an array of technologies and frameworks."
     />
     <Navbar
       customLinks={[
@@ -21,16 +21,22 @@ const IndexPage = () => (
     />
     <Hero
       emphasized="Blog"
-      description="A developer blog to share what I learn"
+      description="Detailed guides covering an array of technologies and frameworks"
     />
     <div className="page__content">
       <div className="p-v--32">
         <Container>
           <BlogCard
+            name="Using Pytesseract To Convert Images Into An HTML Site"
+            description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
+            date="March 7th, 2020"
+            url="/blog/pytesseract-images-to-html/"
+          />
+          <BlogCard
             name="How To Create A LED Rave Mask Using Arduino, Neopixels, and C++"
             description="A detailed guide on how to create an LED mask and display effects"
             date="March 1st, 2020"
-            url="/blog/how-to-create-a-led-rave-mask-using-arduino"
+            url="/blog/how-to-create-a-led-rave-mask-using-arduino/"
           />
           <BlogCard
             name="Part 10: Implementing JWT In Auth Endpoints - Let's Create A Social Network Using Rails And React Native"
