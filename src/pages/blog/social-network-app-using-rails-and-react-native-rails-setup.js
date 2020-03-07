@@ -97,7 +97,7 @@ const IndexPage = () => (
             $ cd social-media-blog-api
           </CodeBlock>
 
-          <Title>Setting Up The Respository</Title>
+          <Title>Setting Up The Repository</Title>
           <Paragraph>
             I like to create my GitHub repository as soon as I start my app. So
             this is a good time to create our GitHub repo. [Click here to create
