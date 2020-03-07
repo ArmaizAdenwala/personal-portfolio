@@ -11,6 +11,7 @@ import LoremHtmlImg from './images/ocr/basic-ocr-to-html-page.png';
 import Chapter1LoremHtmlImg from './images/ocr/chapter-1-image-to-webite.png';
 import Chapter2HtmlImg from './images/ocr/chapter-2-full-page.png';
 import Chapter2StyledImg from './images/ocr/chapter-2-styled-page.png';
+import NavImg from './images/ocr/custom-navigation-using-python.png';
 
 const IndexPage = () => (
   <div>
@@ -1224,18 +1225,156 @@ for index, chapter in enumerate(chapter_keys):`}
             `list(chapters)`: this converts our `chapters.keys()` into a `list`
             of keys that is indexable and assigns it to `chapter_keys`
           </Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
-          <Paragraph></Paragraph>
+          <Paragraph>
+            `for index, chapter`: adds `index` as a variable that increments
+            every loop.
+          </Paragraph>
+          <Paragraph>
+            `enumerate(chapter_keys)`: Python provides us with a built-in
+            function called `enumerate` which will keep track of the iterations
+            for us, allowing us to retrieve the `index` value each loop.
+          </Paragraph>
+          <Paragraph>We can now work on adding our previous link:</Paragraph>
+          <CodeBlock language="python">
+            {`# ...
+html_file = open(file_name, 'w')
+prev_link = ''
+if index > 0:
+  prev_chapter = chapter_keys[index - 1]
+  prev_chapter_file = get_chapter_file(prev_chapter)
+  prev_link = '<p><a href="{}">Previous</a></p>'.format(
+    prev_chapter_file)
+ # ...
+content = """
+<html>
+    ...
+            <h1>{0}</h1>
+            <p>{1}</p>
+            {2}
+		...
+</html>
+""".format(chapter, paragraph, prev_link)`}
+          </CodeBlock>
+          <Paragraph>
+            `prev_link = ''`: This is our previous link, which is defaulted to
+            be blank
+          </Paragraph>
+          <Paragraph>`if index > 0:`: if it is the 2nd page or later</Paragraph>
+          <Paragraph>
+            `prev_chapter = chapter_keys[index - 1]`: gets the previous chapter
+          </Paragraph>
+          <Paragraph>
+            `get_chapter_file(prev_chapter)`: gets the previous chapter file
+            name
+          </Paragraph>
+          <Paragraph>
+            {
+              '` \'<p><a href="{}">Previous</a></p>\'`: our html for the previous link, the link would be relative to the folder it is in (`html`), so we can just pass the normal file name (ex. `lorem.html`). We get add the file link through the `format` method.'
+            }
+          </Paragraph>
+          <Paragraph>
+            {
+              '`content = """...{2}..."""`: this refers to the previous link string. If it is blank, it would be as if it was never added. If the string has the html tags, it will appear in the html page as a link. This means that we won\'t need a condition to hide the previous link if one does not exist. If it doesn\'t exist, it won\'t appear in the html file.'
+            }
+          </Paragraph>
+          <Paragraph>
+            `.format(chapter, paragraph, prev_link)`: adds the previous link as
+            a parameter
+          </Paragraph>
+          <Paragraph>
+            {
+              "The `next` button is basically the same thing, except our conditional would be `if (index < len(chapters) - 1):` so that it checks if the current page isn't the last page. It will also pull the next chapter using `chapter_keys[index + 1]` instead of pulling the previous chapter."
+            }
+          </Paragraph>
+          <Paragraph>
+            Here is the full method with the naviagtion buttons:
+          </Paragraph>
+          <CodeBlock language="python">
+            {`def build_html_files(chapters, dest='html/'):
+    chapter_keys = list(chapters)
+    for index, chapter in enumerate(chapter_keys):
+        chapter_file = get_chapter_file(chapter)
+        file_name = '{0}{1}'.format(dest, chapter_file)
+        html_file = open(file_name, 'w')
+
+        prev_link = ''
+        next_link = ''
+        if index > 0:
+            prev_chapter = chapter_keys[index - 1]
+            prev_chapter_file = get_chapter_file(prev_chapter)
+            prev_link = '<p><a href="{}">Previous</a></p>'.format(
+                prev_chapter_file)
+
+        if (index < len(chapters) - 1):
+            next_chapter = chapter_keys[index + 1]
+            next_chapter_file = get_chapter_file(next_chapter)
+            next_link = '<p><a href="{}">Next</a></p>'.format(
+                next_chapter_file)
+        paragraph = chapters[chapter].replace('\n\n', '<br/><br/>')
+        content = """
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div>
+            <h1>{0}</h1>
+            <p>{1}</p>
+            {2}{3}
+        </div>
+    </body>
+</html>
+""".format(chapter, paragraph, prev_link, next_link)
+        html_file.write(content)
+        html_file.close()`}
+          </CodeBlock>
+          <Paragraph>
+            Once you have updated your code, run `$ Make clean` and then
+            `python3 main.py`. After the script runs, view your html files to
+            see the next and previous buttons:
+          </Paragraph>
+          <LazyLoadImage
+            className="full-width-img"
+            src={NavImg}
+            alt="NeoPixels in the shape of the Arduino LED mask. Cables are connected to the next row and snake around with each row having 1 less LED than the one above it."
+          />
+          <Title>Testing The Entire Dataset</Title>
+          <Paragraph>
+            Now that we verified it worked for the first 3 images, we can test
+            it for the entire dataset by removing `pages = pages[:3]`. Update
+            the `extract` method from:
+          </Paragraph>
+          <CodeBlock language="python">
+            {`def extract(path='data/*.jpg'):
+    pages = glob.glob(path)
+    pages.sort()
+    pages = pages[:3]
+    
+    text = ''
+    # ...`}
+          </CodeBlock>
+          <Paragraph>To:</Paragraph>
+          <CodeBlock language="python">
+            {`def extract(path='data/*.jpg'):
+    pages = glob.glob(path)
+    pages.sort()
+
+    text = ''
+    # ...`}
+          </CodeBlock>
+          <Paragraph>Now run `$ Make clean` and `python3 main.py`:</Paragraph>
+          <CodeBlock useHighlight language="shell">
+            {`$ python3 main.py
+extracting: data/python_dataset_01.jpg
+...
+extracting: data/python_dataset_38.jpg`}
+          </CodeBlock>
+          <Paragraph>
+            If everything went well, you should now have a fully indexed static
+            website from everything in the dataset under the `html/` page! If
+            you wish to improve this project further, learn how to create tests
+            for this exact project using `pytest` here:
+          </Paragraph>
           <div className="m-t--64 tg__t--center">
             <div className="button">
               <a
