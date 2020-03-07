@@ -27,9 +27,9 @@ const IndexPage = () => (
     <div className="page__content">
       <div className="p-v--32">
         <Container>
-          <Paragraph>
-            _Note: My blog posts are project-based, so be sure to check those
-            out for [detailed guides on more projects](/blog)._
+          <Paragraph disableRel>
+            _My blog posts are project-based, so be sure to check those out for
+            [detailed guides on more projects](/blog)._
           </Paragraph>
           <br />
           <ProjectCard
