@@ -16,7 +16,7 @@ import NavImg from './images/ocr/custom-navigation-using-python.png';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Using Pytesseract To Convert Images To An HTML Site"
+      title="Using Pytesseract To Convert Images Into An HTML Site"
       canonical="https://armaizadenwala.com/blog/pytesseract-images-to-html/"
       secondaryTitle="Armaiz"
       image={CoverImage}
@@ -24,7 +24,7 @@ const IndexPage = () => (
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Using Pytesseract To Convert Images To An HTML Site"
+      emphasized="Using Pytesseract To Convert Images Into An HTML Site"
       description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
       date="March 7th, 2020"
       extraContent
@@ -42,7 +42,9 @@ const IndexPage = () => (
             Using Google's Tesseract OCR library, we will scan images and create
             an HTML website out of it with navigation. We will be covering an
             array of topics including the `Pytesseract` library, Google's
-            `tesseract` library, Makefiles, `regex`, and more.
+            `tesseract` library, Makefiles, `regex`, and more. This post is to
+            serve as an introduction to the power of neural networks through
+            basic OCR.
           </Paragraph>
           <Paragraph>
             [View the project in action
@@ -50,8 +52,9 @@ const IndexPage = () => (
           </Paragraph>
           <Paragraph>
             _Feel free to follow along by refering to [the GitHub repository for
-            image scans to html
-            project](https://github.com/ArmaizAdenwala/image-scans-to-html)._
+            this Python OCR
+            project](https://github.com/ArmaizAdenwala/image-scans-to-html) The
+            datasets and the `styles.css` file are within this repository._
           </Paragraph>
           <Title>Creating the project structure</Title>
           <Paragraph>Create the project root directory:</Paragraph>
@@ -93,7 +96,7 @@ $ cd python-ocr-tutorial`}
             functions will live
           </Paragraph>
           <Paragraph>
-            `touch utils/__init__.py`: tells python that `utils` should be
+            `touch utils/__init__.py`: tells Python that `utils` should be
             treated as a package
           </Paragraph>
           <Paragraph>
@@ -127,7 +130,7 @@ $ cd python-ocr-tutorial`}
             Make init`. The name could be anything.
           </Paragraph>
           <Paragraph>
-            `pip3 install -r requirements.txt`: pip3 is python 3's package
+            `pip3 install -r requirements.txt`: pip3 is Python 3's package
             installer. _(you may need to use `pip` if you do not have `python
             3`)_
           </Paragraph>
@@ -156,7 +159,7 @@ Successfully installed Pillow-7.0.0 pytesseract-0.3.2`}
             is because `pytesseract` requires it and it installs it
             automatically. You can view more info about libraries installed
             through `pip3` by running `$ pip3 show PACKAGE_NAME` in terminal
-            (not the python console):
+            (not the Python console):
           </Paragraph>
           <CodeBlock useHighlight language="shell">
             {`$ pip3 show pytesseract
@@ -221,7 +224,7 @@ Successfully installed Pillow-7.0.0`}
             That means all of the `jpg` images go inside
             `python-ocr-tutorial/data/`
           </Paragraph>
-          <Paragraph>Start python with `$ python3`:</Paragraph>
+          <Paragraph>Start Python with `$ python3`:</Paragraph>
           <CodeBlock language="python">
             {`python3
 Python 3.7.6 (default, Dec 30 2019, 19:38:28)
@@ -234,7 +237,7 @@ Type "help", "copyright", "credits" or "license" for more information.
             versions) should work as well._
           </Paragraph>
           <Paragraph>
-            We need to tell python to import the pytesseract library:
+            We need to tell Python to import the pytesseract library:
           </Paragraph>
           <CodeBlock language="python">
             {`>>> import pytesseract
@@ -362,7 +365,7 @@ OCR Engine modes:
           </Paragraph>
           <Paragraph>
             We can test this out by using the `glob` method from the `glob`
-            library. In the python console, import the `glob` library and run
+            library. In the Python console, import the `glob` library and run
             the pattern above using the `glob` method:
           </Paragraph>
           <CodeBlock language="python">
@@ -483,7 +486,7 @@ def extract(path='./data/*.jpg'):
             Since the `extract` method goes through all 40+ images, we shoud
             lower that amount temporarily for testing purposes. We can slice an
             array to only the first 3 items by using `[:3]`. The color ( `:`)
-            tells python to extract everything before index `3` ,
+            tells Python to extract everything before index `3` ,
           </Paragraph>
           <Paragraph>
             We can update the `pages` variable to only loop through a few
@@ -497,7 +500,7 @@ pages = pages[:3]
           </CodeBlock>
           <Paragraph>
             Now that our temporary fix is in place, we can test the library in
-            the python console:
+            the Python console:
           </Paragraph>
           <CodeBlock language="python">
             {`>>> from utils.utils import extract
@@ -509,7 +512,7 @@ extracting: data/python_dataset_03.jpg
 >>>`}
           </CodeBlock>
           <Paragraph>
-            `from utils.utils import extract`: This tells python that we want to
+            `from utils.utils import extract`: This tells Python that we want to
             `import` the `extract` method from `utils/utils.py`. The first
             `utils` refers to the package name (due to the `__init__.py` file)
             and the second `utils` refers to the `utils.py` file.
@@ -543,7 +546,7 @@ build_chapters(lines) # {'Chapter 1: Lorem': 'line 1\nline2', 'Chapter 2: Ipsum'
 >>>`}
           </CodeBlock>
           <Paragraph>
-            `import re`: imports the built-in python regex library
+            `import re`: imports the built-in Python regex library
           </Paragraph>
           <Paragraph>
             `re.match` the match method will return an object if the string
@@ -685,7 +688,7 @@ def build_chapters(lines):
           </Paragraph>
           <Title>Testing build_chapters</Title>
           <Paragraph>
-            In the python console, lets pass the result of our `extract()`
+            In the Python console, lets pass the result of our `extract()`
             method into our build_chapters method:
           </Paragraph>
           <CodeBlock language="python">
@@ -701,7 +704,7 @@ extracting: data/python_dataset_03.jpg
 dict_keys(['Chapter 1: Lorem', 'Chapter 2: lpsum', 'Chapter 3: Dolor'])`}
           </CodeBlock>
           <Paragraph>
-            _Note: be sure to save the utils file and restart the python
+            _Note: be sure to save the utils file and restart the Python
             console_
           </Paragraph>
           <Paragraph>
@@ -795,7 +798,7 @@ dict_keys(['Chapter 1: Lorem', 'Chapter 2: lpsum', 'Chapter 3: Dolor'])`}
             Testing Convert_chapter_to_spinal And InvalidChapterException
           </Title>
           <Paragraph>
-            Restart the python console and try passing strings to the new
+            Restart the Python console and try passing strings to the new
             `convert_chapter_to_spinal` method:
           </Paragraph>
           <CodeBlock language="python">
@@ -866,7 +869,7 @@ utils.utils.InvalidChapterException
           <Title>Creating the build_html_files Method</Title>
           <Paragraph>
             We have one final method left which is to create the html files.
-            Lets walk through creating one manually in the python console:
+            Lets walk through creating one manually in the Python console:
           </Paragraph>
           <CodeBlock language="python">
             {`>>> from utils.utils import get_chapter_file
@@ -1053,7 +1056,7 @@ clean:
           </Paragraph>
           <Paragraph>Run `Make clean` to clean up our html folder.</Paragraph>
           <Paragraph>
-            Start the python terminal again and test our new method:
+            Start the Python terminal again and test our new method:
           </Paragraph>
           <CodeBlock language="python">
             {`>>> from utils.utils import build_html_files
@@ -1384,16 +1387,16 @@ extracting: data/python_dataset_38.jpg`}
             you wish to improve this project further, learn how to create tests
             for this exact project using `pytest` here:
           </Paragraph>
-          <div className="m-t--64 tg__t--center">
-            <div className="button">
-              <a
-                className="button__text"
-                href="https://github.com/ArmaizAdenwala/arduino-led-mask"
-              >
-                VIEW ON GITHUB
-              </a>
-            </div>
-          </div>
+          <Title>What's Next?</Title>
+          <Paragraph>
+            At this point, the project is at a good position to build off of.
+            You can add more features like a table of contents, word count, and
+            more. I recommend viewing the Github Repo to see how I [tested the
+            utils.py
+            file](https://github.com/ArmaizAdenwala/image-scans-to-html/blob/master/tests/test_utils.py)
+            using `pytest` and `coverage`. I am always available to help with
+            any questions, so don't hesitate to contact me!
+          </Paragraph>
         </div>
       </Container>
       <Footer />
