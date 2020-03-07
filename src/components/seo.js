@@ -17,6 +17,7 @@ function SEO({
   secondaryTitle,
   canonical,
   image,
+  ldJson,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -36,6 +37,7 @@ function SEO({
   const socialTitle = `${title} | ${secondaryTitle || site.siteMetadata.title}`;
   const metaImage =
     'https://armaizadenwala.com' + (image || '/armaiz-developer-full.png');
+
   return (
     <Helmet
       htmlAttributes={{
@@ -67,6 +69,10 @@ function SEO({
       <meta property="og:image" content={metaImage} />
       {canonical && <meta property="og:url" content={canonical} />}
       <link rel="shortcut icon" href="/favicon.png" />
+
+      {ldJson && (
+        <script type="application/ld+json">{JSON.stringify(ldJson)}</script>
+      )}
     </Helmet>
   );
 }

@@ -22,6 +22,19 @@ const IndexPage = () => (
       secondaryTitle="Armaiz"
       image={CoverImage}
       description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
+      ldJson={{
+        '@context': 'http://schema.org',
+        '@type': 'Article',
+        name: 'Using Pytesseract To Convert Images Into A HTML Site',
+        author: {
+          '@type': 'Person',
+          name: 'Armaiz Adenwala',
+        },
+        datePublished: '2020-03-07',
+        articleBody:
+          "Using Google's Tesseract OCR library, we will scan images from a dataset and create a HTML website out of it with navigation. We will be covering an array of topics including the Pytesseract library, Google's Tesseract library, Makefiles, regex, and more. This post is to serve as an introduction to the power of neural networks through basic OCR.",
+        url: 'https://armaizadenwala.com/blog/pytesseract-images-to-html/',
+      }}
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
