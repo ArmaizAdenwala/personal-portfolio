@@ -35,7 +35,7 @@ function SEO({
   const metaDescription = description || site.siteMetadata.description;
   const socialTitle = `${title} | ${secondaryTitle || site.siteMetadata.title}`;
   const metaImage =
-    'https://armaizadenwala.com' + (image || '/armaiz-developer-code-logo.png');
+    'https://armaizadenwala.com' + (image || '/armaiz-developer-full.png');
   return (
     <Helmet
       htmlAttributes={{
