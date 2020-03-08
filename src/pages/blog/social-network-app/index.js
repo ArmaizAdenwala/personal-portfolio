@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../../components/general';
 import { Title, Paragraph, CodeBlock } from '../../../components/content';
+import SeriesCard from '../../../components/blog/SeriesCard';
 import '../../../styles/main.scss';
 import '../Blog.scss';
 import SEO from '../../../components/seo';
@@ -32,21 +33,25 @@ const IndexPage = () => (
             copying and pasting blocks of code.
           </Paragraph>
           <Paragraph>
-            _Note: I only work on this series outside of college and work. Since
-            I would like this series to be high quality, installments may be
-            released over a longer period of time._
+            _Note: I only work on this series outside of college and my job as
+            they take much higher priority. Since I would like this series to be
+            high quality, installments may be released over a longer period of
+            time._
           </Paragraph>
-          <div className="m-t--64 tg__t--center">
-            <div className="button">
-              <Link
-                className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-postgresql-setup/"
-              >
-                VIEW PART TWO: POSTGRESQL SETUP
-              </Link>
-            </div>
-          </div>
         </div>
+        <SeriesCard
+          name="1: Rails Setup"
+          description="This series will be covering how to create a social network app using Ruby on Rails and React Native"
+          url="/blog/social-network-app/rails-setup"
+        />
+        <SeriesCard name=": " description="" url="/blog/social-network-app/" />
+        <SeriesCard name=": " description="" url="/blog/social-network-app/" />
+        <SeriesCard name=": " description="" url="/blog/social-network-app/" />
+        <SeriesCard name=": " description="" url="/blog/social-network-app/" />
+        <SeriesCard name=": " description="" url="/blog/social-network-app/" />
+        <SeriesCard name=": " description="" url="/blog/social-network-app/" />
+        <SeriesCard name=": " description="" url="/blog/social-network-app/" />
+        <SeriesCard name=": " description="" url="/blog/social-network-app/" />
       </Container>
       <Footer />
     </div>

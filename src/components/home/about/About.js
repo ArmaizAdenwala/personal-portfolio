@@ -55,10 +55,10 @@ export default class About extends Component {
               </p>
               <p className="tg__title-6 about__content__bio">
                 {
-                  "Over the last 4 years, I've had the opportunity to develop for over "
+                  "Over the last 4 years, I've had the opportunity to develop for "
                 }
                 <span className="about__content__bio--emphasis">
-                  5 awesome companies / clients
+                  a handful of awesome companies / clients
                 </span>{' '}
                 as a consultant and continue to do so today. My work includes
                 developing mobile apps, making web apps, creating backend
