@@ -50,8 +50,7 @@ export default class About extends Component {
                 <span className="about__content__bio--emphasis">
                   California State University, Sacramento
                 </span>{' '}
-                as a full-time student, while working at FullStack Labs, a
-                Software Development consultancy.
+                as a Computer Science major and working at FullStack Labs.
               </p>
               <p className="tg__title-6 about__content__bio">
                 {
