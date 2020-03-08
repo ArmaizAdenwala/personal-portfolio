@@ -1,13 +1,13 @@
 @import "../../styles/colors";
 
-.blog-card {
+.series-card {
   display: flex;
   position: relative;
   background-color: #fafafa ;
   border-radius: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   &__content {
-    padding: 24px 32px;
+    padding: 16px;
     width: 100%;
     &__title-container {
       &__title {
