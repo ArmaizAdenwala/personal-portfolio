@@ -9,17 +9,16 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 8: Implementing Serializers - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-serializers/"
+      title="Implementing Serializers"
+      canonical="https://armaizadenwala.com/blog/social-media-app/serializers/"
       secondaryTitle="Armaiz"
-      description="How to implement serializers for your endpoints in Rails."
+      description="How to create active model serializers for your endpoints in Rails."
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 8: Implementing Serializers In Our Endpoints"
-      description="Implementing serializers in our Rails endpoints"
+      emphasized="Implementing Serializers In Our Endpoints"
+      description="Creating active model serializers in our Rails endpoints"
       date="Feburary 19th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -27,15 +26,19 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the last article, we covered [how JWT (JSON Web Token)
-            works](/blog/social-network-app-using-rails-and-react-native-jwt-authentication/).
-            In order to implement JWT into our endpoints, we need to add it in
-            as __meta data__ for our responses. To achieve that, we will need to
-            implement serializers for our Rails API__.
+            works](/blog/social-media-app/jwt-authentication/). In order to
+            implement JWT into our endpoints, we need to add it in as __meta
+            data__ for our responses. To achieve that, we will need to implement
+            serializers for our Rails API__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 8 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part8)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 8th installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>What Are Serializers?</Title>
           <Paragraph>
@@ -278,7 +281,7 @@ end `}</CodeBlock>
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-singleton-classes/"
+                to="/blog/social-media-app/singleton-classes/"
               >
                 VIEW PART NINE: SINGLETON CLASSES
               </Link>

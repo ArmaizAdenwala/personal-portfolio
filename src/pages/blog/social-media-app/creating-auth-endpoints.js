@@ -26,9 +26,7 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [created a User record using the Rails
-            console](/blog/social-media-app/creating-a-user/). This post is the
-            5th installment of my [Developing A Cross-Platform iOS & Android
-            Social Media App](/blog/social-media-app/) series.
+            console](/blog/social-media-app/creating-a-user/).
           </Paragraph>
           <Paragraph>
             You are now ready for the next step: __setting up endpoints for
@@ -36,6 +34,10 @@ const IndexPage = () => (
             GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part5)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 5th installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>Overview</Title>
           <Paragraph>
@@ -675,7 +677,7 @@ Completed 200 OK in 159ms (Views: 8.6ms | ActiveRecord: 1.9ms | Allocations: 394
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-api-versioning/"
+                to="/blog/social-media-app/api-versioning/"
               >
                 VIEW PART SIX: RAILS API VERSIONING
               </Link>

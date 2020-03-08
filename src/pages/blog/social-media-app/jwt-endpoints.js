@@ -9,15 +9,15 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 10: Implementing JWT In Auth Endpoints - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-jwt-endpoints/"
+      title="Implementing JWT In Auth Endpoints"
+      canonical="https://armaizadenwala.com/blog/social-media-app/jwt-endpoints/"
       secondaryTitle="Armaiz"
       description="How to implement JWT in login and register endpoints"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 10: Implementing JWT In Auth Endpoints"
-      description="Implementing JWT in login and register endpoints"
+      emphasized="Implementing JWT In Auth Endpoints"
+      description="Implementing JWT in our login and register endpoints"
       date="Feburary 19th, 2020"
       extraContent
     />
@@ -27,14 +27,17 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the last section we [created an AccessToken singleton
-            class](/blog/social-network-app-using-rails-and-react-native-singleton-classes/)
-            to help DRY up our code. In this section we will be utilizing that
-            AccessToken class.
+            class](/blog/social-media-app/singleton-classes/) to help DRY up our
+            code. In this section we will be utilizing that AccessToken class.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 10 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part10)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 10th installment of my [Developing A Cross-Platform iOS
+            & Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>Overview</Title>
           <Paragraph>
@@ -331,7 +334,7 @@ end`}
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+                to="/blog/social-media-app/creating-auth-endpoints/"
               >
                 VIEW PART 11: IMPLEMENTING JWT IN AUTH ENDPOINTS
               </Link>

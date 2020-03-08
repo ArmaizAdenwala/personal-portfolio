@@ -74,17 +74,17 @@ const IndexPage = () => (
         />
         <SeriesCard
           name="7: JWT (JSON Web Token) Authentication"
-          description="What is JWT (JSON Web Token) and how to use it"
-          url="/blog/social-media-app/jwt-authenthication/"
+          description="What JWT (JSON Web Token) authentication is and how to use it"
+          url="/blog/social-media-app/jwt-authentication/"
         />
         <SeriesCard
           name="8: Implementing Serializers"
-          description="How to implement serializers for your endpoints in Rails"
+          description="Creating active model serializers in our Rails endpoints"
           url="/blog/social-media-app/serializers/"
         />
         <SeriesCard
           name="9: Creating a JWT Singleton Class"
-          description="How to create a singleton class for JWT logic"
+          description="Developing a module for JWT logic"
           url="/blog/social-media-app/singleton-classes/"
         />
         <SeriesCard

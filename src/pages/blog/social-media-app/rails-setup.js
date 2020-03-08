@@ -45,6 +45,10 @@ const IndexPage = () => (
             using __Ruby on Rails__ and __React Native__. Before we work on the
             React Native side, we will direct our focus on Ruby on Rails.
           </Paragraph>
+          <Paragraph>
+            This is the 1st installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
+          </Paragraph>
 
           <Title>Installing Ruby On Rails</Title>
           <Paragraph>

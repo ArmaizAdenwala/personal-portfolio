@@ -26,9 +26,7 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [setup the PostgreSQL
-            database](/blog/social-media-app/postgresql-setup/). This is part 3
-            of the series, [view the series overview
-            here](/blog/social-media-app/).
+            database](/blog/social-media-app/postgresql-setup/).
           </Paragraph>
           <Paragraph>
             You are now ready for the next step: __setting up the
@@ -36,6 +34,10 @@ const IndexPage = () => (
             GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part3)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 3rd installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>Overview</Title>
           <Paragraph>

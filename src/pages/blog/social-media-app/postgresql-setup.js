@@ -26,14 +26,17 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [installed Ruby on Rails and initiated a
-            new Rails API](/blog/social-media-app/rails-setup/). You can view
-            the series overview [here](/blog/social-media-app).
+            new Rails API](/blog/social-media-app/rails-setup/).
           </Paragraph>
           <Paragraph>
             You are now ready for the next step: __setting up the database__.
             _Feel free to refer to the [part 2 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part2)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 2nd installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>Configuring The Database.yml Config</Title>
           <Paragraph>

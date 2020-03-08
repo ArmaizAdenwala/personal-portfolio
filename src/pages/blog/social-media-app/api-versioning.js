@@ -9,17 +9,16 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 6: Rails API Versioning - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-api-versioning/"
+      title="Rails API Versioning"
+      canonical="https://armaizadenwala.com/blog/social-media-app/api-versioning/"
       secondaryTitle="Armaiz"
       description="How to implement API versioning for your Rails API"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 6: API Versioning"
+      emphasized="API Versioning"
       description="Implementing API versioning on our Rails API"
       date="Feburary 10th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -27,13 +26,17 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [created a login and register
-            endpoint.](/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/).
-            We can now __implement API versioning for our Rails API__.
+            endpoint.](/blog/social-media-app/creating-auth-endpoints/). We can
+            now __implement API versioning for our Rails API__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 6 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part6)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 6th installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>What Is API Versioning And Why Do We Need It?</Title>
           <Paragraph>
@@ -352,7 +355,7 @@ v1_users_register POST   /v1/users/register(.:format) v1/users#register
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
+                to="/blog/social-media-app/jwt-authentication/"
               >
                 VIEW PART SEVEN: JWT AUTHENTICATION
               </Link>

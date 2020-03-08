@@ -9,17 +9,16 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 7: JWT (JSON Web Token) Authentication - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
+      title="JWT (JSON Web Token) Authentication"
+      canonical="https://armaizadenwala.com/blog/social-media-app/jwt-authentication/"
       secondaryTitle="Armaiz"
-      description="What is JWT (JSON Web Token) and how to use it."
+      description="What JWT (JSON Web Token) authentication is and how to use it."
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 7: JWT (JSON Web Token) Authentication"
-      description="What is JWT and how to use it"
+      emphasized="JWT Authentication"
+      description="What JWT authentication is and how to use it"
       date="Feburary 12th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -27,14 +26,17 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             We covered how you can [implement API versioning for your Rails
-            API.](/blog/social-network-app-using-rails-and-react-native-api-versioning/).
-            We will now need to __implement JWT authenthication for our Rails
-            API__.
+            API.](/blog/social-media-app/api-versioning/). We will now need to
+            __implement JWT authentication for our Rails API__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 7 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part7)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 7th installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>What Is JWT?</Title>
           <Paragraph>
@@ -238,7 +240,7 @@ JWT::ExpiredSignature (Signature has expired)`}
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-serializers/"
+                to="/blog/social-media-app/serializers/"
               >
                 VIEW PART EIGHT: IMPLEMENTING SERIALIZERS IN OUR RAILS ENDPOINTS
               </Link>

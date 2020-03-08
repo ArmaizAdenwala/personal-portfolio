@@ -26,15 +26,17 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [setup devise and created the User
-            model](/blog/social-media-app/auth-setup/). If you wish to view an
-            overview of the series, you can [view the series
-            here](/blog/social-media-app/).
+            model](/blog/social-media-app/auth-setup/).
           </Paragraph>
           <Paragraph>
             You are now ready for the next step: __creating a user__. _Feel free
             to refer to the [part 4 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part4)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 4th installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>Overview</Title>
           <Paragraph>
