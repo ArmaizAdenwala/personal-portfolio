@@ -7,13 +7,15 @@ import SEO from '../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Blog"
+      title="Software Engineering Blog"
       canonical="https://armaizadenwala.com/blog/"
       description="Detailed guides covering an array of technologies and frameworks."
       ldJson={{
         '@context': 'http://schema.org',
         '@type': 'WebPage',
         '@id': 'https://armaizadenwala.com/blog/',
+        description:
+          'Detailed guides covering an array of technologies and frameworks.',
         breadcrumb: {
           '@type': 'BreadcrumbList',
           itemListElement: [
@@ -55,7 +57,7 @@ const IndexPage = () => (
       ]}
     />
     <Hero
-      emphasized="Blog"
+      emphasized="Software Engineering Blog"
       description="Detailed guides covering an array of technologies and frameworks"
     />
     <div className="page__content">
