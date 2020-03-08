@@ -96,7 +96,7 @@ const IndexPage = () => (
     <div className="page__content">
       <Container>
         <div className="project__card">
-          <LazyLoadImage
+          <img
             className="cover-image"
             src={CoverImage}
             alt="Using Pytesseract to convert images into a HTML site by Armaiz Adenwala."
