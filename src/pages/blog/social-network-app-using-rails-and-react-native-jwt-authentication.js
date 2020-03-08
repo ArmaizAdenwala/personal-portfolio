@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 7: JWT (JSON Web Token) Authentication - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/jwt-authentication/"
       secondaryTitle="Armaiz"
       description="What is JWT (JSON Web Token) and how to use it."
     />
@@ -27,9 +27,8 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             We covered how you can [implement API versioning for your Rails
-            API.](/blog/social-network-app-using-rails-and-react-native-api-versioning/).
-            We will now need to __implement JWT authenthication for our Rails
-            API__.
+            API.](/blog/social-media-app/api-versioning/). We will now need to
+            __implement JWT authenthication for our Rails API__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 7 branch of the GitHub
@@ -238,7 +237,7 @@ JWT::ExpiredSignature (Signature has expired)`}
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-serializers/"
+                to="/blog/social-media-app/serializers/"
               >
                 VIEW PART EIGHT: IMPLEMENTING SERIALIZERS IN OUR RAILS ENDPOINTS
               </Link>

@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 5: Creating Auth Endpoints - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/creating-auth-endpoints/"
       secondaryTitle="Armaiz"
       description="Learn how to create authentication endpoints in Ruby on Rails"
     />
@@ -27,9 +27,8 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [created a User record using the Rails
-            console](/blog/social-network-app-using-rails-and-react-native-creating-a-user/).
-            You are now ready for the next step: __setting up endpoints for
-            authentication__.
+            console](/blog/social-media-app/creating-a-user/). You are now ready
+            for the next step: __setting up endpoints for authentication__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 5 branch of the GitHub
@@ -674,7 +673,7 @@ Completed 200 OK in 159ms (Views: 8.6ms | ActiveRecord: 1.9ms | Allocations: 394
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-api-versioning/"
+                to="/blog/social-media-app/api-versioning/"
               >
                 VIEW PART SIX: RAILS API VERSIONING
               </Link>

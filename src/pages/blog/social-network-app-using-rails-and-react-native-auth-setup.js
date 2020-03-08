@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 3: Authentication Setup - Let's Create A Social Network App Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-auth-setup/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/auth-setup/"
       secondaryTitle="Armaiz"
       description="Learn how to setup authentication using devise and Rails"
     />
@@ -27,9 +27,8 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [setup the PostgreSQL
-            database](/blog/social-network-app-using-rails-and-react-native-postgresql-setup/).
-            You are now ready for the next step: __setting up the
-            authentication__.
+            database](/blog/social-media-app/postgresql-setup/). You are now
+            ready for the next step: __setting up the authentication__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 3 branch of the GitHub
@@ -242,7 +241,7 @@ add_index :users, :reset_password_token, unique: true`}
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-creating-a-user/"
+                to="/blog/social-media-app/creating-a-user/"
               >
                 VIEW PART FOUR: CREATING A USER
               </Link>

@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 8: Implementing Serializers - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-serializers/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/serializers/"
       secondaryTitle="Armaiz"
       description="How to implement serializers for your endpoints in Rails."
     />
@@ -27,10 +27,10 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the last article, we covered [how JWT (JSON Web Token)
-            works](/blog/social-network-app-using-rails-and-react-native-jwt-authentication/).
-            In order to implement JWT into our endpoints, we need to add it in
-            as __meta data__ for our responses. To achieve that, we will need to
-            implement serializers for our Rails API__.
+            works](/blog/social-media-app/jwt-authentication/). In order to
+            implement JWT into our endpoints, we need to add it in as __meta
+            data__ for our responses. To achieve that, we will need to implement
+            serializers for our Rails API__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 8 branch of the GitHub
@@ -278,7 +278,7 @@ end `}</CodeBlock>
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-singleton-classes/"
+                to="/blog/social-media-app/singleton-classes/"
               >
                 VIEW PART NINE: SINGLETON CLASSES
               </Link>

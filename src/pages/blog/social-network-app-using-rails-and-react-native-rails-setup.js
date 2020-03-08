@@ -14,7 +14,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 1: Rails Setup - Let's Create A Social Network App Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-rails-setup/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/rails-setup/"
       secondaryTitle="Armaiz"
       image={SocialImage}
       description="This series will be covering how to create a social network app using ruby on rails and react native."
@@ -175,7 +175,7 @@ const IndexPage = () => (
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-postgresql-setup/"
+                to="/blog/social-media-app/postgresql-setup/"
               >
                 VIEW PART TWO: POSTGRESQL SETUP
               </Link>

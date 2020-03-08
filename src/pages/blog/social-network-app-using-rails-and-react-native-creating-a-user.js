@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 4: Creating A User - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-creating-a-user/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/creating-a-user/"
       secondaryTitle="Armaiz"
       description="Learn how to create User models using the Rails console"
     />
@@ -27,8 +27,8 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [setup devise and created the User
-            model](/blog/social-network-app-using-rails-and-react-native-auth-setup/).
-            You are now ready for the next step: __creating a user__.
+            model](/blog/social-media-app/auth-setup/). You are now ready for
+            the next step: __creating a user__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 4 branch of the GitHub
@@ -298,7 +298,7 @@ ActiveRecord::RecordNotFound (Couldn't find User)`}</CodeBlock>
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+                to="/blog/social-media-app/creating-auth-endpoints/"
               >
                 VIEW PART FIVE: CREATING AUTH ENDPOINTS
               </Link>

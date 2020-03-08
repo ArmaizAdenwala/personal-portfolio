@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 2: PostgreSQL Setup - Let's Create A Social Network App Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-postgresql-setup/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/postgresql-setup/"
       secondaryTitle="Armaiz"
       description="Learn how to setup a PostgreSQL database for a Rails app"
     />
@@ -27,9 +27,8 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [installed Ruby on Rails and initiated a
-            new Rails
-            API](/blog/social-network-app-using-rails-and-react-native-rails-setup/).
-            You are now ready for the next step: __setting up the database__.
+            new Rails API](/blog/social-media-app/rails-setup/). You are now
+            ready for the next step: __setting up the database__.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 2 branch of the GitHub
@@ -227,7 +226,7 @@ Created database 'social_media_blog_test'`}</CodeBlock>
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-auth-setup/"
+                to="/blog/social-media-app/auth-setup/"
               >
                 VIEW PART THREE: AUTHENTICATION SETUP
               </Link>

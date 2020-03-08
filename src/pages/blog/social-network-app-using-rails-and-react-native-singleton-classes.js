@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Part 9: Creating a JWT Singleton Class - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-singleton-classes/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/singleton-classes/"
       secondaryTitle="Armaiz"
       description="How to create a singleton class for JWT logic"
     />
@@ -27,10 +27,10 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             We learned [how to implement
-            serializers](/blog/social-network-app-using-rails-and-react-native-serializers/)
-            in the last part. To help ease the implementation of JWT and keep
-            the controllers skinny, we will create a __singleton class__ that
-            helps encode and decode our JSON Web Tokens.
+            serializers](/blog/social-media-app/serializers/) in the last part.
+            To help ease the implementation of JWT and keep the controllers
+            skinny, we will create a __singleton class__ that helps encode and
+            decode our JSON Web Tokens.
           </Paragraph>
           <Paragraph>
             _Feel free to refer to the [part 9 branch of the GitHub
@@ -190,9 +190,8 @@ end
           <Title>Creating The Encode And Decode Methods</Title>
           <Paragraph disableRel>
             In part 7, we [encoded a payload using
-            JWT](/blog/social-network-app-using-rails-and-react-native-jwt-authentication/).
-            We can reuse that code in this class. For reference, here is the
-            code we used:
+            JWT](/blog/social-media-app/jwt-authentication/). We can reuse that
+            code in this class. For reference, here is the code we used:
           </Paragraph>
           <CodeBlock language="ruby">
             {`payload = {"user_id": 123}
@@ -323,7 +322,7 @@ end`}
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-jwt-endpoints/"
+                to="/blog/social-media-app/jwt-endpoints/"
               >
                 VIEW PART TEN: IMPLEMENTING JWT IN AUTH ENDPOINTS
               </Link>
