@@ -1,25 +1,24 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../components/general';
-import { Title, Paragraph, CodeBlock } from '../../components/content';
-import '../../styles/main.scss';
-import './Blog.scss';
-import SEO from '../../components/seo';
+import { Hero, Navbar, Footer, Container } from '../../../components/general';
+import { Title, Paragraph, CodeBlock } from '../../../components/content';
+import '../../../styles/main.scss';
+import '../Blog.scss';
+import SEO from '../../../components/seo';
 import { Link } from 'gatsby';
 
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 8: Implementing Serializers - Let's Create A Social Network Using Rails And React Native"
+      title="Implementing Serializers"
       canonical="https://armaizadenwala.com/blog/social-media-app/serializers/"
       secondaryTitle="Armaiz"
-      description="How to implement serializers for your endpoints in Rails."
+      description="How to create active model serializers for your endpoints in Rails."
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 8: Implementing Serializers In Our Endpoints"
-      description="Implementing serializers in our Rails endpoints"
+      emphasized="Implementing Serializers In Our Endpoints"
+      description="Creating active model serializers in our Rails endpoints"
       date="Feburary 19th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -36,6 +35,10 @@ const IndexPage = () => (
             _Feel free to refer to the [part 8 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part8)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 8th installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>What Are Serializers?</Title>
           <Paragraph>

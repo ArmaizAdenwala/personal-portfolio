@@ -1,23 +1,23 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../components/general';
-import { Title, Paragraph, CodeBlock } from '../../components/content';
-import '../../styles/main.scss';
-import './Blog.scss';
-import SEO from '../../components/seo';
+import { Hero, Navbar, Footer, Container } from '../../../components/general';
+import { Title, Paragraph, CodeBlock } from '../../../components/content';
+import '../../../styles/main.scss';
+import '../Blog.scss';
+import SEO from '../../../components/seo';
 import { Link } from 'gatsby';
 
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 9: Creating a JWT Singleton Class - Let's Create A Social Network Using Rails And React Native"
+      title="Creating a JWT Singleton Class"
       canonical="https://armaizadenwala.com/blog/social-media-app/singleton-classes/"
       secondaryTitle="Armaiz"
       description="How to create a singleton class for JWT logic"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 9: Creating a JWT Singleton Class"
-      description="Creating a module For JWT logic"
+      emphasized="Creating a JWT Singleton Class"
+      description="Developing a module for JWT logic"
       date="Feburary 14th, 2020"
       extraContent
     />
@@ -36,6 +36,10 @@ const IndexPage = () => (
             _Feel free to refer to the [part 9 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part9)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 9th installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>What Are Singleton Classes?</Title>
           <Paragraph>

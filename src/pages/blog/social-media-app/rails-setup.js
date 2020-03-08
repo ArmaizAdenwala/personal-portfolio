@@ -1,30 +1,29 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../components/general';
-import { Title, Paragraph, CodeBlock } from '../../components/content';
-import '../../styles/main.scss';
-import './Blog.scss';
-import SEO from '../../components/seo';
-import FirstCommit from './images/social-network/github_first_commit.png';
-import NewRepo from './images/social-network/github_new_repo.png';
-import BlankRepo from './images/social-network/github_blank_repo.png';
-import SocialImage from './images/social-network/part1_social.png';
+import { Hero, Navbar, Footer, Container } from '../../../components/general';
+import { Title, Paragraph, CodeBlock } from '../../../components/content';
+import '../../../styles/main.scss';
+import '../Blog.scss';
+import SEO from '../../../components/seo';
+import FirstCommit from '../images/social-network/github_first_commit.png';
+import NewRepo from '../images/social-network/github_new_repo.png';
+import BlankRepo from '../images/social-network/github_blank_repo.png';
+import SocialImage from '../images/social-network/part1_social.png';
 import { Link } from 'gatsby';
 
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 1: Rails Setup - Let's Create A Social Network App Using Rails And React Native"
+      title="Rails Setup - Developing A Cross-Platform iOS & Android Social Media App"
       canonical="https://armaizadenwala.com/blog/social-media-app/rails-setup/"
       secondaryTitle="Armaiz"
       image={SocialImage}
-      description="This series will be covering how to create a social network app using ruby on rails and react native."
+      description="How to setup Ruby on Rails 6 for our social media app."
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 1: Rails Setup"
-      description="This series will be covering how to create a social network app using ruby on rails and react native"
+      emphasized="Ruby on Rails Setup"
+      description="How to setup Ruby on Rails 6 for our social media app."
       date="Feburary 5th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -44,8 +43,11 @@ const IndexPage = () => (
           <Paragraph>
             We will be covering an array of features that will be implemented
             using __Ruby on Rails__ and __React Native__. Before we work on the
-            __React Native__ side, we will direct our focus on __Ruby on
-            Rails__.
+            React Native side, we will direct our focus on Ruby on Rails.
+          </Paragraph>
+          <Paragraph>
+            This is the 1st installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
 
           <Title>Installing Ruby On Rails</Title>

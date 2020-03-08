@@ -59,6 +59,9 @@ body {
   &-b--0 {
     margin-bottom: 0;
   }
+  &-b--16 {
+    margin-bottom: 16px;
+  }
   @include responsive-modifiers('&-b--32') {
     margin-bottom: 32px;
   }

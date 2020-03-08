@@ -1,25 +1,24 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../components/general';
-import { Title, Paragraph, CodeBlock } from '../../components/content';
-import '../../styles/main.scss';
-import './Blog.scss';
-import SEO from '../../components/seo';
+import { Hero, Navbar, Footer, Container } from '../../../components/general';
+import { Title, Paragraph, CodeBlock } from '../../../components/content';
+import '../../../styles/main.scss';
+import '../Blog.scss';
+import SEO from '../../../components/seo';
 import { Link } from 'gatsby';
 
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 4: Creating A User - Let's Create A Social Network Using Rails And React Native"
+      title="Creating A User"
       canonical="https://armaizadenwala.com/blog/social-media-app/creating-a-user/"
       secondaryTitle="Armaiz"
-      description="Learn how to create User models using the Rails console"
+      description="Creating a user with an email and a password using the Rails console"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 4: Creating A User"
+      emphasized="Creating A User"
       description="Creating a user with an email and a password using the Rails console"
       date="Feburary 8th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -27,13 +26,17 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [setup devise and created the User
-            model](/blog/social-media-app/auth-setup/). You are now ready for
-            the next step: __creating a user__.
+            model](/blog/social-media-app/auth-setup/).
           </Paragraph>
           <Paragraph>
-            _Feel free to refer to the [part 4 branch of the GitHub
+            You are now ready for the next step: __creating a user__. _Feel free
+            to refer to the [part 4 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part4)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 4th installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>Overview</Title>
           <Paragraph>

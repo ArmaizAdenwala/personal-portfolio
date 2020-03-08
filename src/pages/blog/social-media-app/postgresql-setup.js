@@ -1,25 +1,24 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../components/general';
-import { Title, Paragraph, CodeBlock } from '../../components/content';
-import '../../styles/main.scss';
-import './Blog.scss';
-import SEO from '../../components/seo';
+import { Hero, Navbar, Footer, Container } from '../../../components/general';
+import { Title, Paragraph, CodeBlock } from '../../../components/content';
+import '../../../styles/main.scss';
+import '../Blog.scss';
+import SEO from '../../../components/seo';
 import { Link } from 'gatsby';
 
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 2: PostgreSQL Setup - Let's Create A Social Network App Using Rails And React Native"
+      title="PostgreSQL Setup"
       canonical="https://armaizadenwala.com/blog/social-media-app/postgresql-setup/"
       secondaryTitle="Armaiz"
-      description="Learn how to setup a PostgreSQL database for a Rails app"
+      description="Learn how to setup a PostgreSQL database for a Ruby on Rails app"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 2: PostgreSQL Setup"
-      description="Learn how to setup a PostgreSQL database for a Rails app"
+      emphasized="PostgreSQL Setup"
+      description="Learn how to setup a PostgreSQL database for a Ruby on Rails app"
       date="Feburary 6th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -27,13 +26,17 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [installed Ruby on Rails and initiated a
-            new Rails API](/blog/social-media-app/rails-setup/). You are now
-            ready for the next step: __setting up the database__.
+            new Rails API](/blog/social-media-app/rails-setup/).
           </Paragraph>
           <Paragraph>
+            You are now ready for the next step: __setting up the database__.
             _Feel free to refer to the [part 2 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part2)
             if needed._
+          </Paragraph>
+          <Paragraph>
+            This is the 2nd installment of my [Developing A Cross-Platform iOS &
+            Android Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Title>Configuring The Database.yml Config</Title>
           <Paragraph>

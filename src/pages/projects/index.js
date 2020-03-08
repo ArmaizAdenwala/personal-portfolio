@@ -62,7 +62,7 @@ const IndexPage = () => (
           />
           <ProjectCard
             name="Programmable LED Rave Mask"
-            description="A LED rave mask using individually addressable WS2812B led light strips and an Arduino"
+            description="An LED rave mask using individually addressable WS2812B led light strips and an Arduino"
             date="December 2018"
             tags={['C++', 'Arduino', 'WS2812B LEDS', 'FastLED']}
             url="/projects/led-rave-mask"

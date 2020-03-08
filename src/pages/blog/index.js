@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../components/general';
+import { Paragraph } from '../../components/content';
 import BlogCard from '../../components/blog/BlogCard';
 import '../../styles/main.scss';
 import SEO from '../../components/seo';
@@ -64,6 +65,10 @@ const IndexPage = () => (
     <div className="page__content">
       <div className="p-v--32">
         <Container>
+          <Paragraph>
+            _Opinions expressed in my blog are solely my own and do not express
+            the views or opinions of my employer._
+          </Paragraph>
           <BlogCard
             name="Using Pytesseract To Convert Images Into A HTML Site"
             description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
@@ -72,80 +77,17 @@ const IndexPage = () => (
             tags={['Python', 'Tesseract']}
           />
           <BlogCard
-            name="How To Create A LED Rave Mask Using Arduino, Neopixels, and C++"
+            name="How To Create An LED Rave Mask Using Arduino, Neopixels, and C++"
             description="A detailed guide on how to create an LED mask and display effects"
             date="March 1st, 2020"
             url="/blog/how-to-create-a-led-rave-mask-using-arduino/"
             tags={['Arduino', 'C++', 'NeoPixels']}
           />
           <BlogCard
-            name="Part 10: Implementing JWT In Auth Endpoints - Let's Create A Social Network Using Rails And React Native"
-            description="How to implement JWT in login and register endpoints"
-            date="Feburary 19th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-jwt-endpoints/"
-            tags={['Ruby', 'Rails', 'PostgreSQL']}
-          />
-          <BlogCard
-            name="Part 9: Creating a JWT Singleton Class - Let's Create A Social Network Using Rails And React Native"
-            description="How to create a singleton class for JWT logic"
-            date="Feburary 19th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-singleton-classes/"
-            tags={['Ruby', 'Rails', 'PostgreSQL']}
-          />
-          <BlogCard
-            name="Part 8: Implementing Serializers - Let's Create A Social Network Using Rails And React Native"
-            description="How to implement serializers for your endpoints in Rails"
-            date="Feburary 19th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-serializers/"
-            tags={['Ruby', 'Rails', 'PostgreSQL']}
-          />
-          <BlogCard
-            name="Part 7: JWT (JSON Web Token) Authentication - Let's Create A Social Network Using Rails And React Native"
-            description="What is JWT (JSON Web Token) and how to use it"
-            date="Feburary 12th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-jwt-authentication/"
-            tags={['Ruby', 'Rails', 'PostgreSQL']}
-          />
-          <BlogCard
-            name="Part 6: API Versioning - Let's Create A Social Network Using Rails And React Native"
-            description="Implementing API versioning on our Rails API"
-            date="Feburary 10th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-api-versioning/"
-            tags={['Ruby', 'Rails', 'PostgreSQL']}
-          />
-          <BlogCard
-            name="Part 5: Creating Auth Endpoints - Let's Create A Social Network Using Rails And React Native"
-            description="Creating authentication endpoints for our User models"
-            date="Feburary 9th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
-            tags={['Ruby', 'Rails', 'PostgreSQL']}
-          />
-          <BlogCard
-            name="Part 4: Creating A User - Let's Create A Social Network Using Rails And React Native"
-            description="Setting up authentication using devise"
-            date="Feburary 8th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-creating-a-user/"
-            tags={['Ruby', 'Rails', 'PostgreSQL']}
-          />
-          <BlogCard
-            name="Part 3: Authentication - Let's Create A Social Network Using Rails And React Native"
-            description="Setting up authentication using devise"
-            date="Feburary 7th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-auth-setup/"
-            tags={['Ruby', 'Rails', 'PostgreSQL']}
-          />
-          <BlogCard
-            name="Part 2: PostgreSQL Setup - Let's Create A Social Network App Using Rails And React Native"
-            description="Learn how to setup a PostgreSQL database for a Rails app"
-            date="Feburary 6th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-postgresql-setup/"
-            tags={['Ruby', 'Rails', 'PostgreSQL']}
-          />
-          <BlogCard
-            name="Part 1: Rails Setup - Let's Create A Social Network Using Rails And React Native"
-            description="This series will be covering how to create a social network app using ruby on rails and react native"
+            name="Series: Developing A Cross-Platform iOS & Android Social Media App"
+            description="A detailed 10+ part series that details how to create a social media app using Ruby on Rails and React Native"
             date="Feburary 5th, 2020"
-            url="/blog/social-network-app-using-rails-and-react-native-rails-setup/"
+            url="/blog/social-media-app/"
             tags={['Ruby', 'Rails', 'PostgreSQL']}
           />
           <BlogCard

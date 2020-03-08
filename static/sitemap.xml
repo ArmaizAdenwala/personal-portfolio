@@ -79,64 +79,70 @@
     <lastmod>2020-02-09</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-rails-setup/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-09</lastmod>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-postgresql-setup/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/rails-setup/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-09</lastmod>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-auth-setup/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/postgresql-setup/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-09</lastmod>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-creating-a-user/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/auth-setup/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-09</lastmod>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/creating-a-user/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-09</lastmod>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-api-versioning/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/creating-auth-endpoints/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-10</lastmod>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-jwt-authentication/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/api-versioning/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-19</lastmod>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-serializers/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/jwt-authentication/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-19</lastmod>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-singleton-classes/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/serializers/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-19</lastmod>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
-    <loc>https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-jwt-endpoints/</loc>
+    <loc>https://armaizadenwala.com/blog/social-media-app/singleton-classes/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2020-02-19</lastmod>
+    <lastmod>2020-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://armaizadenwala.com/blog/social-media-app/jwt-endpoints/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-03-08</lastmod>
   </url>
   <url>
     <loc>https://armaizadenwala.com/blog/how-to-create-a-led-rave-mask-using-arduino/</loc>
