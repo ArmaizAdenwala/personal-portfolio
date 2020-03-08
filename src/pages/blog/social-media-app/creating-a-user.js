@@ -9,17 +9,16 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 4: Creating A User - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-creating-a-user/"
+      title="Creating A User"
+      canonical="https://armaizadenwala.com/blog/social-media-app/creating-a-user/"
       secondaryTitle="Armaiz"
-      description="Learn how to create User models using the Rails console"
+      description="Creating a user with an email and a password using the Rails console"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 4: Creating A User"
+      emphasized="Creating A User"
       description="Creating a user with an email and a password using the Rails console"
       date="Feburary 8th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -27,11 +26,13 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [setup devise and created the User
-            model](/blog/social-network-app-using-rails-and-react-native-auth-setup/).
-            You are now ready for the next step: __creating a user__.
+            model](/blog/social-media-app/auth-setup/). If you wish to view an
+            overview of the series, you can [view the series
+            here](/blog/social-media-app/).
           </Paragraph>
           <Paragraph>
-            _Feel free to refer to the [part 4 branch of the GitHub
+            You are now ready for the next step: __creating a user__. _Feel free
+            to refer to the [part 4 branch of the GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part4)
             if needed._
           </Paragraph>
@@ -298,7 +299,7 @@ ActiveRecord::RecordNotFound (Couldn't find User)`}</CodeBlock>
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+                to="/blog/social-media-app/creating-auth-endpoints/"
               >
                 VIEW PART FIVE: CREATING AUTH ENDPOINTS
               </Link>

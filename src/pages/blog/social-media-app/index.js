@@ -23,7 +23,7 @@ const IndexPage = () => (
     />
     <div className="page__content">
       <Container>
-        <div className="blog__card blog__card--series">
+        <div className="blog__card">
           <Title first>Introduction</Title>
           <Paragraph>
             In this series, I will be covering how to develop a social media app
@@ -39,6 +39,9 @@ const IndexPage = () => (
             time._
           </Paragraph>
         </div>
+        <h4 className="tg__subtitle tg__t--center m-b--16">
+          Milestone 1: Creating our Rails API
+        </h4>
         <SeriesCard
           name="1: Rails Setup"
           description="How to setup Ruby on Rails 6 for our social media app"
@@ -50,13 +53,13 @@ const IndexPage = () => (
           url="/blog/social-media-app/postgresql-setup/"
         />
         <SeriesCard
-          name="3: Authentication"
-          description="Setting up authentication using devise"
+          name="3: Authentication Setup"
+          description="Setting up Devise with a Rails API for authenthication"
           url="/blog/social-media-app/auth-setup/"
         />
         <SeriesCard
           name="4: Creating A User"
-          description="Lorem ipsum"
+          description="Creating a user with an email and a password using the Rails console"
           url="/blog/social-media-app/creating-a-user/"
         />
         <SeriesCard

@@ -9,17 +9,16 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 5: Creating Auth Endpoints - Let's Create A Social Network Using Rails And React Native"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-creating-auth-endpoints/"
+      title="Creating Auth Endpoints"
+      canonical="https://armaizadenwala.com/blog/social-media-app/creating-auth-endpoints/"
       secondaryTitle="Armaiz"
-      description="Learn how to create authentication endpoints in Ruby on Rails"
+      description="How to create authentication endpoints with Ruby on Rails"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 5: Creating Auth Endpoints"
+      emphasized="Creating Auth Endpoints"
       description="Creating authentication endpoints for our User models"
       date="Feburary 9th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -27,12 +26,14 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [created a User record using the Rails
-            console](/blog/social-network-app-using-rails-and-react-native-creating-a-user/).
-            You are now ready for the next step: __setting up endpoints for
-            authentication__.
+            console](/blog/social-media-app/creating-a-user/). This post is the
+            5th installment of my [Developing A Cross-Platform iOS & Android
+            Social Media App](/blog/social-media-app/) series.
           </Paragraph>
           <Paragraph>
-            _Feel free to refer to the [part 5 branch of the GitHub
+            You are now ready for the next step: __setting up endpoints for
+            authentication__. _Feel free to refer to the [part 5 branch of the
+            GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part5)
             if needed._
           </Paragraph>

@@ -10,7 +10,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="PostgreSQL Setup"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-postgresql-setup/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/postgresql-setup/"
       secondaryTitle="Armaiz"
       description="Learn how to setup a PostgreSQL database for a Ruby on Rails app"
     />

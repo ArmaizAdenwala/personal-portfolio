@@ -84,8 +84,8 @@ const IndexPage = () => (
             tags={['Arduino', 'C++', 'NeoPixels']}
           />
           <BlogCard
-            name="Developing A Cross-Platform iOS & Android Social Media App"
-            description="This series will be covering how to create a social media app using Ruby on Rails and React Native"
+            name="Series: Developing A Cross-Platform iOS & Android Social Media App"
+            description="A detailed 10+ part series that details how to create a social media app using Ruby on Rails and React Native"
             date="Feburary 5th, 2020"
             url="/blog/social-media-app/"
             tags={['Ruby', 'Rails', 'PostgreSQL']}

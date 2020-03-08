@@ -10,14 +10,14 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Authentication Setup"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-auth-setup/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/auth-setup/"
       secondaryTitle="Armaiz"
-      description="Learn how to setup authentication using the devise gem and Rails"
+      description="Setting up Devise with a Rails API for authenthication"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
       emphasized="Authentication Setup"
-      description="Learn how to setup authentication using the devise gem and Rails"
+      description="Setting up Devise with a Rails API for authenthication"
       date="Feburary 7th, 2020"
     />
     <div className="page__content">

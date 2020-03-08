@@ -14,7 +14,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Rails Setup - Developing A Cross-Platform iOS & Android Social Media App"
-      canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-rails-setup/"
+      canonical="https://armaizadenwala.com/blog/social-media-app/rails-setup/"
       secondaryTitle="Armaiz"
       image={SocialImage}
       description="How to setup Ruby on Rails 6 for our social media app."

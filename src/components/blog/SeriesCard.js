@@ -10,7 +10,7 @@ const SeriesCard = ({ name, description, url }) => (
           className="
           tg__title-6--s
           tg__title-6--m
-          tg__title-6--l
+          tg__title-5--l
           series-card__content__title-container__title
         "
         >
@@ -18,7 +18,7 @@ const SeriesCard = ({ name, description, url }) => (
             {name + ' '}
           </Link>
         </h5>
-        <p className="tg__subtitle-1  series-card__content__title-container__subtitle">
+        <p className="tg__subtitle  series-card__content__title-container__subtitle">
           {description}
         </p>
       </div>

@@ -7,7 +7,7 @@
   border-radius: 4px;
   margin-bottom: 8px;
   &__content {
-    padding: 16px;
+    padding: 24px 32px;
     width: 100%;
     &__title-container {
       &__title {
@@ -26,8 +26,7 @@
         }
       }
       &__subtitle {
-        margin-top: 0;
-        font-style: italic;
+        margin-top: 4px;
         font-weight: 400;
         margin-bottom: 8px;
         color: #757575;
