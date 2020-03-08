@@ -17,7 +17,7 @@ import MaskStatic from './images/arduino-led-mask/led_rave_mask_static.jpg';
 const IndexPage = () => (
   <div>
     <SEO
-      title="How To Create A LED Rave Mask Using Arduino, NeoPixels, and C++"
+      title="How To Create An LED Rave Mask Using Arduino, NeoPixels, and C++"
       canonical="https://armaizadenwala.com/blog/how-to-create-a-led-rave-mask-using-arduino/"
       secondaryTitle="Armaiz"
       image={LedsMaskFull}
@@ -25,7 +25,7 @@ const IndexPage = () => (
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="How To Create A LED Rave Mask Using Arduino, NeoPixels, and C++"
+      emphasized="How To Create An LED Rave Mask Using Arduino, NeoPixels, and C++"
       description="A detailed guide on how to make an LED rave mask"
       date="March 1st, 2020"
       extraContent
@@ -592,7 +592,11 @@ void pattern(uint_least8_t pattern[NUM_LEDS], uint_least8_t colorsPattern[], boo
             a consistent speed.
           </Paragraph>
           <Paragraph>This will result in the mask looking like this:</Paragraph>
-          <LazyLoadImage alt="Image of the led mask at the static state. There is a few row of leds that are pink and some that are blue." className="full-width-img" src={MaskStatic} />
+          <LazyLoadImage
+            alt="Image of the led mask at the static state. There is a few row of leds that are pink and some that are blue."
+            className="full-width-img"
+            src={MaskStatic}
+          />
           <Title>Animating The Design</Title>
           <Paragraph>
             To animate the design, we would need to wrap our method in a for

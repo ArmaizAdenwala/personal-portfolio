@@ -13,18 +13,17 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 1: Rails Setup - Let's Create A Social Network App Using Rails And React Native"
+      title="Rails Setup - Developing A Cross-Platform iOS & Android Social Media App"
       canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-rails-setup/"
       secondaryTitle="Armaiz"
       image={SocialImage}
-      description="This series will be covering how to create a social network app using ruby on rails and react native."
+      description="How to setup Ruby on Rails 6 for our social media app."
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 1: Rails Setup"
-      description="This series will be covering how to create a social network app using ruby on rails and react native"
+      emphasized="Ruby on Rails Setup"
+      description="How to setup Ruby on Rails 6 for our social media app."
       date="Feburary 5th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -44,8 +43,7 @@ const IndexPage = () => (
           <Paragraph>
             We will be covering an array of features that will be implemented
             using __Ruby on Rails__ and __React Native__. Before we work on the
-            __React Native__ side, we will direct our focus on __Ruby on
-            Rails__.
+            React Native side, we will direct our focus on Ruby on Rails.
           </Paragraph>
 
           <Title>Installing Ruby On Rails</Title>
@@ -175,7 +173,7 @@ const IndexPage = () => (
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-postgresql-setup/"
+                to="/blog/social-media-app/postgresql-setup/"
               >
                 VIEW PART TWO: POSTGRESQL SETUP
               </Link>

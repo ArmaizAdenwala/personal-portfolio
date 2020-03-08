@@ -9,17 +9,16 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Part 3: Authentication Setup - Let's Create A Social Network App Using Rails And React Native"
+      title="Authentication Setup"
       canonical="https://armaizadenwala.com/blog/social-network-app-using-rails-and-react-native-auth-setup/"
       secondaryTitle="Armaiz"
-      description="Learn how to setup authentication using devise and Rails"
+      description="Learn how to setup authentication using the devise gem and Rails"
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Let's Create A Social Network Using Rails And React Native - Part 3: Authentication"
-      description="Setting up authentication using devise"
+      emphasized="Authentication Setup"
+      description="Learn how to setup authentication using the devise gem and Rails"
       date="Feburary 7th, 2020"
-      extraContent
     />
     <div className="page__content">
       <Container>
@@ -27,12 +26,14 @@ const IndexPage = () => (
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [setup the PostgreSQL
-            database](/blog/social-network-app-using-rails-and-react-native-postgresql-setup/).
-            You are now ready for the next step: __setting up the
-            authentication__.
+            database](/blog/social-media-app/postgresql-setup/). This is part 3
+            of the series, [view the series overview
+            here](/blog/social-media-app/).
           </Paragraph>
           <Paragraph>
-            _Feel free to refer to the [part 3 branch of the GitHub
+            You are now ready for the next step: __setting up the
+            authentication__. _Feel free to refer to the [part 3 branch of the
+            GitHub
             repository](https://github.com/ArmaizAdenwala/social-media-blog-api/tree/part3)
             if needed._
           </Paragraph>
@@ -242,7 +243,7 @@ add_index :users, :reset_password_token, unique: true`}
             <div className="button">
               <Link
                 className="button__text"
-                to="/blog/social-network-app-using-rails-and-react-native-creating-a-user/"
+                to="/blog/social-media-app/creating-a-user/"
               >
                 VIEW PART FOUR: CREATING A USER
               </Link>
