@@ -10,6 +10,41 @@ const IndexPage = () => (
       title="Blog"
       canonical="https://armaizadenwala.com/blog/"
       description="Detailed guides covering an array of technologies and frameworks."
+      ldJson={{
+        '@context': 'http://schema.org',
+        '@type': 'WebPage',
+        '@id': 'https://armaizadenwala.com/blog/',
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': 'https://armaizadenwala.com/',
+                name: 'Home',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              item: {
+                '@id': 'https://armaizadenwala.com/blog/',
+                name: 'Blog',
+              },
+            },
+          ],
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Armaiz Adenwala',
+          logo: {
+            '@type': 'imageObject',
+            url: 'https://armaizadenwala.com/armaiz-developer-full.png',
+          },
+        },
+        url: 'https://armaizadenwala.com/blog/',
+      }}
     />
     <Navbar
       customLinks={[
