@@ -8,6 +8,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Software Engineering Blog"
+      secondaryTitle="Armaiz Adenwala"
       canonical="https://armaizadenwala.com/blog/"
       description="Detailed guides covering an array of technologies and frameworks."
       ldJson={{

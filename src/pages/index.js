@@ -11,8 +11,20 @@ const IndexPage = () => (
     <SEO
       title="Software Engineer Portfolio - JS, Python, Ruby"
       secondaryTitle="Armaiz"
-      description="Hi, I'm Armaiz Adenwala, a Software Engineer with over over 4 years of experience. I'm experienced in React. Ruby, Rails, Python, Django, Node, and more."
+      description="Software Engineer with over over 4 years of experience. Experienced in React. Ruby, Rails, Python, Django, Node, and more."
       canonical="https://armaizadenwala.com/"
+      ldJson={{
+        '@context': 'http://schema.org',
+        '@type': 'WebPage',
+        name:
+          'Software Engineer Portfolio - JS, Python, Ruby | Armaiz Adenwala',
+        description:
+          'Software Engineer with over over 4 years of experience. Experienced in React. Ruby, Rails, Python, Django, Node, and more.',
+        publisher: {
+          '@type': 'ProfilePage',
+          name: 'Armaiz Adenwala',
+        },
+      }}
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
