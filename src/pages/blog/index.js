@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../components/general';
+import { Paragraph } from '../../components/content';
 import BlogCard from '../../components/blog/BlogCard';
 import '../../styles/main.scss';
 import SEO from '../../components/seo';
@@ -64,6 +65,10 @@ const IndexPage = () => (
     <div className="page__content">
       <div className="p-v--32">
         <Container>
+          <Paragraph>
+            _Opinions expressed in my blog are solely my own and do not express
+            the views or opinions of my employer._
+          </Paragraph>
           <BlogCard
             name="Using Pytesseract To Convert Images Into A HTML Site"
             description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
