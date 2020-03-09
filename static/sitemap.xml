@@ -4,7 +4,12 @@
     <loc>https://armaizadenwala.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1</priority>
-    <lastmod>2020-02-03</lastmod>
+    <lastmod>2020-03-08</lastmod>
+    <image:image>
+      <image:loc>https://armaizadenwala.com/static/armaiz_adenwala_software_engineer_sacramento_ca-0c5a34233b0bf91b538029ca1ce66bc4.jpg</image:loc>
+      <image:title>Armaiz Adenwala, Software Engineer Based In Sacramento, CA and San Francisco, CA</image:title>
+      <image:caption>Armaiz has been a Software Engineer for over 4 years and has experience is multiple frameworks including Ruby on Rails, Python Django, React Native, React, and more.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://armaizadenwala.com/projects/</loc>

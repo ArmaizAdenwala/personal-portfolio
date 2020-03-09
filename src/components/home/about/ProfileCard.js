@@ -1,11 +1,15 @@
 import React from 'react';
-import profilePic from '../../../images/armaiz_adenwala_software_engineer_sacramento_ca.jpg';
+import profilePic from './images/armaiz_adenwala_software_engineer_sacramento_ca.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './ProfileCard.scss';
 
 const ProfileCard = () => (
   <div className="profile-card">
-    <div className="profile-card__img" src={profilePic} alt="Armaiz Adenwala" />
+    <img 
+      className="profile-card__img" 
+      alt="Armaiz Adenwala, Software Engineer Based In Sacramento, CA and San Francisco, CA"
+      src={profilePic} 
+    />
     <div className="profile-card__content">
       <h4 className="tg__title-6 profile-card__content__title">
         Armaiz Adenwala
