@@ -12,7 +12,7 @@ const IndexPage = () => (
       title="Software Engineer Portfolio - JS, Python, Ruby"
       secondaryTitle="Armaiz"
       description="Software Engineer with over over 4 years of experience. Experienced in React. Ruby, Rails, Python, Django, Node, and more."
-      canonical="https://armaizadenwala.com/"
+      canonical="https://armaizadenwala.com"
       ldJson={{
         '@context': 'http://schema.org',
         '@type': 'WebPage',
