@@ -30,7 +30,7 @@ const IndexPage = () => (
     <Hero
       title="Hi, I'm "
       emphasized="Armaiz Adenwala"
-      description="I'm a Software Engineer that welcomes challenges and architect solutions."
+      description="I'm a Software Engineer that welcomes challenges and architects solutions."
     />
     <div className="page__content">
       <About />
