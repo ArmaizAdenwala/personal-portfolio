@@ -15,6 +15,7 @@
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-sharp": "^2.3.7",
+    "highlight.js": "https://github.com/ArmaizAdenwala/highlight.js",
     "markdown-to-jsx": "^6.11.0",
     "node-sass": "^4.13.1",
     "preact": "^10.3.3",
@@ -24,6 +25,9 @@
     "react-helmet": "^5.2.1",
     "react-lazy-load-image-component": "^1.4.1",
     "react-syntax-highlighter": "https://github.com/ArmaizAdenwala/react-syntax-highlighter"
+  },
+  "resolutions": {
+    "highlight.js": "https://github.com/ArmaizAdenwala/highlight.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
