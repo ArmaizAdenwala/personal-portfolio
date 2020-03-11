@@ -12,10 +12,10 @@
     display: flex;
     align-items: center;
     &__img {
-      display: none;
       @include respond-to(small){
-        display: block;
+        display: block !important;
       }
+      display: none !important;
       width: 224px !important;
       height: 224px;
     }

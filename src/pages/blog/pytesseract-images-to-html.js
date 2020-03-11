@@ -99,9 +99,9 @@ const IndexPage = () => (
         <div className="project__card">
           <LazyLoadImage
             className="cover-image"
+            wrapperClassName="cover-image"
             src={CoverImage}
             effect="blur"
-            wrapperClassName="cover-image"
             placeholderSrc={CoverImageBlur}
             alt="Using Pytesseract to convert images into a HTML site by Armaiz Adenwala."
           />
@@ -616,7 +616,7 @@ extracting: data/python_dataset_03.jpg
           <Paragraph>For example, lines would become chapters here:</Paragraph>
           <CodeBlock language="shell">
             {`lines = ['Chapter 1: Lorem', 'line 1', 'line 2', 'Chapter 2: Ipsum', 'line 3']
-build_chapters(lines) # {'Chapter 1: Lorem': 'line 1\nline2', 'Chapter 2: Ipsum', 'line 3'}`}
+build_chapters(lines) # {'Chapter 1: Lorem': 'line 1\\nline2', 'Chapter 2: Ipsum', 'line 3'}`}
           </CodeBlock>
           <Paragraph>
             In order to achieve this, we need to recognize which line is a
@@ -704,10 +704,10 @@ def build_chapters(lines):
         if is_chapter:
             cur_chapter = line
         elif cur_chapter in chapters.keys():
-            content = '{}\n'.format(line)
+            content = '{}\\n'.format(line)
             chapters[cur_chapter] += content
         else:
-            content = '{}\n'.format(line)
+            content = '{}\\n'.format(line)
             chapters[cur_chapter] = content
 
     return chapters`}

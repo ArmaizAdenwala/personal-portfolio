@@ -292,6 +292,20 @@ blockquote {
     background: #dde4e9;
   }
 }
+span.cover-image:not(.lazy-load-image-loaded) {
+  margin-top: -32px;
+  margin-left: -32px;
+  margin-bottom: 32px;
+  width: calc(100% + 64px);
+  height: calc((100vw - 32px) * 0.58) !important;
+  max-height: 568.4px;
+  & > span.cover-image {
+    display: block !important;
+    width: calc(100% + 64px) !important;
+    height: calc((100vw - 32px) * 0.58) !important;
+    max-height: 568.4px;
+  }
+}
 img.cover-image {
   width: calc(100% + 64px);
   margin-top: -32px;
