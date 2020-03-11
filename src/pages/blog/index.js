@@ -4,6 +4,10 @@ import { Paragraph } from '../../components/content';
 import BlogCard from '../../components/blog/BlogCard';
 import '../../styles/main.scss';
 import SEO from '../../components/seo';
+import TesseractImg from './images/ocr/tesseract-jpg-to-html.png';
+import ArduinoImg from './images/arduino-led-mask/arduino_neopixel.png';
+import RailsImg from './images/social-network/social_media_app.png';
+import GithubImg from './images/github/free_github.png';
 
 const IndexPage = () => (
   <div>
@@ -75,6 +79,8 @@ const IndexPage = () => (
             date="March 7th, 2020"
             url="/blog/pytesseract-images-to-html/"
             tags={['Python', 'Tesseract']}
+            img={TesseractImg}
+            alt="Image of multiple documents from HTML to JPG"
           />
           <BlogCard
             name="How To Create An LED Rave Mask Using Arduino, Neopixels, and C++"
@@ -82,6 +88,8 @@ const IndexPage = () => (
             date="March 1st, 2020"
             url="/blog/how-to-create-a-led-rave-mask-using-arduino/"
             tags={['Arduino', 'C++', 'NeoPixels']}
+            img={ArduinoImg}
+            alt="Image of NeoPixels for Arduino"
           />
           <BlogCard
             name="Series: Developing A Cross-Platform iOS & Android Social Media App"
@@ -89,6 +97,8 @@ const IndexPage = () => (
             date="Feburary 5th, 2020"
             url="/blog/social-media-app/"
             tags={['Ruby', 'Rails', 'PostgreSQL']}
+            img={RailsImg}
+            alt="Design that represents an iPhone and Android phone"
           />
           <BlogCard
             name="My Favorite Github Student Pack Offers and Why They Are Important"
@@ -96,6 +106,8 @@ const IndexPage = () => (
             date="Feburary 3rd, 2020"
             url="/blog/my-favorite-github-student-pack-offers-and-why-they-are-important/"
             tags={['Git', 'Devops', 'CI']}
+            img={GithubImg}
+            alt="Free price tag design"
           />
         </Container>
       </div>

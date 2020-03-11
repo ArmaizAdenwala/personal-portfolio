@@ -1,15 +1,31 @@
 @import "../../styles/colors";
+@import "../../styles/mixins";
 
 .blog-card {
-  display: flex;
-  position: relative;
   background-color: #fafafa ;
   border-radius: 4px;
   margin-bottom: 12px;
+  @include respond-to(small){
+    height: 224px;
+  }
   &__content {
-    padding: 24px 32px;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    &__img {
+      display: none;
+      @include respond-to(small){
+        display: block;
+      }
+      width: 224px;
+      height: 224px;
+    }
     &__title-container {
+      padding: 32px 24px;
+      @include respond-to(small) {
+        padding: 16px 24px;
+        max-height: 200px;
+        overflow: scroll;
+      }
       &__title {
         margin: 0;
         display: block;

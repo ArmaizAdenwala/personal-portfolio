@@ -2,10 +2,12 @@ import React from 'react';
 import { TechTags } from '../general';
 import { Link } from 'gatsby';
 import './BlogCard.scss';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-const BlogCard = ({ name, description, date, tags, url }) => (
+const BlogCard = ({ name, description, date, tags, url, img, alt }) => (
   <div className="blog-card">
     <div className="blog-card__content">
+      <LazyLoadImage className="blog-card__content__img" src={img} alt={alt} />
       <div className="blog-card__content__title-container">
         <h5
           className="
