@@ -8,6 +8,7 @@ import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import CoverImage from './images/ocr/pytesseract-convert-image-to-html-site.png';
+import CoverImageBlur from './images/ocr/pytesseract-convert-image-to-html-site_blur.png';
 import LoremHtmlImg from './images/ocr/basic-ocr-to-html-page.png';
 import Chapter1LoremHtmlImg from './images/ocr/chapter-1-image-to-webite.png';
 import Chapter2HtmlImg from './images/ocr/chapter-2-full-page.png';
@@ -96,9 +97,12 @@ const IndexPage = () => (
     <div className="page__content">
       <Container>
         <div className="project__card">
-          <img
+          <LazyLoadImage
             className="cover-image"
             src={CoverImage}
+            effect="blur"
+            wrapperClassName="cover-image"
+            placeholderSrc={CoverImageBlur}
             alt="Using Pytesseract to convert images into a HTML site by Armaiz Adenwala."
           />
           <Title first>Overview</Title>
