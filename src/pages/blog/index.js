@@ -7,8 +7,11 @@ import SEO from '../../components/seo';
 import TesseractImg from './images/ocr/tesseract_jpg_to_html.png';
 import TesseractBlurImg from './images/ocr/tesseract_jpg_to_html_blur.png';
 import ArduinoImg from './images/arduino-led-mask/arduino_neopixel.png';
+import ArduinoBlurImg from './images/arduino-led-mask/arduino_neopixel_blur.png';
 import RailsImg from './images/social-network/social_media_app.png';
+import RailsBlurImg from './images/social-network/social_media_app_blur.png';
 import GithubImg from './images/github/free_github.png';
+import GithubBlurImg from './images/github/free_github_blur.png';
 
 const IndexPage = () => (
   <div>
@@ -91,6 +94,7 @@ const IndexPage = () => (
             url="/blog/how-to-create-a-led-rave-mask-using-arduino/"
             tags={['Arduino', 'C++', 'NeoPixels']}
             img={ArduinoImg}
+            placeholder={ArduinoBlurImg}
             alt="Image of NeoPixels for Arduino"
           />
           <BlogCard
@@ -100,6 +104,7 @@ const IndexPage = () => (
             url="/blog/social-media-app/"
             tags={['Ruby', 'Rails', 'PostgreSQL']}
             img={RailsImg}
+            placeholder={RailsBlurImg}
             alt="Design that represents an iPhone and Android phone"
           />
           <BlogCard
@@ -109,6 +114,7 @@ const IndexPage = () => (
             url="/blog/my-favorite-github-student-pack-offers-and-why-they-are-important/"
             tags={['Git', 'Devops', 'CI']}
             img={GithubImg}
+            placeholder={GithubBlurImg}
             alt="Free price tag design"
           />
         </Container>
