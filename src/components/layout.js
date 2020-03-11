@@ -8,14 +8,10 @@
 import React from 'react';
 import './layout.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import {
-  faCheckSquare,
-  faCoffee,
-  faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-library.add(fab, faCheckSquare, faCoffee, faEnvelope);
+library.add(faEnvelope, faGithub, faLinkedin);
 
 const Layout = ({ children }) => {
   return (
