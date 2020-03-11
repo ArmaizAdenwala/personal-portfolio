@@ -4,7 +4,7 @@ import { Paragraph } from '../../components/content';
 import BlogCard from '../../components/blog/BlogCard';
 import '../../styles/main.scss';
 import SEO from '../../components/seo';
-import TesseractImg from './images/ocr/tesseract_jpg_to_html.png';
+import TesseractImg from './images/ocr/tesseract-jpg-to-html.png';
 import TesseractBlurImg from './images/ocr/tesseract_jpg_to_html_blur.png';
 import ArduinoImg from './images/arduino-led-mask/arduino_neopixel.png';
 import ArduinoBlurImg from './images/arduino-led-mask/arduino_neopixel_blur.png';

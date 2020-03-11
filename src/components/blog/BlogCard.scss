@@ -16,7 +16,7 @@
       @include respond-to(small){
         display: block;
       }
-      width: 224px;
+      width: 224px !important;
       height: 224px;
     }
     &__title-container {
