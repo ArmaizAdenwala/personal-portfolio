@@ -126,7 +126,7 @@ const IndexPage = () => (
           </Paragraph>
           <Title>Creating the project structure</Title>
           <Paragraph>Create the project root directory:</Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ mkdir python-ocr-tutorial
 $ cd python-ocr-tutorial`}
           </CodeBlock>
@@ -138,10 +138,7 @@ $ cd python-ocr-tutorial`}
             directory
           </Paragraph>
           <Paragraph>Create our project folders:</Paragraph>
-          <CodeBlock
-            useHighlight
-            language="shell"
-          >{`$ mkdir html data utils`}</CodeBlock>
+          <CodeBlock language="bash">{`$ mkdir html data utils`}</CodeBlock>
           <Paragraph>
             `mkdir html`: our html folder where our html would output to
           </Paragraph>
@@ -153,7 +150,7 @@ $ cd python-ocr-tutorial`}
             utility functions
           </Paragraph>
           <Paragraph>Create our project files:</Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ touch utils/utils.py utils/__init__.py main.py requirements.txt Makefile`}
           </CodeBlock>
           <Paragraph>
@@ -187,10 +184,7 @@ $ cd python-ocr-tutorial`}
             guide](https://tesseract-ocr.github.io/tessdoc/Home.html).
           </Paragraph>
           <Paragraph>In `requirements.txt` add the following:</Paragraph>
-          <CodeBlock
-            useHighlight
-            language="shell"
-          >{`pytesseract==0.3.2`}</CodeBlock>
+          <CodeBlock language="bash">{`pytesseract==0.3.2`}</CodeBlock>
           <Paragraph>
             `pytesseract`: A wrapper for Google's Tesseract OCR library that
             allows us to scan images and extract that data into a string
@@ -216,7 +210,7 @@ $ cd python-ocr-tutorial`}
             info.
           </Paragraph>
           <Paragraph>Run `$ Make init`:</Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ Make init
 pip3 install -r requirements.txt
 Processing /Users/.../Caches/pip/...
@@ -241,7 +235,7 @@ Successfully installed Pillow-7.0.0 pytesseract-0.3.2`}
             running `$ pip3 show PACKAGE_NAME` in terminal (not the Python
             console):
           </Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ pip3 show pytesseract
 Name: pytesseract
 Version: 0.3.2
@@ -269,7 +263,7 @@ Requires: Pillow`}
             Uninstall `Pillow` using the `$ pip3 uninstall PACKAGE_NAME`
             command:
           </Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ pip3 uninstall Pillow
 Uninstalling Pillow-7.0.0:
   Would remove:
@@ -279,12 +273,12 @@ Proceed (y/n)? y
   Successfully uninstalled Pillow-7.0.0`}
           </CodeBlock>
           <Paragraph>Update `requirements.txt`:</Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`pytesseract==0.3.2
 Pillow==7.0.0`}
           </CodeBlock>
           <Paragraph>Install dependencies:</Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ Make init
 pip3 install -r requirements.txt
 ...
@@ -359,7 +353,7 @@ Type "help", "copyright", "credits" or "license" for more information.
             us to configure which OCR engine mode and page segmentation mode to
             use. Run `$ tesseract --help-extra` to see our options:
           </Paragraph>
-          <CodeBlock language="shell">
+          <CodeBlock language="bash">
             {`$ tesseract --help-extra
 # ...
 OCR options:
@@ -614,7 +608,7 @@ extracting: data/python_dataset_03.jpg
             method into a hash of chapters.
           </Paragraph>
           <Paragraph>For example, lines would become chapters here:</Paragraph>
-          <CodeBlock language="shell">
+          <CodeBlock language="bash">
             {`lines = ['Chapter 1: Lorem', 'line 1', 'line 2', 'Chapter 2: Ipsum', 'line 3']
 build_chapters(lines) # {'Chapter 1: Lorem': 'line 1\\nline2', 'Chapter 2: Ipsum', 'line 3'}`}
           </CodeBlock>
@@ -1269,7 +1263,7 @@ build_html_files(chapters)`}
             Save this file and run `$ Make clean` and then `$ python3 main.py`
             (or `$ python main.py`):
           </Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ python3 main.py
 extracting: data/python_dataset_01.jpg
 extracting: data/python_dataset_02.jpg
@@ -1278,7 +1272,7 @@ extracting: data/python_dataset_03.jpg`}
           <Paragraph>
             Now if we check if the files exist in our html folder using `ls`:
           </Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ ls html
 dolor.html lorem.html lpsum.html`}
           </CodeBlock>
@@ -1467,7 +1461,7 @@ content = """
     # ...`}
           </CodeBlock>
           <Paragraph>Now run `$ Make clean` and `python3 main.py`:</Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ python3 main.py
 extracting: data/python_dataset_01.jpg
 ...

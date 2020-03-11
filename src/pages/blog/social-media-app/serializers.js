@@ -163,22 +163,13 @@ ActiveModelSerializers.config.key_transform = :underscore`}
           </Paragraph>
           <Title>Creating Our First Serializers</Title>
           <Paragraph>Create a `serializers` directory:</Paragraph>
-          <CodeBlock
-            useHighlight
-            language="console"
-          >{`$ mkdir app/serializers`}</CodeBlock>
+          <CodeBlock language="bash">{`$ mkdir app/serializers`}</CodeBlock>
           <Paragraph>Create a `v1` directory:</Paragraph>
-          <CodeBlock
-            useHighlight
-            language="console"
-          >{`$ mkdir app/serializers/v1`}</CodeBlock>
+          <CodeBlock language="bash">{`$ mkdir app/serializers/v1`}</CodeBlock>
           <Paragraph>
             Create a `user_serializer.rb` file under `app/serializers/v1/`:
           </Paragraph>
-          <CodeBlock
-            useHighlight
-            language="console"
-          >{`$ touch app/serializers/v1/user_serializer.rb`}</CodeBlock>
+          <CodeBlock language="bash">{`$ touch app/serializers/v1/user_serializer.rb`}</CodeBlock>
           <Paragraph>Add the following to the file:</Paragraph>
           <CodeBlock language="ruby">{`class V1::UserSerializer < ActiveModel::Serializer
   attributes (

@@ -75,7 +75,7 @@ const IndexPage = () => (
             directory and move the file any way you'd like but here is how you
             can do it in the terminal:
           </Paragraph>
-          <CodeBlock useHighlight language="console">
+          <CodeBlock language="bash">
             {`$ mkdir app/controllers/v1
 $ mv app/controllers/users_controller.rb app/controllers/v1/users_controller.rb`}
           </CodeBlock>
@@ -155,7 +155,7 @@ v1_users_register POST   /v1/users/register(.:format)  v1/users#register
             Let's restart are server using `ctrl + c` and by running `rails s`.
             Once the server is up, lets test our new routes:
           </Paragraph>
-          <CodeBlock language="shell">{`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "v1@abc.com","password":"123456","password_confirmation": "123456"}}' http://localhost:3000/v1/users/register | json_pp
+          <CodeBlock language="bash">{`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "v1@abc.com","password":"123456","password_confirmation": "123456"}}' http://localhost:3000/v1/users/register | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   232    0   146  100    86    211    124 --:--:-- --:--:-- --:--:--   211
@@ -165,7 +165,7 @@ v1_users_register POST   /v1/users/register(.:format)  v1/users#register
    "created_at" : "2020-02-10T17:06:32.468Z",
    "updated_at" : "2020-02-10T17:06:32.468Z"
 }`}</CodeBlock>
-          <CodeBlock language="shell">
+          <CodeBlock language="bash">
             {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "v1@abc.com","password":"123456"}}' http://localhost:3000/v1/users/login | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -316,7 +316,7 @@ v1_users_register POST   /v1/users/register(.:format) v1/users#register
             Since `/v1/` is being prepended, lets restart our server again with
             `ctrl + c` and `rails s` and run our `curl` commands again.
           </Paragraph>
-          <CodeBlock language="shell">
+          <CodeBlock language="bash">
             {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "v1concern@abc.com","password":"123456","password_confirmation": "123456"}}' http://localhost:3000/v1/users/register | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -328,7 +328,7 @@ v1_users_register POST   /v1/users/register(.:format) v1/users#register
    "email" : "v1concern@abc.com"
 }`}
           </CodeBlock>
-          <CodeBlock language="shell">
+          <CodeBlock language="bash">
             {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "v1concern@abc.com","password":"123456"}}' http://localhost:3000/v1/users/login | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed

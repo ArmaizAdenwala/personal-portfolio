@@ -146,7 +146,7 @@ no changes added to commit (use "git add" and/or "git commit -a")`}</CodeBlock>
           <Paragraph>
             This is a good point for us to commit our changes:
           </Paragraph>
-          <CodeBlock language="shell">{`$ git add .
+          <CodeBlock language="bash">{`$ git add .
 $ git commit -m 'setup postgresql config'
 $ git push`}</CodeBlock>
           <Title>Setting up PostgreSQL</Title>
@@ -180,7 +180,7 @@ $ git push`}</CodeBlock>
             everything.
           </Paragraph>
           <Paragraph>We can create the role by running:</Paragraph>
-          <CodeBlock useHighlight language="psql">
+          <CodeBlock language="sql">
             CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD
             'password123';
           </CodeBlock>
@@ -191,10 +191,7 @@ $ git push`}</CodeBlock>
           <Paragraph>
             If successful, your console should look like this:
           </Paragraph>
-          <CodeBlock
-            useHighlight
-            language="psql"
-          >{`postgres=# CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD 'password123';
+          <CodeBlock language="sql">{`postgres=# CREATE ROLE social_media_blog LOGIN SUPERUSER PASSWORD 'password123';
 CREATE ROLE`}</CodeBlock>
           <Paragraph>
             You can exit the console by typing `exit` or by using the `ctrl+z`

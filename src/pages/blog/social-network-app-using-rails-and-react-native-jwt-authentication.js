@@ -71,7 +71,7 @@ const IndexPage = () => (
 gem 'jwt'
 `}
           </CodeBlock>
-          <CodeBlock language="shell">
+          <CodeBlock language="bash">
             {`$ bundle install
 ...
 Using jwt 2.2.1

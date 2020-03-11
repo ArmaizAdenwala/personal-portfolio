@@ -76,10 +76,7 @@ const IndexPage = () => (
             Rails provides us a command to create a controller automatically.
             Lets run `$ rails generate controller users`
           </Paragraph>
-          <CodeBlock
-            useHighlight
-            language="shell"
-          >{`$ rails generate controller users
+          <CodeBlock language="bash">{`$ rails generate controller users
       create  app/controllers/users_controller.rb
       invoke  test_unit
       create    test/controllers/users_controller_test.rb`}</CodeBlock>
@@ -361,7 +358,7 @@ end
             Once you save the file, verify that the route has been created by
             running `$ rake routes`
           </Paragraph>
-          <CodeBlock useHighlight language="shell">
+          <CodeBlock language="bash">
             {`$ rake routes
         Prefix Verb   URI Pattern                Controller#Action
 users_register POST   /users/register(.:format)  users#register`}
@@ -376,7 +373,7 @@ users_register POST   /users/register(.:format)  users#register`}
             is highly suggested to take a look at a [REST client such as
             Insominia](https://insomnia.rest/)
           </Paragraph>
-          <CodeBlock language="shell">
+          <CodeBlock language="bash">
             {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "abc@abc.com","password":"123456","password_confirmation": "123456"}}' http://localhost:3000/users/register
 {"id":"666b9e2b-da4a-4dbb-8fcc-aecc760c2f6f","email":"abc@abc.com","created_at":"2020-02-09T17:19:33.376Z","updated_at":"2020-02-09T17:19:33.376Z"}%`}
           </CodeBlock>
@@ -384,7 +381,7 @@ users_register POST   /users/register(.:format)  users#register`}
             A little hard to read, but you can pipe the JSON response and pretty
             print it using `json_pp` by appending `| json_pp` to the end of it:
           </Paragraph>
-          <CodeBlock language="shell">
+          <CodeBlock language="bash">
             {`$ curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "abc2@abc.com","password":"123456","password_confirmation": "123456"}}' http://localhost:3000/users/register | json_pp
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -635,7 +632,7 @@ users_login    POST   /users/login(.:format)     users#login`}
             following `curl` command to test if our endpoint works. _Be sure to
             update the login credentials to the right credentials._
           </Paragraph>
-          <CodeBlock language="shell">
+          <CodeBlock language="bash">
             {`curl -H "Content-Type: application/json" -X POST -d '{"user":{"email": "abc2@abc.com","password":"123456"}}' http://localhost:3000/users/login | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed

@@ -47,7 +47,7 @@ const IndexPage = () => (
             For example, here is all you need to get a Ruby on Rails API
             deployed on heroku:
           </Paragraph>
-          <CodeBlock useHighlight language="console">
+          <CodeBlock language="bash">
             {`$ heroku create
 $ git push heroku master`}
           </CodeBlock>

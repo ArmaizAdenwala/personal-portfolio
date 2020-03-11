@@ -123,10 +123,7 @@ end`}
           <Paragraph>
             First, create the `access_token.rb` file under `lib/`:
           </Paragraph>
-          <CodeBlock
-            useHighlight
-            language="shell"
-          >{`$ touch lib/access_token.rb`}</CodeBlock>
+          <CodeBlock language="bash">{`$ touch lib/access_token.rb`}</CodeBlock>
           <Paragraph>Input the following class and stub methods:</Paragraph>
           <CodeBlock language="ruby">
             {`class AccessToken
