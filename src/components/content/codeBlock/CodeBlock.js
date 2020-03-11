@@ -1,5 +1,5 @@
 import React from 'react';
-import SyntaxHighlighter, { Prism } from 'react-syntax-highlighter';
+import {LightAsync as SyntaxHighlighter, PrismAsyncLight as Prism} from 'react-syntax-highlighter';
 
 const CodeBlock = ({ children, language, useHighlight }) => {
   if (useHighlight) {
