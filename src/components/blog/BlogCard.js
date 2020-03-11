@@ -4,10 +4,27 @@ import { Link } from 'gatsby';
 import './BlogCard.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-const BlogCard = ({ name, description, date, tags, url, img, alt }) => (
+const BlogCard = ({
+  name,
+  description,
+  date,
+  tags,
+  url,
+  img,
+  alt,
+  placeholder,
+}) => (
   <div className="blog-card">
     <div className="blog-card__content">
-      <LazyLoadImage className="blog-card__content__img" src={img} alt={alt} />
+      <LazyLoadImage
+        className="blog-card__content__img"
+        src={img}
+        alt={alt}
+        delayTime={0}
+        effect="blur"
+        wrapperClassName="blog-card__content__img"
+        placeholderSrc={placeholder}
+      />
       <div className="blog-card__content__title-container">
         <h5
           className="

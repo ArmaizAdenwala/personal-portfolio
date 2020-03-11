@@ -4,7 +4,8 @@ import { Paragraph } from '../../components/content';
 import BlogCard from '../../components/blog/BlogCard';
 import '../../styles/main.scss';
 import SEO from '../../components/seo';
-import TesseractImg from './images/ocr/tesseract-jpg-to-html.png';
+import TesseractImg from './images/ocr/tesseract_jpg_to_html.png';
+import TesseractBlurImg from './images/ocr/tesseract_jpg_to_html_blur.png';
 import ArduinoImg from './images/arduino-led-mask/arduino_neopixel.png';
 import RailsImg from './images/social-network/social_media_app.png';
 import GithubImg from './images/github/free_github.png';
@@ -80,6 +81,7 @@ const IndexPage = () => (
             url="/blog/pytesseract-images-to-html/"
             tags={['Python', 'Tesseract']}
             img={TesseractImg}
+            placeholder={TesseractBlurImg}
             alt="Image of multiple documents from HTML to JPG"
           />
           <BlogCard
