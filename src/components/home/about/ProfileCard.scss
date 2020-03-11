@@ -28,7 +28,9 @@
     }
     &__social {
       margin-bottom: 16px;
+      display: flex;
       &__link {
+        width: 24px;
         font-size: 24px;
         margin: 0 8px;
         color: $colors-secondary;

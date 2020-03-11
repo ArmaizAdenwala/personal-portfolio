@@ -5,10 +5,10 @@ import './ProfileCard.scss';
 
 const ProfileCard = () => (
   <div className="profile-card">
-    <img 
-      className="profile-card__img" 
+    <img
+      className="profile-card__img"
       alt="Armaiz Adenwala, Software Engineer Based In Sacramento, CA and San Francisco, CA"
-      src={profilePic} 
+      src={profilePic}
     />
     <div className="profile-card__content">
       <h4 className="tg__title-6 profile-card__content__title">
@@ -29,12 +29,6 @@ const ProfileCard = () => (
           href="https://github.com/ArmaizAdenwala"
         >
           <FontAwesomeIcon icon={['fab', 'github']} />
-        </a>
-        <a
-          className="profile-card__content__social__link"
-          href="mailto:armaiz.adenwala@gmail.com"
-        >
-          <FontAwesomeIcon icon={['fab', 'envelope']} />
         </a>
       </div>
     </div>
