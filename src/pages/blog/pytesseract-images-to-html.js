@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero, Navbar, Footer, Container } from '../../components/general';
+import Layout from '../../components/layout';
 import { Title, Paragraph, CodeBlock } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
@@ -16,7 +17,7 @@ import Chapter2StyledImg from './images/ocr/chapter-2-styled-page.png';
 import NavImg from './images/ocr/custom-navigation-using-python.png';
 
 const IndexPage = () => (
-  <div>
+  <Layout>
     <SEO
       title="Using Pytesseract To Convert Images Into A HTML Site"
       canonical="https://armaizadenwala.com/blog/pytesseract-images-to-html/"
@@ -1505,7 +1506,7 @@ extracting: data/python_dataset_38.jpg`}
       </Container>
       <Footer />
     </div>
-  </div>
+  </Layout>
 );
 
 export default IndexPage;
