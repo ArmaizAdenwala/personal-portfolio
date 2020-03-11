@@ -69,7 +69,11 @@ export default class Navbar extends Component {
         <div className="nav__container">
           <div>
             <a href="/">
-              <img className="nav__container__logo" src={ArmaizLogo} />
+              <img
+                className="nav__container__logo"
+                alt="Armaiz Adenwala, Software Engineer Logo"
+                src={ArmaizLogo}
+              />
             </a>
           </div>
           <div className="nav__container__links">
