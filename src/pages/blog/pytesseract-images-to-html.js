@@ -5,7 +5,10 @@ import { Title, Paragraph, CodeBlock } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
-import { Link } from 'gatsby';
+
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import CoverImage from './images/ocr/pytesseract-convert-image-to-html-site.png';
@@ -1487,19 +1490,19 @@ extracting: data/python_dataset_38.jpg`}
               className="profile-card__content__social__link"
               href="https://www.linkedin.com/in/armaizadenwala/"
             >
-              <FontAwesomeIcon icon={['fab', 'linkedin']} />
+              <FontAwesomeIcon icon={faLinkedin} />
             </a>
             <a
               className="profile-card__content__social__link"
               href="https://github.com/ArmaizAdenwala"
             >
-              <FontAwesomeIcon icon={['fab', 'github']} />
+              <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
               className="profile-card__content__social__link"
               href="mailto:armaiz.adenwala@gmail.com"
             >
-              <FontAwesomeIcon icon="envelope" />
+              <FontAwesomeIcon icon={faEnvelope} />
             </a>
           </div>
         </div>
