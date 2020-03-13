@@ -71,7 +71,7 @@ export default class Navbar extends Component {
             <a href="/">
               <img
                 className="nav__container__logo"
-                alt="Armaiz Adenwala, Software Engineer Logo"
+                alt="Armaiz Adenwala, Software Engineer - JS, Python, Ruby, and More"
                 src={ArmaizLogo}
               />
             </a>
