@@ -5,11 +5,6 @@ import { Title, Paragraph, CodeBlock } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
 import SEO from '../../components/seo';
-
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import CoverImage from './images/ocr/pytesseract-convert-image-to-html-site.png';
 import CoverImageBlur from './images/ocr/pytesseract-convert-image-to-html-site_blur.png';
@@ -1485,26 +1480,6 @@ extracting: data/python_dataset_38.jpg`}
             using `pytest` and `coverage`. I am always available to help with
             any questions, so don't hesitate to contact me!
           </Paragraph>
-          <div className="m-t--32 tg__t--center">
-            <a
-              className="profile-card__content__social__link"
-              href="https://www.linkedin.com/in/armaizadenwala/"
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a
-              className="profile-card__content__social__link"
-              href="https://github.com/ArmaizAdenwala"
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-            <a
-              className="profile-card__content__social__link"
-              href="mailto:armaiz.adenwala@gmail.com"
-            >
-              <FontAwesomeIcon icon={faEnvelope} />
-            </a>
-          </div>
         </div>
       </Container>
       <Footer />

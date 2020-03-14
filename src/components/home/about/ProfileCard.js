@@ -1,11 +1,8 @@
 import React from 'react';
 import profilePic from './images/armaiz_adenwala_software_engineer_sacramento_ca.jpg';
 import profilePicBlur from './images/armaiz_adenwala_software_engineer_sacramento_ca_blur.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './ProfileCard.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const ProfileCard = () => (
   <div className="profile-card">
@@ -30,13 +27,21 @@ const ProfileCard = () => (
           className="profile-card__content__social__link"
           href="https://www.linkedin.com/in/armaizadenwala/"
         >
-          <FontAwesomeIcon icon={faLinkedin} />
+          <LazyLoadImage
+            className="profile-card__content__icon"
+            src="/icons/linkedin.png"
+            alt="Armaiz Adenwala, Software Engineer, LinkedIn"
+          />
         </a>
         <a
           className="profile-card__content__social__link"
           href="https://github.com/ArmaizAdenwala"
         >
-          <FontAwesomeIcon icon={faGithub} />
+          <LazyLoadImage
+            className="profile-card__content__icon"
+            src="/icons/github.png"
+            alt="Armaiz Adenwala, FullStack Developer, GitHub"
+          />
         </a>
       </div>
     </div>
