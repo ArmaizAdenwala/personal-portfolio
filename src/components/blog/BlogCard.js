@@ -18,7 +18,7 @@ const BlogCard = ({
   <div className="blog-card">
     <div className="blog-card__content">
       <div
-        style={{ background: color}}
+        style={{ background: color }}
         className="blog-card__content__img-background"
       >
         <LazyLoadImage
