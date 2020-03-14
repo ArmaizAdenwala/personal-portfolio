@@ -33,8 +33,12 @@
     }
     &__img {
       display: block !important;
-      width: 224px !important;
-      height: 224px;
+      width: 160px;
+      height: 160px;
+      @include respond-to(small) {
+        width: 224px !important;
+        height: 224px;
+      }
     }
     &__title-container {
       padding: 32px 24px;
