@@ -2,6 +2,9 @@
   "name": "gatsby-starter-default",
   "private": true,
   "version": "0.1.0",
+  "engines": {
+    "node": "13.2.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
@@ -44,7 +47,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy:prod": "rm -rf .cache public && gatsby build && heroku static:deploy --app armaiz-portfolio",
+    "deploy:prod": "gatsby clean && gatsby build && heroku static:deploy --app armaiz-portfolio",
     "deploy:stag": "git push stag master",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
