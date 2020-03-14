@@ -11,11 +11,28 @@
   &__content {
     display: flex;
     align-items: center;
-    &__img {
+    flex-direction: column;
+    @include respond-to(small) {
+      flex-direction: row;
+    }
+    &__img-background {
+      width: 100%;
       @include respond-to(small){
-        display: block !important;
+        width: auto;
       }
-      display: none !important;
+    }
+    &__img-wrapper {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      @include respond-to(small) {
+        display: inline-block !important;
+        width: auto;
+      }
+    }
+    &__img {
+      display: block !important;
       width: 224px !important;
       height: 224px;
     }

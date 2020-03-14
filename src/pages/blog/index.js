@@ -86,6 +86,7 @@ const IndexPage = () => (
             img={TesseractImg}
             placeholder={TesseractBlurImg}
             alt="Image of multiple documents from HTML to JPG"
+            color="#E7E5FB"
           />
           <BlogCard
             name="How To Create An LED Rave Mask Using Arduino, Neopixels, and C++"
@@ -96,6 +97,7 @@ const IndexPage = () => (
             img={ArduinoImg}
             placeholder={ArduinoBlurImg}
             alt="Image of NeoPixels for Arduino"
+            color="#D9EDFE"
           />
           <BlogCard
             name="Series: Developing A Cross-Platform iOS & Android Social Media App"
@@ -106,6 +108,7 @@ const IndexPage = () => (
             img={RailsImg}
             placeholder={RailsBlurImg}
             alt="Design that represents an iPhone and Android phone"
+            color="#EA886E"
           />
           <BlogCard
             name="My Favorite Github Student Pack Offers and Why They Are Important"
@@ -116,6 +119,7 @@ const IndexPage = () => (
             img={GithubImg}
             placeholder={GithubBlurImg}
             alt="Free price tag design"
+            color="#F3DDC5"
           />
         </Container>
       </div>

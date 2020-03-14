@@ -13,18 +13,24 @@ const BlogCard = ({
   img,
   alt,
   placeholder,
+  color,
 }) => (
   <div className="blog-card">
     <div className="blog-card__content">
-      <LazyLoadImage
-        className="blog-card__content__img"
-        src={img}
-        alt={alt}
-        delayTime={0}
-        effect="blur"
-        wrapperClassName="blog-card__content__img"
-        placeholderSrc={placeholder}
-      />
+      <div
+        style={{ background: color}}
+        className="blog-card__content__img-background"
+      >
+        <LazyLoadImage
+          className="blog-card__content__img"
+          src={img}
+          alt={alt}
+          delayTime={0}
+          effect="blur"
+          wrapperClassName="blog-card__content__img-wrapper"
+          placeholderSrc={placeholder}
+        />
+      </div>
       <div className="blog-card__content__title-container">
         <h5
           className="
