@@ -17,6 +17,8 @@
     }
     &__img-background {
       width: 100%;
+      display: flex;
+      justify-content: center;
       @include respond-to(small){
         width: auto;
       }
@@ -24,11 +26,14 @@
     &__img-wrapper {
       display: flex !important;
       align-items: center;
-      justify-content: center;
-      width: 100%;
+      justify-coddntent: center;
+      width: 160px;
+      height: 160px;
       @include respond-to(small) {
         display: inline-block !important;
         width: auto;
+        width: 224px !important;
+        height: 224px;
       }
     }
     &__img {
