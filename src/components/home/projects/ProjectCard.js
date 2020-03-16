@@ -1,30 +1,10 @@
 import React from 'react';
 import { TechTags } from '../../general';
 import './ProjectCard.scss';
-
-const _renderUrl = url => {
-  if (url) {
-    return (
-      <div
-        className="
-        tg__t--center
-        m-t--32
-      "
-      >
-        <a
-          href={url}
-          className="
-            tg__button
-          "
-        >
-          VIEW PROJECT
-        </a>
-      </div>
-    );
-  }
-};
+import { Link } from 'gatsby';
 
 const ProjectCard = ({ name, description, date, tags, url }) => (
+  <Link className="tg__td--none" to={url}>
   <div className="project-card">
     <div className="project-card__content">
       <div className="project-card__content__title-container">
@@ -46,9 +26,9 @@ const ProjectCard = ({ name, description, date, tags, url }) => (
         </p>
       </div>
       <TechTags tags={tags} />
-      {_renderUrl(url)}
     </div>
   </div>
+  </Link>
 );
 
 export default ProjectCard;
