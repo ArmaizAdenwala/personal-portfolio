@@ -81,7 +81,7 @@ const IndexPage = () => (
               url: '/blog/algorithms/',
             },
             { name: 'JAVA', url: '/blog/algorithms/java/' },
-            { name: 'SORTING', url: '/blog/algorithms/sorting/' },
+            { name: 'SORTING', url: '/blog/algorithms/java/sorting/' },
           ]}
         />
         <SeriesCard
