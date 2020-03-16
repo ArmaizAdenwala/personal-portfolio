@@ -15,15 +15,15 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Java Algorithms and Concepts"
-      canonical="https://armaizadenwala.com/blog/social-media-app/"
+      canonical="https://armaizadenwala.com/blog/algorithms/java/"
       secondaryTitle="Armaiz"
-      description="A compilation of algorithims and concepts for the Java programming language.."
+      description="A compilation of algorithims and concepts for the Java programming language."
       ldJson={{
         '@context': 'http://schema.org',
         '@type': 'WebPage',
-        '@id': 'https://armaizadenwala.com/blog/algorithms/',
+        '@id': 'https://armaizadenwala.com/blog/algorithms/java/',
         description:
-          'A growing list of detailed explanations of algorithms and concepts in an array of languages.',
+          'A compilation of algorithims and concepts for the Java programming language.',
         breadcrumb: {
           '@type': 'BreadcrumbList',
           itemListElement: [
@@ -51,6 +51,14 @@ const IndexPage = () => (
                 name: 'Algorithms',
               },
             },
+            {
+              '@type': 'ListItem',
+              position: 4,
+              item: {
+                '@id': 'https://armaizadenwala.com/blog/algorithms/java/',
+                name: 'Java',
+              },
+            },
           ],
         },
         publisher: {
@@ -61,14 +69,13 @@ const IndexPage = () => (
             url: 'https://armaizadenwala.com/armaiz-developer-full.png',
           },
         },
-        url: 'https://armaizadenwala.com/blog/algorithms/',
+        url: 'https://armaizadenwala.com/blog/algorithms/java/'
       }}
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
       emphasized="Java Algorithms and Concepts"
       description="A compilation of algorithims and concepts for the Java programming language."
-      extraContent
     />
     <div className="page__content">
       <Container>

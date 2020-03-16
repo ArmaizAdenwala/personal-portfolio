@@ -14,15 +14,84 @@ import SEO from '../../../../../components/seo';
 const IndexPage = () => (
   <div>
     <SEO
-      title="Developing A Cross-Platform iOS & Android Social Media App"
+      title="Iterative Bubble Sort in Java"
       canonical="https://armaizadenwala.com/blog/social-media-app/"
-      secondaryTitle=""
-      description="This series will be covering how to create a cross-platform social media app using Ruby on Rails and React Native."
+      secondaryTitle="Sorting Algorithms"
+      description="Iteratively swap adjacent elements of an array until the array is sorted"
+      ldJson={{
+        '@context': 'http://schema.org',
+        '@type': 'WebPage',
+        '@id': 'https://armaizadenwala.com/blog/algorithms/java/sorting/iterative-bubble-sort/',
+        description:
+          'Iteratively swap adjacent elements of an array until the array is sorted.',
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': 'https://armaizadenwala.com',
+                name: 'Home',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              item: {
+                '@id': 'https://armaizadenwala.com/blog/',
+                name: 'Blog',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              item: {
+                '@id': 'https://armaizadenwala.com/blog/algorithms/',
+                name: 'Algorithms',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 4,
+              item: {
+                '@id': 'https://armaizadenwala.com/blog/algorithms/java/',
+                name: 'Java',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 5,
+              item: {
+                '@id': 'https://armaizadenwala.com/blog/algorithms/java/sorting/',
+                name: 'Sorting',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 6,
+              item: {
+                '@id': 'https://armaizadenwala.com/blog/algorithms/java/sorting/iterative-bubble-sort/',
+                name: 'Iterative Bubble Sort',
+              },
+            },
+          ],
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Armaiz Adenwala',
+          logo: {
+            '@type': 'imageObject',
+            url: 'https://armaizadenwala.com/armaiz-developer-full.png',
+          },
+        },
+        url: 'https://armaizadenwala.com/blog/algorithms/java/sorting/iterative-bubble-sort/',
+      }}
     />
     <Navbar links={['Projects', 'Blog']} />
     <Hero
-      emphasized="Developing A Cross-Platform iOS & Android Social Media App"
-      description="This series will be covering how to create a cross-platform social media app using Ruby on Rails and React Native."
+      emphasized="Iterative Bubble Sort in Java"
+      description="Iteratively swap adjacent elements of an array until the array is sorted"
       extraContent
     />
     <div className="page__content">
@@ -43,7 +112,7 @@ const IndexPage = () => (
             },
             {
               name: 'ITERATIVE BUBBLE SORT',
-              url: '/blog/algorithms/java/sorting/iterative-bubble-sort',
+              url: '/blog/algorithms/java/iterative-bubble-sort',
             },
           ]}
         />

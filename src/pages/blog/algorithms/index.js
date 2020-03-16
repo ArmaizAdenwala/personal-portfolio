@@ -15,7 +15,7 @@ const IndexPage = () => (
   <div>
     <SEO
       title="Algorithms and Concepts"
-      canonical="https://armaizadenwala.com/blog/social-media-app/"
+      canonical="https://armaizadenwala.com/blog/algorithms/"
       secondaryTitle="Armaiz"
       description="A growing list of detailed explanations of algorithms and concepts in an array of languages."
       ldJson={{
@@ -68,7 +68,6 @@ const IndexPage = () => (
     <Hero
       emphasized="Algorithms and Concepts"
       description="A growing list of detailed explanations of algorithms and concepts in an array of languages"
-      extraContent
     />
     <div className="page__content">
       <Container>
