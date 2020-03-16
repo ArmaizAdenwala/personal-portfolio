@@ -7,7 +7,6 @@ import {
   Breadcrumbs,
 } from '../../../../../components/general';
 import { Title, Paragraph, CodeBlock } from '../../../../../components/content';
-import SeriesCard from '../../../../../components/blog/SeriesCard';
 import '../../../../../styles/main.scss';
 import '../../../Blog.scss';
 import SEO from '../../../../../components/seo';
@@ -53,7 +52,7 @@ const IndexPage = () => (
           <Paragraph>
             The bubble sort algorithm sorts an array by swapping adjacent
             elements until it is fully sorted. Bubble sort can be O(n) or
-            O(n^2^) depending on the array being sorted.<sup>superscript</sup>
+            O(n^2^) depending on the array being sorted.
           </Paragraph>
         </div>
       </Container>
