@@ -6,7 +6,6 @@ import {
   Container,
   Breadcrumbs,
 } from '../../components/general';
-import { Paragraph } from '../../components/content';
 import BlogCard from '../../components/blog/BlogCard';
 import '../../styles/main.scss';
 import SEO from '../../components/seo';
@@ -18,6 +17,8 @@ import RailsImg from './images/social-network/social_media_app.png';
 import RailsBlurImg from './images/social-network/social_media_app_blur.png';
 import GithubImg from './images/github/free_github.png';
 import GithubBlurImg from './images/github/free_github_blur.png';
+import AlgorithmsImg from './images/algorithms/algorithms.png';
+import AlgorithmsBlurImg from './images/algorithms/algorithms_blur.png';
 
 const IndexPage = () => (
   <div>
@@ -101,6 +102,17 @@ const IndexPage = () => (
               the views or opinions of my employer.
             </em>
           </p>
+          <BlogCard
+            name="Algorithms and Concepts"
+            description="A growing list of detailed explanations of algorithms and concepts in an array of languages"
+            date="Last Updated: March 16th, 2020"
+            url="/blog/algorithms/"
+            tags={['JAVA']}
+            img={AlgorithmsImg}
+            placeholder={AlgorithmsBlurImg}
+            alt="Image of a terminal compiling and executing a Bubble Sort program in Java"
+            color="#96d8d8"
+          />
           <BlogCard
             name="Using Pytesseract To Convert Images Into A HTML Site"
             description="Convert images to a string with Google Tesseract and then into a static HTML site using python"
