@@ -7,7 +7,7 @@ const _renderUrl = url => {
     return (
       <div
         className="
-        tg__t--center 
+        tg__t--center
         m-t--32
       "
       >
