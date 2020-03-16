@@ -1,5 +1,11 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../components/general';
+import {
+  Hero,
+  Navbar,
+  Footer,
+  Container,
+  Breadcrumbs,
+} from '../../components/general';
 import { Title, Paragraph, CodeBlock } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
@@ -22,7 +28,18 @@ const IndexPage = () => (
     />
     <div className="page__content">
       <Container>
-        <div className="project__card">
+        <Breadcrumbs
+          items={[
+            { name: 'HOME', url: '/', hideOnMobile: true },
+            { name: 'BLOG', url: '/blog/' },
+            {
+              name: 'GITHUB STUDENT PACK',
+              url:
+                '/blog/my-favorite-github-student-pack-offers-and-why-they-are-important/',
+            },
+          ]}
+        />
+        <div className="blog__card">
           <Title first>What is the Github Student Pack?</Title>
           <Paragraph>
             The __Github Student Pack__ is an abundance of resources available

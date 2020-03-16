@@ -1,5 +1,11 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../components/general';
+import {
+  Hero,
+  Navbar,
+  Footer,
+  Container,
+  Breadcrumbs,
+} from '../../components/general';
 import { Title, Paragraph, CodeBlock } from '../../components/content';
 import '../../styles/main.scss';
 import './Blog.scss';
@@ -32,7 +38,17 @@ const IndexPage = () => (
     />
     <div className="page__content">
       <Container>
-        <div className="project__card">
+        <Breadcrumbs
+          items={[
+            { name: 'HOME', url: '/', hideOnMobile: true },
+            { name: 'BLOG', url: '/blog/' },
+            {
+              name: 'LED MASK',
+              url: '/blog/how-to-create-a-led-rave-mask-using-arduino/',
+            },
+          ]}
+        />
+        <div className="blog__card">
           <Title first>Overview</Title>
           <Paragraph>
             In this guide, we will cover how you can create the hardware and

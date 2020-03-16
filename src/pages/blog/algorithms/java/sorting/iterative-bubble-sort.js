@@ -4,6 +4,7 @@ import {
   Navbar,
   Footer,
   Container,
+  Breadcrumbs,
 } from '../../../../../components/general';
 import { Title, Paragraph, CodeBlock } from '../../../../../components/content';
 import SeriesCard from '../../../../../components/blog/SeriesCard';
@@ -27,6 +28,22 @@ const IndexPage = () => (
     />
     <div className="page__content">
       <Container>
+        <Breadcrumbs
+          items={[
+            { name: 'HOME', url: '/', hideOnMobile: true },
+            { name: 'BLOG', url: '/blog/', hideOnMobile: true },
+            {
+              name: 'ALGORITHMS',
+              url: '/blog/algorithms/',
+              hideOnMobile: true,
+            },
+            { name: 'JAVA', url: '/blog/algorithms/java/' },
+            {
+              name: 'ITERATIVE BUBBLE SORT',
+              url: '/blog/algorithms/java/iterative-bubble-sort',
+            },
+          ]}
+        />
         <div className="blog__card">
           <Title first>Introduction</Title>
           <Paragraph>

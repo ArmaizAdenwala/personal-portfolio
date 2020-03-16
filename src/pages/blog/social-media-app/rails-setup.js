@@ -1,5 +1,11 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../../components/general';
+import {
+  Hero,
+  Navbar,
+  Footer,
+  Container,
+  Breadcrumbs,
+} from '../../../components/general';
 import { Title, Paragraph, CodeBlock } from '../../../components/content';
 import '../../../styles/main.scss';
 import '../Blog.scss';
@@ -27,7 +33,18 @@ const IndexPage = () => (
     />
     <div className="page__content">
       <Container>
-        <div className="project__card">
+        <Breadcrumbs
+          items={[
+            { name: 'HOME', url: '/', hideOnMobile: true },
+            { name: 'BLOG', url: '/blog/', hideOnMobile: true },
+            { name: 'SOCIAL MEDIA APP', url: '/blog/social-media-app/' },
+            {
+              name: 'RAILS SETUP',
+              url: '/blog/social-media-app/rails-setup/',
+            },
+          ]}
+        />
+        <div className="blog__card">
           <Title first>Introduction</Title>
           <Paragraph>
             In this blog post series, I will be walking you through my process

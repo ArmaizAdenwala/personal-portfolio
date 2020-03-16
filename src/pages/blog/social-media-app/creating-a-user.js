@@ -1,5 +1,11 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../../components/general';
+import {
+  Hero,
+  Navbar,
+  Footer,
+  Container,
+  Breadcrumbs,
+} from '../../../components/general';
 import { Title, Paragraph, CodeBlock } from '../../../components/content';
 import '../../../styles/main.scss';
 import '../Blog.scss';
@@ -22,7 +28,18 @@ const IndexPage = () => (
     />
     <div className="page__content">
       <Container>
-        <div className="project__card">
+        <Breadcrumbs
+          items={[
+            { name: 'HOME', url: '/', hideOnMobile: true },
+            { name: 'BLOG', url: '/blog/', hideOnMobile: true },
+            { name: 'SOCIAL MEDIA APP', url: '/blog/social-media-app/' },
+            {
+              name: 'CREATING A USER',
+              url: '/blog/social-media-app/creating-a-user/',
+            },
+          ]}
+        />
+        <div className="blog__card">
           <Title first>A Quick Recap</Title>
           <Paragraph disableRel>
             In the previous article we [setup devise and created the User

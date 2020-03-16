@@ -1,6 +1,12 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../../components/general';
-import { Title, Paragraph, CodeBlock } from '../../../components/content';
+import {
+  Hero,
+  Navbar,
+  Footer,
+  Container,
+  Breadcrumbs,
+} from '../../../components/general';
+import { Title, Paragraph } from '../../../components/content';
 import SeriesCard from '../../../components/blog/SeriesCard';
 import '../../../styles/main.scss';
 import '../Blog.scss';
@@ -23,6 +29,13 @@ const IndexPage = () => (
     />
     <div className="page__content">
       <Container>
+        <Breadcrumbs
+          items={[
+            { name: 'HOME', url: '/', hideOnMobile: true },
+            { name: 'BLOG', url: '/blog/' },
+            { name: 'SOCIAL MEDIA APP', url: '/blog/social-media-app/' },
+          ]}
+        />
         <div className="blog__card">
           <Title first>Introduction</Title>
           <Paragraph>

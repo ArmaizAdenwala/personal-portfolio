@@ -5,11 +5,11 @@ import {
   Footer,
   Container,
   Breadcrumbs,
-} from '../../../../../components/general';
-import SeriesCard from '../../../../../components/blog/SeriesCard';
-import '../../../../../styles/main.scss';
-import '../../../Blog.scss';
-import SEO from '../../../../../components/seo';
+} from '../../../../components/general';
+import SeriesCard from '../../../../components/blog/SeriesCard';
+import '../../../../styles/main.scss';
+import '../../Blog.scss';
+import SEO from '../../../../components/seo';
 import schema from './schema';
 
 const IndexPage = () => (

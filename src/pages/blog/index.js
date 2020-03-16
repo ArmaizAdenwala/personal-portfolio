@@ -1,5 +1,11 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../components/general';
+import {
+  Hero,
+  Navbar,
+  Footer,
+  Container,
+  Breadcrumbs,
+} from '../../components/general';
 import { Paragraph } from '../../components/content';
 import BlogCard from '../../components/blog/BlogCard';
 import '../../styles/main.scss';
@@ -71,12 +77,30 @@ const IndexPage = () => (
       description="Detailed guides covering an array of technologies and frameworks"
     />
     <div className="page__content">
-      <div className="p-v--32">
+      <div className="p-b--32">
         <Container>
-          <Paragraph>
-            _Opinions expressed in my blog are solely my own and do not express
-            the views or opinions of my employer._
-          </Paragraph>
+          <Breadcrumbs
+            items={[
+              { name: 'HOME', url: '/' },
+              { name: 'BLOG', url: '/blog/' },
+            ]}
+          />
+          <p
+            className="
+            tg__title-7--s
+            tg__title-6--m
+            tg__title-6--l
+            tg__lh--1-5--s
+            tg__lh--1-75--m
+            tg__lh--1-75--l
+            m-v--8
+            "
+          >
+            <em>
+              Opinions expressed in my blog are solely my own and do not express
+              the views or opinions of my employer.
+            </em>
+          </p>
           <BlogCard
             name="Using Pytesseract To Convert Images Into A HTML Site"
             description="Convert images to a string with Google Tesseract and then into a static HTML site using python"

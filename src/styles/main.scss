@@ -39,6 +39,10 @@ body {
     margin-top: 8px;
     margin-bottom: 8px;
   }
+  @include responsive-modifiers('&-v--16') {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
   @include responsive-modifiers('&-t--16') {
     margin-top: 16px;
   }
@@ -70,6 +74,9 @@ body {
     padding-top: 32px;
     padding-bottom: 32px;
   }
+  @include responsive-modifiers('&-b--32') {
+    padding-bottom: 32px;
+  }
 }
 
 .flex {
@@ -88,6 +95,12 @@ body {
   }
   @include responsive-modifiers('&--row-reverse') {
     flex-direction: row-reverse;
+  }
+}
+
+.display {
+  @include responsive-modifiers('&--none') {
+    display: none;
   }
 }
 

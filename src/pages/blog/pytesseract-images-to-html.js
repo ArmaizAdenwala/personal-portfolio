@@ -1,5 +1,11 @@
 import React from 'react';
-import { Hero, Navbar, Footer, Container } from '../../components/general';
+import {
+  Hero,
+  Navbar,
+  Footer,
+  Container,
+  Breadcrumbs,
+} from '../../components/general';
 import Layout from '../../components/layout';
 import { Title, Paragraph, CodeBlock } from '../../components/content';
 import '../../styles/main.scss';
@@ -95,7 +101,17 @@ const IndexPage = () => (
     />
     <div className="page__content">
       <Container>
-        <div className="project__card">
+        <Breadcrumbs
+          items={[
+            { name: 'HOME', url: '/', hideOnMobile: true },
+            { name: 'BLOG', url: '/blog/' },
+            {
+              name: 'PYTESSERACT IMAGES TO HTML',
+              url: '/blog/pytesseract-images-to-html/',
+            },
+          ]}
+        />
+        <div className="blog__card">
           <LazyLoadImage
             className="cover-image"
             wrapperClassName="cover-image"
