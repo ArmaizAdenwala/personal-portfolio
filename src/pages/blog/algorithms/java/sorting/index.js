@@ -33,11 +33,14 @@ const IndexPage = () => (
           items={[
             { name: 'HOME', url: '/', hideOnMobile: true },
             { name: 'BLOG', url: '/blog/', hideOnMobile: true },
-            { name: 'ALGORITHMS', url: '/blog/algorithms/' },
+            {
+              name: 'ALGORITHMS',
+              url: '/blog/algorithms/',
+            },
             { name: 'JAVA', url: '/blog/algorithms/java/' },
+            { name: 'SORTING', url: '/blog/algorithms/sorting/' },
           ]}
         />
-        <h3 className="tg__title-6 tg__t--center m-b--16">Sorting</h3>
         <SeriesCard
           name="Iterative Bubble Sort"
           description="Iteratively swap adjacent elements of an array until the array is sorted."

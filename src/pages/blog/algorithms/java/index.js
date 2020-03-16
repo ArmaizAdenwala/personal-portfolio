@@ -37,11 +37,10 @@ const IndexPage = () => (
             { name: 'JAVA', url: '/blog/algorithms/java/' },
           ]}
         />
-        <h3 className="tg__title-6 tg__t--center m-b--16">Sorting</h3>
         <SeriesCard
-          name="Iterative Bubble Sort"
-          description="Iteratively swap adjacent elements of an array until the array is sorted."
-          url="/blog/algorithms/java/sorting/iterative-bubble-sort"
+          name="Sorting"
+          description="Algorithms used to order an array of integers"
+          url="/blog/algorithms/java/sorting/"
         />
         <br />
       </Container>
