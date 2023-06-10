@@ -7,7 +7,7 @@
   },
   "browserslist": [">0.25%", "not dead"],
   "dependencies": {
-    "gatsby": "^2.18.12",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-preact": "^3.1.27",
     "gatsby-plugin-react-helmet": "^3.1.21",
